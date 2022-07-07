@@ -1,0 +1,64 @@
+<a name="IDH_455"></a>
+<title>Convert to array</title>
+<table width="100%"><tr valign="top"><td><h2>Convert to array</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeArray
+ </pre>
+This command allows you to create arrays and change their sizes.
+<p>
+The arrays are created in 2 simple steps:
+<pre>
+  1. Create the first element of array using the data
+     definition commands (<a href="453.html">data</a>, <a href="454.html">string</a>, <a href="496.html">structs</a>)
+  2. Apply the array command to the created data item.
+</pre>
+Enter array size in current array elements (not bytes).
+The suggested array size is the minimum of the following values:
+<pre>
+        - the address of the next item with a cross reference
+        - the address of the next user-defined name
+</pre>
+For string literals, you can use this command to change the length of the string.
+<p>
+The dialog box contains the following fields:
+<p>
+Items on a line (meaningless for string literals):
+<pre>
+        0               place maximal number of items on a line
+        other value     number of items on a line
+</pre>
+Please note that the <a href="605.html">margin</a> parameter affects the number of
+items on a line too.
+<p>
+Alignment (meaningless for string literals):
+<pre>
+        -1              do not align items
+        0               align automatically
+        other value     width of each item
+</pre>
+<pre>
+ Signed elements:       if checked, IDA treats all elements as signed numbers.
+                        only meaningful for numbers (not for offsets and
+                        segments and strings)
+</pre>
+<pre>
+ Display indexes:       if checked, IDA will display the indexes of array
+                        elements in the form of comments (0,1,2...)
+                        This option is ignored for arrays of expanded structures.
+</pre>
+<pre>
+ Create as array:       if not checked, IDA will create a separate item for
+                        each array element. Useful for creating huge arrays.
+                        If the box is unchecked when this command is
+                        applied to string literals, IDA will create many
+                        string literals instead of one big string.
+</pre>
+If applied to a variable-sized structure, this command is used
+to specify the overall size of the structure. You cannot create arrays of
+variable-sized structures.
+<p>
+See also
+<pre>
+ <a href="451.html">Edit</a> submenu
+ <a href="423.html">How to Enter a Number</a>.</pre>

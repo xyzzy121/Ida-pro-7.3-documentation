@@ -1,0 +1,16 @@
+<a name="IDH_320"></a>
+<title> savefile</title>
+<table width="100%"><tr valign="top"><td><h2> savefile</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+save from IDA database to file
+     handle  - file handle
+     pos     - position in the file
+     ea      - linear address to save from
+     size    - number of bytes to save
+returns: 0 - error
+         1 - ok
+<p>
+success savefile(long handle, long pos, long ea, long size);
+
+</pre>

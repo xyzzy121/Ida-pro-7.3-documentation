@@ -1,0 +1,218 @@
+<a name="IDH_1332"></a>
+<title>Bochs PE operation mode</title>
+<table width="100%"><tr valign="top"><td><h2>Bochs PE operation mode</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The PE operation mode can be used to load PE files and debug them in a MS Windows like environment.
+<p>
+The current limitations include:
+<pre>
+  - Thread or process manipulation are not supported
+</pre>
+<pre>
+  - Limited support for PE+
+</pre>
+<pre>
+  - We provide implementations of a limited number of system calls. Feel
+    free to implement missing functions using IDC scripts or DLLs.
+</pre>
+<pre>
+  - LoadLibrary() will fail on unknown DLLs: the list of desired DLLs must
+    be specified before running the debugger in the startup.idc file
+</pre>
+<pre>
+  - Limited emulation environment: IDA does not emulate the complete MS Windows
+    operating system: it just provides the basic environment for a
+    32bit PE file to run (please check the features below). There are many
+    ways how the debugged program can detect that it runs in an emulated
+    environment.
+</pre>
+PE executables feature list:
+<p>
+- SEH support: we try to mimic MS Windows as much as possible. For example, the
+ICEBP instruction is a privileged instruction, but Windows reports back a single
+step exception. Similarly, MS Windows does not distinguish between 0xCC and 0xCD 0x03,
+so when an exception occurs, it reports that the exception address is always
+one byte before the trap. So if it was an INT 0x3 (CD03), the exception address
+will point to the 0x03 (in the middle of the instruction).
+<p>
+- TLS callbacks: TLS callbacks are normally parsed by IDA and presented as
+entry points. They will be called by the debugger before jumping to the main
+entry point of the application. Turning on the &quot;Debugger Setup/Suspend on debugging start&quot;
+may be a good idea since it will make all this logic clearly visible.
+<p>
+- Emulation of NT structures: Some malware do not use GetProcAddress() or
+GetModuleHandle(). Instead, they try to parse the system structures and deduce these values.
+For this we also provide and build the basic structure of TIB, PEB, PEB_LDR_DATA,
+LDR_MODULE(s) and RTL_USER_PROCESS_PARAMETERS. Other structures can be built
+in the bochs_startup() function of the startup.idc file.
+<p>
+PE/PE+ executables feature list:
+<p>
+- Extensible API emulation: The user may provide an implementation of a any API function
+using scripts. The plugin supports IDC language by default, but if there are any other registered
+and active external languages, then external language will be used. Currently, the plugin ships with
+preconfigured IDC and Python scripts (please refer to startup.idc/startup.py).
+<p>
+It is also possible to take a copy of all the API and startup scripts and place them next to the database in question.
+This will tell the Bochs debugger plugin that these scripts are to be used with the current database directory.
+Such mechanism makes it possible to customize API/startup scripts for different databases.
+<p>
+In the following example, kernel32!GlobalAlloc is implemented via IDC like this:
+<pre>
+ (file name: api_kernel32.idc)
+ ///func=GlobalAlloc entry=k32_GlobalAlloc purge=8
+ static k32_GlobalAlloc()
+ {
+   eax = BochsVirtAlloc(0, BochsGetParam(2), 1);
+   return 0;
+ }
+ ///func=GlobalFree entry=k32_GlobalFree purge=4
+ static k32_GlobalFree()
+ {
+   eax = BochsVirtFree(BochsGetParam(1), 0);
+   return 0;
+ }
+</pre>
+A simple MessageBoxA replacement can be:
+<pre>
+ (file name: api_user32.idc)
+ ///func=MessageBoxA entry=messagebox purge=0x10
+ static messagebox()
+ {
+   auto param2; param2 = BochsGetParam(2);
+   msg(&quot;MessageBoxA has been called: %s\n&quot;,
+        get_strlit_contents(param2, -1, STRTYPE_C));
+</pre>
+<pre>
+   // Supply the return value
+   eax = 1;
+</pre>
+<pre>
+   // Continue execution
+   return 0;
+ }
+</pre>
+To access the stack arguments passed to a given IDC function, please use the BochsGetParam() IDC function.
+<p>
+For a full reference on using IDC to implement API calls, please refer to ida\plugins\bochs\api_kernel32.idc file.
+<p>
+- Remap a DLL path (from the startup.idc script):
+<pre>
+    /// map /home/johndoe/sys_dlls/user32.dll=d:\winnt\system32\user32.dll
+    /// map /home/johndoe/sys_dlls/kernel32.dll=d:\winnt\system32\kernel32.dll
+</pre>
+- Specify additional DLL search path (and optionally change the mapping):
+<pre>
+    /// map /home/johndoe/sys_dlls/=d:\winnt\system32
+  Or:
+</pre>
+<pre>
+    /// map c:\projects\windows_xpsp2_dlls\=c:\windows\system32
+  Or just as a search path without mapping:
+</pre>
+<pre>
+    /// map c:\program files\my program
+  You need to add the appropriate terminating slashes
+</pre>
+- Redefine the environment variables: the environment variables can be redefined in startup.idc
+<pre>
+    /// env PATH=c:\windows\system32\;c:\programs    /// env USERPROFILE=c:\Users\Guest
+</pre>
+<pre>
+  In Linux, if no environment variable is defined in the startup file then no environment strings will be present.
+  In Windows, we take the environment variables from the system if none were defined.
+</pre>
+- Use native code: it is possible to write a custom Win32/64 DLL and map it into the process space.
+<p>
+Existing APIs can then be redirected to custom written functions. For example:
+<pre>
+  ///func=GetProcAddress entry=bochsys.BxGetProcAddress
+  ///func=ExitProcess entry=bochsys.BxExitProcess
+  ///func=GetModuleFileNameA entry=bochsys.BxGetModuleFileNameA
+  ///func=GetModuleHandleA entry=bochsys.BxGetModuleHandleA
+</pre>
+Here we redirect some functions to bochsys.dll that modify the memory space of the application.
+Please note that bochsys.dll is a special module, IDA is aware of it.
+Custom functions are declared like this:
+<pre>
+  (file name: api_kernel32.idc)
+  ///func=GetCommandLineA entry=mydll.GetCommandLineA purge=0
+</pre>
+Then in startup.idc file, the following line must be added:
+<pre>
+   /// load mydll.dll
+</pre>
+Custom DLLs are normal DLLs that can import functions from any other DLL. However,
+it is advisable that the custom DLL is kept small in size and simple, by not linking it
+to the runtime libraries.
+<p>
+- Helper IDC functions: a set of helper IDC functions are available when the
+debugger is active. For more information, please refer to &quot;startup.idc&quot;.
+<p>
+- Less demanding PE loader: Most PE files can be loaded and run, including
+system drivers, DLL and some PE files that cannot be run by the operating system.
+<p>
+- Dependency resolution: In the PE operation mode, the plugin will recursively load all DLLs referenced
+by the program. All DLLs that are not explicitly marked with &quot;stub&quot; in startup.idc
+will be loaded as is. It is important to &quot;stub&quot; all system DLLs for faster loading.
+The PE loader creates empty stubs for undefined functions in stubbed DLLs.
+For example, the following line defines a stub that will always return 0 for CreateFileA:
+<pre>
+  /// func=CreateFileA retval=0
+</pre>
+Since CreateFileA is mentioned in the IDS files and IDA knows how many bytes it purges
+from the stack, there is no need to specify the &quot;purge&quot; value. For other functions
+that are not known to IDA, a full definition line would look like:
+<pre>
+  /// func=FuncName purge=N_bytes retval=VALUE
+</pre>
+- Startup and Exit scripts: It is possible to assign IDC functions that run when the debugging
+session starts or is about to terminate (before the application continues from
+the PROCESS_EXITED event). In addition to running code at startup, the startup
+script serves a role in telling the PE loader which DLLs are to be mapped for
+the current debugging session. For example:
+<pre>
+  /// stub ntdll.dll
+  /// stub kernel32.dll
+  /// stub user32.dll
+  /// stub shell32.dll
+  /// stub shlwapi.dll
+  /// stub wininet.dll
+</pre>
+These lines list the DLLs that will be used during the debugging session.
+IDA creates empty stubs for all functions from these DLLs. Non-trivial implementations
+of selected functions can be speficied in api_xxxx.idc files, where xxxx is the module name.
+<p>
+API and startup scripts are searched first in the current directory and then
+in the ida/plugins/bochs directory.
+<p>
+- Memory allocation limit: The PE loader has a simple memory manager. It is
+used for the intial memory allocation at the loading stage and for dynamic memory allocation
+during the debugging session. No memory limits are applied at the loading stage:
+the loader will load all modules regardless of their size. However, when the
+debugging session starts, a limit applies on how much memory can be dynamically
+allocated. This limit is specfied in the debugger specific options as &quot;Max allocatable
+memory&quot;. Memory allocation will fail once this limit is reached.
+<p>
+Some notes on bochsys.dll:
+<p>
+- BxIDACall: This exported function is used as a trap to suspend the code execution
+in Bochs and perform some actions in IDA. For example, when the target calls
+kernel32.VirtualAlloc, it is redirected to bochsys.BxVirtualAlloc, which calls BxIDACall,
+which triggers IDA:
+<pre>
+  kernel32.VirtualAlloc -&gt; bochsys.BxVirtualAlloc -&gt; BxIDACall -&gt; IDA bochs plugin
+</pre>
+A breakpoint can be set on this function to monitor all API calls that are
+handled by IDA.
+<p>
+- BxUndefinedApiCall: This exported function is executed when the application
+calls an unimplemented function. Setting a breakpoint on it will allow discovering
+unimplemented functions and eventually implementing them as IDC or
+DLL functions. It can also be used to determine when unpacking/decryption
+finishes (provided that all functions used by the unpacker have been defined).
+<pre>
+ See also:
+        <a href="1329.html">Bochs debugger</a>
+        <a href="1333.html">Bochs plugin operation mode FAQ</a>
+</pre>

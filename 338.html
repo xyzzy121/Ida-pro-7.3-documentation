@@ -1,0 +1,13 @@
+<a name="IDH_338"></a>
+<title> set_func_flags</title>
+<table width="100%"><tr valign="top"><td><h2> set_func_flags</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+change function flags
+     ea    - any address belonging to the function
+     flags - see <a href="337.html">get_func_flags</a>() for explanations
+returns: !=0 - ok
+<p>
+#define set_func_flags(ea, flags) set_func_attr(ea, FUNCATTR_FLAGS, flags)
+
+</pre>

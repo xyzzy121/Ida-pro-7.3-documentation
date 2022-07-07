@@ -1,0 +1,73 @@
+<a name="IDH_161"></a>
+<title>IDC: variables</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: variables</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+There are two kinds of variables in IDC:
+<pre>
+  - local variables: they are created at the function entry
+    and destroyed at the exit
+</pre>
+<pre>
+  - global variables: they are created at the compilation time
+    and destroyed when the database is closed
+</pre>
+A variable can contain:
+<pre>
+  - LONG: a 32-bit signed long integer (64-bit in 64-bit version of IDA)
+  - INT64: a 64-bit signed long integer
+  - STR: a character string
+  - FLOAT: a floating point number (extra precision, up to 25 decimal digits)
+  - OBJECT: an object with attributes and methods
+            (a concept very close to C++ class) <a href="1577.html">more</a>
+  - REF: a reference to another variable
+  - FUNC: a function reference
+</pre>
+A local variable is declared this way:
+<pre>
+  auto var1;
+  auto var2 = &lt;expr&gt;;
+</pre>
+Global variables are declared like this:
+<pre>
+  extern var;
+</pre>
+Global variables can be redefined many times. IDA will silently ignore subsequent
+declarations. Please note that global variables cannot be initialized at the
+declaration time.
+<p>
+All C and C++ keywords are reserved and cannot be used as a variable name.
+<p>
+While it is possible to declare a variable anywhere in the function body,
+all variables are initialized at the function entry and all of them are
+destroyed only at the exit. So, a variable declared in a loop body will not
+be reinitialized at each loop iteration, unless explicitly specified with
+an assignment operator.
+<p>
+If a variable or function name cannot be recognized, IDA tries
+to resolve them using the names from the disassembled application. In it succeeds,
+the name is replaced by its value in the disassembly listing. For example:
+<pre>
+  .data:00413060 errtable        dd 1   ; oscode
+  .data:00413060                 dd 16h ; errnocode
+
+</pre>
+<pre>
+        msg(&quot;address is: %x\n&quot;, _errtable);
+</pre>
+will print 413060. If the label denotes a structure, it is possible
+to refer to its fields:
+<pre>
+        msg(&quot;address is: %x\n&quot;, _errtable.errnocode);
+</pre>
+will print 413064. Please note that IDA does not try to read the data but
+just returns the address of the structure field. The field address can also
+be calculated using the <a href="1579.html">get_field_ea</a> function.
+<p>
+<b>NOTE:</b> The processor register names can be used in the IDC scripts when the
+debugger is active. Reading from such a variable return the corresponding
+register value. Writing to such a variable modifies the register value
+in the debugged process. Such variables are accessible only when the application
+is in the suspended mode.
+<p>
+<b>NOTE:</b> another way to emulate global scope variables is to use <a href="668.html">array</a>
+functions and create global persistent arrays.

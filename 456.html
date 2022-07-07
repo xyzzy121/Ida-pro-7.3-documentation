@@ -1,0 +1,17 @@
+<a name="IDH_456"></a>
+<title>Undefine a byte</title>
+<table width="100%"><tr valign="top"><td><h2>Undefine a byte</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeUnknown
+ </pre>
+This command deletes the current instruction or data, converting
+it to 'unexplored' bytes. IDA will delete the subsequent instructions if
+there are no more references to them (functions are never deleted).
+<p>
+If you have selected a range using the <a href="420.html">anchor</a>, all the bytes in this range
+will be converted into 'unexplored' bytes. In this case, IDA will not delete
+any other instructions even if there are no references to them after the deletion.
+<p>
+See also
+ <a href="451.html">Edit</a> submenu

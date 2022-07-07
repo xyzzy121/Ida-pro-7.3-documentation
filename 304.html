@@ -1,0 +1,28 @@
+<a name="IDH_304"></a>
+<title> set_segm_alignment</title>
+<table width="100%"><tr valign="top"><td><h2> set_segm_alignment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change alignment of the segment
+  ea      - any address in the segment
+  align   - new alignment of the segment, one of sa... constants
+Note: it is a macro
+<p>
+#define set_segm_alignment(ea, alignment) set_segm_attr(ea, SEGATTR_ALIGN, alignment)
+        #define saAbs         0  // Absolute segment.
+        #define saRelByte     1  // Relocatable, byte aligned.
+        #define saRelWord     2  // Relocatable, word (2-byte, 16-bit) aligned.
+        #define saRelPara     3  // Relocatable, paragraph (16-byte) aligned.
+        #define saRelPage     4  // Relocatable, aligned on 256-byte boundary (a &quot;page&quot;
+                                 // in the original Intel specification).
+        #define saRelDble     5  // Relocatable, aligned on a double word (4-byte)
+                                 // boundary. This value is used by the PharLap OMF for
+                                 // the same alignment.
+        #define saRel4K       6  // This value is used by the PharLap OMF for page (4K)
+                                 // alignment. It is not supported by LINK.
+        #define saGroup       7  // Segment group
+        #define saRel32Bytes  8  // 32 bytes
+        #define saRel64Bytes  9  // 64 bytes
+        #define saRelQword   10  // 8 bytes
+
+</pre>

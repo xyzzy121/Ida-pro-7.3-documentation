@@ -1,0 +1,25 @@
+<a name="IDH_1601"></a>
+<title>Set operand type</title>
+<table width="100%"><tr valign="top"><td><h2>Set operand type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetOpType
+ </pre>
+This command allows you to specify the type of the operand under the cursor.
+<p>
+The operand type must be entered as a C declaration. Currently IDA itself does
+not use the operand type information. However, it can be used by the Hex-Rays decompiler plugin.
+Setting operand type is most useful in case of indirect calls: the decompiler will use the type information
+to determine the input parameters to the call instead of guessing, which can make the decompiled code better.
+<p>
+An example of a type declaration:
+<pre>
+        int (*func)(int param1, char param2);
+</pre>
+To delete a type declaration, enter an empty string.
+<p>
+For details on possible calling conventions, see <a href="1361.html">Set function/item type...</a> menu item description.
+<p>
+See also
+<pre>
+         <a href="1361.html">Set function/item type...</a></pre>

@@ -1,0 +1,13 @@
+<a name="IDH_256"></a>
+<title> get_segm_by_sel</title>
+<table width="100%"><tr valign="top"><td><h2> get_segm_by_sel</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get segment by segment base
+     base - segment base paragraph or selector
+returns: linear address of the start of the segment
+         BADADDR - no such segment
+<p>
+long get_segm_by_sel(long base);
+
+</pre>

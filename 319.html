@@ -1,0 +1,16 @@
+<a name="IDH_319"></a>
+<title> loadfile</title>
+<table width="100%"><tr valign="top"><td><h2> loadfile</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+load file into IDA database
+     handle - file handle or loader_input_t object
+     pos    - position in the file
+     ea     - linear address to load
+     size   - number of bytes to load
+returns: 0 - error
+         1 - ok
+<p>
+success loadfile(long handle, long pos, long ea, long size);
+
+</pre>

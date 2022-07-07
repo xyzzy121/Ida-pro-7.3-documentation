@@ -1,0 +1,95 @@
+<a name="IDH_472"></a>
+<title>Convert operand to structure offset</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to structure offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpStructOffset
+ </pre>
+<pre>
+ GUI version:
+ ------------
+</pre>
+This command pertmits to convert all immediate operands of instructions in a
+range selection to a path of offsets through a structure and its possible sub unions.
+If no selection is active, IDA will simply permit to convert the current operand.
+In this case, it will display a simple dialog box the same way as the text version (see below).
+<p>
+You can select the desired register in the drop-down list: all operands relative
+to this register will be added to the 'Offsets' list. A special empty line in the
+drop-down list is used to directly work on immediate values.
+Checkboxes in the 'Offsets' list allow you to select which operand you indeed
+want to modify. By default, IDA will select only undefined operands, to avoid
+overwriting previous type definitions. This list is sorted by operand value, by
+instruction address and finally by operand number. You can easily see the instructions
+related to the operand by moving the mouse over it, and wait for a hint to be
+displayed.
+<p>
+The 'Structures and Unions' tree will contain all selectable structures, and sub unions.
+Once you select or move over a structure, the 'Offsets' list updates itself for each
+checked offset: the computed name of the operand is displayed, according to the selected
+structure in the tree. An icon is also drawn, to easily know if a specific structure
+matchs the offset or not, or if the offset is too big for the selected structure.
+The structures who match the most offsets will be near the top of the tree.
+You can also move your mouse over structures in the tree to obtain an interesting hint.
+<p>
+A '?' icon can also appear, if the offset can be specialized by selecting an union
+member. In this case, if you expand the structure in the tree, you can select the adequate
+union member simply by checking the desired radio button. IDA automatically corrects
+the related name in the 'Offsets' list.
+<p>
+The 'Offset delta' value represents the difference between the structure start and the
+pointer value. For example, if you have an operand 4 and want to convert in into an
+expression like &quot;mystruct.field_6-2&quot;, then you have to enter 2 as the delta.
+Usually the delta is zero, i.e. the pointer points to the start of the structure.
+<p>
+The 'Hide sub structures without sub unions' option (checked by default) avoids to
+add unnecessary sub structures to the tree, to keep it as small as possible. If you
+uncheck this option, all sub structures will be added to the tree.
+<p>
+By default, IDA displays the structure member at offset 0. To change this behaviour, you
+can directly disable the 'Force zero offset field' in the 'Options' frame. Later zero offsets
+can be forced using <a href="497.html">Edit, Structs, Force zero offset</a> menu item.
+<pre>
+ Text version:
+ -------------
+</pre>
+This command converts immediate operand(s) type of the
+current instruction/data to an offset within the specified structure.
+Before using this command, you have to <a href="491.html">define</a> a structure type.
+<p>
+First of all, IDA will ask a so-called &quot;struct offset delta&quot;. This value
+represents the difference between the structure start and the pointer value.
+For example, if you have an operand 4 and want to convert in into an expression
+like &quot;mystruct.field_6-2&quot;, then you have to enter 2 as the delta.
+Usually the delta is zero, i.e. the pointer points to the start of the structure.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+offsets. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the an operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to offset, otherwise it
+will be left unmodified.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+By default IDA doesn't display the structure member at offset 0.
+To change this behaviour, use <a href="497.html">Force zero field offset</a> command.
+<p>
+Moreover, if there are several possible representations (this can happen if
+unions are used), select the desired representation using the
+<a href="498.html">Select union member...</a> command.
+<p>
+See also:
+<pre>
+          <a href="467.html">offset by data segment/no</a>
+          <a href="468.html">offset by current segment</a>
+          <a href="469.html">offset by any segment</a>
+          <a href="470.html">offset by any user-specified base</a>
+          <a href="1381.html">Edit|Operand types|Offset</a> submenu.
+          <a href="477.html">Enter #th operand manually</a> command.
+          <a href="1601.html">Set operand type</a></pre>

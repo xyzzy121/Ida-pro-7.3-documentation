@@ -1,0 +1,20 @@
+<a name="IDH_367"></a>
+<title> put_bookmark</title>
+<table width="100%"><tr valign="top"><td><h2> put_bookmark</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+mark position
+     ea      - address to mark
+     lnnum   - number of generated line for the 'ea'
+     x       - x coordinate of cursor
+     y       - y coordinate of cursor
+     slot    - slot number: 0..1023
+               if the specifed value is not within the range,
+               IDA will ask the user to select slot.
+     comment - description of the mark.
+               Should be not empty.
+returns: none
+<p>
+void put_bookmark(long ea, long lnnum, long x, long y, long slot, string comment);
+
+</pre>

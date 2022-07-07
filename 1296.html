@@ -1,0 +1,23 @@
+<a name="IDH_1296"></a>
+<title>Refresh memory</title>
+<table width="100%"><tr valign="top"><td><h2>Refresh memory</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: RefreshMemcfg
+ </pre>
+This command refreshes the program segmentation and memory contents in IDA.
+It is available only during a debugging session.
+<b>NOTE:</b> this command is currently hidden from the user interface because IDA
+does synchronize with the process memory automatically.
+<p>
+Please note that IDA itself tries to keep the program segmentation in sync
+with the debugged process. However, in order to accelerate the debugger,
+the synchronization is done only at major events, for example when dynamic library
+gets loaded or unloadled or a thread is created or deleted. If the memory
+configuration is changed because of a simple system call (think of VirtualAlloc),
+IDA might miss it. Use the &quot;refesh memory&quot; command in these cases.
+<p>
+Note2: when IDA detects a discrepancy in the program segmentation, it will
+automatically synchronize with the process.
+<p>
+See also <a href="1395.html">Debugger</a> submenu.

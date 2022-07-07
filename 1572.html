@@ -1,0 +1,141 @@
+<a name="IDH_1572"></a>
+<title> dbg_appcall</title>
+<table width="100%"><tr valign="top"><td><h2> dbg_appcall</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Call application function
+     ea - address to call
+     type - type of the function to call. can be specified as:
+             - declaration string. example: &quot;int func(void);&quot;
+             - typeinfo object. example: get_tinfo(ea)
+             - zero: the type will be retrieved from the idb
+     ... - arguments of the function to call
+Returns: the result of the function call
+If the call fails because of an access violation or other exception,
+a runtime error will be generated (it can be caught with try/catch)
+In fact there is rarely any need to call this function explicitly.
+IDC tries to resolve any unknown function name using the application labels
+and in the case of success, will call the function. For example:
+     _printf(&quot;hello\n&quot;)
+will call the application function _printf provided that there is
+no IDC function with the same name.
+<p>
+anyvalue dbg_appcall(ea, type, ...);
+<p>
+// Set/get appcall options
+#define set_appcall_options(x) set_inf_attr(INF_APPCALL_OPTIONS, x)
+#define get_appcall_options()  get_inf_attr(INF_APPCALL_OPTIONS)
+<p>
+#define APPCALL_MANUAL 0x0001   // Only set up the appcall, do not run it.
+                                // you should call <a href="1573.html">cleanup_appcall</a>() when finished
+#define APPCALL_DEBEV  0x0002   // Return debug event information
+                                // If this bit is set, exceptions during appcall
+                                // will generate idc exceptions with full
+                                // information about the exception
+#define APPCALL_TIMEOUT 0x0004  // dbg_appcall with timeout
+                                // The timeout value in milliseconds is specified
+                                // in the high 2 bytes of the 'options' argument:
+                                // If timed out, exception message will contain &quot;timeout&quot;.
+#define SET_APPCALL_TIMEOUT(x) ((x&lt;&lt;16)|0x0004) // dbg_appcall with timeout
+<p>
+With dbg_appcall, it is possible to call an arbitrary function from the
+debugged application without any special measures like dll injection or
+modifying the process memory. The call can be simplified to func(args), if the
+function name is a valid identifier. For example, given this:
+<pre>
+        verinfo = object();
+        verinfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOA);
+</pre>
+the following dbg_appcall:
+<pre>
+        GetVersionExA(&amp;verinfo);
+</pre>
+will call create an instance of OSVERSIONINFOA in the application memory
+and call GetVersionExA with a pointer to it. After the call, it will convert the
+OSVERSIONINFO instance into an IDC object. The verinfo variable will contain:
+<p>
+object
+  __at__:        18FEB0h
+  dwBuildNumber:        7600.
+  dwMajorVersion:          6.
+  dwMinorVersion:          1.
+  dwOSVersionInfoSize:
+  dwPlatformId:            2.
+  szCSDVersion: &quot;\x00\x00\x00\x00...&quot;
+
+<p>
+The <b>_at_</b> attribute tells us the address of the structure. If this particular
+case it is not very useful since the object was temporary, but in other cases
+it could be useful.
+<p>
+dbg_appcall converts IDC objects to C objects and vice versa. The conversion is
+controlled by the type information. The following rules control the conversion:
+<pre>
+ PLAIN SCALARS:
+</pre>
+<pre>
+  - if the target type a plain scalar type (not a pointer),
+    a simple conversion is done, with sign extension or truncation.
+    For example, an IDC value of -1 is converted into an __int32(0xFFFFFFFF).
+    For example, an IDC value of 0x555 is converted into an __int8(0x55).
+</pre>
+<pre>
+ POINTERS:
+</pre>
+<pre>
+  - if the target type a pointer and the corresponding idc value is a string,
+    the string is accepted as the pointed object. It is simply copied to the
+    process memory without any modifications. There will be a terminating zero
+    after the string.
+</pre>
+<pre>
+    If the corresponding idc value a number, its value is used as the pointer
+    value. To create pointers to numbers, use the &amp; operator.
+</pre>
+<pre>
+    If the corresponding idc value is not a string, it is converted to C
+    and a pointer to the converted object will be used to initialize the pointer.
+</pre>
+<pre>
+ STRUCTURES:
+</pre>
+<pre>
+  - if the target type is a structure, ida tries to initialize its fields one by
+    one, by accessing the corresponding attributes. For example, in the above
+    sample only the dwOSVersionInfoSize attribute exists, and its corresponding
+    field will be initialized with its value. If a field does not exist,
+    the corresponding field will be initialized with zeroes.
+</pre>
+<pre>
+ ARRAYS:
+</pre>
+<pre>
+  - each array element is initialized individually, expect if the corresponding
+    idc value is a string. In this case, the string value is used as the value
+    of the whole array. It is the user's responsibility to prepare a valid
+    string that will represent an array in this case.
+</pre>
+Some more examples. Calling printf is very easy:
+<pre>
+  auto n = 5;
+  auto s = &quot;short&quot;;
+  _printf(&quot;Hello world, number is %d, string is %s\n&quot;, n, s);
+</pre>
+Calling sscanf will require using the &amp; operator:
+<pre>
+  auto x;
+  auto nsuccess = _sscanf(s, &quot;%d&quot;, &amp;x);
+</pre>
+Structures can be passed by ref without &amp; because they are always
+passed by reference:
+<pre>
+  verinfo = object();
+  GetVersionExA(verinfo);
+
+</pre>
+All calling conventions, including <a href="1361.html">__usercall</a>, are supported.
+<p>
+For calls that generate exceptions, single stepping is possible using
+the APPCALL_MANUAL bit.
+
+</pre>

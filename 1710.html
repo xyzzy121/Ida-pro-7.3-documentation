@@ -1,0 +1,56 @@
+<a name="IDH_1710"></a>
+<title>Undo an action</title>
+<table width="100%"><tr valign="top"><td><h2>Undo an action</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Undo
+ </pre>
+This command reverts the database to the state before executing the last
+user action. It is possible to apply Undo multiple times, in this case
+multiple user actions will be reverted.
+<p>
+Please note the entire database is reverted, including all modifications that
+were made to the database after executing the user action and including the ones
+that are not connected to the user action. For example, if a third party plugin
+modified the database during or after the user action, this modification will
+be reverted. In theory it is possible to go back in time to the very beginning
+and revert the database to the state state that was present immediately after
+performing the very first user action. However, in practice the undo buffers
+overflow because of the changes made by autoanalysis. <a href="620.html">Autoanalysis</a>
+generates copious amounts of undo data. Also please note that maintaining undo
+data during autoanalysis slows it down a bit. In practice it is not a big deal
+because the limit on the undo data is reached quite quickly (in a matter of minutes).
+Therefore, if during analysis the user does not perform any actions that modify
+the database, the undo feature will turn itself off temporarily.
+<p>
+However, if you prefer not to collect undo data at all during the initial autoanalysis,
+just turn off the UNDO_DURING_AA parameter in <a href="419.html">ida.cfg</a>.
+<p>
+The configuration file <a href="419.html">ida.cfg</a> has 2 more undo-related parameters:
+<pre>
+  UNDO_MAXSIZE  max size of undo buffers; default: 128MB
+                once this limit is reached, the undo info about the oldest
+                user action will be forgotten.
+</pre>
+<pre>
+  UNDO_DEPTH    max number of user actions to remember; default: 1000000
+                if set to 0, the undo feature will be unavailable.
+</pre>
+Since there is a limit on the size of undo buffers, any action, even the tiniest,
+may become non-undoable after some time. This is true because the analysis
+or plugins may continue to modify the database and overflow the buffers.
+Some massive actions, like deleting a segment, may be non-undoable just
+because of the sheer amount of undo data they generate.
+<p>
+Please note that Undo does not affect the state of IDC or Python scripts. Script
+variables will not change their values because of Undo. Also nothing external to
+the database can be changed: created files will not be deleted, etc.
+<p>
+Some actions can not be undone. For example, launching a debugger or resuming
+from a breakpoint can not be undone.
+<p>
+See also
+        <a href="1711.html">Redo</a>
+        <a href="1712.html">Reset Undo</a>
+        <a href="1713.html">Disable Undo</a>
+        <a href="1714.html">Open undo history</a>

@@ -1,0 +1,48 @@
+<a name="IDH_1522"></a>
+<title>Remote GDB Debugger options</title>
+<table width="100%"><tr valign="top"><td><h2>Remote GDB Debugger options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Max packet size
+<pre>
+        Maximum packet size supported by the GDB stub (in bytes).
+        Some stubs can crash on big packets, e.g. memory reads. IDA
+        will try to split such requests in smaller chunks so that
+        replies should fit in this size. You can enter -1 to
+        autodetect (in this case IDA will use the size of the
+        &quot;g&quot; packet reply as the max packet size).
+</pre>
+Timeout
+<pre>
+        Default timeout in milliseconds for remote GDB stub responses.
+        Some targets can be slow to respond, so increase this value
+        when having problems, e.g. with disappearing memory bytes.
+</pre>
+Run a program before starting debugging
+<pre>
+        Check to enable <a href="1587.html">external program options</a>.
+</pre>
+Processor
+<pre>
+        This option is only visible when <a href="1502.html">starting debugger without a database</a>.
+        Use it to specify on which CPU the target is running. For some processors you can also
+        specify the endianness.
+</pre>
+Software breakpoints at EIP+1
+<pre>
+        Most GDB stubs for x86 report software breakpoint hits with EIP one byte after
+        the breakpoint address. However, some emulators report the actual breakpoint
+        address. This option allows IDA to recognize such situations.
+        Recommendations: uncheck for QEMU, check for others.
+</pre>
+Use CS:IP in real mode
+<pre>
+        When debugging real-mode (16-bit) code, the stub can send either
+        just 16 bits of IP register or the full EIP (CS&lt;&lt;4 + IP).
+        Enable this option in the former case.
+        Recommendations: check for QEMU, uncheck for others.
+</pre>
+See also
+<pre>
+  <a href="1502.html">Instant debugger</a>
+  <a href="1335.html">Remote GDB Debugger</a>
+</pre>

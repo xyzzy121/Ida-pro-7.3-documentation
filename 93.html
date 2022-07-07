@@ -1,0 +1,21 @@
+<a name="IDH_93"></a>
+<title> loader_input_t.read</title>
+<table width="100%"><tr valign="top"><td><h2> loader_input_t.read</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Read from the input file
+     buf - reference to the variable that will hold the read bytes
+           in form of a string
+     size - number of bytes to read
+Returns: number of read bytes
+<p>
+long loader_input_t.read(vref buf, long size);
+<p>
+// For example:
+<pre>
+        auto li, buf;
+        li = open_loader_input(&quot;myfile&quot;, 0);
+        li.read(&amp;buf, 100);
+</pre>
+
+</pre>

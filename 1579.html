@@ -1,0 +1,29 @@
+<a name="IDH_1579"></a>
+<title> get_field_ea</title>
+<table width="100%"><tr valign="top"><td><h2> get_field_ea</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get address of the specified field using the type information
+     ea         - address of the strcture
+     field_name - name of the structure field
+If the database contains a structurue at the specified ea and the
+type information is present, this function will return the address of the
+structure field.
+<p>
+long get_field_ea(long ea, string field_name);
+<p>
+For example:
+<pre>
+  .data:00413060 errtable        dd 1   ; oscode
+  .data:00413060                 dd 16h ; errnocode
+
+</pre>
+<pre>
+        msg(&quot;address is: %x\n&quot;, _errtable.errnocode);
+</pre>
+prints 413064.
+The &quot;_errtable.errnocode&quot; expression is essentially a shortcut for:
+<p>
+get_field_ea(get_name_ea_simple(&quot;_errtable&quot;), &quot;errnocode&quot;)
+
+</pre>

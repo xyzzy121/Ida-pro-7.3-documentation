@@ -1,0 +1,14 @@
+<a name="IDH_202"></a>
+<title> plan_and_wait</title>
+<table width="100%"><tr valign="top"><td><h2> plan_and_wait</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Perform full analysis of the range
+     sEA        - starting linear address
+     eEA        - ending linear address (excluded)
+     final_pass - make the final pass over the specified range
+returns: 1-ok, 0-Ctrl-Break was pressed.
+<p>
+long plan_and_wait(long sEA, long eEA, long final_pass=1);
+
+</pre>

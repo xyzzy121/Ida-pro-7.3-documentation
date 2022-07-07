@@ -1,0 +1,10 @@
+<a name="IDH_638"></a>
+<title>Patched Bytes Are Skipped</title>
+<table width="100%"><tr valign="top"><td><h2>Patched Bytes Are Skipped</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Some bytes in program memory have no corresponding byte in the executable
+file. For example, uninitialized data is not kept in the file.
+OS/2 Warp and Window support compressed pages.
+<p>
+In this case, IDA cannot create a full difference file. It shows the skipped
+byte addresses along with their values in the message window.

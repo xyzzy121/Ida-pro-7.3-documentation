@@ -1,0 +1,42 @@
+<a name="IDH_1646"></a>
+<title> format_cdata</title>
+<table width="100%"><tr valign="top"><td><h2> format_cdata</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Format value(s) as a C/C++ data initializers
+     outvec - reference to the output object
+              after the call will contain array of strings
+     value  - value to format
+     type   - type of the data to format
+     options- optional object, which may have the attributes PTV_...
+                     'ptvf' - combination of PTV_... constants:
+                     'flags'      number representation (e.g. hex_flag(), dec_flags(), etc)
+                     'max_length' max length of the formatted text (0 means no limit)
+                     'arrbase'    for arrays: the first element of array to print
+                     'arrnelems'  for arrays: number of elements to print
+                     'margin'     length of one line (0 means to print everything on one line)
+                     'indent'     how many spaces to use to indent nested structures/arrays
+     info   - object to store additional information about the generated lines
+              after the call will contain array of objects, each of which has:
+                     'ea' - address of the line
+                     'type' - typeinfo of the line (may include label for the line as 'name')
+              may be specified as 0 if this info is not required
+Returns: error code
+<p>
+long format_cdata(object &amp;outvec, anyvalue value, typeinfo type, object options, object &amp;info);
+<p>
+#define PTV_DEREF  0x0001  // take value to print from the database.
+                           // its address is specifed by value.num (default)
+#define PTV_QUEST  0x0002  // print '?' for uninited data
+#define PTV_EMPTY  0x0004  // return empty string for uninited data (default)
+#define PTV_CSTR   0x0008  // print constant strings inline (default)
+#define PTV_EXPAND 0x0010  // print only top level on separate lines
+                           // max_length applies to separate lines
+                           // margin is ignored
+#define PTV_LZHEX  0x0020  // print hex numbers with leading zeroes
+#define PTV_STPFLT 0x0040  // fail on bad floating point numbers
+                           // (if not set, just print ?flt for them)
+#define PTV_SPACE  0x0080  // add spaces after commas and around braces (default)
+#define PTV_DEBUG  0x0100  // format output for debugger
+
+</pre>

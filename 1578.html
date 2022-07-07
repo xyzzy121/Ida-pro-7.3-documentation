@@ -1,0 +1,37 @@
+<a name="IDH_1578"></a>
+<title>IDC: Slices</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: Slices</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The slice operator can be applied IDC objects are strings.
+<p>
+For strings, the slice operator denotes a substring:
+<pre>
+  str[i1:i2] - substring from i1 to i2. i2 is excluded
+  str[idx]   - one character substring at 'idx'.
+               this is equivalent to str[idx:idx+1]
+  str[:idx]  - substring from the beginning of the string to idx
+               this is equivalent to str[0:idx]
+  str[idx:]  - substring from idx to the end of the string
+               this is equivalent to str[idx:0x7fffffff]
+</pre>
+Any indexes that are out of bounds are silently adjusted to correct values.
+If i1 &gt;= i2, empty string is returned. Negative indexes are used to
+denote positions counting from the end of the string.
+
+<p>
+String slices can be used on the right side of an assignment. For example:
+<pre>
+  str[0:2] = &quot;abc&quot;;
+</pre>
+will replace 2 characters at the beginning of the string by &quot;abc&quot;.
+<p>
+For objects, the slice operator denotes a subset of attributes. It can be
+used to emulate arrays:
+<pre>
+  auto x = object();
+  x[0] = value1;
+  x[1] = &quot;value2&quot;;
+</pre>
+x[i1:i2] denotes all attributes with numeric values between i1 and i2 (i2 is excluded).
+<p>
+Any non-numeric attributes are ignored by the slice operator.

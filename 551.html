@@ -1,0 +1,17 @@
+<a name="IDH_551"></a>
+<title>Problem: Cannot find name</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Cannot find name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        Two reasons can cause this problem:
+          1.Reference to an illegal address is made in the program being
+            disassembled;
+          2.IDA couldn't find a name for the address but
+            it must exist.
+ What to do:
+        1. If this problem is caused by a reference to an illegal address
+            - try to enter the operand <a href="477.html">manually</a>
+            - or make the illegal address legal by <a href="507.html">creating</a> a new segment.
+        2. Otherwise, the database is corrupt.
+</pre>

@@ -1,0 +1,32 @@
+<a name="IDH_270"></a>
+<title> get_name</title>
+<table width="100%"><tr valign="top"><td><h2> get_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get name at the specified address.
+     ea        - linear address
+     gtn_flags - how exactly the name should be retrieved.
+                 combination of GN_ bits
+returns: name
+<p>
+string get_name(long ea, long gtn_flags=0);
+<p>
+// GN_ bits for <a href="270.html">get_name</a>() function.
+// There is a convenience function calc_gtn_flags() to calculate the GN_LOCAL flag
+#define GN_VISIBLE   0x0001     // replace forbidden characters by SUBSTCHAR
+#define GN_COLORED   0x0002     // return colored name
+#define GN_DEMANGLED 0x0004     // return demangled name
+#define GN_STRICT    0x0008     // fail if cannot demangle
+#define GN_SHORT     0x0010     // use short form of demangled name
+#define GN_LONG      0x0020     // use long form of demangled name
+#define GN_LOCAL     0x0040     // try to get local name first; if failed, get global
+#define GN_ISRET     0x0080     // for dummy names: use retloc
+#define GN_NOT_ISRET 0x0100     // for dummy names: do not use retloc
+<p>
+// Calculate flags for get_name() function
+static calc_gtn_flags(from, ea)
+{
+  return func_contains(from, ea) ? GN_LOCAL : 0;
+}
+
+</pre>

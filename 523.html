@@ -1,0 +1,62 @@
+<a name="IDH_523"></a>
+<title>Change Segment Register Value</title>
+<table width="100%"><tr valign="top"><td><h2>Change Segment Register Value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetSegmentRegister
+ </pre>
+Relevant only for processors with the segment registers.
+Currently this command works for IBM PC, TMS320C2, Intel80196, and PowerPC processors.
+<p>
+This command creates or updates a segment register
+<a href="524.html">change point</a>.
+<p>
+See <a href="547.html">jump to segment register change point</a> for more info.
+<p>
+<h3>ALPHA DISASSEMBLY</h3>
+
+<p>
+For Alpha processors, the user must enter the difference between the real GP value
+and the start of
+the GOT (global offset table). For example:
+<pre>
+         .got
+         ....
+         ; gp points here
+ label:
+</pre>
+If you want to specify that a register points to &quot;label&quot;, you must
+calculate and enter the difference &quot;label-.got&quot; as the register value.
+<p>
+<h3>ARM DISASSEMBLY</h3>
+
+<p>
+The ARM processor module has a virtual segment register T which reflects the
+state of the T bit of the processor state register (PSR). Therefore, the value
+of this register controls THUMB/ARM mode. If its value is not zero, then
+the disassembly will be in the thumb mode.
+<p>
+<h3>POWER PC DISASSEMBLY</h3>
+
+<p>
+For PowerPC processors, the user must enter an offset from the beginning of
+the TOC to the TOC entry which contains the address of the target. An example:
+<pre>
+ TOC:    .toc
+         ....
+ sometc: .tc sometc[tc], datachunk
+</pre>
+If you want to specify that a register points to &quot;datachunk&quot;, you must
+calculate and enter the difference &quot;sometc-TOC&quot; as the register value.
+You can change the TOC value in the processor specific options (which is accessible
+from the analysis options).
+<p>
+<h3>INTEL 80196 DISASSEMBLY</h3>
+
+<p>
+For Intel 80196NP/NU processors, the user must enter the value of WSR or WSR1
+register. IDA will automatically take the new value into account.
+<pre>
+ See also <a href="506.html">Edit|Segments</a> submenu.
+ See also <a href="422.html">How to enter segment value</a>.
+ See also <a href="423.html">How to Enter a Number</a>.</pre>

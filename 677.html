@@ -1,0 +1,22 @@
+<a name="IDH_677"></a>
+<title> split_sreg_range</title>
+<table width="100%"><tr valign="top"><td><h2> split_sreg_range</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set value of a segment register.
+     ea - linear address
+     reg - name of a register, like &quot;cs&quot;, &quot;ds&quot;, &quot;es&quot;, etc.
+     value - new value of the segment register.
+     tag   - one of SR_... constants
+IDA keeps tracks of all the points where segment registers change their
+values. This function allows you to specify the correct value of a segment
+register if IDA is not able to find the corrent value.
+<p>
+success split_sreg_range(long ea, string reg, long value, long tag=SR_user);
+<p>
+#define SR_inherit      1               // the value is inherited from the previous range
+#define SR_user         2               // the value is specified by the user
+#define SR_auto         3               // the value is determined by IDA
+#define SR_autostart    4               // used as SR_auto for segment starting address
+
+</pre>

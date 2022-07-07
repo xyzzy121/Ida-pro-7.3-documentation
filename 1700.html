@@ -1,0 +1,16 @@
+<a name="IDH_1700"></a>
+<title>Push all metadata</title>
+<table width="100%"><tr valign="top"><td><h2>Push all metadata</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This commands sends <a href="1704.html">metadata</a> about the current database to Lumina.
+<p>
+IDA will calculate checksums for all non-trivial functions in the database,
+extract metadata about them, and send it to Lumina. The metadata includes
+function names and types, user comments, operand types, etc.
+<p>
+If Lumina already has metadata about the involved functions, it will be replaced
+only if the new metadata is better and more complete.
+<p>
+Only functions with non-trivial names are pushed by this command.
+<p>
+See also <a href="1698.html">Lumina submenu</a>

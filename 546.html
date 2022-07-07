@@ -1,0 +1,21 @@
+<a name="IDH_546"></a>
+<title>Jump to the specified segment</title>
+<table width="100%"><tr valign="top"><td><h2>Jump to the specified segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: JumpSegment
+ </pre>
+This command jumps to the start of the selected segment.
+IDA will ask you to select the target segment.
+After:
+<pre>
+  - the current address is saved in the <a href="542.html">jump stack</a>.
+  - the cursor is positioned to the specified address.
+</pre>
+The <a href="539.html">Jump back</a> command (usually Esc) will return you back.
+<p>
+See also:
+<pre>
+        <a href="525.html">How to choose a segment</a>
+        <a href="506.html">Other segment related commands</a>
+        <a href="543.html">Jump</a> submenu</pre>

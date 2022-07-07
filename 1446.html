@@ -1,0 +1,34 @@
+<a name="IDH_1446"></a>
+<title>Instruction tracing</title>
+<table width="100%"><tr valign="top"><td><h2>Instruction tracing</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ToggleTraceInstructions
+ </pre>
+This command starts instruction tracing.
+You can then use all the debugger commands as usual: the debugger will save all the
+modified register values for each instruction.
+<p>
+When you click on an instruction trace event in the trace window,
+IDA displays the corresponding register values preceding the execution
+of this instruction. In the 'Result' column of the <a href="1444.html">Trace window</a>, you
+can also see which registers were modified by this instruction.
+By using this information, you can for example quickly determine which instruction
+modified a specific register, or you can even backtrace the execution flow.
+Note that the IP register is never printed in the 'Result' column, although it is usually
+modified by almost any instruction (except perhaps some prefixed instructions like REP MOVSB, ...).
+<p>
+Internally, the debugger runs the current thread step by step
+to properly obtain all the required register values.
+This explains why instruction tracing is slower than a normal execution.
+<pre>
+ See also <a href="1444.html">Trace window</a>
+          <a href="1629.html">Trace management</a>
+          <a href="1445.html">Clear trace</a>
+          <a href="1447.html">Function tracing</a>
+          <a href="1628.html">Basic block tracing</a>
+          <a href="1448.html">Add write trace</a>
+          <a href="1449.html">Add read/write trace</a>
+          <a href="1450.html">Add execution trace</a>
+          <a href="1451.html">Tracing options</a>
+          <a href="1443.html">Tracing</a> submenu.</pre>

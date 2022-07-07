@@ -1,0 +1,33 @@
+<a name="IDH_1676"></a>
+<title> print_decls</title>
+<table width="100%"><tr valign="top"><td><h2> print_decls</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Print types in a format suitable for use in a header file
+     ordinals - comma-separated list of type ordinals
+     flags    - combination of PDF_... constants or 0
+returns: string containing the type definitions
+<p>
+string print_decls(string ordinals, long flags);
+<p>
+#define PT_FILE   0x0001  // input if a file name (otherwise contains type declarations)
+#define PT_SILENT 0x0002  // silent mode
+#define PT_PAKDEF 0x0000  // default pack value
+#define PT_PAK1   0x0010  // #pragma pack(1)
+#define PT_PAK2   0x0020  // #pragma pack(2)
+#define PT_PAK4   0x0030  // #pragma pack(4)
+#define PT_PAK8   0x0040  // #pragma pack(8)
+#define PT_PAK16  0x0050  // #pragma pack(16)
+#define PT_HIGH   0x0080  // assume high level prototypes
+                          // (with hidden args, etc)
+#define PT_LOWER  0x0100  // lower the function prototypes
+#define PT_REPLACE 0x0200 // replace the old type
+#define PT_RAWARGS 0x0400 // leave argument names unchanged
+                          // (do not remove underscores)
+<p>
+#define PDF_INCL_DEPS  0x1 // include dependencies
+#define PDF_DEF_FWD    0x2 // allow forward declarations
+#define PDF_DEF_BASE   0x4 // include base types: __int8, __int16, etc..
+#define PDF_HEADER_CMT 0x8 // prepend output with a descriptive comment
+
+</pre>

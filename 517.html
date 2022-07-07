@@ -1,0 +1,29 @@
+<a name="IDH_517"></a>
+<title>Segment Class Name</title>
+<table width="100%"><tr valign="top"><td><h2>Segment Class Name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The segment class name identifies the segment with a class name
+(such as CODE, FAR_DATA, or STACK). The linker places segments with
+the same class name into a contiguous range of memory in the runtime
+memory map.
+<p>
+Changing the segment class changes only the segment definition
+on the screen. There are the following predefined segment class names:
+<pre>
+        CODE    -       Pure code
+        DATA    -       Pure data
+        CONST   -       Pure data
+        BSS     -       Uninitialized data
+        STACK   -       Uninitialized data
+        XTRN    -       Extern definitions segment
+</pre>
+If you change segment class and the segment type is &quot;Regular&quot;,
+then the segment type will be changed accordingly.
+<p>
+In order to set the segment type &quot;Regular&quot;, you should change the segment
+class to &quot;UNK&quot;.
+<p>
+<b>NOTE:</b> Segment class names are never deleted. Once you
+define a segment class name, you cannot reuse it as a name of another object.
+<p>
+See also other <a href="514.html">SegEdit</a> form fields.

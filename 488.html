@@ -1,0 +1,38 @@
+<a name="IDH_488"></a>
+<title>Stack Variables Window</title>
+<table width="100%"><tr valign="top"><td><h2>Stack Variables Window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenStackVariables
+ </pre>
+This command opens the stack variables window for the current function.
+<p>
+The stack variables are internally represented as a structure. This structure
+consists of two parts: local variables and function arguments.
+<p>
+You can modify stack variable definitions here:
+add/delete/define stack variables, enter comments for them.
+<p>
+There may be two special fields in this window: &quot; r&quot; and &quot; s&quot;.
+They represent the size of the function return address and
+of the saved registers in bytes.
+You cannot modify them directly. To change them, use
+<a href="485.html">edit function</a> command.
+<p>
+Offsets at the line prefixes represent offsets from the frame pointer register (BP).
+The window indicator at the lower left corner of the window displays
+offsets from the stack pointer.
+<p>
+In order to create or delete a stack variable, use data definitions
+commands (<a href="453.html">data</a>, <a href="454.html">strlit</a>, <a href="455.html">array</a>, <a href="456.html">undefine</a>, <a href="457.html">Rename</a>).
+Also you may define <a href="479.html">regular</a> or <a href="480.html">repeatable</a> comments.
+<p>
+The defined stack variables may be used in the program by converting
+operands to <a href="474.html">stack variables</a>.
+<p>
+Esc closes this window.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="474.html">Convert to stack variable</a></pre>

@@ -1,0 +1,26 @@
+<a name="IDH_228"></a>
+<title>Cannot rename a location</title>
+<table width="100%"><tr valign="top"><td><h2>Cannot rename a location</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+It might be because of one of the following reasons:
+<p>
+1. The name is ill-formed:
+<pre>
+        - it is a reserved word
+          <b>NOTE:</b> IDA does not allow the use of register names as byte names.
+        - it contains bad characters.
+          The list of allowed characters is specified in IDA.CFG
+        - it starts with a reserved prefix. Some prefixes are used
+          by IDA to generate names. See <a href="609.html">Names Representation</a>
+          dialog for the list of prefixes.
+</pre>
+2. The name is already used in the program. Try to use another <a href="424.html">name</a>.
+   In order to know where the name is used, you can try to jump to it using
+   <a href="545.html">Jump to the Named Location</a>
+<p>
+3. The address cannot have a name:
+<pre>
+     - IDA refuses to rename tail bytes (i.e. the second, third...
+       bytes of instruction/data).
+     - the address does not belong to the program
+</pre>

@@ -1,0 +1,13 @@
+<a name="IDH_214"></a>
+<title> create_float</title>
+<table width="100%"><tr valign="top"><td><h2> create_float</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert the current item to a floating point (4 bytes)
+     ea - linear address
+returns: 1-ok, 0-failure
+This is a convenience macro, see also <a href="18.html">create_data</a>() function
+<p>
+#define create_float(ea)    create_data(ea, FF_FLOAT, 4, BADADDR)
+
+</pre>

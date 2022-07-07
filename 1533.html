@@ -1,0 +1,15 @@
+<a name="IDH_1533"></a>
+<title> get_tinfo</title>
+<table width="100%"><tr valign="top"><td><h2> get_tinfo</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get type information of function/variable as 'typeinfo' object
+     ea - the address of the object
+     type_name - name of a named type
+returns: typeinfo object, 0 - failed
+The typeinfo object has one mandatory attribute: typid
+<p>
+typeinfo get_tinfo(long ea);
+typeinfo get_tinfo(string type_name);
+
+</pre>

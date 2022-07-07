@@ -1,0 +1,45 @@
+<a name="IDH_1371"></a>
+<title>Miscellanous Options</title>
+<table width="100%"><tr valign="top"><td><h2>Miscellanous Options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Editor
+<pre>
+        A text editor is to be used when the user decides to edit an
+        IDC script using the IDC tollbar.
+</pre>
+Navigation band refresh interval (milliseconds)
+<pre>
+        Specifies how often the navigation band will be refreshed.
+        IDA tries to minimize the number of redrawings because they
+        could be really time and processor consuming (imagine
+        a huge program, 50-100 megabytes of code. it would
+        take a long time to refresh information on the navigation
+        band because the whole program will be examined to
+        determine how to draw the band). If this option is set to 0,
+        the navigation band is refreshed only when the cursor is
+        moved far enough to reflect its movement on the band.
+</pre>
+Convert already defined bytes
+<pre>
+        Determines how IDA should behave when user operations
+        would end up redefining some already-defined bytes
+</pre>
+Associate .IDB file extension with IDA
+<pre>
+        Whether or not the .IDB extension should be associated,
+        at the OS-level, with IDA
+</pre>
+Enable autocomplete in forms
+<pre>
+        Determines whether input fields should provide an auto-complete
+        combo box by default
+</pre>
+Output files encoding
+<pre>
+       The encoding used to generate output text files from IDA
+       The value '&lt;default&gt;' means that the IDB's default 8 bit-per-unit
+       encoding will be used.
+</pre>
+
+</pre>

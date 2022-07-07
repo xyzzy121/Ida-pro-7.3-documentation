@@ -1,0 +1,24 @@
+<a name="IDH_695"></a>
+<title>Cannot add the selection to the function definition</title>
+<table width="100%"><tr valign="top"><td><h2>Cannot add the selection to the function definition</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This error message means that the selection cannot be added to the function.
+It may be because of the following:
+<pre>
+  - the specified function does not exist or it is not a function entry chunk
+</pre>
+<pre>
+  - the selection crosses boundaries of the existing function chunks.
+  the selection must not intersect with the existing function chunks
+  or must be equal to a function tail chunk.
+</pre>
+<pre>
+  - the selection crosses segment boundaries
+</pre>
+<pre>
+  - the selection is in a special segment (imports, exports, ...)
+</pre>
+<pre>
+  - the selection crosses boundaries of instructions or data
+</pre>
+Correct your selection and try again.

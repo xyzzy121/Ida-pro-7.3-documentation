@@ -1,0 +1,14 @@
+<a name="IDH_705"></a>
+<title> op_stroff</title>
+<table width="100%"><tr valign="top"><td><h2> op_stroff</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert operand to an offset in a structure
+(for the explanations of 'ea' and 'n' please see <a href="696.html">op_bin</a>())
+     strid - id of a structure type
+     delta - struct offset delta. usually 0. denotes the difference
+             between the structure base and the pointer into the structure.
+<p>
+success op_stroff(long ea, int n, long strid, long delta);
+
+</pre>

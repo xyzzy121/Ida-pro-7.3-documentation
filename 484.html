@@ -1,0 +1,26 @@
+<a name="IDH_484"></a>
+<title>Create Function</title>
+<table width="100%"><tr valign="top"><td><h2>Create Function</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeFunction
+ </pre>
+This command defines a new function in the disassembly text.
+<p>
+You can specify function boundaries using the <a href="420.html">anchor</a>.
+If you don't specify any, IDA will try to find the boundaries automatically:
+<pre>
+   - function start point is equal to the current cursor position;
+   - function end point is calculated by IDA.
+</pre>
+A function cannot contain references to undefined instructions.
+If a function has already been defined at the specified addresses,
+IDA will jump to its start address, showing you a warning message.
+<p>
+A function must start with an instruction.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="485.html">Edit a function</a>
+         <a href="486.html">Delete a function</a></pre>

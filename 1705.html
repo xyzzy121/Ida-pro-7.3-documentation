@@ -1,0 +1,88 @@
+<a name="IDH_1705"></a>
+<title>DYLD Shared Cache Utils</title>
+<table width="100%"><tr valign="top"><td><h2>DYLD Shared Cache Utils</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This plugin (nicknamed &quot;dscu&quot; for brevity) is essentially just an extension of
+the Mach-O loader, and allows you to manually load modules from the dyldcache
+that were not initially loaded by Mach-O.
+<p>
+There are three ways to manually load a module:
+<pre>
+  1. Use File&gt;Load file&gt;Load another module... and choose which module to load
+</pre>
+<pre>
+  2. Right-click on an unmapped address in the disassembly, and select 'Load module &lt;module name&gt;'
+</pre>
+<pre>
+  3. Programatically:
+</pre>
+<pre>
+     n = idaapi.netnode()
+     n.create(&quot;$ dscu&quot;)
+     n.supset(2, &quot;/usr/lib/libobjc.A.dylib&quot;)
+     idaapi.load_and_run_plugin(&quot;dscu&quot;, 1)
+</pre>
+Note that the plugin is only available when using the &quot;single module&quot; option at load time.
+<p>
+Branch Islands:
+<p>
+Some sections of the cache contain only branch instructions, and are a special case because
+they do not belong to any module.
+<p>
+dscu allows you to load these sections as well. For example, if you see a reference
+to a branch island:
+<pre>
+  BL 0x197CA3DFC
+</pre>
+Right-click on the address and select &quot;Load dyld_branch_island:__stubs&quot;.
+<p>
+The cache will likely have many separate branch islands, so you may need to repeat
+this step several times until you find the final branch target in one of the
+modules.
+<p>
+Loading a branch island can also be done programmatically:
+<pre>
+  node = idaapi.netnode()
+  node.create(&quot;$ dscu&quot;)
+  node.altset(3, 0x197CA3DFC) # address can be any address within the branch island
+  idaapi.load_and_run_plugin(&quot;dscu&quot;, 2)
+</pre>
+Selectors:
+<p>
+Sections that contain only selector strings are also a special case.
+Often times it is useful to only load the selectors from a given module,
+without loading all of the code.
+<p>
+For example, if you see a reference to a selector:
+<pre>
+  ADRP  X8, #0x1AECFF7F9@PAGE
+  ADD   X1, X8, #0x1AECFF7F9@PAGEOFF ; SEL
+  MOV   X0, X21 ; id
+  BL    _objc_msgSend_0
+</pre>
+Right-click on &quot;0x1AECFF7F9&quot; and dscu will provide you with two options:
+<pre>
+  Load UIKitCore:__objc_methname
+  Load UIKitCore
+</pre>
+The UIKitCore module is huge, so perhaps you don't want to load the entire thing,
+but still want to clean up the disassembly. If you choose &quot;Load UIKitCore:__objc_methname&quot;,
+dscu will load only these selector strings into the database:
+<pre>
+  ADRP  X8, #sel_alloc@PAGE ; &quot;alloc&quot;
+  ADD   X1, X8, #sel_alloc@PAGEOFF ; SEL
+  MOV   X0, X21 ; id
+  BL    _objc_msgSend_0
+</pre>
+This operation is much faster, and still provides a lot of benefit to the analysis.
+It can be done programmatically as well:
+<pre>
+  node = idaapi.netnode()
+  node.create(&quot;$ dscu&quot;)
+  node.altset(3, 0x1AECFF7F9) # address can be any address in the __objc_methname section
+  idaapi.load_and_run_plugin(&quot;dscu&quot;, 2)
+
+</pre>
+See also <a href="1687.html">Objective-C Analysis Plugin</a>
+         <a href="1078.html">Debugger for Intel Mac OS X</a>
+         <a href="1677.html">Remote iOS debugger</a>

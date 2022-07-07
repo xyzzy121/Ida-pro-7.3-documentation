@@ -1,0 +1,20 @@
+<a name="IDH_12"></a>
+<title> attach_process</title>
+<table width="100%"><tr valign="top"><td><h2> attach_process</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Attach the debugger to a running process
+     pid - PID of the process to attach to. If NO_PROCESS, a dialog box
+           will interactively ask the user for the process to attach to.
+     event_id - reserved, must be -1
+returns:
+        -2 - impossible to find a compatible process
+        -1 - impossible to attach to the given process (process died, privilege
+             needed, not supported by the debugger plugin, ...)
+         0 - the user cancelled the attaching to the process
+         1 - the debugger properly attached to the process
+See the important note to the step_into() function
+<p>
+long attach_process(long pid, long event_id);
+
+</pre>

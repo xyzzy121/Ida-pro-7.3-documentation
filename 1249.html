@@ -1,0 +1,13 @@
+<a name="IDH_1249"></a>
+<title> getn_thread_name</title>
+<table width="100%"><tr valign="top"><td><h2> getn_thread_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get the NAME of a thread
+     idx - number of thread, is in range 0..get_thread_qty()-1
+           or -1 for the current thread
+returns: required info
+<p>
+string getn_thread_name(long idx);
+
+</pre>

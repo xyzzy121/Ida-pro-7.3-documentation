@@ -1,0 +1,39 @@
+<a name="IDH_1343"></a>
+<title>Debugging with gdbserver</title>
+<table width="100%"><tr valign="top"><td><h2>Debugging with gdbserver</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+gdbserver is a GDB stub implemented as a separate program. It runs a program to be debugged
+or attaches to a process and then waits for commands.
+The remote GDB debugger module has been tested with gdbserver available with Cygwin
+and Linux.
+<p>
+To debug a specific program from the start, run the following command:
+<pre>
+    gdbserver localhost:23946 &lt;program&gt;
+</pre>
+and then choose Debugger,Attach,&lt;process running on target&gt; in IDA.
+<p>
+To debug a running process:
+<pre>
+    gdbserver --multi localhost:23947
+</pre>
+then choose Debugger,Attach,&lt;enter PID to attach&gt; in IDA and enter the PID of
+the process to attach to.
+<p>
+Another method of debugging a running process is:
+<pre>
+    gdbserver localhost:23947 --attach &lt;PID&gt;
+</pre>
+then choose Debugger,Attach,&lt;process running on target&gt; in IDA.
+<p>
+To start a program from inside IDA, first launch the debugger server:
+<pre>
+    gdbserver --multi localhost:23947
+</pre>
+Then use Debugger,Start process or Debugger,Run in IDA.
+<pre>
+ NOTE
+</pre>
+The --multi option is only available in GDB 6.8 or higher.
+<p>
+Back to <a href="1335.html">Remote GDB Debugger</a>

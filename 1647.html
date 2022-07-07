@@ -1,0 +1,22 @@
+<a name="IDH_1647"></a>
+<title> typeinfo.print</title>
+<table width="100%"><tr valign="top"><td><h2> typeinfo.print</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Print typeinfo in a human readable form
+  flags - optional parameter, combination of PRTYPE_... bits
+The typeinfo object must have the &quot;typid&quot; attribute
+If the &quot;name&quot; attribute is present, it will be used in the output too
+If failed, returns 0
+<p>
+string typeinfo.print(flags);
+<p>
+#define PRTYPE_1LINE  0x0000 // print to one line
+#define PRTYPE_MULTI  0x0001 // print to many lines
+#define PRTYPE_TYPE   0x0002 // print type declaration (not variable declaration)
+#define PRTYPE_PRAGMA 0x0004 // print pragmas for alignment
+#define PRTYPE_SEMI   0x0008 // append ; to the end
+#define PRTYPE_CPP    0x0010 // use c++ name (only for print_type2)
+#define PRTYPE_DEF    0x0020 // tinfo_t: print definition, if available
+
+</pre>

@@ -1,0 +1,16 @@
+<a name="IDH_1380"></a>
+<title>Convert operand to floating point number</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to floating point number</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpFloat
+ </pre>
+This command makes the current operand type floating point.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+See also <a href="1382.html">Edit|Operand types|Number</a> submenu.

@@ -1,0 +1,14 @@
+<a name="IDH_1614"></a>
+<title> write_dbg_memory</title>
+<table width="100%"><tr valign="top"><td><h2> write_dbg_memory</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Write to debugger memory
+     ea - linear address
+     data - string to write
+returns: number of written bytes (-1 - network/debugger error)
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+long write_dbg_memory(long ea, string data);
+
+</pre>

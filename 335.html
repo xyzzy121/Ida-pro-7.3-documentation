@@ -1,0 +1,40 @@
+<a name="IDH_335"></a>
+<title> get_func_attr</title>
+<table width="100%"><tr valign="top"><td><h2> get_func_attr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get a function attribute
+     ea   - any address belonging to the function
+     attr - one of FUNCATTR_... constants
+returns: -1 - error
+         otherwise returns the attribute value
+<p>
+long get_func_attr(long ea, long attr);
+<p>
+#ifndef __EA64__
+#define FUNCATTR_START    0     // readonly: function start address
+#define FUNCATTR_END      4     // readonly: function end address
+#define FUNCATTR_FLAGS    8     // function flags
+#define FUNCATTR_FRAME   16     // readonly: function frame id
+#define FUNCATTR_FRSIZE  20     // readonly: size of local variables
+#define FUNCATTR_FRREGS  24     // readonly: size of saved registers area
+#define FUNCATTR_ARGSIZE 28     // readonly: number of bytes purged from the stack
+#define FUNCATTR_FPD     32     // frame pointer delta
+#define FUNCATTR_COLOR   36     // function color code
+#define FUNCATTR_OWNER   16     // readonly: chunk owner (valid only for tail chunks)
+#define FUNCATTR_REFQTY  20     // readonly: number of chunk parents (valid only for tail chunks)
+#else // EA64
+#define FUNCATTR_START    0
+#define FUNCATTR_END      8
+#define FUNCATTR_FLAGS   16
+#define FUNCATTR_FRAME   24
+#define FUNCATTR_FRSIZE  32
+#define FUNCATTR_FRREGS  40
+#define FUNCATTR_ARGSIZE 48
+#define FUNCATTR_FPD     56
+#define FUNCATTR_COLOR   64
+#define FUNCATTR_OWNER   24
+#define FUNCATTR_REFQTY  32
+#endif
+
+</pre>

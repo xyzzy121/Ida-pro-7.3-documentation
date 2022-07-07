@@ -1,0 +1,22 @@
+<a name="IDH_305"></a>
+<title> set_segm_combination</title>
+<table width="100%"><tr valign="top"><td><h2> set_segm_combination</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change combination of the segment
+  ea      - any address in the segment
+  comb    - new combination of the segment, one of sc... constants
+Note: it is a macro
+<p>
+#define set_segm_combination(ea, comb) set_segm_attr(ea, SEGATTR_COMB, comb)
+        #define scPriv     0    // Private. Do not combine with any other program
+                                // segment.
+        #define scPub      2    // Public. Combine by appending at an offset that meets
+                                // the alignment requirement.
+        #define scPub2     4    // As defined by Microsoft, same as C=2 (public).
+        #define scStack    5    // Stack. Combine as for C=2. This combine type forces
+                                // byte alignment.
+        #define scCommon   6    // Common. Combine by overlay using maximum size.
+        #define scPub3     7    // As defined by Microsoft, same as C=2 (public).
+
+</pre>

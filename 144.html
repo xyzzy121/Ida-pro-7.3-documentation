@@ -1,0 +1,38 @@
+<a name="IDH_144"></a>
+<title>Low level breakpoint conditions</title>
+<table width="100%"><tr valign="top"><td><h2>Low level breakpoint conditions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Low level breakpoint conditions can be used to speed up the debugger.
+They are evaluated like this:
+<pre>
+  - in case of remote debugging, the condition is evaluated on the remote
+    computer. The following actions are bypassed:
+      - sending of the breakpoint event to the local computer
+      - switching from debthread to the main thread
+      - updating internal IDA structures and caches
+      - updating the screen
+</pre>
+<pre>
+  - in case of local debugging, the condition is evaluated at low level.
+    The following actions are bypassed:
+      - switching from debthread to the main thread
+      - updating internal IDA structures and caches
+      - updating the screen
+</pre>
+In both cases, there is a significant speed up. This improvement imposes
+some limitations on the breakpoint condition:
+<pre>
+  - only <a href="157.html">IDC</a> expressions can be used for low level conditions
+  - only functions marked as 'thread-safe' may be called
+  - only entire registers can be accessed (e.g. EAX is ok but AL is not)
+</pre>
+Essentially this means that the only available functions are:
+<pre>
+  - read/write process registers
+  - read/write process memory
+  - file i/o
+  - auxiliary string and object functions
+  - msg() function (for debugging the breakpoint conditions)
+</pre>
+Low level breakpoint conditions are available only for Win32, Linux, Mac,
+and Android debuggers.

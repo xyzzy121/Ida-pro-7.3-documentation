@@ -1,0 +1,38 @@
+<a name="IDH_1367"></a>
+<title>Load C header</title>
+<table width="100%"><tr valign="top"><td><h2>Load C header</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: LoadHeaderFile
+ </pre>
+This command allows you to apply type declarations from a C header file
+to the program.
+<p>
+IDA reads and parses the specified header file as a C compiler does.
+In other words, it mimics the front-end of a C compiler with some restrictions:
+<pre>
+        - only type declarations are allowed. The function definitions
+          in the input file are skipped
+        - not all C++ header files are not supported, only simple classes can
+          be parsed
+        - the compiler specific predefined macros are not defined,
+          you have to define them manually in the header file
+</pre>
+Don't forget to specify the compiler and memory model in
+the <a href="1354.html">compiler setup</a> dialog box before loading a header file.
+<p>
+All type declarations found in the input file are stored in the current
+database in the form of a type library. These type declarations can be used
+to define new structure and enumeration definitions by pressing &quot;Add standard structure&quot;
+or &quot;Add standard enum&quot; buttons in the
+<a href="501.html">Add enum type...</a> and
+<a href="491.html">Add struct type...</a>
+dialog boxes.
+<p>
+In the case of an error in the input file, the error messages appear in
+the message window. In any case, the function declarations that are already parsed
+are not deleted from the database.
+IDA stops parsing the input file when 20 errors occur.
+<p>
+See also <a href="430.html">Load... submenu</a> commands.
+         <a href="1259.html">Local types window</a>

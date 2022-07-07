@@ -1,0 +1,86 @@
+<a name="IDH_1691"></a>
+<title>C++ type details</title>
+<table width="100%"><tr valign="top"><td><h2>C++ type details</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA can parse and handle simple C++ class declarations. It cannot parse
+templates and other complex constructs but simple standard cases can be parsed.
+<p>
+If a C++ class contains virtual functions, IDA will try to rebuild the
+virtual function table (VFT) for the class. The VFT will be linked to the
+class by the name: if the class is called &quot;A&quot;, the VFT type will be &quot;A_vtbl&quot;.
+<p>
+Let us consider the following class hierarchy:
+<pre>
+  class A { virtual int f(); int data; };
+  class B : public A { virtual int g(); };
+</pre>
+IDA will create the following structures:
+<pre>
+  struct __cppobj A {A_vtbl *__vftable;int data;}
+  struct A_vtbl {int (*f)(A *__hidden this);}
+  struct __cppobj B : A {}
+  struct B_vtbl {int (*f)(A *__hidden this);
+                 int (*g)(B *__hidden this);}
+</pre>
+Please note that the VFT pointer in the class A has a special name: &quot;__vftable&quot;.
+This name allows IDA to recognize the pointer as a VFT pointer and treat it
+accordingly.
+<p>
+Another example of more complex class hierarchy:
+<pre>
+  class base1 { virtual int b1(); int data; };
+  class base2 { virtual int b2(); int data; };
+  class der2 : public base2 { virtual int b2(); int data; };
+  class derived : public base1, public der2 { virtual int d(); };
+</pre>
+Compiling in 32-bit Visual Studio mode yields the following layout:
+<pre>
+  class derived size(20):
+        +---
+   0    | +--- (base class base1)
+   0    | | {vfptr}
+   4    | | data
+        | +---
+   8    | +--- (base class der2)
+   8    | | +--- (base class base2)
+   8    | | | {vfptr}
+  12    | | | data
+        | | +---
+  16    | | data
+        | +---
+        +---
+</pre>
+IDA will generate the following types:
+<pre>
+  struct __cppobj base1 {base1_vtbl *__vftable /*VFT*/;int data;};
+  struct /*VFT*/ base1_vtbl {int (*b1)(base1 *__hidden this);};
+  struct __cppobj base2 {base2_vtbl *__vftable /*VFT*/;int data;};
+  struct /*VFT*/ base2_vtbl {int (*b2)(base2 *__hidden this);};
+  struct __cppobj der2 : base2 {int data;};
+  struct /*VFT*/ der2_vtbl {int (*b2)(der2 *__hidden this);};
+  struct __cppobj derived : base1, der2 {};
+  struct /*VFT*/ derived_vtbl {int (*b1)(base1 *__hidden this);
+                               int (*d)(derived *__hidden this);};
+</pre>
+The 'derived' class will use 2 VFTs:
+<pre>
+  offset 0: derived_vtbl
+  offset 8: der2_vtbl
+</pre>
+IDA and Decompiler can use both VFTs and produce nice code for virtual calls.
+<p>
+Please note that the VFT layout will be different in g++ mode and IDA
+can handle it too. Therefore it is important to have the target compiler
+set correctly.
+<p>
+It is possible to build the class hierarchy manually. Just abide by the
+following rules:
+<pre>
+  - VFT pointer must have the &quot;__vftable&quot; name
+  - VFT type must follow the &quot;CLASSNAME_vtbl&quot; pattern
+</pre>
+C++ classes are marked with &quot;__cppobj&quot; keyword, it influences the class layout.
+However, this keyword is not required for VFT types.
+<pre>
+ See also <a href="1259.html">Local types window</a>
+</pre>

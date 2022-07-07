@@ -1,0 +1,31 @@
+<a name="IDH_1391"></a>
+<title>Display used-defined chart of xrefs</title>
+<table width="100%"><tr valign="top"><td><h2>Display used-defined chart of xrefs</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ChartXrefsUser
+ </pre>
+This command displays a user-defined graph of xrefs from/to the
+current address/range of selected addresses in the program.
+<p>
+The direction of the xrefs to analyze can be chosen.
+If the Recursive flag is checked, all found xrefs are themselves
+analyzed to find new xrefs.
+You can choose to search for xrefs to new referenced addresses
+only in the current direction.
+Only External, data xrefs, xrefs from library functions and to
+library functions can possibly be ignored.
+<p>
+A recursion depth can be specified.
+If 'Print recursion dots' is checked, and a function has others xrefs
+outside of the range defined by the 'recursion depth' setting, small
+nodes containing dots are printed.
+<p>
+The 'Print comments' flag causes the generated function node to also
+contain the function comment.
+<p>
+The addresses are represented as nodes. The xrefs are represented as
+edges between nodes.
+The used colors are the same as in IDA.
+<p>
+See also <a href="1378.html">View|Graphs</a> submenu.

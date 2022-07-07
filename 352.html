@@ -1,0 +1,16 @@
+<a name="IDH_352"></a>
+<title> get_sp_delta</title>
+<table width="100%"><tr valign="top"><td><h2> get_sp_delta</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get modification of SP made by the instruction
+     ea      - end address of the instruction
+               i.e. the last address of the instruction+1
+returns: Get modification of SP made at the specified location
+         If the specified location doesn't contain a SP
+         change point, return 0
+         Otherwise return delta of SP modification
+<p>
+long get_sp_delta(long ea);
+
+</pre>

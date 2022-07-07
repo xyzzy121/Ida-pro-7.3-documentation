@@ -1,0 +1,44 @@
+<a name="IDH_611"></a>
+<title>Demangled Names</title>
+<table width="100%"><tr valign="top"><td><h2>Demangled Names</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetDemangledNames
+ </pre>
+IDA can demangle mangled C++ names of the most popular C++ compilers:
+<pre>
+        - Microsoft
+        - Borland
+        - Watcom
+        - Visual Age
+        - GNU
+</pre>
+The demangled names are represented in two
+forms: short and long form. The short form is used when a name is used as a
+reference, the long form is used at the declaration.
+<p>
+You can set how demangled C++ names must be represented:
+<pre>
+        - as comments. this representation allows you to obtain
+          recompilable source text
+        - instead of mangled names. this representation makes the output
+          more readable. the disadvantage is that you cannot recompile the
+          output
+        - don't display demangled names.
+</pre>
+You can setup short and long forms of demangled names. Short form is used
+when a reference to the name is made; long form is used at the declaration.
+<p>
+To make demangled names more readable, we introduce the possibility to
+suppress pointer modifiers (near/far/huge).
+<p>
+To demangle GNU C v3.x names, the &quot;Assume GCC v3.x names&quot; checkbox should be set,
+otherwise such names might not be demangled.
+furthermore, to make the demangled name more compact, unsigned types may be displayed
+as uchar, uint, ushort, ulong. The same with signed basic types.
+<p>
+If the &quot;Override type info&quot; checkbox is set, the demangled name overrides the
+type information if both are present.
+
+<p>
+See also <a href="612.html">How to customize demangled names</a>

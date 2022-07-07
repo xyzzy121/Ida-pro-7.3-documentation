@@ -1,0 +1,20 @@
+<a name="IDH_1311"></a>
+<title> define_exception</title>
+<table width="100%"><tr valign="top"><td><h2> define_exception</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Add exception handling information
+     code - exception code
+     name - exception name
+     desc - exception description
+     flags - exception flags (combination of EXC_...)
+returns: failure description or &quot;&quot;
+<p>
+string define_exception(long code, string name, string desc, long flags);
+<p>
+#define EXC_BREAK  0x0001 // break on the exception
+#define EXC_HANDLE 0x0002 // should be handled by the debugger?
+#define EXC_MSG    0x0004 // instead of warn, log the exception to the output window
+#define EXC_SILENT 0x0008 // do not warn or log to the output window
+
+</pre>

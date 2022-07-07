@@ -1,0 +1,15 @@
+<a name="IDH_668"></a>
+<title> create_array</title>
+<table width="100%"><tr valign="top"><td><h2> create_array</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+create array
+     name - name of array. There are no restrictions
+            on the name (its length should be less than
+            120 characters, though)
+returns: -1 - can't create array (it already exists)
+         otherwise returns id of the array
+<p>
+long create_array(string name);
+
+</pre>

@@ -1,0 +1,31 @@
+<a name="IDH_509"></a>
+<title>Create segment - simple case (PC)</title>
+<table width="100%"><tr valign="top"><td><h2>Create segment - simple case (PC)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IBM PC case
+-----------
+<p>
+Suppose we need to create a segment occupying addresses F000:1000..F000:2000
+Let's calculate linear addresses:
+<pre>
+        start = (0xF000 &lt;&lt; 4) + 0x1000 = 0xF1000
+        end   = (0xF000 &lt;&lt; 4) + 0x2000 = 0xF2000
+</pre>
+The segment base must be selected so that the first offset in our segment
+will be 0x1000. Let's find it using the following equation:
+<pre>
+        VirtualAddress = LinearAddress - (SegmentBase &lt;&lt; 4);
+        0x1000         = 0xF1000 - (base &lt;&lt; 4);
+</pre>
+After solving this equation, we see that the segment base is equal to 0xF000.
+(you see, this is really a very simple case :) )
+<p>
+Now, we can create a segment entering:
+<pre>
+        segment start address:  0xF1000
+        segment end address:    0xF2000
+        segment base:           0xF000
+</pre>
+Please note that the end address never belongs to the segment in IDA.
+<p>
+Go back to <a href="508.html">addressing space concepts</a>

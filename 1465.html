@@ -1,0 +1,21 @@
+<a name="IDH_1465"></a>
+<title>Plugin Options</title>
+<table width="100%"><tr valign="top"><td><h2>Plugin Options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The -O command line switch allows the user to pass options to the plugins.
+A plugin which uses options should call the get_plugin_options() function
+to get them.
+<p>
+Since there may be many plugins written by independent programmers,
+each options will have a prefix -O in front of the plugin name.
+<p>
+For example, a plugin named &quot;decomp&quot; should expect its parameters
+to be in the following format:
+<pre>
+        -Odecomp:option1:option2:option3
+</pre>
+In this case, get_plugin_options(&quot;decomp&quot;) will return the &quot;option1:option2:option3&quot;
+part of the options string.
+<p>
+If there are several -O options in the command line,
+they will be concatenated with ':' between them.

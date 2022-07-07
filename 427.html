@@ -1,0 +1,39 @@
+<a name="IDH_427"></a>
+<title>How To Use List Viewers in IDA</title>
+<table width="100%"><tr valign="top"><td><h2>How To Use List Viewers in IDA</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The following commands work in the list viewers:
+<p>
+1. All usual movement keys: PgUp,PgDn,Home,End and arrows.
+<p>
+2. It is possible to position to a line simply by typing in the desired
+   line number.
+<p>
+3. It is possible to position on a line by typing in its beginning.
+   In this case the user can use:
+        Backspace key to erase the last character typed in.
+        Ctrl-Enter to find another line with the same prefix.
+   Please note that List Viewer ignores the prefix of a line up to the last
+   backslash (\\) or slash (/) if it exists.
+<p>
+4. Alt-T         search for a substring (case-insensitive)
+   Ctrl-T        repeat last search
+<p>
+5. If the list is not in dialog mode, you can use the following keys:
+   Enter         jump to the selected item in the last IDA View window
+   Ctrl-E        edit the current item
+   Del           delete the current item
+   Ins           insert a new item
+   Ctrl-U        refresh information in the window
+<p>
+6. Quick filtering is available using Ctrl-F. More complex filters can be
+   defined with a right click (only the GUI mode).
+<p>
+7. The list can be sorted by any column by clicking on it. Please note that
+   maintaining a frequently modified list sorted can be very time consuming,
+   so try not to sort non-modal lists during the initial analysis.
+   (sorting is available only in the GUI mode).
+<p>
+8. Right-click may show additional functionality for the list viewer.
+<p>
+Esc or Enter close modal list viewers.

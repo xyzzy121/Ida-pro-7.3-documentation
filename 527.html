@@ -1,0 +1,24 @@
+<a name="IDH_527"></a>
+<title>Patching the Image</title>
+<table width="100%"><tr valign="top"><td><h2>Patching the Image</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: PatchByte, PatchWord
+ </pre>
+You can modify the executable file and eventually <a href="442.html">generate a new</a> file.
+<p>
+If you patch bytes, then you may enter multiple bytes.
+Follow this <a href="528.html">link</a> to learn about format of the input
+string.
+<p>
+If this command is invoked when the debugger is active, then IDA will
+modify the memory and the database. If the database does not contain the patched
+bytes, then only the process memory will be modified.
+<p>
+You can create a <a href="443.html">difference</a> file too.
+<p>
+See also
+<pre>
+         <a href="526.html">Edit|Patch core</a> submenu.
+         <a href="423.html">How to Enter a Number</a>.
+</pre>

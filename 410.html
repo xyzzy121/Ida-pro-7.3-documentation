@@ -1,0 +1,16 @@
+<a name="IDH_410"></a>
+<title> get_enum_flag</title>
+<table width="100%"><tr valign="top"><td><h2> get_enum_flag</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get flag of enum
+     enum_id - ID of enum
+returns: flags of enum. These flags determine representation
+         of numeric constants (binary, octal, decimal, hex)
+         in the enum definition. See start of this file for
+         more information about flags.
+         Returns 0 if enum_id is bad.
+<p>
+long get_enum_flag(long enum_id);
+
+</pre>

@@ -1,0 +1,16 @@
+<a name="IDH_1248"></a>
+<title> get_module_info</title>
+<table width="100%"><tr valign="top"><td><h2> get_module_info</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get a description of the module that contains the given ea
+returned objct has attributes:
+  &quot;name&quot;      - the full path of the module
+  &quot;base&quot;      - module's base address
+  &quot;size&quot;      - module size
+  &quot;rebase_to&quot; - address the module was rebased to
+                BADADDR if module was not rebased at all
+<p>
+object get_module_info(long ea);
+
+</pre>

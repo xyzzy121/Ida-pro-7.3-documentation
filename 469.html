@@ -1,0 +1,34 @@
+<a name="IDH_469"></a>
+<title>Convert operand to offset (any segment)</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to offset (any segment)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpAnyOffset
+ </pre>
+This command converts the immediate operand of the
+current instruction/data to an offset from any segment.
+<p>
+IDA will ask to choose a base segment for the offset.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+offsets. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to offset, otherwise it
+will be left unmodified.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+To create offsets to structure members use <a href="472.html">Convert to struct offset</a>
+command.
+<p>
+See also:
+<pre>
+          <a href="467.html">offset by data segment/no</a>
+          <a href="468.html">offset by current segment</a>
+          <a href="1381.html">Edit|Operand types|Offset</a> submenu.
+          <a href="477.html">Enter #th operand manually</a> commands.
+          <a href="1601.html">Set operand type</a></pre>

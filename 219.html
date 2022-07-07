@@ -1,0 +1,16 @@
+<a name="IDH_219"></a>
+<title>Overlayed files</title>
+<table width="100%"><tr valign="top"><td><h2>Overlayed files</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Some EXE files are built with overlays.
+This means that the whole file is
+not loaded into the memory at the start of
+the program, but only a part of it. Other
+parts are loaded by the program itself
+into the dynamic memory or over some
+subroutines of the program.  This fact
+leads to many difficulties when you
+disassemble such a program.
+<p>
+Currently,  IDA knows about overlays created by Borland and Microsoft C
+and Pascal compilers.

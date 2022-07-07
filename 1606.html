@@ -1,0 +1,15 @@
+<a name="IDH_1606"></a>
+<title> begin_type_updating</title>
+<table width="100%"><tr valign="top"><td><h2> begin_type_updating</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Begin type updating. Use this function if you
+plan to call AddEnumConst or similar type modification functions
+many times or from inside a loop
+<pre>
+     utp - (one of UTP_... consts)
+returns: none
+</pre>
+success begin_type_updating(long utp);
+
+</pre>

@@ -1,0 +1,27 @@
+<a name="IDH_1529"></a>
+<title>Windmp file loader</title>
+<table width="100%"><tr valign="top"><td><h2>Windmp file loader</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The Windmp loader module can load *.dmp files into IDA for static analysis.
+<p>
+For the Windmp loader to function properly, one need to specify the path to
+MS Debugger Engine Library (dbgeng.dll). This option can be set in CFG\IDA.CFG
+under the DBGTOOLS key.
+If this value is not set then Windmp will try to detect the path.
+<p>
+Windmp can be used to load big dump files, however that will result in a huge database,
+therefore is possible to manually load a given input file:
+<pre>
+  - Load modules segments only: If used, Windmp will only load segments related to
+  the loaded modules and skips all other memory segments
+</pre>
+<pre>
+  - Do not load symbol names: If symbol path is configured properly, then Windmp will
+  fetch and rename all known addresses; you can skip this step by not loading symbol names.
+</pre>
+<pre>
+  - Skip segments greater than: It skips segments with a given size, resulting in faster loading speed.
+  If this value is zero then this option will not be used.
+</pre>
+In addition to static analysis it is possible to run the dump file under the
+<a href="1520.html">windbg debugger module</a>.

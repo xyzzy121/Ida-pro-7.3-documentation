@@ -1,0 +1,20 @@
+<a name="IDH_1581"></a>
+<title>IDC: loader_input_t class</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: loader_input_t class</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The loader_input_t class can read from input files.
+It has the following methods:
+<pre>
+    <a href="93.html">long read(vref buf, long size);</a>
+    <a href="95.html">long size();</a>
+    <a href="96.html">long seek(long pos, long whence);</a>
+    <a href="1302.html">long tell();</a>
+    <a href="1576.html">string gets(long maxsize);</a>
+    <a href="1427.html">string getz(long pos, long maxsize);</a>
+    <a href="1551.html">long getc();</a>
+    <a href="1553.html">long readbytes(vref result, long size, long mf);</a>
+    <a href="1570.html">void close();</a>
+</pre>
+Instances of this class can be created by calling the <a href="1571.html">open_loader_input</a> function.
+<p>
+See other IDC <a href="1577.html">classes</a>.

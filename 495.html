@@ -1,0 +1,31 @@
+<a name="IDH_495"></a>
+<title>Edit a structure</title>
+<table width="100%"><tr valign="top"><td><h2>Edit a structure</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: EditStruct
+ </pre>
+This command allows the user to accomplish two things:
+  - it moves the current structure type definition to another place
+    in the structure window
+  - it allows the user to change the structure alignment
+<p>
+Each structure has its ID and serial number. The ID is a number used to
+refer to the structure, while a serial number is used to order structures
+during output. Changing the serial number moves the structure to another place.
+<p>
+The serial number of a structure is displayed at the lower left corner of the window.
+<p>
+You can specify any number, IDA will move the structure to the specified place.
+<pre>
+  1 - the current structure becomes the first structure
+  2 - to the second place
+  ...
+</pre>
+The structure alignment is used to calculate the padding bytes at the end of the
+structure. The alignment must be a power of 2.
+<p>
+This command is available when you open a structure <a href="593.html">window</a>.
+<p>
+See also <a href="490.html">Edit|Structs</a> submenu.
+         <a href="423.html">How to Enter a Number</a>.

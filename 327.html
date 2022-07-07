@@ -1,0 +1,16 @@
+<a name="IDH_327"></a>
+<title> writelong</title>
+<table width="100%"><tr valign="top"><td><h2> writelong</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+write 4 bytes to file
+     handle    - file hanlde
+     dword     - a 32-bit value to write
+     mostfirst - 0 least significant byte is first (intel)
+                 1 most  significant byte is first
+returns: 0 - ok
+Thread-safe function.
+<p>
+long writelong(long handle, long dword, long mostfirst);
+
+</pre>

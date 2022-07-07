@@ -1,0 +1,30 @@
+<a name="IDH_444"></a>
+<title>Dump database to IDC file</title>
+<table width="100%"><tr valign="top"><td><h2>Dump database to IDC file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: DumpDatabase
+ </pre>
+This command saves current IDA database into a text file.
+<p>
+You can use it as a safety command:
+<pre>
+  - to protect your work from disasters
+  - to migrate information into new database formats of IDA.
+</pre>
+This command is used when you want to switch to a new version
+of IDA. Usually each new version of IDA has its own database
+format. To create a new format database, you need:
+<pre>
+  1. to issue the 'Dump...' command for the old
+     database (using old version of IDA). You will
+     get an IDC file containing all information
+     from your old database.
+  2. to reload your database using new IDA with switch -x.
+  3. to compile and execute the IDC file with command
+    'Execute IDC file' (usually F2)
+</pre>
+Please note that this command does not save everything to text file.
+Any nformation about the local variables will be lost!
+<p>
+See also other <a href="438.html">Produce output file</a> commands.

@@ -1,0 +1,53 @@
+<a name="IDH_1335"></a>
+<title>Remote GDB Debugger</title>
+<table width="100%"><tr valign="top"><td><h2>Remote GDB Debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Remote GDB Debugger module allows for debugging code using the GDB remote serial protocol.
+For this, the debuggee must contain a so-called &quot;GDB stub&quot; that controls the
+execution and handles the remote protocol commands. There are many implementations
+of such stubs available with different capabilities. The module has been tested
+with the following GDB stubs:
+<pre>
+ <a href="1343.html">gdbserver</a>: Windows (Cygwin), Linux (ARM, MIPS, PowerPC)
+ <a href="1357.html">VMWare</a>: x86 (16/32 bit)
+ <a href="1521.html">QEMU</a>: x86 (16/32 bit), ARM, MIPS, PowerPC
+ <a href="1417.html">OpenOCD</a>: ARM
+</pre>
+It is quite possible that the module will work with other stubs.
+Note that only x86, ARM, MIPS and PowerPC processors are supported at the moment.
+<p>
+Some GDB stubs support so-called &quot;monitor&quot; commands. For example, VMWare stub
+can return extra info about system registers. Use the command line at the bottom
+of the main IDA window to send such commands. The output will be displayed in the message window.
+Hint: most stubs have a &quot;help&quot; command (if they support any commands at all).
+<p>
+The module also makes the following function available from IDC:
+<pre>
+ string <a href="1592.html">send_dbg_command</a>(string command);
+</pre>
+<pre>
+ NOTE
+</pre>
+When using <a href="1502.html">instant debugging</a>, you will need to tell IDA on which CPU the
+target is running. This is done in the <a href="1522.html">Remote GDB Debugger options</a> dialog,
+available via &quot;Debugger specific options&quot; button in the Process options dialog shown when you
+choose Remote GDB Debugger from the Run or Attach menu.
+<pre>
+ NOTE
+</pre>
+Many GDB stubs do not report the address that triggered a hardware breakpoint.
+In this case, IDA will report a memory breakpoint hit as a generic TRAP signal.
+Examine the previous instruction to see if it referenced a memory location
+with breakpoint. When continuing from such a breakpoint, choose not to pass
+the signal to the program.
+<pre>
+ NOTE
+</pre>
+IDA can be used together with a J-Link debug probe from SEGGER Microcontroller GmbH:
+<p>
+<a href="https://segger.com/jlink-debug-probes.html">https://segger.com/jlink-debug-probes.html</a>
+<p>
+See also
+<pre>
+  <a href="1522.html">Remote GDB Debugger options</a>
+  <a href="1395.html">Debugger</a> submenu.</pre>

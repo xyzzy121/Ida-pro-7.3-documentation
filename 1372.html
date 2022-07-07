@@ -1,0 +1,20 @@
+<a name="IDH_1372"></a>
+<title>Load Additional Binary File</title>
+<table width="100%"><tr valign="top"><td><h2>Load Additional Binary File</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Below is the description of dialog box fields:
+<pre>
+ Load segment    - The paragraph where the file will be loaded.
+ Load offset     - Specifies offset of the first byte from the start of
+                   the first segment. For example, if load offset=0x2700
+                   and load segment=0x1000, the first byte of the file will
+                   be at 1000:2700, or in linear addressing, 0x12700.
+ File offset     - Offset in the input file to load bytes from.
+ Number of bytes - Number of bytes to load from the file.
+                   0 means load as many as possible.
+ Create segments        - If not checked, IDA does not create segments.
+ Code segment           - If checked, IDA creates a code segment.
+                          relevant for processors which have different
+                          code/data segment addressing schemes (for
+                          example, Atmel AVR).
+</pre>

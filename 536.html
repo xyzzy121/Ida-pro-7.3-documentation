@@ -1,0 +1,45 @@
+<a name="IDH_536"></a>
+<title>Plugin modules</title>
+<table width="100%"><tr valign="top"><td><h2>Plugin modules</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+A plugin module is a module written on C++ that provides additional
+functionality to IDA.
+<p>
+Usually, a plugin is invoked through a hotkey or the menu system.
+The registered and loaded plugins will appear in a special Edit|Plugins submenu.
+A plugin may provide better analysis, automation of tedious tasks, etc.
+<p>
+The plugin modules reside in the &quot;plugins&quot; subdirectory of IDA.
+IDA is able to find and load all the plugins from this directory
+automatically.
+<p>
+However, you can write a configuration file and tell IDA how to load
+plugins. To do so, you need to modify the &quot;plugins.cfg&quot; file in the
+&quot;plugins&quot; subdirectory.
+<p>
+The format of this file is simple:
+<p>
+Empty lines and lines starting with ';' are comment lines.
+Other lines must have the following structure:
+<pre>
+           menuname filename hotkey arg
+</pre>
+<pre>
+ Example:
+</pre>
+<pre>
+           Undefine undef    Alt-U  0
+</pre>
+If the filename doesn't include the file extension or the directory,
+IDA will add them. The plugin modules have the following extensions:
+<pre>
+        Windows:        *.dll
+        Linux:          *.so
+        Mac:            *.dylib
+</pre>
+Note: plugins compiled with support for 64-bit address space, will
+feature a '64' suffix before the extension. E.g., 'pdb64.dll'
+<p>
+For more details, see information on individual plugin modules.
+<p>
+See also <a href="451.html">Edit</a> submenu.

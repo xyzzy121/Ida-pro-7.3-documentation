@@ -1,0 +1,15 @@
+<a name="IDH_631"></a>
+<title>Silent mode of IDA</title>
+<table width="100%"><tr valign="top"><td><h2>Silent mode of IDA</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In this mode, IDA will not display dialog boxes on the screen.
+Instead, it will assume the default answer and proceed.
+For example, if you press @&lt;Quit&gt;, IDA will promptly exit to OS
+without asking for any confirmation.
+<p>
+To return to normal mode you will need to execute an IDC function:
+<pre>
+        <a href="287.html">batch</a>(0);
+</pre>
+i.e. disable batch &quot;silent&quot; mode. To execute a script command, select
+<a href="437.html">File|Script command...</a> menu item or press @&lt;ExecuteLine&gt; hotkey.

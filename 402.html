@@ -1,0 +1,16 @@
+<a name="IDH_402"></a>
+<title> set_member_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> set_member_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+change structure member comment
+     id            - structure type ID
+     member_offset - offset of the member
+     comment       - new comment of the structure member
+     repeatable    - 1: change repeatable comment
+                     0: change regular comment
+returns: !=0 - ok
+<p>
+long set_member_cmt(long id, long member_offset, string comment, long repeatable);
+
+</pre>

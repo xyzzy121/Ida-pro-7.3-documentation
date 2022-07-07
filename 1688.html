@@ -1,0 +1,34 @@
+<a name="IDH_1688"></a>
+<title>Kernel analysis options 3</title>
+<table width="100%"><tr valign="top"><td><h2>Kernel analysis options 3</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Enable EH analysis
+<pre>
+  If this option is set on, IDA uses EH information of the binary for
+  more detailed analysis.
+</pre>
+Enable RTTI analysis
+<pre>
+  If this option is set on, IDA tries to detect C++ Run-Time Type
+  Indentification and does additional analysis based on this information.
+</pre>
+Enable macros
+<pre>
+  This option is disabled if the processor module does not support macros.
+</pre>
+<pre>
+  If this option is on, IDA will combine several instructions into one macro
+  instruction.
+  For example for the ARM processor,
+</pre>
+<pre>
+      ADRP Rx, label@PAGE
+      ADD  Rx, Rx, label@PAGEOFF
+</pre>
+<pre>
+  will be replaced by
+</pre>
+<pre>
+      ADRL Rx, label
+</pre>
+See also <a href="621.html">analysis options 1</a> <a href="622.html">analysis options 2</a>

@@ -1,0 +1,135 @@
+<a name="IDH_1451"></a>
+<title>Tracing options</title>
+<table width="100%"><tr valign="top"><td><h2>Tracing options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetupTracing
+ </pre>
+This dialog box allows you to specify different settings related to the tracing features.
+
+<p>
+Trace buffer size
+<pre>
+  This setting indicates how many tracing events can fit in the trace buffer.
+  If the debugger must insert a new event and the buffer is full,
+  the oldest tracing event will be removed.
+  However, if you specify a size of 0, the buffer size isn't limited.
+  Notice that, for example, in the case of an instructions trace,
+  all executed instructions could be logged, which would quickly fill
+  up the memory!
+</pre>
+Trace file
+<pre>
+  If a filename is specified, all future traced events will be appended to it.
+</pre>
+Trace directory
+<pre>
+  The directory were trace files for the current database will be saved. If not
+  specified, the IDB directory will be used.
+</pre>
+Stop condition
+<pre>
+  This <a href="162.html">IDC</a> expression will be evaluated before the execution
+  of each instruction. If the expression returns true, the debugger will
+  suspend the execution. Please note that you can use register names in
+  the condition.
+</pre>
+Tracing
+<pre>
+  - Trace over debugger segments
+</pre>
+<pre>
+      If selected, the debugger will not go step by step in debugger segments
+      (segments not available in the database).
+</pre>
+<pre>
+  - Trace over library functions
+</pre>
+<pre>
+      If selected, the debugger will not go step by step in library functions.
+</pre>
+<pre>
+  Enabling these options will speed up the execution, as many instructions
+  (from debugger segments and/or library functions) will not be traced.
+  Disabling these options can quickly fill the <a href="1444.html">Trace window</a>, as all
+  instructions in DLLs and system functions will be executed step by step.
+  Notice that both options influence the way instruction and function tracings
+  will work.
+  Internally, the debugger proceeds like this:
+  - memorize the return address associated with the last executed call
+    instruction in database segments (the previously saved one is overwriten).
+  - setup a temporary breakpoint on this address once the IP is in a debugger
+    segment or library function, disable step by step, and run the thread.
+  - reenable step by step once this temporary breakpoint is reached.
+</pre>
+<pre>
+  - Do not log already logged IP
+</pre>
+<pre>
+      If selected, already executed instructions will not be logged if
+      they are executed again.
+</pre>
+<pre>
+  - Skip loops
+</pre>
+<pre>
+      If selected, tracing will be temporarily disabled for some loops
+      constructs.
+</pre>
+Highlight
+<pre>
+  - Highlight instructions in IDA views
+</pre>
+<pre>
+    If selected, recorded instructions will be displayed in IDA views (disassembly
+    views) with a different background color.
+</pre>
+<pre>
+  - Main color
+</pre>
+<pre>
+    The main background color for traced instructions.
+</pre>
+<pre>
+  - Diff color
+</pre>
+<pre>
+    The background color for the instructions recorded and being diffed against the
+    currently loaded trace.
+</pre>
+Instruction tracing
+<pre>
+  - Log if same IP
+</pre>
+<pre>
+    If selected, the debugger will also log all register modifications occuring
+    during the execution of prefixed instructions like REP MOVSB, ...
+</pre>
+Function tracing
+<pre>
+  - Log return instructions
+</pre>
+<pre>
+      If selected, the debugger will also log function returns.
+      If disabled, only function calls are logged.
+</pre>
+Basic block tracing
+<pre>
+  - Log basic block instructions
+</pre>
+<pre>
+      If selected, all instructions from the current basic block will be logged
+      and displayed in the trace window, instead of only the last instruction of
+      the basic block.
+</pre>
+<pre>
+ See also <a href="1444.html">Trace window</a>
+          <a href="1629.html">Trace management</a>
+          <a href="1445.html">Clear trace</a>
+          <a href="1446.html">Instruction tracing</a>
+          <a href="1447.html">Function tracing</a>
+          <a href="1628.html">Basic block tracing</a>
+          <a href="1448.html">Add write trace</a>
+          <a href="1449.html">Add read/write trace</a>
+          <a href="1450.html">Add execution trace</a>
+          <a href="1443.html">Tracing</a> submenu.</pre>

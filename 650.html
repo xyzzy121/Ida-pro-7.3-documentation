@@ -1,0 +1,16 @@
+<a name="IDH_650"></a>
+<title> get_frame_regs_size</title>
+<table width="100%"><tr valign="top"><td><h2> get_frame_regs_size</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get size of saved registers in function frame
+     ea - any address belonging to the function
+returns: Size of saved registers in bytes.
+         If the function doesn't have a frame, return 0
+         This value is used as offset for BP
+         (if FUNC_FRAME is set)
+         If the function does't exist, return -1
+<p>
+#define get_frame_regs_size(ea)  get_func_attr(ea, FUNCATTR_FRREGS)
+
+</pre>

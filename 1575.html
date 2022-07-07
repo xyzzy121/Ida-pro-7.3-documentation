@@ -1,0 +1,16 @@
+<a name="IDH_1575"></a>
+<title> object.retrieve</title>
+<table width="100%"><tr valign="top"><td><h2> object.retrieve</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Retrieve a C structure from the idb or a buffer and convert it into an object
+ typeinfo - description of the C structure. Can be specified
+            as a declaration string or result of <a href="1533.html">get_tinfo</a>() or
+            similar functions
+ src      - address (ea) to retrieve the C structure from
+            OR a string buffer previously packed with the store method
+ flags    - combination of <a href="1574.html">PIO_...</a> bits
+<p>
+void object.retrieve(typeinfo, src, flags);
+
+</pre>

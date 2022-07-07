@@ -1,0 +1,26 @@
+<a name="IDH_286"></a>
+<title> set_processor_type</title>
+<table width="100%"><tr valign="top"><td><h2> set_processor_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set target processor type.
+Once a processor module is loaded, it cannot be replaced until we close the idb.
+     processor - name of processor in short form.
+     level     - the request level:
+ SETPROC_IDB         set processor type for old idb
+ SETPROC_LOADER      set processor type for new idb;
+                     if the user has specified a compatible processor,
+                     return success without changing it.
+                     if failure, call loader_failure()
+ SETPROC_LOADER_NON_FATAL the same as SETPROC_LOADER but non-fatal failures.
+ SETPROC_USER        set user-specified processor
+                     used for -p and manual processor change at later time
+<p>
+success set_processor_type(string processor, long level);
+<p>
+#define SETPROC_IDB              0
+#define SETPROC_LOADER           1
+#define SETPROC_LOADER_NON_FATAL 2
+#define SETPROC_USER             3
+
+</pre>

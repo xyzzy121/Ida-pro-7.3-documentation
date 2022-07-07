@@ -1,0 +1,17 @@
+<a name="IDH_716"></a>
+<title> get_enum_member</title>
+<table width="100%"><tr valign="top"><td><h2> get_enum_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get id of constant
+     enum_id - id of enum
+     value   - value of constant
+     serial  - serial number of the constant in the enumeration.
+               See <a href="704.html">op_enum</a>() for for details.
+     bmask   - bitmask of the constant
+               ordinary enums accept only -1 as a bitmask
+returns: id of constant or -1 if error
+<p>
+long get_enum_member(long enum_id, long value, long serial, long bmask);
+
+</pre>

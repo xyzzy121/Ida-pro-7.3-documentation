@@ -1,0 +1,13 @@
+<a name="IDH_516"></a>
+<title>Change Segment Addressing</title>
+<table width="100%"><tr valign="top"><td><h2>Change Segment Addressing</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+You can choose between 16-bit and 32-bit segment addressing.
+<p>
+IDA will delete all instructions and data in the segment if the segment
+address is changed.
+<p>
+Never do it if you are not sure. It may have irreversible consequences,
+all instructions/data will be converted to undefined bytes.
+<p>
+See also other <a href="514.html">SegEdit</a> form fields.

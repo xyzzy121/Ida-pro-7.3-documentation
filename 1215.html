@@ -1,0 +1,40 @@
+<a name="IDH_1215"></a>
+<title> Debugger: options</title>
+<table width="100%"><tr valign="top"><td><h2> Debugger: options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get/set debugger options
+     opt - combination of DOPT_... constants
+returns: old options
+<p>
+long set_debugger_options(long opt);
+<p>
+#define DOPT_SEGM_MSGS    0x00000001 // print messages on debugger segments modifications
+#define DOPT_START_BPT    0x00000002 // break on process start
+#define DOPT_THREAD_MSGS  0x00000004 // print messages on thread start/exit
+#define DOPT_THREAD_BPT   0x00000008 // break on thread start/exit
+#define DOPT_BPT_MSGS     0x00000010 // print message on breakpoint
+#define DOPT_LIB_MSGS     0x00000040 // print message on library load/unlad
+#define DOPT_LIB_BPT      0x00000080 // break on library load/unlad
+#define DOPT_INFO_MSGS    0x00000100 // print message on debugging information
+#define DOPT_INFO_BPT     0x00000200 // break on debugging information
+#define DOPT_REAL_MEMORY  0x00000400 // don't hide breakpoint instructions
+#define DOPT_REDO_STACK   0x00000800 // reconstruct the stack
+#define DOPT_ENTRY_BPT    0x00001000 // break on program entry point
+#define DOPT_EXCDLG       0x00006000 // exception dialogs:
+#  define EXCDLG_NEVER    0x00000000 // never display exception dialogs
+#  define EXCDLG_UNKNOWN  0x00002000 // display for unknown exceptions
+#  define EXCDLG_ALWAYS   0x00006000 // always display
+#define DOPT_LOAD_DINFO   0x00008000 // automatically load debug files (pdb)
+<p>
+// ***********************************************
+// Set remote debugging options
+//       hostname - remote host name or address
+//                  if empty, revert to local debugger
+//       password - password for the debugger server
+//       portnum  - port number to connect (-1: don't change)
+// returns: nothing
+<p>
+void set_remote_debugger(string hostname, string password, long portnum);
+
+</pre>

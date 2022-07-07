@@ -1,0 +1,28 @@
+<a name="IDH_529"></a>
+<title>Assemble an instruction</title>
+<table width="100%"><tr valign="top"><td><h2>Assemble an instruction</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Assemble
+ </pre>
+This command allows you to assemble instructions. Currently, only the IBM PC
+processors provide an assembler, nonetheless, plugin writers can extend or totally
+replace the built-in assembler by writing their own.
+<p>
+The assembler requires to enclose all memory references into square brackets.
+For example:
+<pre>
+        mov ax, [counter]
+</pre>
+Also, the keyword 'offset' must not be used. Instead of
+<pre>
+        mov eax, offset name
+</pre>
+you must write
+<pre>
+        mov eax, name
+</pre>
+See also
+<pre>
+         <a href="526.html">Edit|Patch core</a> submenu.
+         <a href="423.html">How to Enter a Number</a>.</pre>

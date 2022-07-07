@@ -1,0 +1,29 @@
+<a name="IDH_1673"></a>
+<title> Dalvik debugger extension functions</title>
+<table width="100%"><tr valign="top"><td><h2> Dalvik debugger extension functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Get local variable or function argument value
+//       name - variable name (&quot;v0&quot;, &quot;v1&quot;, ... or user defined name)
+auto dalvik_get_local(string name);
+<p>
+// Get typed local variable value
+//       name - variable name (&quot;v0&quot;, &quot;v1&quot;, ... or user defined name)
+//       wanted_type - Java VM's representation of type signature
+auto dalvik_get_local_typed(string name, string wanted_type);
+<p>
+// Get object instance field value
+//       oid - object id
+//       name - object field name
+auto dalvik_get_instance_fld(int64 oid, string name);
+<p>
+// Get number or array elements
+//       oid - array object id
+long dalvik_get_array_size(int64 oid);
+<p>
+// Get array element by index
+//       oid - object id
+//       idx - element index
+auto dalvik_get_array_elem(int64 oid, long idx);
+
+</pre>

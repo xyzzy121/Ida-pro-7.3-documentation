@@ -1,0 +1,35 @@
+<a name="IDH_1650"></a>
+<title> Trace file functions</title>
+<table width="100%"><tr valign="top"><td><h2> Trace file functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Load a previously recorded binary trace file
+//       filename - trace file
+success load_trace_file(string filename);
+<p>
+// Save current trace to a binary trace file
+//       filename - trace file
+//       description - trace description
+success save_trace_file(string filename, string description);
+<p>
+// Check the given binary trace file
+//       filename - trace file
+success is_valid_trace_file(string filename);
+<p>
+// Diff current trace buffer against given trace
+//       filename - trace file
+success diff_trace_file(string filename);
+<p>
+// Clear the current trace buffer
+void clear_trace();
+<p>
+// Update the trace description of the given binary trace file
+//       filename - trace file
+//       description - trace description
+success set_trace_file_desc(string filename, string description);
+<p>
+// Get the trace description of the given binary trace file
+//       filename - trace file
+string get_trace_file_desc(string filename);
+
+</pre>

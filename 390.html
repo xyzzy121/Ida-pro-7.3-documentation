@@ -1,0 +1,22 @@
+<a name="IDH_390"></a>
+<title> get_member_flag</title>
+<table width="100%"><tr valign="top"><td><h2> get_member_flag</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get type of a member
+     id            - structure type ID
+     member_offset - member offset. The offset can be
+                     any offset in the member. For example,
+                     is a member is 4 bytes long and starts
+                     at offset 2, then 2, 3, 4, 5 denote
+                     the same structure member.
+returns: -1 if bad structure type ID is passed
+            or no such member in the structure
+         otherwise returns type of the member, see bit
+         definitions above. If the member type is a structure
+         then function <a href="391.html">get_member_strid</a>() should be used to
+         get the structure type id.
+<p>
+long get_member_flag(long id, long member_offset);
+
+</pre>

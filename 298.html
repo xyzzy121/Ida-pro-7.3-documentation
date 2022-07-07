@@ -1,0 +1,13 @@
+<a name="IDH_298"></a>
+<title> get_segm_name</title>
+<table width="100%"><tr valign="top"><td><h2> get_segm_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get name of a segment
+     ea - any address in the segment
+  flags - 0-name as is;1-substitute invalid chars with _
+returns: segment name, 0 - no segment at the specified address
+<p>
+string get_segm_name(long ea, long flags=0);
+
+</pre>

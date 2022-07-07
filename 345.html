@@ -1,0 +1,16 @@
+<a name="IDH_345"></a>
+<title> get_frame_id</title>
+<table width="100%"><tr valign="top"><td><h2> get_frame_id</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get ID of function frame structure
+     ea - any address belonging to the function
+returns: ID of function frame.
+         In order to access stack variables you need to use
+         structure member manipulation functions with the
+         obtained ID.
+         -1 if function or function frame does not exist.
+<p>
+#define get_frame_id(ea)  get_func_attr(ea, FUNCATTR_FRAME)
+
+</pre>

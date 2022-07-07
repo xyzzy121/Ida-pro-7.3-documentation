@@ -1,0 +1,75 @@
+<a name="IDH_313"></a>
+<title> Xrefs</title>
+<table width="100%"><tr valign="top"><td><h2> Xrefs</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+//      See sample file xrefs.idc to learn to use these functions.
+<p>
+//      Flow types (combine with XREF_USER!):
+#define fl_CF   16              // Call Far
+#define fl_CN   17              // Call Near
+#define fl_JF   18              // jumpto Far
+#define fl_JN   19              // jumpto Near
+#define fl_F    21              // Ordinary flow
+<p>
+#define XREF_USER 32            // All user-specified xref types
+                                // must be combined with this bit
+<p>
+// Mark exec flow 'from' 'to'
+success add_cref(long from, long to, long flowtype);
+<p>
+// Unmark exec flow 'from' 'to'
+// undef - make 'to' undefined if no
+//        more references to it
+// returns 1 - planned to be made undefined
+long del_cref(long from, long to, int undef);
+<p>
+// The following functions include the ordinary flows:
+// (the ordinary flow references are returned first)
+<p>
+// Get first code xref from 'from'
+long get_first_cref_from(long From);
+<p>
+// Get next code xref from
+long get_next_cref_from(long from, long current);
+<p>
+// Get first code xref to 'to'
+long get_first_cref_to(long to);
+<p>
+// Get next code xref to 'to'
+long get_next_cref_to(long to, long current);
+<p>
+// The following functions don't take into account the ordinary flows:
+long get_first_fcref_from(long from);
+long get_next_fcref_from(long from, long current);
+long get_first_fcref_to(long to);
+long get_next_fcref_to(long to, long current);
+<p>
+// Data reference types (combine with XREF_USER!):
+#define dr_O    1                       // Offset
+#define dr_W    2                       // Write
+#define dr_R    3                       // Read
+#define dr_T    4                       // Text (names in manual operands)
+#define dr_I    5                       // Informational
+<p>
+// Create Data Ref
+success add_dref(long From, long to, long dreftype);
+<p>
+// Unmark Data Ref
+void del_dref(long from, long to);
+<p>
+// Get first data xref from 'from'
+long get_first_dref_from(long from);
+long get_next_dref_from(long From, long current);
+<p>
+// Get first data xref to 'to'
+long get_first_dref_to(long to);
+long get_next_dref_to(long to, long current);
+<p>
+// returns type of the last xref
+// obtained by get_first_.../get_next_...
+// functions. Return values
+// are fl_... or dr_...
+long get_xref_type(void);
+
+</pre>

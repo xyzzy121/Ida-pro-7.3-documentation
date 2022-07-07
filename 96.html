@@ -1,0 +1,17 @@
+<a name="IDH_96"></a>
+<title> loader_input_t.seek</title>
+<table width="100%"><tr valign="top"><td><h2> loader_input_t.seek</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Seek in the input file
+     pos - position to seek to
+     whence - where from?
+Returns: the new file position
+<p>
+long loader_input_t.seek(long pos, long whence);
+<p>
+#define SEEK_SET   0 // from the file start
+#define SEEK_CUR   1 // from the current position
+#define SEEK_END   2 // from the file end
+
+</pre>

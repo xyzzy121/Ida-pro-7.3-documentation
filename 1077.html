@@ -1,0 +1,85 @@
+<a name="IDH_1077"></a>
+<title> Function chunk related functions</title>
+<table width="100%"><tr valign="top"><td><h2> Function chunk related functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Get a function chunk attribute
+//       ea     - any address in the chunk
+//       attr   - one of: FUNCATTR_START, FUNCATTR_END
+//                        FUNCATTR_OWNER, FUNCATTR_REFQTY
+// returns: desired attribute or -1
+<p>
+long get_fchunk_attr(long ea, long attr);
+<p>
+// Set a function chunk attribute
+//       ea     - any address in the chunk
+//       attr   - nothing defined yet
+//       value  - desired bg color (RGB)
+// returns: 0 if failed, 1 if success
+<p>
+success set_fchunk_attr(long ea, long attr, long value);
+<p>
+// Get a function chunk referer
+//       ea     - any address in the chunk
+//       idx    - referer index (0..get_fchunk_attr(FUNCATTR_REFQTY))
+// returns: referer address or BADADDR
+<p>
+long get_fchunk_referer(long ea, long idx);
+<p>
+// Get next function chunk
+//       ea     - any address
+// returns: the starting address of the next
+//          function chunk or BADADDR
+// This function enumerates all chunks of all functions in the database
+<p>
+long get_next_fchunk(long ea);
+<p>
+// Get previous function chunk
+//       ea     - any address
+// returns: the starting address of the previous
+//          function chunk or BADADDR
+// This function enumerates all chunks of all functions in the database
+<p>
+long get_prev_fchunk(long ea);
+<p>
+// Append a function chunk to the function
+//       funcea   - any address in the function
+//       ea1, ea2 - boundaries of a function tail to add.
+//                  If a chunk exists at the specified addresses,
+//                  it must have exactly the specified boundaries
+// returns: 0 if failed, 1 if success
+<p>
+success append_func_tail(long funcea, long ea1, long ea2);
+<p>
+// Remove a function chunk from the function
+//       funcea - any address in the function
+//       ea1    - any address in the function chunk to remove
+// returns: 0 if failed, 1 if success
+<p>
+success remove_fchunk(long funcea, long tailea);
+<p>
+// Change the function chunk owner
+//       tailea - any address in the function chunk
+//       funcea - the starting address of the new owner
+// returns: 0 if failed, 1 if success
+// The new owner must already have the chunk appended before the call
+<p>
+success set_tail_owner(long tailea, long funcea);
+<p>
+// Get the first function chunk of the specified function
+//       funcea - any address in the function
+// returns: the function entry point or BADADDR
+// This function returns the first (main) chunk of the specified function
+<p>
+long first_func_chunk(long funcea);
+<p>
+// Get the next function chunk of the specified function
+//         arguments:      funcea - any address in the function
+//                         tailea - any address in the current chunk
+//         returns:        the starting address of the next
+//                         function chunk or BADADDR
+// This function returns the next chunk of the specified function
+<p>
+long next_func_chunk(long funcea, long tailea);
+
+</pre>

@@ -1,0 +1,15 @@
+<a name="IDH_368"></a>
+<title> get_bookmark</title>
+<table width="100%"><tr valign="top"><td><h2> get_bookmark</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get marked position
+     slot    - slot number: 0..1023
+               if the specifed value is &lt;= 0,
+               IDA will ask the user to select slot.
+returns: -1 - the slot doesn't contain a marked address
+         otherwise returns the marked address
+<p>
+long get_bookmark(long slot);
+
+</pre>

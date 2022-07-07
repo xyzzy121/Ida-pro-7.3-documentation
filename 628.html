@@ -1,0 +1,39 @@
+<a name="IDH_628"></a>
+<title>Moving The Segment Start</title>
+<table width="100%"><tr valign="top"><td><h2>Moving The Segment Start</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+When you edit the segment boundaries, you can check the &quot;move the adjacent segments&quot;
+checkbox.
+<p>
+IDA will try to shrink/expand the previous
+segment in order to move the beginning of the selected segment.
+Of course, you cannot move the start of the segment 'too far':
+<pre>
+  - the segment must have at least 1 byte
+  - the start address of the segment must be less than the end of the segment
+  - no segments can be killed during moving
+  - the segment cannot have bytes with negative offsets
+</pre>
+You cannot shrink a segment to zero bytes. A segment must have
+at least one byte.
+<p>
+This command is mostly used when IDA does not detect the boundary
+between segments correctly.
+<p>
+Sometimes, IDA creates 2 segments where only
+one segment must exist. In this case, you should not use this command.
+Use the following sequence instead:
+<pre>
+        - <a href="513.html">delete</a> one segment.
+          Choose the one with the bad segment base value.
+          Do not disable addresses occupied by the segment being deleted.
+        - change boundaries of the other segment.
+</pre>
+Caution: moving the first segment of the program will
+delete all information about the bytes between the old start of the segment
+and the new start of the segment!
+<p>
+See also another command that changes segment bounds:
+<pre>
+ <a href="514.html">Edit Segment</a>
+ <a href="506.html">Edit|Segments</a> submenu.</pre>

@@ -1,0 +1,22 @@
+<a name="IDH_592"></a>
+<title>Cross references window</title>
+<table width="100%"><tr valign="top"><td><h2>Cross references window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenXrefs
+ </pre>
+This command opens the cross-references window. This window contains
+all references to the current location.
+<p>
+You can use <a href="427.html">list viewer</a> commands in this window.
+<p>
+You can add and delete cross references here too by pressing Ins or Del.
+Right clicking on the mouse will work too.
+<p>
+Add a cross reference: the from and to address, as well as the xref type should be specified.
+<p>
+Del a cross reference: if the 'undefine if no more xrefs' is check, then the instruction
+at the target address will be undefined upon the deletion of the last xref.
+IDA undefines instructions only if they do not start a function.
+<p>
+See also <a href="1356.html">View|Open subviews</a> submenu.

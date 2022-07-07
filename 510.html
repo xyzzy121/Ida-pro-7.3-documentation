@@ -1,0 +1,37 @@
+<a name="IDH_510"></a>
+<title>Create segment - simple case (Z80)</title>
+<table width="100%"><tr valign="top"><td><h2>Create segment - simple case (Z80)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Z80 case
+ --------
+</pre>
+Suppose we need to create a segment occuping virtual addresses 8000-C000.
+Since we are free to place our segment anywhere in the linear address space,
+we choose the linear addresses at our convenience. Let's say we choose
+a linear address 0x20000:
+<pre>
+        start = 0x20000
+        end   = start + 0x4000 = 0x24000
+</pre>
+The segment base must be selected so that the virtual address in our segment
+will be 0x8000. Let's find it using the following equation:
+<pre>
+        VirtualAddress = LinearAddress - (SegmentBase &lt;&lt; 4);
+        0x8000         = 0x20000 - (base &lt;&lt; 4);
+        base &lt;&lt; 4      = 0x20000 - 0x8000
+        base &lt;&lt; 4      = 0x18000
+        base           = 0x1800
+</pre>
+After solving this equation, we see that the segment base is equal to 0x1800.
+<p>
+Now we can create a segment entering:
+<pre>
+        segment start address:  0x20000
+        segment end address:    0x24000
+        segment base:           0x1800
+
+</pre>
+Please note that the end address never belongs to the segment in IDA.
+<p>
+Go back to <a href="508.html">addressing space concepts</a>

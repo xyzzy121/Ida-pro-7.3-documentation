@@ -1,0 +1,16 @@
+<a name="IDH_324"></a>
+<title> readshort</title>
+<table width="100%"><tr valign="top"><td><h2> readshort</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+read 2 bytes from file
+     handle    - file hanlde
+     mostfirst - 0 least significant byte is first (intel)
+                 1 most  significant byte is first
+returns: -1 - error
+         otherwise: a 16-bit value
+Thread-safe function.
+<p>
+long readshort(long handle, long mostfirst);
+
+</pre>

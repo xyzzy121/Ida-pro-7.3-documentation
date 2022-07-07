@@ -1,0 +1,41 @@
+<a name="IDH_491"></a>
+<title>Define a new structure</title>
+<table width="100%"><tr valign="top"><td><h2>Define a new structure</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AddStruct
+ </pre>
+This command defines a new structure or a new union.
+The new structure is created with zero length. You will have to add structure
+members using <a href="490.html">structure</a> manipulation commands.
+<p>
+If the entered structure name denotes a standard structure type from a loaded
+type library, then its definition will be automatically used. In this
+case, the value of the 'create union' checkbox will be ignored.
+<p>
+This command is available when you open a structures <a href="593.html">window</a>.
+<p>
+You can add new members to the structure using the following commands:
+<pre>
+        command         hotkey
+        -------         ------
+    <a href="453.html">make data</a>            D
+    <a href="454.html">make strlit</a>           A
+    <a href="455.html">make array</a>           *
+    <a href="457.html">rename</a>               N
+</pre>
+You may also insert/delete undefined bytes into the middle of the structure
+by using <a href="493.html">expand</a> and <a href="494.html">shrink</a> commands.
+<p>
+&quot;Create before current structure&quot; means that the new structure will be
+placed immediately before the current structure type. Otherwise, the new
+structure is placed after the current structure.
+<p>
+&quot;Don't include in the list&quot; means that the structure will not be included
+in the list of the structures which appears when the user applies the structure
+definition, for example, when he creates a variable of this structure type.
+We recommend to mark this checkbox when you have defined all variables of
+this structure type and want to reduce the number of choices in the list.
+<p>
+See also <a href="490.html">Edit|Structs</a> submenu.
+         <a href="424.html">How to Enter an Identifier</a>

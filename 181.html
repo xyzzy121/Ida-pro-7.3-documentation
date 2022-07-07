@@ -1,0 +1,131 @@
+<a name="IDH_181"></a>
+<title> OpTypes</title>
+<table width="100%"><tr valign="top"><td><h2> OpTypes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+#define MS_0TYPE 0x00F00000            // Mask for 1st arg typing
+#define FF_0VOID 0x00000000            // Void (unknown)?
+#define FF_0NUMH 0x00100000            // Hexadecimal number?
+#define FF_0NUMD 0x00200000            // Decimal number?
+#define FF_0CHAR 0x00300000            // Char ('x')?
+#define FF_0SEG  0x00400000            // Segment?
+#define FF_0OFF  0x00500000            // Offset?
+#define FF_0NUMB 0x00600000            // Binary number?
+#define FF_0NUMO 0x00700000            // Octal number?
+#define FF_0ENUM 0x00800000            // Enumeration?
+#define FF_0FOP  0x00900000            // Forced operand?
+#define FF_0STRO 0x00A00000            // Struct offset?
+#define FF_0STK  0x00B00000            // Stack variable?
+#define FF_0FLT  0x00C00000            // Floating point number?
+#define FF_0CUST 0x00D00000            // Custom format type?
+<p>
+#define MS_1TYPE 0x0F000000            // Mask for 2nd arg typing
+#define FF_1VOID 0x00000000            // Void (unknown)?
+#define FF_1NUMH 0x01000000            // Hexadecimal number?
+#define FF_1NUMD 0x02000000            // Decimal number?
+#define FF_1CHAR 0x03000000            // Char ('x')?
+#define FF_1SEG  0x04000000            // Segment?
+#define FF_1OFF  0x05000000            // Offset?
+#define FF_1NUMB 0x06000000            // Binary number?
+#define FF_1NUMO 0x07000000            // Octal number?
+#define FF_1ENUM 0x08000000            // Enumeration?
+#define FF_1FOP  0x09000000            // Forced operand?
+#define FF_1STRO 0x0A000000            // Struct offset?
+#define FF_1STK  0x0B000000            // Stack variable?
+#define FF_1FLT  0x0C000000            // Floating point number?
+#define FF_1CUST 0x0D000000            // Custom format type?
+<p>
+// The following macros answer questions like
+//   'is the 1st (or 2nd) operand of instruction or data of the given type'?
+// Please note that data items use only the 1st operand type (is...0)
+<p>
+#define is_defarg0(F)    ((F &amp; MS_0TYPE) != FF_0VOID)
+#define is_defarg1(F)    ((F &amp; MS_1TYPE) != FF_1VOID)
+#define is_dec0(F)       ((F &amp; MS_0TYPE) == FF_0NUMD)
+#define is_dec1(F)       ((F &amp; MS_1TYPE) == FF_1NUMD)
+#define is_hex0(F)       ((F &amp; MS_0TYPE) == FF_0NUMH)
+#define is_hex1(F)       ((F &amp; MS_1TYPE) == FF_1NUMH)
+#define is_oct0(F)       ((F &amp; MS_0TYPE) == FF_0NUMO)
+#define is_oct1(F)       ((F &amp; MS_1TYPE) == FF_1NUMO)
+#define is_bin0(F)       ((F &amp; MS_0TYPE) == FF_0NUMB)
+#define is_bin1(F)       ((F &amp; MS_1TYPE) == FF_1NUMB)
+#define is_off0(F)       ((F &amp; MS_0TYPE) == FF_0OFF)
+#define is_off1(F)       ((F &amp; MS_1TYPE) == FF_1OFF)
+#define is_char0(F)      ((F &amp; MS_0TYPE) == FF_0CHAR)
+#define is_char1(F)      ((F &amp; MS_1TYPE) == FF_1CHAR)
+#define is_seg0(F)       ((F &amp; MS_0TYPE) == FF_0SEG)
+#define is_seg1(F)       ((F &amp; MS_1TYPE) == FF_1SEG)
+#define is_enum0(F)      ((F &amp; MS_0TYPE) == FF_0ENUM)
+#define is_enum1(F)      ((F &amp; MS_1TYPE) == FF_1ENUM)
+#define is_manual0(F)    ((F &amp; MS_0TYPE) == FF_0FOP)
+#define is_manual1(F)    ((F &amp; MS_1TYPE) == FF_1FOP)
+#define is_stroff0(F)    ((F &amp; MS_0TYPE) == FF_0STRO)
+#define is_stroff1(F)    ((F &amp; MS_1TYPE) == FF_1STRO)
+#define is_stkvar0(F)    ((F &amp; MS_0TYPE) == FF_0STK)
+#define is_stkvar1(F)    ((F &amp; MS_1TYPE) == FF_1STK)
+#define is_float0(F)     ((F &amp; MS_0TYPE) == FF_0FLT)
+#define is_float1(F)     ((F &amp; MS_1TYPE) == FF_1FLT)
+#define is_custfmt0(F)   ((F &amp; MS_0TYPE) == FF_0CUST)
+#define is_custfmt1(F)   ((F &amp; MS_1TYPE) == FF_1CUST)
+<p>
+//
+//      Bits for DATA bytes
+//
+#define DT_TYPE       0xF0000000       // Mask for DATA typing
+<p>
+#define FF_BYTE       0x00000000       // byte
+#define FF_WORD       0x10000000       // word
+#define FF_DWORD      0x20000000       // dword
+#define FF_QWORD      0x30000000       // qword
+#define FF_TBYTE      0x40000000       // tbyte
+#define FF_STRLIT     0x50000000       // ASCII    ?
+#define FF_STRUCT     0x60000000       // Struct   ?
+#define FF_OWORD      0x70000000       // octaword (16 bytes/128 bits)
+#define FF_FLOAT      0x80000000       // float
+#define FF_DOUBLE     0x90000000       // double
+#define FF_PACKREAL   0xA0000000       // packed decimal real
+#define FF_ALIGN      0xB0000000       // alignment directive
+#define FF_CUSTOM     0xD0000000       // custom data type
+#define FF_YWORD      0xE0000000       // ymm word (32 bytes/256 bits)
+#define FF_ZWORD      0xF0000000       // zmm word (64 bytes/512 bits)
+<p>
+#define is_byte(F)      (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_BYTE)
+#define is_word(F)      (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_WORD)
+#define is_dword(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_DWORD)
+#define is_qword(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_QWORD)
+#define is_oword(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_OWORD)
+#define is_yword(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_YWORD)
+#define is_tbyte(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_TBYTE)
+#define is_float(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_FLOAT)
+#define is_double(F)    (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_DOUBLE)
+#define is_pack_real(F) (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_PACKREAL)
+#define is_strlit(F)    (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_STRLIT)
+#define is_struct(F)    (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_STRUCT)
+#define is_align(F)     (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_ALIGN)
+#define is_custom(F)    (is_data(F) &amp;&amp; (F &amp; DT_TYPE) == FF_CUSTOM)
+<p>
+//
+//      Bits for CODE bytes
+//
+<p>
+#define MS_CODE 0xF0000000
+#define FF_FUNC 0x10000000             // function start?
+#define FF_IMMD 0x40000000             // Has Immediate value ?
+#define FF_JUMP 0x80000000             // Has jump table
+<p>
+//
+//      Loader flags
+//
+<p>
+#define NEF_SEGS   0x0001               // Create segments
+#define NEF_RSCS   0x0002               // Load resources
+#define NEF_NAME   0x0004               // Rename entries
+#define NEF_MAN    0x0008               // Manual load
+#define NEF_FILL   0x0010               // Fill segment gaps
+#define NEF_IMPS   0x0020               // Create imports section
+#define NEF_FIRST  0x0080               // This is the first file loaded
+#define NEF_CODE   0x0100               // for load_binary_file:
+#define NEF_RELOAD 0x0200               // reload the file at the same place:
+#define NEF_FLAT   0x0400               // Autocreated FLAT group (PE)
+
+</pre>

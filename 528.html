@@ -1,0 +1,28 @@
+<a name="IDH_528"></a>
+<title>Binary string format</title>
+<table width="100%"><tr valign="top"><td><h2>Binary string format</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+You can:
+<pre>
+  - enter a sequence of numbers in the selected radix
+    (hexdecimal, decimal or octal)
+  - enter C string constants like this: &quot;string&quot;
+  - enter a question mark ? to ignore variable bytes
+  - enter Unicode string constants: L&quot;unicode string&quot;
+</pre>
+Sequence must be separated by a space or a comma.
+<p>
+If you enter a number, it will occupy the minimal number of bytes it fits in
+with the restriction that the number of bytes is a power of 2 (1, 2, or 4 bytes).
+<p>
+Example:
+<pre>
+  CD 21          - bytes 0xCD, 0x21
+  21CD           - bytes 0xCD, 0x21 (the order depends on the endiannes)
+  &quot;Hello&quot;, 0     - the null terminated string &quot;Hello&quot;
+  L&quot;Hello&quot;       - 'H', 0, 'e', 0, 'l', 0, 'l', 0, 'o', 0
+  B8 ? ? ? ? 90  - byte 0xB8, 4 bytes with any value, byte 0x90
+</pre>
+
+</pre>

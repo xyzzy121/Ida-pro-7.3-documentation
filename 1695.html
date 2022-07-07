@@ -1,0 +1,40 @@
+<a name="IDH_1695"></a>
+<title>Shifted pointers</title>
+<table width="100%"><tr valign="top"><td><h2>Shifted pointers</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Sometimes in binary code we can encounter a pointer to the middle of a structure.
+Such pointers usually do not exist in the source code but an optimizing
+compiler may introduce them to make the code shorter or faster.
+<p>
+Such pointers can be described using shifted pointers. A shifted pointer
+is a regular pointer with additional information about the name of the
+parent structure and the offset from its beginning. For example:
+<pre>
+        struct mystruct
+        {
+          char buf[16];
+          int dummy;
+          int value;            // &lt;- myptr points here
+          double fval;
+        };
+        int *__shifted(mystruct,20) myptr;
+</pre>
+The above declaration means that myptr is a pointer to 'int' and if we
+decrement it by 20 bytes, we will end up at the beginning of 'mystruct'.
+<p>
+Please note that IDA does not limit parents of shifted pointers to structures.
+A shifted pointer after the adjustment may point to any type except 'void'.
+<p>
+Also, negative offsets are supported too. They mean that the pointer points
+to memory before the structure.
+<p>
+When a shifted pointer is used with an adjustment, it will be displayed with
+the 'ADJ' helper function. For example, if we refer to the memory 4 bytes further,
+it can be represented like this:
+<pre>
+        ADJ(myptr)-&gt;fval
+</pre>
+Shifted pointers are an improvement compared to the CONTAINING_RECORD macro
+because expressions with them are shorter and easier to read.
+<p>
+See also <a href="1361.html">Set type</a> command.

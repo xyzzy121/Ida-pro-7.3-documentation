@@ -1,0 +1,14 @@
+<a name="IDH_1553"></a>
+<title> loader_input_t.readbytes</title>
+<table width="100%"><tr valign="top"><td><h2> loader_input_t.readbytes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Read a multibyte value from the input file
+     result - reference to the variable that will hold the result
+     size   - size of the value. Usually is: 1, 2, 4, 8
+     be     - treat bytes as big-endian?
+Returns: 0:ok, -1:failure
+<p>
+long loader_input_t.readbytes(vref result, long size, long be);
+
+</pre>

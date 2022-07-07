@@ -1,0 +1,14 @@
+<a name="IDH_301"></a>
+<title> set_segment_bounds</title>
+<table width="100%"><tr valign="top"><td><h2> set_segment_bounds</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change segment boundaries
+  ea      - any address in the segment
+  startea - new start address of the segment
+  endea   - new end address of the segment
+  flags   - combination of SEGMOD_... flags
+<p>
+success set_segment_bounds(long ea, long startea, long endea, long flags);
+
+</pre>

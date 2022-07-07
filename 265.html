@@ -1,0 +1,14 @@
+<a name="IDH_265"></a>
+<title> prev_head</title>
+<table width="100%"><tr valign="top"><td><h2> prev_head</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get previous defined item (instruction or data) in the program
+     ea    - linear address to start search from
+     minea - the search will stop at the address
+             minea is included in the search range
+returns: BADADDR - no (more) defined items
+<p>
+long prev_head(long ea, long minea);
+
+</pre>

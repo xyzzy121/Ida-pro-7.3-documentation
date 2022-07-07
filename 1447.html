@@ -1,0 +1,25 @@
+<a name="IDH_1447"></a>
+<title>Function tracing</title>
+<table width="100%"><tr valign="top"><td><h2>Function tracing</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ToggleTraceFunctions
+ </pre>
+This command starts function tracing.
+You can then use all debugger commands as usual: the debugger will save all
+addresses where a call to a function or a return from a function occurred.
+<p>
+Internally, the debugger runs the current thread step by step
+to properly detect all function calls and returns.
+This explains why functions tracing is slower than a normal execution.
+<pre>
+ See also <a href="1444.html">Trace window</a>
+          <a href="1629.html">Trace management</a>
+          <a href="1445.html">Clear trace</a>
+          <a href="1446.html">Instruction tracing</a>
+          <a href="1628.html">Basic block tracing</a>
+          <a href="1448.html">Add write trace</a>
+          <a href="1449.html">Add read/write trace</a>
+          <a href="1450.html">Add execution trace</a>
+          <a href="1451.html">Tracing options</a>
+          <a href="1443.html">Tracing</a> submenu.</pre>

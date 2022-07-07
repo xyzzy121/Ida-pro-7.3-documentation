@@ -1,0 +1,40 @@
+<a name="IDH_1626"></a>
+<title>Proximity view</title>
+<table width="100%"><tr valign="top"><td><h2>Proximity view</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Starting from IDA v6.2, the callgraph of a program can be displayed in a
+graph form.
+<p>
+In the proximity view, the current address, the callers and the callees
+are represented as a collection of nodes linked together with edges. Nodes
+represent functions and data references (global variables, strings, etc..)
+and edges represent code or data cross-references between them.
+<p>
+To open the proximity view press the '-' key to zoom out and switch to the
+callgraph of the address under cursor.
+<p>
+Only the address names (function names or data labels) are displayed in the proximity view, but not the
+disassembly, nonetheless, hovering the mouse over a node will display brief disassembly listing in a
+resizable hint window. To see the complete disassembly listing switch to text or graph mode by pressing
+'+' or Space respectively.
+<p>
+When disassembling new files, IDA will display a dialog offering to switch to proximity view
+when applicable. It is possible to turn off this dialog and not show it again.
+<p>
+In the proximity view there are 3 types of nodes: Function nodes, data nodes
+and auxiliar nodes. Function nodes are rectangular and they have a toolbar.
+Those nodes are used to display the callers or callees of the current
+central node (or any of his parents or children). Data nodes
+are rectangular nodes (without a toolbar) and they are used to display the
+data references (global variables, strings, etc...) to/from the current
+central node or any of his parents and children.
+<p>
+Please select one of the following topic to learn more about graphs:
+<pre>
+ - <a href="241.html">Selections in graphs</a>
+ - <a href="281.html">Zooming graphs</a>
+ - <a href="1117.html">Scrolling graphs</a>
+ - <a href="1130.html">Graph overview window</a>
+ - <a href="1142.html">Graph colors</a>
+ - <a href="19.html">Graph options</a>
+</pre>

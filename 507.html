@@ -1,0 +1,35 @@
+<a name="IDH_507"></a>
+<title>Create a new segment</title>
+<table width="100%"><tr valign="top"><td><h2>Create a new segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: CreateSegment
+ </pre>
+This command allows you to create a new segment.
+<p>
+If you select a range using the <a href="420.html">anchor</a>, IDA will propose the start
+address and the end address of the selection as defaults for the segment bounds.
+<p>
+You need to specify at least:
+<pre>
+    - the segment start address
+    - the segment end address (excluded from the range)
+    - the segment base
+</pre>
+Click <a href="508.html">here</a> to learn about addressing model used in IDA.
+<p>
+If &quot;sparse storage&quot; is set, IDA will use special sparse storage method
+for the segment. This method is recommended for huge segments.
+Later, it is possible to change the storage method of any region using
+<a href="1527.html">set_storage_type</a> IDC function.
+<p>
+If another segment already exists at the specified address,
+the existing segment is truncated and the new segment lasts from the
+specified start address to the next segment
+(or specified end address, whichever is lower). If the old and the new segments
+have the same base address, instructions/data will not be discarded by IDA.
+Otherwise, IDA will discard all instructions/data of the new segment.
+<p>
+An additional segment may be created by IDA to cover the range after the end of the new segment.
+<p>
+See also <a href="506.html">Edit|Segments</a> submenu.

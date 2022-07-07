@@ -1,0 +1,64 @@
+<a name="IDH_1078"></a>
+<title>Intel Mac OS X debugger</title>
+<table width="100%"><tr valign="top"><td><h2>Intel Mac OS X debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The Intel Mac OS X debugger has the following particularities and limitations:
+<p>
+- OSX requires debugger applications to be codesigned.
+<pre>
+  We do not codesign the main IDA Pro application. This is to make it easier for users
+  to write binary plugins. If you want to debug with IDA using the Local Mac OS X Debugger,
+  you will have to run IDA with elevated permissions.
+</pre>
+<pre>
+  We suggest that users use the Remote Mac OS X Debugger along with the mac debugger servers,
+  even when debugging locally. The debug servers are shipped with IDA and are already codesigned,
+  so they are able to debug right out of the box.
+</pre>
+<pre>
+  If for whatever reason the server's code signature is not valid on your machine,
+  IDA will display a message that looks like:
+</pre>
+<pre>
+    Permission denied. Please ensure that '%s' is either codesigned or running as root.
+</pre>
+<pre>
+  This means that OSX refused to recognize the server as a trusted application, in spite of its signature.
+  To get around this, you can create a Self-Signed Certificate, and use this to codesign the server:
+</pre>
+<pre>
+  1. Follow the steps at <a href="https://llvm.org/svn/llvm-project/lldb/trunk/docs/code-signing.txt">https://llvm.org/svn/llvm-project/lldb/trunk/docs/code-signing.txt</a>
+</pre>
+<pre>
+     and replace all instances of 'lldb_codesign' with 'mac_server'.
+</pre>
+<pre>
+  2. $ codesign --force -s mac_server /path/to/mac_server
+     $ codesign --force -s mac_server /path/to/mac_server64
+</pre>
+<pre>
+  The servers should now be able to properly debug.
+</pre>
+<pre>
+  Also note that even if the servers have been properly codesigned, you will still need to
+  provide OSX with your credentials to authorize the debugging session. This only needs to be done
+  once per user login session. Subsequent runs of the debugger should run silently.
+</pre>
+- In Mac OS X, UNIX signals are emulated on top of the Mach microkernel.
+The debugger hooks to the microkernel events to get information about
+the application, effectively hiding the signals from installed signal
+handlers. We will try to solve this problem in the future.
+<p>
+- In multithreaded applications running on multicore processors, several events
+may happen simutlaneously. For example, several threads may activate a breakpoint
+at the same time. In IDA, these events will be presented sequentially.
+For example, the user might decide to single step for the first presented
+breakpoint. In response to the user's command,
+IDA will present all other breakpoints and only when the user will have handled all breakpoints,
+the execution will be resumed.
+
+<pre>
+ See also <a href="1463.html">How to launch remote debugging</a>
+          <a href="1395.html">Debugger</a> submenu
+          <a href="1397.html">Start process</a>
+          <a href="1677.html">Remote iOS debugger</a></pre>

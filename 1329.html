@@ -1,0 +1,82 @@
+<a name="IDH_1329"></a>
+<title>Bochs debugger</title>
+<table width="100%"><tr valign="top"><td><h2>Bochs debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The Bochs debugger plugin uses the Bochs internal command line debugger.
+For more about the internal debugger: <a href="http://bochs.sourceforge.net/doc/docbook/user/internal-debugger.html">http://bochs.sourceforge.net/doc/docbook/user/internal-debugger.html</a>
+<p>
+To use the Bochs debugger plugin, the following steps must be carried out:
+<pre>
+  - Download and install Bochs v2.6.x from:
+        <a href="http://bochs.sourceforge.net/getcurrent.html">http://bochs.sourceforge.net/getcurrent.html</a>
+</pre>
+<pre>
+    For Mac OS or Linux, please refer to the following guide:
+        <a href="https://www.hex-rays.com//products/ida/support/tutorials/debugging_bochs_linux.pdf">https://www.hex-rays.com//products/ida/support/tutorials/debugging_bochs_linux.pdf</a>
+</pre>
+<pre>
+  - Open or create an IDB file in IDA and select the Bochs debugger
+</pre>
+<pre>
+  - Configure the debugger specific options in
+        Debugger Options, Set specific options.
+    One of three possible modes of operation can be selected: image, idb, or pe.
+</pre>
+Because the debugger plugin uses the Bochs command line debugger, it has the
+following limitations:
+<pre>
+  - Breakpoints: the Bochs debugger has the limit of 10 physical, 10
+    virtual, and 10 linear breakpoints. Since IDA uses some breakpoints
+    for its own purposes, only 20 breakpoints can be set by the user
+</pre>
+<pre>
+  - Watchpoints: the Bochs debugger has the limit of 16 read and 16 write
+    watchpoints
+</pre>
+<pre>
+  - FPU registers, MMX, XMM, control, task and segment registers cannot be modified
+</pre>
+There are ways to overcome some of the limitations mentioned above by downloading
+Bochs source code and modifying it. For example, the number of allowed breakpoints
+can be increased.
+<p>
+The Bochs debugger configuration dialog box has the following entries:
+<pre>
+  BOCHSRC
+    This is the path to the Bochs configuration file template. It contains
+    special variables prefixed with &quot;$&quot;. These variables should not be
+    modified or changed by the user, as they are automatically filled by the
+    plugin. Other entries can be modified as needed.
+</pre>
+<pre>
+  Operation mode
+    The user can choose between <a href="1330.html">Disk Image</a>,
+    <a href="1331.html">IDB</a> and <a href="1332.html">PE</a> operation modes.
+</pre>
+<pre>
+  Delete image files upon session end
+    If enabled, IDA will automatically delete the Bochs disk images used for
+    the debugging session (this option only applies to IDB and PE operation modes).
+    If the plugin (in IDB operation mode) finds a previously created image, it verifies that it
+    corresponds to the database and uses it as is. Unchecking this option
+    for the IDB operation mode will speed up launching the debugger.
+</pre>
+<pre>
+  64-bit emulation
+    This options enables 64bit emulation. It is only present in the 64-bit version of IDA.
+    By default, the Bochs plugin will try to detect whether to choose 32 or 64-bit emulation.
+</pre>
+Default configuration parameters are taken from ida\cfg\dbg_bochs.cfg.
+<p>
+The Bochs debugger module adds a new menu item: Debugger, Bochs Command.
+It can be used to send arbitrary commands to Bochs. The command output is
+displayed in the message window (there is also an IDC counterpart of this function,
+please refer to &quot;startup.idc&quot; file). This command is very useful but may interfere
+with IDA, especially if the user modifies breakpoints or resume execution outside IDA.
+<pre>
+ See also:
+        <a href="1330.html">Disk Image operation mode</a>
+        <a href="1331.html">Bochs IDB operation mode</a>
+        <a href="1332.html">Bochs PE operation mode</a>
+        <a href="1333.html">Bochs plugin operation mode FAQ</a>
+</pre>

@@ -1,0 +1,22 @@
+<a name="IDH_1253"></a>
+<title> gen_flow_graph</title>
+<table width="100%"><tr valign="top"><td><h2> gen_flow_graph</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Generate a flow chart GDL file
+     outfile - output file name. GDL extension will be used
+     title   - graph title
+     ea1     - beginning of the range to flow chart
+     ea2     - end of the range to flow chart. if ea2 == BADADDR
+               then ea1 is treated as an address within a function.
+               That function will be flow charted.
+     flags   - combination of CHART_... constants
+<p>
+success gen_flow_graph(string outfile, string title, long ea1, long ea2, long flags);
+<p>
+#define CHART_PRINT_NAMES 0x1000 // print labels for each block?
+#define CHART_GEN_GDL     0x4000 // generate .gdl file (file extension is forced to .gdl)
+#define CHART_WINGRAPH    0x8000 // call wingraph32 to display the graph
+#define CHART_NOLIBFUNCS  0x0400 // don't include library functions in the graph
+
+</pre>

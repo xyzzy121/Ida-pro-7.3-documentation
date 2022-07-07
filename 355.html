@@ -1,0 +1,20 @@
+<a name="IDH_355"></a>
+<title> add_entry</title>
+<table width="100%"><tr valign="top"><td><h2> add_entry</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+add entry point
+     ordinal  - entry point number
+                if entry point doesn't have an ordinal
+                number, 'ordinal' should be equal to 'ea'
+     ea       - address of the entry point
+     name     - name of the entry point. If null string,
+                the entry point won't be renamed.
+     makecode - if 1 then this entry point is a start
+                of a function. Otherwise it denotes data bytes.
+returns: 0 - entry point with the specifed ordinal already exists
+         1 - ok
+<p>
+success add_entry(long ordinal, long ea, string name, long makecode);
+
+</pre>

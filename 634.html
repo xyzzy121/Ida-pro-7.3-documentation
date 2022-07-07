@@ -1,0 +1,24 @@
+<a name="IDH_634"></a>
+<title>Unpacked database is dangerous</title>
+<table width="100%"><tr valign="top"><td><h2>Unpacked database is dangerous</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+First of all, you can lose all information because you will not have a backup
+copy of the database. IDA makes modifications to the unpacked database
+and if some unexpected condition occurs, the unpacked database
+is usually damaged. IDA is able to repair this database, but some information
+could be irreversibly lost, leading to disastrous consequences.
+<p>
+The only advantage of the unpacked database is that it is loaded very fast.
+the same way, exiting IDA is fast too.
+<p>
+If packing is disabled, the <a href="449.html">abort</a> command will not be available
+the next time the database is loaded.
+<p>
+We strongly discourage using unpacked databases.
+<p>
+To disable this prompt in the future, simply modify ASK_EXIT_UNPACKED parameter in IDATUI.CFG or IDAGUI.CFG file.
+<p>
+Please note that when the &quot;File -&gt; Save as&quot; is used with an unpacked database, IDA
+will continue to use the unpacked database and not the newly created database (the saved as one).
+In this case, please close and re-open the newly created database to ensure that IDA will use it
+instead of the original database.

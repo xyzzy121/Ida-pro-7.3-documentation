@@ -1,0 +1,26 @@
+<a name="IDH_1510"></a>
+<title>Toggle leading zeroes</title>
+<table width="100%"><tr valign="top"><td><h2>Toggle leading zeroes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ToggleLeadingZeroes
+ </pre>
+This command displays or hides the leading zeroes of the current operand.
+Example: if the instruction looked like this:
+<pre>
+        and     ecx, 40h
+</pre>
+then after applying the command it will look like this:
+<pre>
+        and     ecx, 00000040h
+</pre>
+If you prefer to see leading zeroes in all cases, then open the
+<a href="596.html">calculator</a>
+and enter the following expression:
+<pre>
+        <a href="285.html">set_inf_attr</a>(INF_GENFLAGS, get_inf_attr(INF_GENFLAGS) | INFFL_LZERO);
+</pre>
+This will toggle the default for the current database and all numbers
+without leading zeroes will become numbers with leading zeroes, and vice versa.
+<p>
+See also <a href="1382.html">Edit|Operand types|Number</a> submenu.

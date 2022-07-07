@@ -1,0 +1,32 @@
+<a name="IDH_1396"></a>
+<title>Debugger window</title>
+<table width="100%"><tr valign="top"><td><h2>Debugger window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Debugger
+ </pre>
+Opens the debugger window.
+<p>
+In this window, you can view the register values for the selected thread.
+The debugger always selects the thread where the latest debugging event occurred.
+<p>
+For most registers, we have two different boxes:
+<pre>
+       - the first box (on the left) indicates the current value of the register.
+         Blue indicates that the value has changed since the last debugging event.
+         Purple indicates that the value has been modified by the user.
+         A popup menu is available on this control, offering different commands.
+</pre>
+<pre>
+       - the second box (on the right) shows the current value of the register,
+         interpreted like an address (if possible).
+</pre>
+For a segment register, we only have one box indicating the current value.
+<p>
+For the flags register, we have one box indicating the current value,
+and small boxes indicating the status of the most important flags.
+<p>
+A popup menu is accessible everywhere in the window, which allows the user to show or
+hide different parts of the window: toolbar, thread list and available register classes.
+<p>
+See also <a href="1395.html">Debugger</a> submenu.

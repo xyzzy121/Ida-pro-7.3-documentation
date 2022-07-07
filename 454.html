@@ -1,0 +1,37 @@
+<a name="IDH_454"></a>
+<title>Convert to string literal</title>
+<table width="100%"><tr valign="top"><td><h2>Convert to string literal</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeStrlit
+ </pre>
+This command converts the current unexplored bytes to a string.
+<p>
+The set of allowed characters is specified in the <a href="419.html">configuration</a>
+file, parameter StrlitChars. Character '\0' is not allowed in any case.
+If the current <a href="619.html">assembler</a> does not allow characters above 0x7F,
+characters with high bit set are not allowed.
+<p>
+If the <a href="420.html">anchor</a> has been dropped, IDA will take for the string
+all characters between the current cursor position and the anchor.
+<p>
+Use the <a href="420.html">anchor</a> if the string starts a disallowed character.
+<p>
+This command also generates a <a href="424.html">name</a> for the string.
+In the <a href="419.html">configuration</a> file, you can specify the
+characters allowed in names (NameChars).
+<p>
+You can change the literal string length using <a href="455.html">Array</a> command.
+<p>
+The GUI version allows you to assign a special hotkey to create
+Unicode strings. To do so, change the value of the StringUnicode
+parameter in the IDAGUI.CFG file.
+<p>
+<h3>Pascal Strings</h3>
+
+<p>
+To create Pascal style strings (with first byte indicating string
+length) use <a href="613.html">Set String Style</a> command.
+<p>
+See also
+ <a href="451.html">Edit</a> submenu

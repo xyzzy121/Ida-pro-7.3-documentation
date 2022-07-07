@@ -1,0 +1,13 @@
+<a name="IDH_252"></a>
+<title> get_wide_dword</title>
+<table width="100%"><tr valign="top"><td><h2> get_wide_dword</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of program double word (4 bytes)
+     ea - linear address
+returns: the value of the double word. Throws an exception on failure.
+<p>
+long get_wide_dword(long ea);
+#define dword(ea) get_wide_dword(ea)
+
+</pre>

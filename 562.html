@@ -1,0 +1,26 @@
+<a name="IDH_562"></a>
+<title>Problem: The decision made by IDA was wrong and rolled back</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: The decision made by IDA was wrong and rolled back</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        This problem occurs when IDA has converted unexplored bytes to
+        instruction(s) and later found that the decision was wrong.
+        For example:
+</pre>
+<pre>
+                mov     ax, bx
+                db 0FFh, 0FFh
+</pre>
+<pre>
+        0FFh, 0FFh cannot be converted to an instruction, therefore
+        the &quot;mov&quot; instruction cannot be here.
+</pre>
+<pre>
+        In this case, IDA automatically destroys the instruction(s)
+        and enlists the address as problematic.
+</pre>
+<pre>
+ What to do:
+        Examine the end result and modify it accordingly.
+</pre>

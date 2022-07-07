@@ -1,0 +1,274 @@
+<a name="IDH_1375"></a>
+<title>Environment variables</title>
+<table width="100%"><tr valign="top"><td><h2>Environment variables</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+The following environment variables are used by IDA:
+<p>
+TMP or TEMP     Specifies the directory where the temporary files will
+                be created.
+                Default: C:\TEMP
+<p>
+EDITOR          The name of the preferred text editor.
+<p>
+IDALOG          Specifies the name of the log file. Everything appearing
+                in the message window will be dumped there.
+                Default: none
+<p>
+IDALOG_SILENT   Suppress all output to the message window.
+                If the IDALOG variable is set, messages will continue to
+                be written to the log file. Otherwise, they will be lost.
+<p>
+IDADIR          Specifies the IDA directory.
+                Default: the directory where IDA executable is located
+<p>
+IDA_LOADALL     The selected loader will load all segments without asking
+<p>
+IDAUSR          Specifies the directory for user-specific settings.
+                Default: Windows:  %APPDATA%/Hex-Rays/IDA Pro
+                         Linux:    $HOME/.idapro
+                         Mac OS X: $HOME/.idapro
+<pre>
+                This variable can contain multiple paths, in which case they must
+                be separated by the platform's path separator character (i.e., ';'
+                on Windows, and ':' on Linux &amp; Mac OS X.)
+</pre>
+<pre>
+          <b>NOTE:</b> Using %IDAUSR% for loading plugins.
+</pre>
+<pre>
+                %IDAUSR% will be considered when scanning for plugins: for
+                each directory component of %IDAUSR%, IDA will iterate on
+                files in its &quot;plugins&quot; subdirectory, in alphabetical order.
+</pre>
+<pre>
+                Plugins with the same case-insensitive file name (without
+                extension) are considered to be duplicates and are ignored;
+                only the first plugin with a given name will be considered.
+                Thus, let's say %IDAUSR% is set to &quot;C:\my_idausr&quot;, and a file
+                &quot;C:\my_idausr\plugins\DWARF.py&quot; exists, then
+                &quot;C:\my_idausr\plugins\DWARF.py&quot; will be picked up first while
+                &quot;%IDADIR%\plugins\dwarf.dll&quot; will be considered conflicting,
+                and thus ignored.
+</pre>
+<pre>
+                In addition, in each directory, IDA first looks for plugins
+                with the native extension (e.g., &quot;.dll&quot; on Windows) and only
+                then looks for files with extensions corresponding to
+                extension languages (e.g., &quot;.idc&quot;, &quot;.py&quot;, ...)
+                Consequently if two files, say &quot;foo.dll&quot; and &quot;foo.py&quot;, are
+                present in the same directory, &quot;foo.dll&quot; will be picked first,
+                and &quot;foo.py&quot; will be considered conflicting, and thus ignored.
+</pre>
+<pre>
+          <b>NOTE:</b> Using %IDAUSR% for overriding configuration.
+</pre>
+<pre>
+                %IDAUSR% will be considered when looking for configuration
+                files, after the config file found in %IDADIR%\cfg has been
+                read.
+</pre>
+<pre>
+                After %IDADIR%\cfg\&lt;filename&gt; has been read &amp; applied, for
+                each directory component of %IDAUSR%, IDA will look for
+                cfg/&lt;filename&gt; in it, and, if found, read &amp; apply its
+                contents as well.
+</pre>
+<pre>
+                This enables users to have their own small, fine-tuned
+                configuration files containing just the bits they wanted to
+                override, stored in one (or more) folder(s) of their choosing.
+</pre>
+<pre>
+          <b>NOTE:</b> Using %IDAUSR% for specifying themes
+</pre>
+<pre>
+                %IDAUSR% will be considered when scanning for themes: for
+                each directory component of %IDAUSR%, IDA will iterate on
+                subdirectories in its &quot;themes&quot; subdirectory.
+</pre>
+<pre>
+          <b>NOTE:</b> Using %IDAUSR% for providing additional loaders, processor
+                modules, .til files, .sig and .ids files
+</pre>
+<pre>
+                %IDAUSR% will also be considered when building the list of
+                existing loaders, processor modules, .til, .sig and .ids files.
+                The following directories will be inspected:
+                       %IDAUSR%\loaders
+                       %IDAUSR%\procs
+                       %IDAUSR%\til\&lt;arch-name&gt;
+                       %IDAUSR%\sig\&lt;arch-name&gt;
+                       %IDAUSR%\ids\&lt;platform-name&gt;
+</pre>
+IDA_MINIDUMP    (Windows only) If IDA crashes, it creates a minidump file with
+                the MiniDumpWrite(). Use this environment variable to specify
+                MiniDump flags (a combination of MINIDUMP_TYPE flags as a
+                hexadecimal number).
+                If set to &quot;NO&quot;, IDA will not write a dump.
+<p>
+IDA_MDMP_INIT   (Windows only) Let IDA load dbghlp.dll on startup so it is
+                used for crash dump file generation in case of a crash. If
+                not set, IDA will load dbghlp.dll dynamically (if needed).
+                Using this option may cause the Windbg debugger plugin to
+                malfunction in case its dbghlp.dll does not match the one
+                loaded by IDA.
+<p>
+IDA_NOEH        If set, disable IDA's own exception handler and let all
+                possible crashes to be handled by the OS or active debugger.
+                It is useful if you're debugging a crash in a plugin or
+                processor module.
+<p>
+IDAIDS          Specifies the directory with the IDS files.
+                Default: %IDADIR%\IDS
+<p>
+IDASGN          Specifies the directory with the SIG files.
+                Default: %IDADIR%\SIG
+<p>
+IDATIL          Specifies the directory with the TIL files.
+                Default: %IDADIR%\TIL
+<p>
+IDAIDC          Specifies the directory with the IDC files.
+                Default: %IDADIR%\IDC
+<p>
+IDA_NONAMES     Disables the name resolution
+<p>
+IDA_NO_HISTORY  Disables updating file history
+<p>
+IDA_NORELOC     Disables processing of the relocation information
+                for some file formats
+<p>
+IDA_NOEXP       Disables processing of the export information
+                for some file formats
+<p>
+IDA_NOTLS       Disables processing of the TLS entries for some file formats
+<p>
+H8_NOSIZER      Disables the display of the operand sizes for H8 module
+<p>
+IDA_LOADALL     Load all segments of the input file without futher
+                confirmations
+<p>
+IDA_DEBUGBREAKPROCESS (Windows only) IDA debugger will use the
+                DebugBreakProcess() API to break into the process. Otherwise
+                it will instead attempt to set temporary breakpoints for
+                all threads.
+<p>
+IDA_NO_REBASE   IDA Debugger will not rebase the program when debugging.
+                (This will be in effect even if the debugger plugin implements
+                the rebase_if_required_to callback)
+<p>
+IDA_NOWIN       (Text MS Windows version only)
+                Bypass the code trying to find out the foreground window.
+                This code causes problems under WINE.
+<p>
+IDA_DONT_SWITCH_SCREENS
+                (text version only)
+                Tells IDA to keep only one screen even during local
+                debugging sessions. For local debugging sessions,
+                IDA keeps by default one screen for the
+                debugged application and one screen for itself.
+<p>
+IDA_NOAUTOCOMP  Do not autodetect compiler for name demangling.
+                If this variable is absent and the current compiler
+                is one of MS, Borland and Watcom, the compiler
+                is autodetected.
+<p>
+IDA_ELF_PATCH_MODE Overrides patch mode for the new ELF files.
+                If this variable is defined, it must contain a number.
+                Each bit of this number corresponds to an option from the
+                following list:
+<pre>
+   0: Replace PIC form of 'Procedure Linkage Table' to non PIC form
+   1: Direct jumping from PLT (without GOT) regardless of its form
+   2: Convert PIC form of loading '_GLOBAL_OFFSET_TABLE_[]' of address
+   3: Obliterate auxiliary bytes in PLT &amp; GOT for 'final autoanalysis'
+   4: Natural form of PIC GOT address loading in relocatable file
+   5: Unpatched form of PIC GOT references in relocatable file
+   6: Mark 'allocated' objects as library-objects (MIPS only)
+</pre>
+The following variables are used to fine-tune the Linux version of IDA:
+<p>
+TVLOG    the name of the log-file
+         if it is not defined, use syslog with LOG_WARNING priority
+<p>
+TERM     the terminal definition (see terminfo)
+<p>
+TVHEADLESS disable all output (for i/o redirection)
+         if this variable defined, the TVOPT variable is ignored
+         This environment variable also works also in graphical versions of
+         IDA. When set, the graphical interface will not restore desktops,
+         toolbars or show the main window.
+<p>
+TVOPT    the enduser flags. Has many subfields delimited by commas ','.
+     noX11   - when libX11.so is not compatible
+     noGPM   - when libgpm.so is not compatible
+     ansi    -
+          OR
+     mono    - when the terminfo data of your display does not declare
+               it as having the ANSI-color support
+     ign8    - ignore '8bit as meta key' in the terminfo description
+     xtrack  - if your xterm-emulator in telnet client does not support
+               mode 1002 (only 1000), set this flag
+     alt866  - do not encode pseudographic symbols (for the console with
+               alt-font loaded)
+     cyrcvt= - cyrilic conversion (oem/koi8r).
+               possible values are:
+       linux   - for linux russian users and PuTTY (in/out koi8r)
+       kwin    - output in koi8 and input in cp1251 - any telnet
+       windows - for many telnet and any linux users (in/out 1251)
+<pre>
+ Client name | Terminal   | TVOPT  | Client settings
+ ------------|------------|--------|---------------------------------------
+             |            |        |
+ SecureCRT   |xterm-scokey| xtrack | Emulation-&gt;Terminal: xterm,
+             |            |        | Emulation-&gt;keyboard: either the
+             |            |        |   built-in keyboard, either custom
+             |            |        |                  'xt-sco.key' file
+             |            |        | Advanced-&gt;Terminaltype: xterm-scokey
+             |            |        |
+ SecureCRT   |   xterm    | xtrack | Emulation-&gt;Terminal: xterm+internal kbd
+             |            |        |
+             |            |        |
+ Putty       |xterm-scokey|   -    | Terminal,Keyboard: Control?, Standard,
+             |            |        |                    SCO, Normal, Normal
+             |            |        |
+ Putty       |   xterm    |   -    | Terminal,Keyboard: ControlH, Standard,
+             |            |        |                    ~num, Normal, Normal
+             |            |        |
+ Console     |   linux    |   -    | default
+             |            |        |
+ X11:xterm   |   xterm    |   -    | default
+</pre>
+We recommend to use the 'xterm-scokey' terminal type for remote clients.
+<p>
+When the terminal type is xterm-scokey, add  the following string
+to /etc/inputrc (or to ~/.inputrc):
+<p>
+&quot;\e[.&quot;: delete char
+<p>
+When working on the console without GPM installed, append &quot;noGPM&quot; to TVOPT.
+<p>
+Russian users should append the following settings to the above:
+<pre>
+                  | <b>APPEND</b>  TO TVOPT  | <b>APPEND</b> TO Client Settings
+ -----------------|---------------------|----------------------------
+ Console          | alt866,cyrcvt=linux |
+                  |                     |
+ X11              | cyrcvt=linux        |
+                  |                     |
+ Putty            | cyrcvt=linux        | Window,Translation: use font in
+                  |                     |           both ANSI and OEM modes
+                  |                     |
+ SecureCRT        |                     |
+   with koi8font  |                     |
+    and kbd-hook  | cyrcvt=linux        |
+    with koi8font | cyrcvt=kwin         |
+   with ANSI-font | cyrcvt=windows      |
+                  |                     |
+    The best settings for russian users on the console are:
+         setfont alt-8x16.psf.gz -m koi2al
+         loadkey ru-ms.map
+         export TVOPT=cyrcvt=linux,alt866
+</pre>
+
+</pre>

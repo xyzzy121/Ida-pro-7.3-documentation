@@ -1,0 +1,10 @@
+<a name="IDH_1653"></a>
+<title>PIN support for MacOSX</title>
+<table width="100%"><tr valign="top"><td><h2>PIN support for MacOSX</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Recording traces on MacOSX target is not supported yet. Versions equal or prior to
+2.12-55942 does not have support for the API PIN_SpawnInternalThread, which is
+needed by IDA to communicate with the PIN tool.
+<p>
+However, it's possible to record traces from a Linux or Windows target using the
+MacOSX version of IDA.

@@ -1,0 +1,20 @@
+<a name="IDH_349"></a>
+<title> get_frame_size</title>
+<table width="100%"><tr valign="top"><td><h2> get_frame_size</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get full size of function frame
+     ea - any address belonging to the function
+returns: Size of function frame in bytes.
+         This function takes into account size of local
+         variables + size of saved registers + size of
+         return address + number of purged bytes.
+         The purged bytes correspond to the arguments of
+         __stdcall functions.
+         If the function doesn't have a frame, return size of
+         function return address in the stack.
+         If the function does't exist, return 0
+<p>
+long get_frame_size(long ea);
+
+</pre>

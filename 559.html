@@ -1,0 +1,16 @@
+<a name="IDH_559"></a>
+<title>Problem: Too many lines</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Too many lines</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        The current item (instruction or data) occupies more lines
+        on the screen than it is allowed by the current configuration.
+</pre>
+<pre>
+ What to do:
+        1. If the current item is an <a href="455.html">array</a> or <a href="454.html">String literal</a>, try to divide it.
+     or 2. Delete <a href="481.html">Additional comment lines</a>
+     or 3. Disable <a href="607.html">cross-references</a> display
+     or 4. Increase the limit in IDA.CFG, the paramter name is MAX_ITEM_LINES.
+</pre>

@@ -1,0 +1,19 @@
+<a name="IDH_253"></a>
+<title> get_fpnum</title>
+<table width="100%"><tr valign="top"><td><h2> get_fpnum</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of a floating point number (4/8 bytes)
+     ea - linear address or string that contains float number byte rep
+Returns: a floating point number at the specified address.
+If the bytes at the specified address cannot be represented as a floating
+point number, then return integer value -1.
+If the first argument has not long or string type, throw an exception
+<p>
+float get_fpnum(long ea, long size);
+<p>
+// Convenience macros:
+#define get_float(ea)     get_fpnum(ea, 4)
+#define get_double(ea)    get_fpnum(ea, 8)
+
+</pre>

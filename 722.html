@@ -1,0 +1,15 @@
+<a name="IDH_722"></a>
+<title> get_bmask_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> get_bmask_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get bitmask comment (only for bitfields)
+     enum_id - id of enum
+     bmask   - bitmask of the constant
+     repeatable - type of comment, 0-regular, 1-repeatable
+returns: comment attached to bitmask if it exists.
+         otherwise returns 0.
+<p>
+long get_bmask_cmt(long enum_id, long bmask, long repeatable);
+
+</pre>

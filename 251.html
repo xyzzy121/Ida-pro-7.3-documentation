@@ -1,0 +1,16 @@
+<a name="IDH_251"></a>
+<title> get_wide_word</title>
+<table width="100%"><tr valign="top"><td><h2> get_wide_word</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get one wide word (2 'byte') of the program at 'ea'.
+     ea - linear address
+returns: the value of the word. If word has no value then returns 0xFFFF
+Some processors may access more than 8bit quantity at an address.
+These processors have 32-bit byte organization from the IDA's point of view.
+This function takes into account order of bytes specified in inf.is_be()
+<p>
+long get_wide_word(long ea);
+#define word(ea) get_wide_word(ea)
+
+</pre>

@@ -1,0 +1,14 @@
+<a name="IDH_351"></a>
+<title> get_spd</title>
+<table width="100%"><tr valign="top"><td><h2> get_spd</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get current delta for the stack pointer
+     ea      - end address of the instruction
+               i.e. the last address of the instruction+1
+returns: The difference between the original SP upon
+         entering the function and SP for the specified address
+<p>
+long get_spd(long ea);
+
+</pre>

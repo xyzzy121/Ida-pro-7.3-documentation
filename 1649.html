@@ -1,0 +1,22 @@
+<a name="IDH_1649"></a>
+<title> Step Tracing Options</title>
+<table width="100%"><tr valign="top"><td><h2> Step Tracing Options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Get step current tracing options
+// Returns combination of ST_... constants
+<p>
+long get_step_trace_options();
+<p>
+// Set step current tracing options.
+//      options - combination of ST_... constants
+<p>
+void set_step_trace_options(long options);
+<p>
+#define ST_OVER_DEBUG_SEG 0x01 // step tracing will be disabled when IP is in a debugger segment
+#define ST_OVER_LIB_FUNC  0x02 // step tracing will be disabled when IP is in a library function
+#define ST_ALREADY_LOGGED 0x04 // step tracing will be disabled when IP is already logged
+#define ST_SKIP_LOOPS     0x08 // step tracing will try to skip loops already recorded
+#define ST_DIFFERENTIAL   0x10 // tracing: log only new instructions
+
+</pre>

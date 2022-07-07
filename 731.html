@@ -1,0 +1,24 @@
+<a name="IDH_731"></a>
+<title> add_enum</title>
+<table width="100%"><tr valign="top"><td><h2> add_enum</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+add a new enum type
+     idx - serial number of the new enum.
+           If another enum with the same serial number
+           exists, then all enums with serial
+           numbers &gt;= the specified idx get their
+           serial numbers incremented (in other words,
+           the new enum is put in the middle of the list
+           of enums).
+           If idx &gt;= get_enum_qty() or idx == -1
+           then the new enum is created at the end of
+           the list of enums.
+     name - name of the enum.
+     flag - flags for representation of numeric constants
+            in the definition of enum.
+returns: id of new enum or -1.
+<p>
+long add_enum(long idx, string name, long flag);
+
+</pre>

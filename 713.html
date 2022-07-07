@@ -1,0 +1,18 @@
+<a name="IDH_713"></a>
+<title> patch_byte</title>
+<table width="100%"><tr valign="top"><td><h2> patch_byte</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change value of a program byte
+If debugger was active then the debugged process memory will be patched too
+     ea    - linear address
+     value - new value of the byte
+Returns: 1 if the database has been modified,
+         0 if either the debugger is running and the process' memory
+           has value 'value' at address 'ea',
+           or the debugger is not running, and the IDB
+           has value 'value' at address 'ea already.
+<p>
+success patch_byte(long ea, long value);
+
+</pre>

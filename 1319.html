@@ -1,0 +1,23 @@
+<a name="IDH_1319"></a>
+<title> get_processes</title>
+<table width="100%"><tr valign="top"><td><h2> get_processes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Take a snapshot of running processes and return their description.
+returns: the object with the attributes:
+&quot;size&quot; - number of processes
+&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, ... up to the number of processes - 1
+       - contains object which describes the process with the attributes:
+         &quot;pid&quot;  - PID
+         &quot;name&quot; - process name, usually executable name prefixed
+                  with the process bitness
+<p>
+object get_processes(void);
+<p>
+For example, to get the name of the 5th process:
+<pre>
+  extern fifth_name;
+  fifth_name = get_processes()[4].name
+</pre>
+
+</pre>

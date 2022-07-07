@@ -1,0 +1,100 @@
+<a name="IDH_485"></a>
+<title>Edit Function</title>
+<table width="100%"><tr valign="top"><td><h2>Edit Function</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: EditFunction
+ </pre>
+Here you can change function bounds, its name and flags.
+In order to change function end address you could use <a href="487.html">FunctionEnd</a>
+command.
+<p>
+If the current address does not belong to any function, IDA beeps.
+<p>
+This command allows you to change the function frame parameters too.
+You can change the size of some parts of frame structure.
+<p>
+IDA considers the stack as the following structure:
+<pre>
+      +------------------------------+
+      | function arguments           |
+      +------------------------------+
+      | return address               |
+      +------------------------------+
+      | saved registers (SI,DI,etc)  |
+      +------------------------------+  &lt;- BP
+      | local variables              |
+      +------------------------------+  &lt;- SP
+</pre>
+For some processors or functions, BP may be equal to SP. In other words, it can
+point to the bottom of the stack frame.
+<p>
+You may specify the number of bytes in each part of the stack frame. The size of the
+return address is calculated by IDA itself.
+<p>
+&quot;Purged bytes&quot; specifies the number of bytes added to SP upon function return.
+This value will be used to calculate the SP changes at call sites (used in some
+calling conventions, such as __stdcall in Windows 32-bit programs.)
+<p>
+&quot;BP based frame&quot; allows IDA to automatically convert [BP+xxx] operands
+to <a href="474.html">stack variables</a>.
+<p>
+&quot;BP equal to SP&quot; means that the frame pointer points to the bottom of the stack.
+It is usually used for the processors who set up the stack frame with EBP and ESP
+both pointing to the bottom of the frame (currently MC6816, M32R).
+<p>
+If you press &lt;Enter&gt; even without changing any parameter,IDA will reanalyze the function.
+<p>
+Sometimes, EBP points to the middle of the stack frame.
+FPD (frame pointer delta) is used to handle such situations.
+FPD is the value substracted from the EBP before accessing variables.
+An example:
+<pre>
+           push    ebp
+           lea     ebp, [esp-78h]
+           sub     esp, 588h
+           push    ebx
+           push    esi
+           lea     eax, [ebp+74h]
+</pre>
+<pre>
+      +------------------------------+
+      | function arguments           |
+      +------------------------------+
+      | return address               |
+      +------------------------------+
+      | saved registers (SI,DI,etc)  |
+      +------------------------------+  &lt;- typical BP
+      |                              |
+      |                              |
+      |                              |  &lt;- real BP
+      | local variables              |
+      |                              |
+      |                              |
+      |                              |
+      +------------------------------+  &lt;- SP
+</pre>
+In our example, the saved registers area is empty (since EBP has been immediately
+initialized before saving EBX and ESI). The difference between the 'typical BP'
+and 'real BP' is 0x78 and this is the value of FPD.
+<p>
+After specifying FPD=0x78 the last instruction of the example becomes
+<pre>
+           lea     eax, [ebp+78h+var_4]
+</pre>
+where var_4 = -4
+<p>
+Most of the time, IDA calculates the FPD value automatically. If it fails, the user can specify
+the value manually.
+<p>
+If the value of the stack pointer is modified in an unpredictable way,
+(e.g. &quot;and esp, -16&quot;), then IDA marks the function as &quot;fuzzy-sp&quot;.
+<p>
+If this command is invoked for an imported function, then a simplified dialog
+box will appear on the screen.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="484.html">Make a function</a>
+         <a href="486.html">Delete a function</a></pre>

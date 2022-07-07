@@ -1,0 +1,14 @@
+<a name="IDH_111"></a>
+<title> get_first_index</title>
+<table width="100%"><tr valign="top"><td><h2> get_first_index</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get index of the first existing array element
+     tag     - tag of array (AR_LONG or AR_STR)
+     id      - array id
+returns: -1 - array is empty
+         otherwise returns index of the first array element
+<p>
+long get_first_index(long tag, long id);
+
+</pre>

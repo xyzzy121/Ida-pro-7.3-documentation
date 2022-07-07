@@ -1,0 +1,16 @@
+<a name="IDH_1366"></a>
+<title> get_db_byte</title>
+<table width="100%"><tr valign="top"><td><h2> get_db_byte</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get one byte (8-bit) of the program at 'ea' from the database
+even if the debugger is active.
+     ea - linear address
+returns: byte value. If the byte has no value then 0xFF is returned.
+If the current byte size is different from 8 bits, then the returned value
+may have more 1's.
+To check if a byte has a value, use <a href="178.html">is_loaded</a>(ea)
+<p>
+long get_db_byte(long ea);              // get a byte at ea
+
+</pre>

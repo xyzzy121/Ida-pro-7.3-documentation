@@ -1,0 +1,24 @@
+<a name="IDH_434"></a>
+<title>Load IDS file</title>
+<table width="100%"><tr valign="top"><td><h2>Load IDS file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: LoadIdsFile
+ </pre>
+This command loads an IDS file.
+<p>
+An IDS file contains information about well-known functions (such as
+functions from MS Windows API), namely:
+<pre>
+        - their names
+        - their ordinal number in the DLL
+        - an eventual informative comment
+        - the number of parameters passed on the stack
+        - the number of parameters purged when returning
+</pre>
+IDS files are automatically loaded if they are found in the IDS
+directory. This command allows you to load an IDS file from any
+directory, even after the main file has been loaded into the
+database.
+<p>
+See also <a href="430.html">Load... submenu</a> commands.

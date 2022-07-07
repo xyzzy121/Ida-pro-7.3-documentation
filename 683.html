@@ -1,0 +1,16 @@
+<a name="IDH_683"></a>
+<title> create_align</title>
+<table width="100%"><tr valign="top"><td><h2> create_align</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert the current item to an alignment directive
+     ea      - linear address
+     count   - number of bytes to convert
+     align   - 0 or 1..32
+               if it is 0, the correct alignment will be calculated
+               by the kernel
+returns: 1-ok, 0-failure
+<p>
+success create_align(long ea, long count, long align);
+
+</pre>

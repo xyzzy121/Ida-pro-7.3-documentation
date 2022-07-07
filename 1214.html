@@ -1,0 +1,103 @@
+<a name="IDH_1214"></a>
+<title> Debugger: events</title>
+<table width="100%"><tr valign="top"><td><h2> Debugger: events</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Wait for the next event
+This function (optionally) resumes the process
+execution and wait for a debugger event until timeout
+     wfne - combination of WFNE_... constants
+     timeout - number of seconds to wait, -1-infinity
+returns: debugger event codes, see below
+<p>
+long wait_for_next_event(long wfne, long timeout);
+<p>
+// convenience function
+#define resume_process() wait_for_next_event(WFNE_CONT|WFNE_NOWAIT, 0)
+// wfne flag is combination of the following:
+#define WFNE_ANY    0x0001 // return the first event (even if it doesn't suspend the process)
+                           // if the process is still running, the database
+                           // does not reflect the memory state. you might want
+                           // to call refresh_debugger_memory() in this case
+#define WFNE_SUSP   0x0002 // wait until the process gets suspended
+#define WFNE_SILENT 0x0004 // 1: be slient, 0:display modal boxes if necessary
+#define WFNE_CONT   0x0008 // continue from the suspended state
+#define WFNE_NOWAIT 0x0010 // do not wait for any event, immediately return DEC_TIMEOUT
+                           // (to be used with WFNE_CONT)
+#define WFNE_USEC   0x0020 // timeout is specified in microseconds
+                           // (minimum non-zero timeout is 40000us)
+<p>
+// debugger event codes
+#define NOTASK         -2            // process does not exist
+#define DBG_ERROR      -1            // error (e.g. network problems)
+#define DBG_TIMEOUT     0            // timeout
+#define PROCESS_STARTED   0x00000001 // New process started
+#define PROCESS_EXITED    0x00000002 // Process stopped
+#define THREAD_STARTED    0x00000004 // New thread started
+#define THREAD_EXITED     0x00000008 // Thread stopped
+#define BREAKPOINT        0x00000010 // Breakpoint reached
+#define STEP              0x00000020 // One instruction executed
+#define EXCEPTION         0x00000040 // Exception
+#define LIB_LOADED        0x00000080 // New library loaded
+#define LIB_UNLOADED      0x00000100 // Library unloaded
+#define INFORMATION       0x00000200 // User-defined information
+#define PROCESS_ATTACHED  0x00000400 // Attached to running process
+#define PROCESS_DETACHED  0x00000800 // Detached from process
+#define PROCESS_SUSPENDED 0x00001000 // Process has been suspended
+<p>
+// refresh_idaview_anyway debugger memory
+// Upon this call IDA will forget all cached information
+// about the debugged process. This includes the segmentation
+// information and memory contents (register cache is managed
+// automatically). Also, this function refreshes exported name
+// from loaded DLLs.
+// You must call this function before using the segmentation
+// information, memory contents, or names of a non-suspended process.
+// This is an expensive call.
+<p>
+void refresh_debugger_memory(void);
+<p>
+// Get debugged process state
+// returns: one of the DSTATE_... constants (see below)
+<p>
+long get_process_state(void);
+<p>
+#define DSTATE_SUSP             -1 // process is suspended
+#define DSTATE_NOTASK            0 // no process is currently debugged
+#define DSTATE_RUN               1 // process is running
+<p>
+// ***********************************************
+// Get various information about the current debug event
+// These function are valid only when the current event exists
+// (the process is in the suspended state)
+<p>
+// For all events:
+long get_event_id(void);
+long get_event_pid(void);
+long get_event_tid(void);
+long get_event_ea(void);
+long is_event_handled(void);
+<p>
+// For PROCESS_STARTED, PROCESS_ATTACHED, LIB_LOADED events:
+string get_event_module_name(void);
+long get_event_module_base(void);
+long get_event_module_size(void);
+<p>
+// For PROCESS_EXITED, THREAD_EXITED events
+long get_event_exit_code(void);
+<p>
+// For THREAD_STARTED (thread name)
+// For LIB_UNLOADED (unloaded library name)
+// For INFORMATION (message to display)
+string get_event_info(void);
+<p>
+// For BREAKPOINT event
+long get_event_bpt_hea(void);
+<p>
+// For EXCEPTION event
+long get_event_exc_code(void);
+long get_event_exc_ea(void);
+long can_exc_continue(void);
+string get_event_exc_info(void);
+
+</pre>

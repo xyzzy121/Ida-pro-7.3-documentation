@@ -1,0 +1,15 @@
+<a name="IDH_185"></a>
+<title> strstr</title>
+<table width="100%"><tr valign="top"><td><h2> strstr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Search a substring in a string
+     str    - input string
+     substr - substring to search
+returns: 0..n - index in the 'str' where the substring starts
+         -1   - if the substring is not found
+Thread-safe function.
+<p>
+long strstr(string str, string substr);
+
+</pre>

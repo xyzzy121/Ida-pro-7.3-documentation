@@ -1,0 +1,24 @@
+<a name="IDH_145"></a>
+<title>Android debugger</title>
+<table width="100%"><tr valign="top"><td><h2>Android debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The Android debugger has the following particularities and limitations:
+<p>
+- Android on ARM is supported (not on x86)
+<p>
+- Both ARM and Thumb mode code is supported
+<p>
+- Multithreaded applications can be debugged. However, since the operating
+  system does not report thread deaths, they are reported only when
+  the debugger notices that the thread is missing (for example, because
+  there is an error when we try to suspend it)
+<p>
+- Apparently Android reports applications that are currently executing
+  a system call as executing &quot;LDMFD SP!, {R4,R7}&quot; before the syscall.
+  Once the syscall completes, the next instruction is reached.
+<p>
+- Hardware breakpoints are not supported.
+<pre>
+ See also <a href="1397.html">Start process</a>
+          <a href="1395.html">Debugger</a> submenu
+          <a href="1463.html">How to launch remote debugging</a></pre>

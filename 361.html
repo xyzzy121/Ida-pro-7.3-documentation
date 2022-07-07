@@ -1,0 +1,41 @@
+<a name="IDH_361"></a>
+<title> get_fixup_target_type</title>
+<table width="100%"><tr valign="top"><td><h2> get_fixup_target_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get fixup target type
+     ea - address to get information about
+returns: -1 - no fixup at the specified address
+         otherwise returns fixup target type FIXUP_...
+<p>
+long get_fixup_target_type(long ea);
+<p>
+#define FIXUP_MASK      0xF
+#define FIXUP_BYTE      FIXUP_OFF8 // 8-bit offset.
+#define FIXUP_OFF8      0       // 8-bit offset.
+#define FIXUP_OFF16     1       // 16-bit offset.
+#define FIXUP_SEG16     2       // 16-bit base--logical segment base (selector).
+#define FIXUP_PTR32     3       // 32-bit long pointer (16-bit base:16-bit
+                                // offset).
+#define FIXUP_OFF32     4       // 32-bit offset.
+#define FIXUP_PTR48     5       // 48-bit pointer (16-bit base:32-bit offset).
+#define FIXUP_HI8       6       // high  8 bits of 16bit offset
+#define FIXUP_HI16      7       // high 16 bits of 32bit offset
+#define FIXUP_LOW8      8       // low   8 bits of 16bit offset
+#define FIXUP_LOW16     9       // low  16 bits of 32bit offset
+#define FIXUP_REL       0x10    // fixup is relative to the linear address
+                                // specified in the 3d parameter to set_fixup()
+#define FIXUP_SELFREL   0x0     // self-relative?
+                                //   - disallows the kernel to convert operands
+                                //      in the first pass
+                                //   - this fixup is used during output
+                                // This type of fixups is not used anymore.
+                                // Anyway you can use it for commenting purposes
+                                // in the loader modules
+#define FIXUP_EXTDEF    0x20    // target is a location (otherwise - segment)
+#define FIXUP_UNUSED    0x40    // fixup is ignored by IDA
+                                //   - disallows the kernel to convert operands
+                                //   - this fixup is not used during output
+#define FIXUP_CREATED   0x80    // fixup was not present in the input file
+
+</pre>

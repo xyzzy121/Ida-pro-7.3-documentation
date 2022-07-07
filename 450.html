@@ -1,0 +1,41 @@
+<a name="IDH_450"></a>
+<title>Exit IDA</title>
+<table width="100%"><tr valign="top"><td><h2>Exit IDA</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Quit
+ </pre>
+This command terminates the current IDA session. IDA will
+write all changes to the disk and will close all databases.
+<p>
+You can enable/disable database packing. When the database is packed,
+it consists of one file with IDB extension. When the database is not
+packed, it consists of several files on the disk.
+If packing is disabled, in the next session you cannot <a href="449.html">abort</a> IDA.
+We do not recommend to leave the database in the unpacked form because
+you will not have a backup copy.
+<p>
+You can also perform garbage collection on the database before packing it.
+The garbage collection removes the unused database pages, making it smaller.
+However, IDA needs some free database pages when it works,therefore it will
+allocate them again when you reuse the database. Removing and adding
+free pages takes time and, what is most important, it changes the database
+control blocks.
+<p>
+Use garbage collection only when you do not intend to work with the
+database in the near future.
+<p>
+IDA will remember all information about the screen, cursor
+position, jump stack, etc.
+The following information
+will be lost:
+<pre>
+        <a href="418.html">keystroke macros</a>,
+        the <a href="420.html">anchor</a> position
+</pre>
+To resume a disassembly session simply type: &quot;ida file&quot;
+<p>
+See also
+<pre>
+         <a href="429.html">other File... submenu</a> commands.
+         <a href="449.html">Abort</a> command.</pre>

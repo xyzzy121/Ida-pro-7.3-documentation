@@ -1,0 +1,17 @@
+<a name="IDH_561"></a>
+<title>Problem: Decision to convert to instruction/data is made by IDA</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Decision to convert to instruction/data is made by IDA</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        In fact, this is not exactly a problem: IDA collects all the locations
+        where it has decided to convert undefined bytes to
+        instructions or data even if they don't have
+        any references to them. We consider this decision as dangerous
+        and therefore we provide you with a way to examine all such places.
+</pre>
+<pre>
+ What to do:
+        Examine the result of conversion and modify the instructions
+        or data if IDA has made a wrong conversion.
+</pre>

@@ -1,0 +1,32 @@
+<a name="IDH_310"></a>
+<title> set_segm_type</title>
+<table width="100%"><tr valign="top"><td><h2> set_segm_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set segment type
+        arguments:      segea - any address within segment
+                        type  - new segment type:
+        returns:        !=0 - ok
+note: this function is a macro, see its definition at the end of idc.idc
+Note: it is a macro
+<p>
+#define set_segm_type(ea, type)  set_segm_attr(ea, SEGATTR_TYPE, type)
+<p>
+#define SEG_NORM        0
+#define SEG_XTRN        1       // * segment with 'extern' definitions
+                                //   no instructions are allowed
+#define SEG_CODE        2       // pure code segment
+#define SEG_DATA        3       // pure data segment
+#define SEG_IMP         4       // implementation segment
+#define SEG_GRP         6       // * group of segments
+                                //   no instructions are allowed
+#define SEG_NULL        7       // zero-length segment
+#define SEG_UNDF        8       // undefined segment type
+#define SEG_BSS         9       // uninitialized segment
+#define SEG_ABSSYM     10       // * segment with definitions of absolute symbols
+                                //   no instructions are allowed
+#define SEG_COMM       11       // * segment with communal definitions
+                                //   no instructions are allowed
+#define SEG_IMEM       12       // internal processor memory &amp; sfr (8051)
+
+</pre>

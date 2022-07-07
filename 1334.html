@@ -1,0 +1,28 @@
+<a name="IDH_1334"></a>
+<title> set_array_params</title>
+<table width="100%"><tr valign="top"><td><h2> set_array_params</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set array representation format
+     ea      - linear address
+     flags   - combination of AP_... constants or 0
+     litems  - number of items per line. 0 means auto
+     align   - element alignment:
+                 -1: do not align
+                 0:  automatic alignment
+                 other values: element width
+Returns: 1-ok, 0-failure
+<p>
+success set_array_params(long ea, long flags, long litems, long align);
+<p>
+#define AP_ALLOWDUPS    0x00000001L     // use 'dup' construct
+#define AP_SIGNED       0x00000002L     // treats numbers as signed
+#define AP_INDEX        0x00000004L     // display array element indexes as comments
+#define AP_ARRAY        0x00000008L     // reserved (this flag is not stored in database)
+#define AP_IDXBASEMASK  0x000000F0L     // mask for number base of the indexes
+#define   AP_IDXDEC     0x00000000L     // display indexes in decimal
+#define   AP_IDXHEX     0x00000010L     // display indexes in hex
+#define   AP_IDXOCT     0x00000020L     // display indexes in octal
+#define   AP_IDXBIN     0x00000030L     // display indexes in binary
+
+</pre>

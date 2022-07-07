@@ -1,0 +1,14 @@
+<a name="IDH_1321"></a>
+<title> get_qword</title>
+<table width="100%"><tr valign="top"><td><h2> get_qword</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of program quadro word (8 bytes)
+     ea - linear address
+returns: the value of the quadro word. If failed, throws an exception
+Note: this function is available only in the 64-bit version of IDA Pro
+<p>
+long get_qword(long ea);
+#define qword(ea) get_qword(ea)
+
+</pre>

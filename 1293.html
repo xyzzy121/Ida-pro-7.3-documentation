@@ -1,0 +1,13 @@
+<a name="IDH_1293"></a>
+<title> process_config_line</title>
+<table width="100%"><tr valign="top"><td><h2> process_config_line</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Parse one or more ida.cfg config directives
+     line - directives to process, for example: PACK_DATABASE=2
+If the directives are erroneous, a fatal error will be generated.
+The changes are permanent: effective for the current session and the next ones
+<p>
+void process_config_line(string directive);
+
+</pre>

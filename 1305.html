@@ -1,0 +1,40 @@
+<a name="IDH_1305"></a>
+<title>Cross reference attributes</title>
+<table width="100%"><tr valign="top"><td><h2>Cross reference attributes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The cross reference dialog displays a list of references to the various items.
+Each line has the following attributes:
+<p>
+Direction
+        Up or Down. Meainingful for program address; denotes where the
+        reference comes from, from the lower addresses than the reference
+        target (down) or from higher addresses (up).
+<p>
+Type
+<pre>
+        The following types exist:
+</pre>
+<pre>
+          o - offset, the address of the item is taken
+          r - read access
+          w - write access
+          t - textual referenced (used for manually specified operands)
+          i - informational (e.g. a derived class refers to its base class)
+          J - far (intersegment) jump
+          j - near (intrasegment) jump
+          P - far (intersegment) call
+          p - near (intrasegment) call
+          ^ - ordinary flow
+          s - xref from a structure
+          m - xref from a structure member
+          k - xref from a stack variable
+</pre>
+Address
+<pre>
+        For 'xrefs to' dialogs: where the reference comes from (source)
+        For 'xrefs from' dialogs: where the reference goes to (destination)
+</pre>
+Text
+<pre>
+        Additional info about the cross reference
+</pre>

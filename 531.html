@@ -1,0 +1,24 @@
+<a name="IDH_531"></a>
+<title>Rename Any Address</title>
+<table width="100%"><tr valign="top"><td><h2>Rename Any Address</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeAnyName
+ </pre>
+This command gives name/renames/deletes <a href="424.html">name</a> for the
+specified address. This is a more powerful variant of <a href="457.html">Rename</a> command.
+<p>
+To delete a name, simply give an empty name.
+<p>
+If the specified address is referenced, you cannot delete its name.
+Even if you try it, IDA will generate a <a href="609.html">dummy</a> name.
+<p>
+This command is available only from the <a href="587.html">name window</a>.
+<p>
+For an explanation about the dialog box entries, please see the <a href="457.html">Rename current address</a> command.
+<p>
+See also
+<pre>
+         <a href="530.html">Edit|Other</a> submenu.
+         <a href="424.html">How to Enter an Identifier</a>.
+         <a href="609.html">Names representation</a>.</pre>

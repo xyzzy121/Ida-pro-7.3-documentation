@@ -1,0 +1,16 @@
+<a name="IDH_1442"></a>
+<title>Run until return</title>
+<table width="100%"><tr valign="top"><td><h2>Run until return</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ThreadRunUntilReturn
+ </pre>
+This command executes assembler instructions and stops on the instruction
+immediately following the instruction that called the current function.
+<p>
+Internally, IDA executes each instruction in the current function until
+a 'return from function' instruction is reached.
+<pre>
+ See also <a href="1401.html">Step into</a>
+          <a href="1402.html">Step over</a>
+          <a href="1395.html">Debugger</a> submenu.</pre>

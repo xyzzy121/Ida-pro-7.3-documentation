@@ -1,0 +1,35 @@
+<a name="IDH_525"></a>
+<title>Choose segment</title>
+<table width="100%"><tr valign="top"><td><h2>Choose segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA can display a list of the program segments.
+Each segment is represented by a line in the list.
+Please note that the end address of the segment never belongs to the segment in IDA.
+<p>
+The following segment attributes are visible:
+<pre>
+  Name          Segment name
+  Start         Virtual start address
+  End           Virtual end address (address past the end of the segment)
+  R             'R': readable,      '.': not readable,   '?':unknown
+  W             'W': writable,      '.': not writable,   '?':unknown
+  X             'X': executable,    '.': not executable, '?':unknown
+  D             'D': debugger only, '.': regular
+  L             'L': created by loader, '.': no
+  Align         Segment alignment
+  Base          Segment base selector or address
+  Type          Segment type
+  Class         Segment class
+  AD            Segment addressing width
+</pre>
+The rest of the columns display the default values of the segment registers
+for the segment.
+<p>
+By default, the cursor is located on the current segment.
+<p>
+You can use normal cursor movement keys and the mouse.
+You can also search for the segment by pressing Alt-T, ordirectly jump to the desired line by typing in its number.
+<p>
+Press &lt;Enter&gt; to select line, &lt;Esc&gt; to cancel the selection.
+<p>
+See also <a href="506.html">other segment related commands</a>

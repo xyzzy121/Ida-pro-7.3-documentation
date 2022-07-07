@@ -1,0 +1,15 @@
+<a name="IDH_325"></a>
+<title> readlong</title>
+<table width="100%"><tr valign="top"><td><h2> readlong</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+read 4 bytes from file
+     handle  - file hanlde
+     mostfirst  - 0 least significant byte is first (intel)
+                  1 most  significant byte is first
+returns: a 32-bit value
+Thread-safe function.
+<p>
+long readlong(long handle, long mostfirst);
+
+</pre>

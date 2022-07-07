@@ -1,0 +1,14 @@
+<a name="IDH_537"></a>
+<title> get_last_index</title>
+<table width="100%"><tr valign="top"><td><h2> get_last_index</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get index of the last existing array element
+     tag     - tag of array (AR_LONG or AR_STR)
+     id      - array id
+returns: -1 - array is empty
+         otherwise returns index of the last array element
+<p>
+long get_last_index(long tag, long id);
+
+</pre>

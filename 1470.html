@@ -1,0 +1,36 @@
+<a name="IDH_1470"></a>
+<title>Take memory snapshot</title>
+<table width="100%"><tr valign="top"><td><h2>Take memory snapshot</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: TakeSnapshot
+ </pre>
+This command copies the contents of the process memory to the database.
+It is available during a debugging session.
+<p>
+The memory contents will be copied to the database.
+The user may specify that only the segments with the 'loader'
+attribute will be saved in the database.
+<p>
+The segments with the loader attribute are created by the
+input file loader and usually contain information from the input file.
+However, in some cases (like attaching to an existing process),
+there will not be any loader segments because the input file was not
+loaded by IDA.
+<p>
+To be able to make a partial snapshot in this case and other similar cases,
+the user can set or clear the 'loader' attribute of the desired segments
+using the
+<a href="514.html">edit segment</a> command.
+<p>
+After applying this command, the user can terminate the debugging
+process and continue to analyze the program in the database.
+<p>
+Please note that it is possible to save the database without
+taking a memory snapshot. Such a database might be used to keep global
+information about the program like the breakpoint information, notes, etc.
+However, we recommend to take a memory snapshot of at least the 'loader'
+segments because it will allow to save also information about the program
+functions, names, comments, etc.
+<p>
+See also <a href="1395.html">Debugger</a> submenu.

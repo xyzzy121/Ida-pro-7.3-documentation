@@ -1,0 +1,19 @@
+<a name="IDH_556"></a>
+<title>Problem: Cannot disassemble</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Cannot disassemble</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        IDA cannot represent the specified bytes as an instruction.
+</pre>
+<pre>
+ Possible reason(s):
+        1. The specified bytes do not form an instruction.
+        2. The current <a href="618.html">processor</a> type is incorrect.
+</pre>
+<pre>
+ What to do:
+        If you are sure that the specified bytes contain an instruction,
+        you can try to change <a href="618.html">processor</a> type and
+        mark these bytes as an instruction using the following command:
+         <a href="452.html">Convert to instruction</a></pre>

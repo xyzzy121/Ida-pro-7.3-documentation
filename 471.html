@@ -1,0 +1,88 @@
+<a name="IDH_471"></a>
+<title>Complex Offset Expression</title>
+<table width="100%"><tr valign="top"><td><h2>Complex Offset Expression</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+A complex offset expression looks like
+<pre>
+        offset target + delta - offset base
+</pre>
+It is specified by:
+<pre>
+        - type (OFF16, OFF32, LOW16, etc.)
+        - base
+        - optional target
+        - optional delta from target
+</pre>
+The relationship between these parameters is
+(the formula is given for full offsets):
+<pre>
+        operand_value = target + delta - base
+</pre>
+<pre>
+  or (the same relationship in a different form):
+</pre>
+<pre>
+        target = operand_value - delta + base
+</pre>
+You always have to specify the offset type and base.
+Usually, the delta is equal to zero.
+For the full offset type you may omit the offset target, which is recommended.
+In this case, IDA will calculate it automatically.
+However, if you specify the offset target, make sure that the relationship
+between the parameters still holds.
+For the half offset types, you have to specify the target because
+there is no way to calculate it.
+<p>
+The offset types:
+<pre>
+  8-bit full offset            :
+  16-bit full offset           :
+  32-bit full offset           :
+</pre>
+<pre>
+    The full offsets are regular offset expressions like
+</pre>
+<pre>
+        offset label
+</pre>
+<pre>
+    They can occupy 8, 16, or 32 bits.
+    You have to specify the offset base for these offsets.
+</pre>
+<pre>
+  low 8 bits of 16-bit offset  :
+</pre>
+<pre>
+    Only the low 8 bits of the offset. IDA will represent them as
+</pre>
+<pre>
+        (offset label) &amp; 0xFF
+</pre>
+<pre>
+  low 16 bits of 32-bit offset :
+</pre>
+<pre>
+    Only the low 16 bits of the offset. IDA will represent them as
+</pre>
+<pre>
+        (offset label) &amp; 0xFFFF
+</pre>
+<pre>
+  high 8 bits of 16-bit offset :
+</pre>
+<pre>
+    Only the high 8 bits of the offset. IDA will represent them as
+</pre>
+<pre>
+        offset label &gt;&gt; 8
+</pre>
+<pre>
+  high 16 bits of 32-bit offset:
+</pre>
+<pre>
+    Only the high 17 bits of the offset. IDA will represent them as
+</pre>
+<pre>
+        offset label &gt;&gt; 16
+</pre>
+See also <a href="470.html">offset by any user-specified base</a>

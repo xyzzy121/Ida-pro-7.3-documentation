@@ -1,0 +1,16 @@
+<a name="IDH_1289"></a>
+<title> set_local_type</title>
+<table width="100%"><tr valign="top"><td><h2> set_local_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Parse one type declaration and store it in the specified slot
+     ordinal -  slot number (1...NumberOfLocalTypes)
+                -1 means allocate new slot or reuse the slot
+                of the existing named type
+     input -  C declaration. Empty input empties the slot
+     flags -  combination of PT_... constants or 0
+returns: slot number or 0 if error
+<p>
+success set_local_type(long ordinal, string input, long flags);
+
+</pre>

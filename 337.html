@@ -1,0 +1,45 @@
+<a name="IDH_337"></a>
+<title> get_func_flags</title>
+<table width="100%"><tr valign="top"><td><h2> get_func_flags</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+retrieve function flags
+     ea - any address belonging to the function
+returns: -1 - function doesn't exist
+         otherwise returns the flags FUNC_...
+<p>
+#define get_func_flags(ea)        get_func_attr(ea, FUNCATTR_FLAGS)
+<p>
+#define FUNC_NORET         0x00000001L     // function doesn't return
+#define FUNC_FAR           0x00000002L     // far function
+#define FUNC_LIB           0x00000004L     // library function
+#define FUNC_STATIC        0x00000008L     // static function
+#define FUNC_FRAME         0x00000010L     // function uses frame pointer (BP)
+#define FUNC_USERFAR       0x00000020L     // user has specified far-ness
+                                           // of the function
+#define FUNC_HIDDEN        0x00000040L     // a hidden function
+#define FUNC_THUNK         0x00000080L     // thunk (jump) function
+#define FUNC_BOTTOMBP      0x00000100L     // BP points to the bottom of the stack frame
+#define FUNC_NORET_PENDING 0x00000200L     // Function 'non-return' analysis
+                                           // must be performed. This flag is
+                                           // verified upon func_does_return()
+#define FUNC_SP_READY      0x00000400L     // SP-analysis has been performed
+                                           // If this flag is on, the stack
+                                           // change points should not be not
+                                           // modified anymore. Currently this
+                                           // analysis is performed only for PC
+#define FUNC_FUZZY_SP      0x00000800L     // Function changes SP in untraceable way,
+                                           // for example: and esp, 0FFFFFFF0h
+#define FUNC_PROLOG_OK     0x00001000L     // Prolog analysis has be performed
+                                           // by last SP-analysis
+#define FUNC_PURGED_OK     0x00004000L     // 'argsize' field has been validated.
+                                           // If this bit is clear and 'argsize'
+                                           // is 0, then we do not known the real
+                                           // number of bytes removed from
+                                           // the stack. This bit is handled
+                                           // by the processor module.
+#define FUNC_TAIL          0x00008000L     // This is a function tail.
+                                           // Other bits must be clear
+                                           // (except FUNC_HIDDEN)
+
+</pre>

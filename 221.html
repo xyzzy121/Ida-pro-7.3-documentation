@@ -1,0 +1,10 @@
+<a name="IDH_221"></a>
+<title>Maximal number of segments is reached</title>
+<table width="100%"><tr valign="top"><td><h2>Maximal number of segments is reached</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+When IDA tried to delete bytes outside of any segment, the maximal number
+of contiguous chunks is reached. This is NOT a fatal error.
+<p>
+Some bytes outside of any segment will be present =&gt; the output text
+will be incorrect because of these bytes. However, you can delete them in the
+output text using a text editor.

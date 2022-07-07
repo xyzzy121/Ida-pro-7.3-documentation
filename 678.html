@@ -1,0 +1,26 @@
+<a name="IDH_678"></a>
+<title> auto_mark_range</title>
+<table width="100%"><tr valign="top"><td><h2> auto_mark_range</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Plan to perform an action in the future.
+This function will put your request to a special autoanalysis queue.
+Later IDA will retrieve the request from the queue and process
+it. There are several autoanalysis queue types. IDA will process all
+queries from the first queue and then switch to the second queue, etc.
+<p>
+// plan/unplan range of addresses
+void auto_mark_range(long start, long end, long queuetype);
+void auto_unmark(long start, long end, long queuetype);
+<p>
+// plan to analyze an address
+#define auto_mark(ea, qtype)      auto_mark_range(ea, (ea)+1, qtype)
+<p>
+#define AU_UNK  10      // make unknown
+#define AU_CODE 20      // convert to instruction
+#define AU_PROC 30      // make function
+#define AU_USED 40      // reanalyze
+#define AU_LIBF 60      // apply a flirt signature (the current signature!)
+#define AU_FINAL 200    // coagulate unexplored items
+
+</pre>

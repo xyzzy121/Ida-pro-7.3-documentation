@@ -1,0 +1,22 @@
+<a name="IDH_1697"></a>
+<title>Manual memory regions</title>
+<table width="100%"><tr valign="top"><td><h2>Manual memory regions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ManualRegions
+ </pre>
+This command open a window with manual memory regions. In this window the user
+can manipulate memory region definitions: add or delete them.
+<p>
+Some debugger backends (e.g. the gdb backend) do not provide memory layout
+information. IDA needs this information in order to show the memory contents.
+When this information is not available, the user must specify it.
+<p>
+The defined memory regions will be accessible when the debugger is active.
+The user will be able to see the memory contents in the disassembly windows.
+<p>
+If no memory information is provided by the user nor by the debugger backend,
+IDA will assume that entire memory space is accessible. However, it is better
+to specify memory layout more precisely.
+<p>
+See also <a href="1395.html">Debugger</a> submenu.

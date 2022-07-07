@@ -1,0 +1,18 @@
+<a name="IDH_386"></a>
+<title> get_member_offset</title>
+<table width="100%"><tr valign="top"><td><h2> get_member_offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get offset of a member of a structure by the member name
+     id            - structure type ID
+     member_name   - name of structure member
+returns: -1 if bad structure type ID is passed
+         or no such member in the structure
+         otherwise returns offset of the specified member.
+         <b>NOTE:</b> Union members are, in IDA's internals, located
+               at subsequent byte offsets: member 0 -&gt; offset 0x0,
+               member 1 -&gt; offset 0x1, etc...
+<p>
+long get_member_offset(long id, string member_name);
+
+</pre>

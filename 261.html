@@ -1,0 +1,15 @@
+<a name="IDH_261"></a>
+<title> get_sreg</title>
+<table width="100%"><tr valign="top"><td><h2> get_sreg</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of segment register at the specified address
+     ea - linear address
+     reg - name of segment register
+returns: the value of the segment register. The segment registers in
+32bit program usually contain selectors, so to get paragraph pointed by
+the segment register you need to call sel2para() function.
+<p>
+long get_sreg(long ea, string reg);
+
+</pre>

@@ -1,0 +1,19 @@
+<a name="IDH_709"></a>
+<title> update_extra_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> update_extra_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set or update extra comment line
+     ea   - linear address
+     n    - number of additional line (0..MAX_ITEM_LINES)
+     line - the line to display
+IDA displays additional lines from number 0 up to the first unexisting
+additional line. So, if you specify additional line #150 and there is no
+additional line #149, your line will not be displayed.
+MAX_ITEM_LINES is defined in IDA.CFG
+To set anterior  line #n use (E_PREV + n)
+To set posterior line #n use (E_NEXT + n)
+<p>
+void update_extra_cmt(long ea, long n, string line);
+
+</pre>

@@ -1,0 +1,23 @@
+<a name="IDH_710"></a>
+<title> Functions provided by the replayer debugger</title>
+<table width="100%"><tr valign="top"><td><h2> Functions provided by the replayer debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Step back in the currently replayed trace
+// Returns: error code (0 if none happened).
+<p>
+success step_back(void);
+<p>
+// Set the current event number, changing the PC register.
+// Input  : the event to move to
+// Events are numbered in reverse order, i.e. 0 is the last available event.
+// Returns: error code.
+<p>
+success set_current_tev(long event);
+<p>
+// Get the current event number.
+// Returns: the current event number.
+<p>
+long get_current_tev(void);
+
+</pre>

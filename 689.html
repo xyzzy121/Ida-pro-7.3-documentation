@@ -1,0 +1,15 @@
+<a name="IDH_689"></a>
+<title>Empty input file</title>
+<table width="100%"><tr valign="top"><td><h2>Empty input file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The input file doesn't contain any instructions or data, i.e. there is
+nothing to disassemble.
+<p>
+Some file formats allow the situation when the file is not empty
+but it doesn't contain anything to disassemble. For example,
+COFF/OMF/EXE formats could contain a file header which just declares that
+there are no executable sections in the file.
+<p>
+There could be type information, compiler options and other auxiliary
+information in the file. This is the reason why the file doesn't look empty
+but IDA doesn't find anything to disassemble.

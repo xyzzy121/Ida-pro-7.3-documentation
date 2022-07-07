@@ -1,0 +1,22 @@
+<a name="IDH_1218"></a>
+<title> decode_insn</title>
+<table width="100%"><tr valign="top"><td><h2> decode_insn</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Decode an instruction and returns an insn_t object (check ua.hpp)
+     ea - linear address of the instruction to decode
+The return values are:
+     0 =&gt; if the function fails
+   or:
+     insn_t object:
+       cs, ip, ea, itype, size, auxpref, insnpref, segpref, flags
+       n: number of operands
+       is_canonical: Boolean. True if its a canonical instruction.
+       feature, mnem: canonical feature and mnemonic string (if is_canonical is True)
+       Op0..Op7: instances of op_t (check ua.hpp)
+                 n, type, offb, offo, flags, dtyp, reg, value, addr, specval,
+                 specflag1, specflag2, specflag3, specflag4
+<p>
+object decode_insn(long ea);
+
+</pre>

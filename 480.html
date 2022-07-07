@@ -1,0 +1,42 @@
+<a name="IDH_480"></a>
+<title>Create a repeatable comment</title>
+<table width="100%"><tr valign="top"><td><h2>Create a repeatable comment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeRptCmt
+ </pre>
+This command allows you to enter a repeatable comment. A repeatable
+comment will appear attached to the current item and all other items
+referencing it.
+<p>
+If you stand at the function start, IDA will ask you to enter a function comment.
+<p>
+If this command is issued in the
+<a href="593.html">structures window</a>, it allows you to change the comment of a structure or
+structure member. If the cursor is on the structure name, the structure comment
+will be changed, otherwise the member comment will be changed.
+<p>
+Otherwise, this command allows you to enter a repeatable comment for
+the current item.
+<p>
+You cannot enter repeatable segment comments.
+<p>
+All items that refer to the current item will have this comment by default.
+<p>
+Note that if you have defined both comment types (<a href="479.html">regular</a> and repeatable),
+the regular comment will be displayed for the current item and the repeatable
+comment will be displayed for all items that refer to the current item, if
+they do not have their own comments.
+<p>
+The repeatable comments may be used to describe subroutines, data items etc.,
+because all calls to the subroutine will have the repeatable comment.
+<p>
+You can show/hide all comments in the <a href="1369.html">Comments Dialog</a>.
+<p>
+You can show and hide repeatable comments in the <a href="1369.html">Comments Dialog</a>.
+<p>
+See also
+<pre>
+        &quot;How to use the <a href="425.html">notepad</a>&quot;
+         <a href="478.html">Edit|Comments</a> submenu
+         <a href="479.html">Regular comments</a></pre>

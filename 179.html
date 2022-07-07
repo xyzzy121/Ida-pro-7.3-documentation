@@ -1,0 +1,18 @@
+<a name="IDH_179"></a>
+<title> is_code</title>
+<table width="100%"><tr valign="top"><td><h2> is_code</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+#define MS_CLS  0x00000600             // Mask for typing
+#define FF_CODE 0x00000600             // Code ?
+#define FF_DATA 0x00000400             // Data ?
+#define FF_TAIL 0x00000200             // Tail ?
+#define FF_UNK  0x00000000             // Unknown ?
+<p>
+#define is_code(F)       ((F &amp; MS_CLS) == FF_CODE) // is code byte?
+#define is_data(F)       ((F &amp; MS_CLS) == FF_DATA) // is data byte?
+#define is_tail(F)       ((F &amp; MS_CLS) == FF_TAIL) // is tail byte?
+#define is_unknown(F)    ((F &amp; MS_CLS) == FF_UNK)  // is unexplored byte?
+#define is_head(F)       ((F &amp; FF_DATA) != 0)      // is start of code/data?
+
+</pre>

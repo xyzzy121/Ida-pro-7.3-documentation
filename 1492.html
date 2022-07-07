@@ -1,0 +1,82 @@
+<a name="IDH_1492"></a>
+<title>Scattered argument locations</title>
+<table width="100%"><tr valign="top"><td><h2>Scattered argument locations</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+On x64 and other processors the compiler sometimes passes structures and
+unions partially on registers and partially on the stack. Consider the
+following structure:
+<pre>
+  #pragma pack(push, 4)
+  struct struc_1
+  {
+    char c1;
+    short s2;
+    char c3;
+    int i4;
+  };
+  #pragma pack(pop)
+</pre>
+In binary form it looks like this:
+<pre>
+  00000000 struc_1         struc ; (sizeof=0xC)
+  00000000 c1              db ?
+  00000001                 db ? ; undefined
+  00000002 s2              dw ?
+  00000004 c3              db ?
+  00000005                 db ? ; undefined
+  00000006                 db ? ; undefined
+  00000007                 db ? ; undefined
+  00000008 i4              dd ?
+  0000000C struc_1         ends
+</pre>
+If we have this function prototype:
+<pre>
+  void myfunc(struc_1 s);
+</pre>
+the 64bit GNU compiler will pass the structure like this:
+<pre>
+  RDI: c1, s2, and c3
+  RSI: i4
+</pre>
+Since compilers can use such complex calling conventions, IDA needs some
+mechanism to describe them. Scattered argument locations are used for that.
+The above calling convention can be described like this:
+<pre>
+  void __usercall myfunc(struc_1 s@&lt;0:rdi.1, 2:rdi^2.2, 4:rdi^4.1, 8:rsi.4&gt;);
+</pre>
+It reads:
+<pre>
+  1 byte  at offset 0 of the argument is  passed in the byte 0 of RDI
+  2 bytes at offset 2 of the argument are passed in the byte 1,2 of RDI
+  1 byte  at offset 4 of the argument is  passed in the byte 3 of RDI
+  4 bytes at offset 8 of the argument are passed starting from the byte 0 of RSI
+</pre>
+In other words, the following syntax is used:
+<pre>
+  argoff:register^regoff.size
+</pre>
+where
+<pre>
+  argoff - offset within the argument
+  register - register name used to pass part of the argument
+  regoff - offset within the register
+  size - number of bytes
+</pre>
+The regoff and size fields can be omitted if there is no ambiguity.
+<p>
+If the register is not specified, the expression describes a stack location:
+<pre>
+  argoff:^stkoff.size
+</pre>
+where
+<pre>
+  argoff - offset within the argument
+  stkoff - offset in the stack frame (the first stack argument is at offset 0)
+  size - number of bytes
+</pre>
+Please note that while IDA checks the argument location specifiers for soundness,
+it cannot perform all checks and some wrong locations may be accepted. In
+particular, IDA in general does not know the register sizes and accepts any
+offsets within them and any sizes.
+<p>
+See also <a href="1361.html">Set type</a> command.

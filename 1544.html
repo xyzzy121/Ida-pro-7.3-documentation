@@ -1,0 +1,16 @@
+<a name="IDH_1544"></a>
+<title> setattr</title>
+<table width="100%"><tr valign="top"><td><h2> setattr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set object attribute
+     self  - object
+     attr  - attribute name
+     value - value
+This function sets the attribute value without calling __setattr__()
+Returns false: self is not an object
+Thread-safe function.
+<p>
+success setattr(object self, string attr, any value);
+
+</pre>

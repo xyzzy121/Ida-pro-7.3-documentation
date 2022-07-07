@@ -1,0 +1,27 @@
+<a name="IDH_696"></a>
+<title> op_bin</title>
+<table width="100%"><tr valign="top"><td><h2> op_bin</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert an operand of the item (instruction or data) to a binary number
+     ea  - linear address
+      n  - number of operand
+             0 - the first operand
+             1 - the second, third and all other operands
+             -1 - all operands
+Note: the data items use only the type of the first operand
+Returns: 1-ok, 0-failure
+<p>
+success op_bin(long ea, int n);
+<p>
+// Convert an operand of the item (instruction or data) to an octal number
+<p>
+success op_oct(long ea, int n);
+<p>
+// Convert operand to decimal, hex, char
+<p>
+success op_dec(long ea, int n);
+success op_hex(long ea, int n);
+success op_chr(long ea, int n);
+
+</pre>

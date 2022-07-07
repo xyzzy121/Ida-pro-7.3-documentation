@@ -1,0 +1,21 @@
+<a name="IDH_273"></a>
+<title> generate_disasm_line</title>
+<table width="100%"><tr valign="top"><td><h2> generate_disasm_line</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get disassembly line
+     ea - linear address of instruction
+     flags - combination of the GENDSM_ flags, or 0
+returns: &quot;&quot; - could not decode instruction at the specified location
+note: this function may return not exactly the same mnemonics
+as you see on the screen.
+<p>
+string generate_disasm_line(long ea, long flags);  // get disassembly line
+<p>
+// flags for generate_disasm_line
+#define GENDSM_FORCE_CODE 1     // generate a disassembly line as if
+                                // there is an instruction at 'ea'
+#define GENDSM_MULTI_LINE 2     // if the instruction consists of several lines,
+                                // produce all of them(useful for parallel instructions)
+
+</pre>

@@ -1,0 +1,24 @@
+<a name="IDH_1142"></a>
+<title>Graph colors</title>
+<table width="100%"><tr valign="top"><td><h2>Graph colors</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Graph edges can have several colors. In graph view:
+<pre>
+ - Blue: a normal edge
+ - Green: if the jump is taken (its condition is satisfied)
+ - Red: if the jump is not taken
+ - Blinking: when in the debugger, the edge that will be followed blinks
+</pre>
+And, in proximity view:
+<pre>
+ - Blue: Code cross-reference edge
+ - Gray: Data cross-reference edge
+</pre>
+IDA highlights the current mouse items. If the mouse is hovered over an
+edge, it is highlighted. If the mouse is hovered over a node, all
+adjacent edges are highlighted. To turn off the highlighting, specify
+the 'current edge' color as an undefined custom color.
+<p>
+The 'highlighted edge' and 'foreign node' colors are not used yet.
+<p>
+Back to <a href="42.html">graph view</a> or <a href="1626.html">proximity view</a>

@@ -1,0 +1,20 @@
+<a name="IDH_1521"></a>
+<title>Debugging with QEMU</title>
+<table width="100%"><tr valign="top"><td><h2>Debugging with QEMU</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Run QEMU with -s switch to enable its GDB stub. The default port number is 1234. If desired,
+the -p command line switch can be used to change it. The -S command line switch causes
+the execution to be suspended at startup.
+For example:
+<pre>
+ qemu.exe -s -S -L . -m 128 -hda linux.img -soundhw all -localtime -M pc
+</pre>
+For better debugging, make sure to set the following options in
+<a href="1522.html">GDB Debugger options</a>:
+<pre>
+ Software breakpoints at EIP+1: disabled
+ Use CS:IP in real mode: enabled (when debugging 16-bit (real-mode) code)
+</pre>
+In other aspects debugging with QEMU is the same as debugging for other targets.
+<p>
+Back to <a href="1335.html">Remote GDB Debugger</a>

@@ -1,0 +1,24 @@
+<a name="IDH_1212"></a>
+<title> Debugger: modules</title>
+<table width="100%"><tr valign="top"><td><h2> Debugger: modules</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Enumerate process modules
+// These function return the module base address
+<p>
+long get_first_module(void);
+long get_next_module(long base);
+<p>
+// Get process module name
+//      base - the base address of the module
+// returns: required info
+<p>
+string get_module_name(long base);
+<p>
+// Get process module size
+//      base - the base address of the module
+// returns: required info or -1
+<p>
+long get_module_size(long base);
+
+</pre>

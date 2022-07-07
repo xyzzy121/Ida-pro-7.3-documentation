@@ -1,0 +1,187 @@
+<a name="IDH_1076"></a>
+<title> Breakpoint handling functions</title>
+<table width="100%"><tr valign="top"><td><h2> Breakpoint handling functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Get number of breakpoints.
+// Returns: number of breakpoints
+<p>
+long get_bpt_qty();
+<p>
+// Get breakpoint address
+//      n - number of breakpoint, is in range 0..get_bpt_qty()-1
+// returns: address of the breakpoint or BADADDR
+<p>
+long get_bpt_ea(long n);
+<p>
+// Get the characteristics of a breakpoint
+//      address - any address in the breakpoint range
+//      bptattr - the desired attribute code, one of BPTATTR_... constants
+// Returns: the desired attribute value or -1
+<p>
+long get_bpt_attr(long ea, number bptattr);
+<p>
+#define NO_PROCESS    -1  // invalid process
+#define NO_THREAD      0  // invalid thread
+#define BPTATTR_EA     1  // starting address of the breakpoint
+#define BPTATTR_SIZE   2  // size of the breakpoint (undefined for software breakpoint)
+#define BPTATTR_TYPE   3                     // type of the breakpoint
+                                             // Breakpoint types:
+#define  BPT_WRITE   1                       // Hardware: Write access
+#define  BPT_READ    2                       // Hardware: Read access
+#define  BPT_RDWR    3                       // Hardware: Read/write access
+#define  BPT_SOFT    4                       // Software breakpoint
+#define  BPT_EXEC    8                       // Hardware: Execute instruction
+#define  BPT_DEFAULT (BPT_SOFT|BPT_EXEC)     // Choose bpt type automaticaly
+<p>
+#define BPTATTR_COUNT  4  // number of times the breakpoint is hit before stopping
+<p>
+#define BPTATTR_FLAGS  5  // Breakpoint attributes:
+#define BPT_BRK        0x001 // the debugger stops on this breakpoint
+#define BPT_TRACE      0x002 // the debugger adds trace information when
+                             // this breakpoint is reached
+#define BPT_UPDMEM     0x004 // refresh the memory layout and contents before evaluating bpt condition
+#define BPT_ENABLED    0x008 // enabled?
+#define BPT_LOWCND     0x010 // condition is calculated at low level (on the server side)
+#define BPT_TRACEON    0x020 // enable tracing when the breakpoint is reached
+#define BPT_TRACE_INSN 0x040 //   instruction tracing
+#define BPT_TRACE_FUNC 0x080 //   function tracing
+#define BPT_TRACE_BBLK 0x100 //   basic block tracing
+<p>
+#define BPTATTR_COND   6  // Breakpoint condition
+                          // <b>NOTE:</b> the return value is a string in this case
+#define BPTATTR_PID    7  // Breakpoint process id
+#define BPTATTR_TID    8  // Breakpoint thread id
+<p>
+// Breakpoint location type:
+#define BPLT_ABS     0    // Absolute address. Attributes:
+                          // - locinfo: absolute address
+<p>
+#define BPLT_REL     1    // Module relative address. Attributes:
+                          // - locpath: the module path
+                          // - locinfo: offset from the module base address
+<p>
+#define BPLT_SYM     2    // Symbolic name. The name will be resolved on DLL load/unload
+                          // events and on naming an address. Attributes:
+                          // - locpath: symbol name
+                          // - locinfo: offset from the symbol base address
+<p>
+// Breakpoint properties:
+#define BKPT_BADBPT   0x01 // failed to write the bpt to the process memory (at least one location)
+#define BKPT_LISTBPT  0x02 // include in bpt list (user-defined bpt)
+#define BKPT_TRACE    0x04 // trace bpt; should not be deleted when the process gets suspended
+#define BKPT_ACTIVE   0x08 // active?
+#define BKPT_PARTIAL  0x10 // partially active? (some locations were not written yet)
+#define BKPT_CNDREADY 0x20 // condition has been compiled
+<p>
+// ***********************************************
+class Breakpoint
+{
+  // Breakpoint type. One of BPT_... constants
+  attribute type;
+<pre>
+  // Breakpoint size (for hardware breakpoint)
+  attribute size;
+</pre>
+<pre>
+  // Breakpoint condition (string)
+  attribute condition;
+</pre>
+<pre>
+  // Scripting language of the condition string
+  // &quot;IDC&quot; for IDC, &quot;Python&quot; for Python etc. ('name' field of extlang_t)
+  // if empty, default extlang is assumed
+  attribute elang;
+</pre>
+<pre>
+  // Breakpoint flags. Refer to BPTATTR_FLAGS
+  attribute flags;
+</pre>
+<pre>
+  // Breakpoint properties. Refer to BKPT_... constants
+  attribute props;
+</pre>
+<pre>
+  // Breakpoint pass count
+  attribute pass_count;
+</pre>
+<pre>
+  // Attribute location type. Refer to BPLT_... constants.
+  // Readonly attribute.
+  attribute loctype;
+</pre>
+<pre>
+  // Breakpoint path (depending on the loctype)
+  // Readonly attribute.
+  attribute locpath;
+</pre>
+<pre>
+  // Breakpoint address info (depending on the loctype)
+  // Readonly attribute.
+  attribute locinfo;
+</pre>
+<pre>
+  // Set absolute breakpoint
+  success set_abs_bpt(address);
+</pre>
+<pre>
+  // Set symbolic breakpoint
+  success set_sym_bpt(symbol_name, offset);
+</pre>
+<pre>
+  // Set relative breakpoint
+  success set_rel_bpt(path, offset);
+};
+</pre>
+// Set modifiable characteristics of a breakpoint
+//       address - any address in the breakpoint range
+//       bptattr - the attribute code, one of BPTATTR_... constants.
+//                 BPTATTR_COND is not allowed, see <a href="1076.html">Bpts</a>
+//       value   - the attibute value
+// Returns: success
+<p>
+success set_bpt_attr(long ea, number bptattr, long value);
+<p>
+// Set breakpoint condition
+//       address  - any address in the breakpoint range
+//       cnd      - breakpoint condition
+//       is_lowcnd- 0:regular condition, 1:low level condition
+// Returns: success
+<p>
+success set_bpt_cond(long ea, string cnd, long is_lowcnd=0);
+<p>
+// Add a new breakpoint
+//       ea   - any address in the process memory space:
+//       size - size of the breakpoint (irrelevant for software breakpoints):
+//       type - type of the breakpoint (one of BPT_... constants)
+// Only one breakpoint can exist at a given address.
+// Returns: success
+<p>
+success add_bpt(long ea, long size=0, long bpttype=BPT_DEFAULT);
+<p>
+// Delete breakpoint
+//       ea   - any address in the process memory space:
+// Returns: success
+<p>
+success del_bpt(long ea);
+<p>
+// Enable/disable breakpoint
+//       ea   - any address in the process memory space
+// Disabled breakpoints are not written to the process memory
+// To check the state of a breakpoint, use check_bpt()
+// Returns: success
+<p>
+success enable_bpt(long ea, long enable);
+<p>
+// Check a breakpoint
+//       ea   - any address in the process memory space
+// Returns: one of BPTCK_... constants
+<p>
+long check_bpt(long ea);
+<p>
+#define BPTCK_NONE -1  // breakpoint does not exist
+#define BPTCK_NO    0  // breakpoint is disabled
+#define BPTCK_YES   1  // breakpoint is enabled
+#define BPTCK_ACT   2  // breakpoint is active (written to the process)
+
+</pre>

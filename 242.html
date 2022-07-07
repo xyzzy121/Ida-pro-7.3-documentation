@@ -1,0 +1,52 @@
+<a name="IDH_242"></a>
+<title>Load file dialog</title>
+<table width="100%"><tr valign="top"><td><h2>Load file dialog</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Below is the description of dialog box fields:
+<pre>
+ Load address - the paragraph where the file will be loaded.
+                Meaningful only for EXE and binary files. For new exe
+                files, please use 'manual load' feature.
+ Load offset  - relevant only for binary files.
+                specifies offset of the first byte from the start of
+                the first segment. For example, if load offset=0x2700 and
+                load address=0x1000, the first byte of the file will
+                be at 1000:2700.
+ DLL directory - path where IDA will look up referenced DLL files.
+                Note that if IDA finds .IDS file, it does not look for
+                .DLL file.
+ Create segments        - relevant for binary files.
+                          If not checked, IDA does not create segments.
+ Load resources         - If not checked, IDA does not load resources from
+                          NE files.
+ Rename DLL entries     - If not checked, IDA makes repeatable comments
+                          for entries imported by ordinals. Otherwise,
+                          IDA renames the entries to meaningful names.
+ Manual load            - relevant only for NE,LE,LX,ELF files.
+                          If checked, IDA will ask loading addresses
+                          and selectors for each object of the file.
+                          For experienced users only!
+ Fill segment gaps      - relevant only for COFF &amp; OMF files.
+                          If checked, IDA will fill gaps between
+                          segments, creating one big chunk.
+                          This option facilitates loading of big
+                          object files.
+ Make imports section   - relevant only for PE files.
+                          If checked, IDA will convert .idata section
+                          definitions to &quot;extrn&quot; directives and truncate it.
+                          Unfortunately, sometimes there are some additional
+                          data in .idata section so you'll need to disable
+                          this feature if some information is not loaded
+                          into the database.
+ Create FLAT group      - relevant only for IBM PC PE files.
+                          If checked, IDA will automatically create FLAT
+                          group and use its selector as the default value
+                          for the segment registers.
+ Code segment           - If checked, IDA creates a code but not a data
+                          segment. Relevant for processors with different
+                          code/data segment addressing schemes (for
+                          example, Atmel AVR).
+ Loading options        - relevant only ELF,JAVA files.
+                          If checked, IDA will ask additional loader
+                          options. For experienced users only!
+</pre>

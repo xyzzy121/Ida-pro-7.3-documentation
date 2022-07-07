@@ -1,0 +1,15 @@
+<a name="IDH_308"></a>
+<title> set_default_sreg_value</title>
+<table width="100%"><tr valign="top"><td><h2> set_default_sreg_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set default segment register value for a segment
+  ea      - any address in the segment
+            if no segment is present at the specified address
+            then all segments will be affected
+  reg     - name of segment register
+  value   - default value of the segment register. -1-undefined.
+<p>
+success set_default_sreg_value(long ea, string reg, long value);
+
+</pre>

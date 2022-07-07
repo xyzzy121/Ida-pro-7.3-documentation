@@ -1,0 +1,17 @@
+<a name="IDH_292"></a>
+<title> set_selector</title>
+<table width="100%"><tr valign="top"><td><h2> set_selector</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set a selector value
+        arguments:      sel - the selector number
+                        val - value of selector
+        returns:        nothing
+        note:           ida supports up to 4096 selectors.
+                        if 'sel' == 'val' then the
+                        selector is destroyed because
+                        it has no significance
+<p>
+void set_selector(long sel, long value);
+
+</pre>

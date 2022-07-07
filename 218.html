@@ -1,0 +1,11 @@
+<a name="IDH_218"></a>
+<title>Additional information at the end of file</title>
+<table width="100%"><tr valign="top"><td><h2>Additional information at the end of file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The file being loaded is not completely loaded to memory by the
+operating system. This may be because:
+        - the file is overlayed; IDA does not know this type of overlays
+        - the file has debugging information attached to its end
+        - the file has other type of information at the end
+<p>
+Anyway, IDA will not load the additional information.

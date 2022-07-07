@@ -1,0 +1,30 @@
+<a name="IDH_697"></a>
+<title> op_plain_offset</title>
+<table width="100%"><tr valign="top"><td><h2> op_plain_offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert operand to an offset
+(for the explanations of 'ea' and 'n' please see <a href="696.html">op_bin</a>())
+     base - base of the offset as a linear address
+            If base == BADADDR then the current operand becomes non-offset
+Example:
+ seg000:2000 dw      1234h
+and there is a segment at paragraph 0x1000 and there is a data item
+within the segment at 0x1234:
+ seg000:1234 MyString        db 'Hello, world!', 0
+Then you need to specify a linear address of the segment base to
+create a proper offset:
+     op_plain_offset(to_ea(&quot;seg000&quot;, 0x2000), 0, 0x10000);
+and you will have:
+ seg000:2000 dw      offset MyString
+Motorola 680x0 processor have a concept of &quot;outer offsets&quot;.
+If you want to create an outer offset, you need to combine number
+of the operand with the following bit:
+<p>
+#define OPND_OUTER      0x80                    // outer offset base
+// Please note that the outer offsets are meaningful only for
+// Motorola 680x0.
+<p>
+success op_plain_offset(long ea, int n, long base);
+
+</pre>

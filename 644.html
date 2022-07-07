@@ -1,0 +1,16 @@
+<a name="IDH_644"></a>
+<title> add_sourcefile</title>
+<table width="100%"><tr valign="top"><td><h2> add_sourcefile</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Mark a range of address as belonging to a source file
+   An address range may belong only to one source file.
+   A source file may be represented by several address ranges.
+        ea1     - linear address of start of the address range
+        ea2     - linear address of end of the address range
+        filename- name of source file.
+   returns: 1-ok, 0-failed.
+<p>
+success add_sourcefile(long ea1, ulong ea2, string filename);
+
+</pre>

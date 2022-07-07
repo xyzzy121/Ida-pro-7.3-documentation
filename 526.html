@@ -1,0 +1,34 @@
+<a name="IDH_526"></a>
+<title>Edit|Patch core  submenu</title>
+<table width="100%"><tr valign="top"><td><h2>Edit|Patch core  submenu</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This submenu allows you to patch the image of the input file.
+More precisely, IDA never modifies the input file. The image of the input file
+which was loaded to the database will be modified.
+<p>
+You can modify the image of the input file:
+<pre>
+        - change a byte
+        - change a word
+        - enter an assembler instruction (only for IBM PC)
+</pre>
+IDA will display the original value, the current value and file offset.
+If the file offset is equal to 0xFFFFFFFF then the current byte comes
+from a compressed page (LX/LE/NE iterated pages, for example) and/or it is
+not possible to tell the file position.
+<p>
+You can create a <a href="443.html">difference</a> file and use an external tool to apply the patches
+or you can apply the <a href="1618.html">patches</a> directly to the file using IDA.
+<p>
+The following commands are availabe:
+<pre>
+ <a href="527.html">Patch byte or word</a>
+ <a href="529.html">Assemble...</a>
+ <a href="1618.html">Apply patches to input file...</a>
+</pre>
+See also:
+<pre>
+ <a href="442.html">Produce EXE file</a>
+ <a href="443.html">Produce DIF file</a>
+ <a href="451.html">Edit</a> submenu.
+</pre>

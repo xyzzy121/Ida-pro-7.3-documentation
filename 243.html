@@ -1,0 +1,26 @@
+<a name="IDH_243"></a>
+<title>PE .idata section has additional data</title>
+<table width="100%"><tr valign="top"><td><h2>PE .idata section has additional data</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+If &quot;create imports section&quot; in the file loading dialog is checked,
+IDA will convert .idata section definitions to &quot;extrn&quot;
+directives and truncate it so it will not contain empty lines.
+<p>
+Unfortunately, sometimes there is some additional data in .idata
+section so you'll need to disable this feature if some information is
+not loaded into the database.
+<p>
+IDA tries to detect additional data in .idata section automatically.
+<p>
+If you disable conversion of .idata section to a segment with &quot;extrn&quot;
+directives, you will see
+<p>
+somename        dd      ?
+<p>
+instead of
+<pre>
+        extrn   somename
+</pre>
+directives.
+<p>
+Another impact is that the .idata segment will not be truncated in any way.

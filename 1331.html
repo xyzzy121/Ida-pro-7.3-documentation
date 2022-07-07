@@ -1,0 +1,45 @@
+<a name="IDH_1331"></a>
+<title>Bochs IDB operation mode</title>
+<table width="100%"><tr valign="top"><td><h2>Bochs IDB operation mode</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The IDB operation mode, as its name implies, takes the current database as the input and runs it
+under the Bochs debugger. This mode can be used to debug any x86 32 or 64-bit code.
+Please note that the code executes with privilege ring 3.
+<p>
+The following parameters can be specified in the IDB operation mode:
+<pre>
+  - Entry address: the address where the execution starts.
+    This parameter can be specified in three ways (listed in order of
+    precedence):
+      - by renaming the desired location as &quot;ENTRY&quot; (global name)
+      - by selecting an address range with the mouse or keyboard.
+        The selection start address is used as the entry point
+      - by positioning the cursor at a given position and running the
+        debugger
+</pre>
+<pre>
+  - Exit address (optional): the address where the execution ends.
+    This parameter can be specified in two ways:
+      - by renaming the desired location as &quot;EXIT&quot; (global name). Please note that
+        the emulation will stop at the item following the exit label.
+      - by selecting an address range with the mouse or keyboard
+        The selection end address is used as the exit point
+    If the exit address is not specified, the execution will continue until
+    an exception occurs. However, if the exit address is reached, the debugger
+    will ask the user if emulation should be continued or not.
+</pre>
+<pre>
+  - Startup stack size: number of KBs to allocate for the stack segment.
+    The stack segment is automatically created and named as &quot;STACK&quot;.
+</pre>
+It may also prove useful to enable the &quot;Debugger Setup/Suspend on debugging start&quot; so
+that IDA automatically suspends the process before executing the first instruction.
+<p>
+While debugging, exceptions may occur and are caught by IDA. Please note that
+these exceptions are raw machine exceptions. For example, instead of an access
+violation exception, a page fault exception is generated.
+<pre>
+ See also:
+        <a href="1329.html">Bochs debugger</a>
+        <a href="1333.html">Bochs plugin operation mode FAQ</a>
+</pre>

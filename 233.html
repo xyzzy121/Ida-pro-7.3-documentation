@@ -1,0 +1,16 @@
+<a name="IDH_233"></a>
+<title>Cannot move segment start address</title>
+<table width="100%"><tr valign="top"><td><h2>Cannot move segment start address</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA cannot change the segment start address because this segment with the
+new start address would overlap another adjacent segment. For example,
+the following situation:
+<pre>
+  seg_a  starts at 0x0000 ends at 0x1000
+  seg_b  starts at 0x1000 ends at 0x2000
+  seg_c  starts at 0x2000 ends at 0x3000
+</pre>
+If you ask to change seg_c so that it starts at 0x500, you'll see this
+error message, because the new seg_c would overlap seg_b.
+<p>
+Please note that the end address never belongs to the segment in IDA.

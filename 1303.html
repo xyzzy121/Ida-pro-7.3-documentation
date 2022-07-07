@@ -1,0 +1,15 @@
+<a name="IDH_1303"></a>
+<title> save_database</title>
+<table width="100%"><tr valign="top"><td><h2> save_database</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Save current database to the specified idb file
+     idbname - name of the idb file. if empty, the current idb
+               file will be used.
+     flags   - DBFL_BAK or 0
+<p>
+success save_database(string idbname, long flags);
+<p>
+#define DBFL_BAK        0x04            // create backup file
+
+</pre>

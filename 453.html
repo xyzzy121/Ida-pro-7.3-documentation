@@ -1,0 +1,27 @@
+<a name="IDH_453"></a>
+<title>Convert to data</title>
+<table width="100%"><tr valign="top"><td><h2>Convert to data</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeData
+ </pre>
+This command converts the current unexplored bytes to data.
+If it is not possible, IDA will warn you.
+<p>
+Multiple using of this command will change the data type:
+<pre>
+ db -&gt; dw -&gt; dd -&gt; float -&gt; dq -&gt; double -&gt; dt -&gt; packreal -&gt; octa \;
+ ^                                                                 |;
+ \---------&lt;----------------&lt;--------------&lt;-----------------------/;
+</pre>
+You may remove some items from this list using <a href="617.html">setup data</a> command.
+<p>
+If the <a href="619.html">target assembler</a> does not support double words or another
+data type, it will be skipped.
+<pre>
+ To create a structure variable, use <a href="496.html">Declare struct var</a> command.
+ To create an array, use <a href="455.html">Array</a> command.
+ To convert back, use <a href="456.html">Undefine</a> command.
+</pre>
+See also
+ <a href="451.html">Edit</a> submenu

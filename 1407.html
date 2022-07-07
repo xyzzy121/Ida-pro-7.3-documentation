@@ -1,0 +1,134 @@
+<a name="IDH_1407"></a>
+<title>Edit breakpoint</title>
+<table width="100%"><tr valign="top"><td><h2>Edit breakpoint</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: BreakpointEdit
+ </pre>
+This command opens a dialog box to edit an existing breakpoint.
+<p>
+Location
+<pre>
+  The breakpoint location: either an absolute address, a symbol name,
+  a module+offset combination, or a source file name and a line number.
+  The exact location syntax depends on the breakpoint kind: absolute, module
+  relative, symbolic, or source code.
+</pre>
+Condition
+<pre>
+  This <a href="162.html">IDC</a> expression will be evaluated each time the breakpoint
+  is reached. If the expression returns true (non-zero), the debugger will execute the
+  selected actions. Please note that you can use the register names in the
+  IDC scripts when the debugger is active. Tests like this are allowed,
+  for example: EAX == EBX+5 or get_wide_dword(ESP+0x10) == 34
+</pre>
+<pre>
+  You can also use the &quot;...&quot; button to enter a multiline condition, or specify
+  another scripting language to use. See <a href="1488.html">here</a> for
+  more info.
+</pre>
+Settings
+<pre>
+  Enabled:
+        If the breakpoint is enabled or disabled. Disabled breakpoints
+        are not written to the debugged process.
+</pre>
+<pre>
+  Hardware:
+        If enabled, IDA will use a hardware breakpoint. The breakpoint
+        mode and size must be specified for them (see below).
+</pre>
+<pre>
+  Module relative:
+        The breakpoint location is stored as a combination of a module
+        name and an offset. This kind of breakpoint is useful for
+        DLLs that are loaded to various addresses because their addresses
+        cannot be calculated in advance. Example: kernel32+0x1234
+</pre>
+<pre>
+  Symbolic:
+        The breakpoint location is stored as a combination of a symbol
+        name and a possible offset. This kind of breakpoint is useful for
+        symbols that can be imported from different DLLs because their addresses
+        cannot be calculated in advance. Example: myfunc+44
+</pre>
+<pre>
+  Source code:
+        The breakpoint location is stored as a combination of a source file
+        name and a line number. Can be used only if the source code of the
+        debugged application is available. Example: myfile.cpp:55
+</pre>
+<pre>
+  Low level condition:
+        Evaluate the condition on the remote computer. Such conditions are
+        faster, especially during remote debugging, because there is no
+        network traffic between IDA and the remote computer on each
+        breakpoint hit. <a href="144.html">More details</a>
+</pre>
+Actions
+<pre>
+  Break:
+        Suspend the debugged application
+</pre>
+<pre>
+  Trace:
+        Add a new entry to the trace log
+</pre>
+<pre>
+  Refresh debugger memory:
+        By default IDA does not refresh the memory config before evaluating
+        a breakpoint condition. This option enables the refresh.
+        To refresh it, please call <a href="1214.html">refresh_debugger_memory</a>
+</pre>
+<pre>
+  Enable tracing:
+        Enable tracing when the breakpoint hits. This is different from trace
+        breakpoints (where only a new entry is added to the trace log).
+</pre>
+<pre>
+  Disable tracing:
+        Disable tracing when the breakpoint fires.
+</pre>
+<pre>
+  Tracing type:
+        <a href="1446.html">Instruction</a>, <a href="1447.html">Function</a> and <a href="1628.html">Basic block</a> level tracing types can be selected
+        for breakpoints where enable/disable tracing have been selected.
+</pre>
+Hardware breakpoint size
+<pre>
+        Number of bytes to watch: 1, 2 or 4 bytes for normal hardware breakpoints.
+        Any size for <a href="1648.html">page breakpoints</a>.
+</pre>
+Hardware breakpoint mode
+<pre>
+        The access type the breakpoint will react: read/write, write, execute.
+</pre>
+In the case of Intel hardware breakpoints, some limitations are enforced (in contrast with
+<a href="1648.html">page breakpoints</a>).
+It is impossible to create more than 4 hardware breakpoints.
+The address of the breakpoint must be aligned appropriately:
+<pre>
+  - 2-byte breakpoints must be word-aligned.
+  - 4-byte breakpoints must be dword-aligned.
+</pre>
+Please note that hardware breakpoints occur AFTER the instruction execution
+while software breakpoints occur BEFORE the instruction.
+<p>
+Usually, it is easier to use software breakpoints, except if:
+<pre>
+  - we want to be sure the memory is not modified by the debugger
+  (instruction breakpoints modify the debugged process memory).
+</pre>
+<pre>
+  - we want to detect accesses to data bytes.
+</pre>
+<pre>
+  - the specified address is write protected (really rare!).
+</pre>
+<pre>
+ See also <a href="1404.html">Breakpoints list</a>
+          <a href="1405.html">Add breakpoint</a>
+          <a href="1406.html">Delete breakpoint</a>
+          <a href="1488.html">Breakpoint conditions</a>
+          <a href="1404.html">Breakpoints</a> submenu
+          <a href="162.html">Index of IDC functions</a></pre>

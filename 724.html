@@ -1,0 +1,15 @@
+<a name="IDH_724"></a>
+<title> set_bmask_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> set_bmask_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set bitmask comment (only for bitfields)
+     enum_id - id of enum
+     bmask   - bitmask of the constant
+     cmt     - comment
+     repeatable - type of comment, 0-regular, 1-repeatable
+returns: 1-ok, 0-failed
+<p>
+long set_bmask_cmt(long enum_id, long bmask, string cmt, long repeatable);
+
+</pre>

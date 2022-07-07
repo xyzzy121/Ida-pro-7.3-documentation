@@ -1,0 +1,23 @@
+<a name="IDH_1423"></a>
+<title>Thread list</title>
+<table width="100%"><tr valign="top"><td><h2>Thread list</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Threads
+ </pre>
+Opens the threads window.
+<p>
+In this window, you can view all the threads of the debugged process.
+Double clicking on a thread jumps to its current instruction (available only
+if the process has been suspended). Double clicking also changes the current
+thread for the hlpHelpDebugger[CPU] window.
+<p>
+The right click brings a popup menu, where you can suspend or resume threads.
+The following thread states are possible:
+<pre>
+  - Running: the thread is running
+  - Ready: the thread is ready to run but the application has been suspended
+  - Suspended: the thread has been suspended by the user
+</pre>
+<pre>
+ See also <a href="1395.html">Debugger</a> submenu.</pre>

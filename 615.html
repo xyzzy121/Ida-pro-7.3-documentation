@@ -1,0 +1,104 @@
+<a name="IDH_615"></a>
+<title>Color configuration</title>
+<table width="100%"><tr valign="top"><td><h2>Color configuration</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This dialog allows you to customize the color settings.
+<pre>
+ GUI version:
+ ------------
+</pre>
+IDA keeps the color configuration in the registry. There are 4 palettes
+which can be configured independently.
+<pre>
+ Text version:
+ -------------
+</pre>
+IDA keeps colors in file IDACOLOR.CF. This file may reside in the IDA
+directory or in the current directory. It is a binary file.
+IDA automatically saves all your changes into this file.
+<p>
+If the current item line prefix has &quot;black on black&quot; color, then
+the current item will not be highlighted. The same is with current line
+color - if it is &quot;black on black&quot;, the current line will not be highlighted.
+<p>
+You can change the colors using the Customize button.
+You may have up to 4 different color palettes and switch between them
+on fly. The color palette is saved in IDACOLOR.CF file.
+<p>
+Each line prefix has its own color code depending on the current item:
+(the fourth color palette values are shown)
+<pre>
+ Line prefixes
+   Library function             BRIGHT CYAN ON BLUE
+   Regular function             WHITE ON BLUE
+   Instruction                  BROWN ON BLUE
+   Data                         WHITE ON BLUE
+   Unexplored                   WHITE ON BLACK
+   Externs                      BRIGHT MAGENTA ON BLUE
+   Current item                 BRIGHT BLUE ON BLUE
+   Current line                 YELLOW ON BLUE
+   Default                      BLACK ON BLACK (not used)
+</pre>
+If the &quot;current item&quot; or &quot;current line&quot; are BLACK ON BLACK, then
+they will not be highlighted.
+<p>
+The rest of the line is colored with the following codes:
+<pre>
+ Keywords
+   Instruction                  WHITE ON BLUE
+   Directive                    YELLOW ON BLUE
+   Macro name                   MAGENTA ON BLUE
+   Register name                WHITE ON BLUE
+   Other                        WHITE ON BLUE
+</pre>
+<pre>
+ Names
+   Dummy data                   WHITE ON BLUE
+   Dummy code                   WHITE ON BLUE
+   Dummy unexplored             MAGENTA ON BLUE
+   Hidden                       GREY ON BLUE
+   Library function             BRIGHT CYAN ON BLUE
+   Local variable               GREEN ON BLUE
+   Regular data                 YELLOW ON BLUE
+   Regular code                 YELLOW ON BLUE
+   Regular unexplored           RED ON BLUE
+   Demangled                    BRIGHT GREEN ON BRIGHT BLUE
+   Segment name                 YELLOW ON BLUE
+   Imported name                LIGHT MAGENTA ON BLUE
+</pre>
+<pre>
+ Constants
+   Suspicious                   BRIGHT RED ON BLUE
+   Char in instruction          BRIGHT CYAN ON BLUE
+   String in instruction        BRIGHT CYAN ON BLUE
+   Number in instruction        BRIGHT GREEN ON BLUE
+   Char in data                 BRIGHT GREEN ON BLUE
+   String in data               BRIGHT GREEN ON BLUE
+   Number in data               WHITE ON BLUE
+</pre>
+<pre>
+ Xrefs
+   Code                         GREEN ON BLUE
+   Data                         CYAN ON BLUE
+   Code to tail                 BRIGHT RED ON BLUE
+   Data to tail                 MAGENTA ON BLUE
+</pre>
+<pre>
+ Comments
+   Automatic                    BROWN ON BLUE
+   Regular                      BRIGHT WHITE ON BLUE
+   Repeatable                   BROWN ON BLUE
+   Extra line                   YELLOW ON BLUE
+</pre>
+<pre>
+ Other
+   Punctuation                  WHITE ON BLUE
+   Opcode bytes                 BRIGHT GREEN ON BLUE
+   Manual operand               BRIGHT WHITE ON BLUE
+   Errors                       RED ON BLACK
+   Selected                     BLACK ON WHITE
+   Default                      YELLOW ON BLUE
+</pre>
+(Other,Default) color code is used if a token has no color attached to it.
+<p>
+See also <a href="604.html">Options</a> submenu.

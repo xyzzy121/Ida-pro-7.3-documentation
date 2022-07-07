@@ -1,0 +1,47 @@
+<a name="IDH_240"></a>
+<title>Imported module is not found</title>
+<table width="100%"><tr valign="top"><td><h2>Imported module is not found</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+  IDA did not find the specified module in:
+    - the current directory
+    - the operating system directory (see switch <a href="417.html">-W</a>
+      and configuration file parameters <a href="419.html">WINDIR,OS2DIR</a>)
+</pre>
+<pre>
+  OR
+        - the module cannot be accepted because:
+        - the module name (recorded in the file) doesn't match
+          the expected name
+        - the module does not contains any exported names (all exported functions
+          are exported by ordinal numbers)
+</pre>
+Entries imported by ordinal entries will not be commented. If IDA finds a module,
+all entries that are imported by ordinal will be commented like this:
+<pre>
+  KERNEL_91:
+                retf            ; INITTASK
+                                  ^^^^^^^^^
+                                  comment
+</pre>
+This comment will be propagated (<a href="480.html">repeated</a>) to all
+locations which call this
+entry:
+<pre>
+                call    far ptr KERNEL_91 ; INITTASK
+
+</pre>
+IDA searches all files named &quot;modulename.*&quot; for the module.
+If you know that the imported module resides in another directory,
+copy it to your current directory. If the module file name is different
+from &quot;modulename.*&quot;,
+rename it. After the database is loaded, you can
+delete the copied module.
+<p>
+IDA also looks for file &quot;modulename.ids&quot;
+  in the current directory
+  in the IDS subdirectory of the directory where IDA.EXE resides
+  in the PATHed directories
+<p>
+You can create such a file yourself. For an example, look at DOSCALLS.IDS
+in the IDS subdirectory.

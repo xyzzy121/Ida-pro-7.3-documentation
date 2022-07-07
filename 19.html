@@ -1,0 +1,89 @@
+<a name="IDH_19"></a>
+<title>Graph options</title>
+<table width="100%"><tr valign="top"><td><h2>Graph options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Use graph view by default
+<pre>
+        IDA switches to graph mode for each 'jump' command.
+</pre>
+Enable graph animation
+<pre>
+        Animate the graph layout, movement, and group collapsing/uncollapsing.
+        While animation takes time, it gives the user some idea what's going on.
+</pre>
+Draw node shadows
+<pre>
+        Display shadows for each graph node. Shadows are not displayed
+        for really huge or ridiculously small nodes.
+</pre>
+Auto fit graph into window
+<pre>
+        Zoom the graph so that it occupies the whole window.
+</pre>
+Fit window max zoom level 100%
+<pre>
+        The 'fit window' command maximal zoom level is 100%.
+</pre>
+Re-layout graph if nodes overlap
+<pre>
+        IDA recomputes the graph layout if a node overlap is detected.
+        The presence of a custom layout (if the user has displaced
+        some graph nodes) effectively turns off this option.
+</pre>
+Re-layout graph uopn screen refresh
+<pre>
+        IDA recomputes the graph layout at each screen refresh.
+        Turning this option off accelerates IDA but then
+        a manual layout might be required after some operations.
+</pre>
+Truncate at the right margin
+<pre>
+        All nodes at truncated at the right margin. The right <a href="605.html">margin</a>
+        is specified in the Options, General, Disassembly tab.
+        This option narrows the graph but hides some information
+        by truncating long lines.
+</pre>
+Lock graph layout
+<pre>
+        Locks the graph layout by ignoring attempts to displace
+        nodes. This prevents the creation of custom layouts that might lead
+        to ugly graph layouts when nodes change their sizes.
+</pre>
+PROXIMITY VIEW
+<p>
+Show data references
+<pre>
+        Show data cross-referenced items in proximity view.
+</pre>
+Hide library functions
+<pre>
+        Do not show data or code cross-references to library functions,
+        only show cross-referenced local functions.
+</pre>
+Unlimited children recursion
+<pre>
+        Recurse until there are no more callees (children) of the currently
+        selected central node and all of his children.
+</pre>
+Recurse into library functions
+<pre>
+        Displays children data or code cross-references from library
+        functions.
+</pre>
+Max parents recursion
+<pre>
+        Maximum recursion level for displaying parents of the currently
+        selected central node. The value '0' disables parents recursion.
+</pre>
+Max children recursion
+<pre>
+        Maximum recursion level for displaying children of the currently
+        selected central node. The value '0' means no maximum recursion
+        level.
+</pre>
+Max nodes per level
+<pre>
+        Maximum number of nodes to show per level of children and parents.
+
+</pre>
+Back to <a href="42.html">graph view</a> or <a href="1626.html">proximity view</a>

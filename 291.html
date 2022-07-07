@@ -1,0 +1,14 @@
+<a name="IDH_291"></a>
+<title> find_selector</title>
+<table width="100%"><tr valign="top"><td><h2> find_selector</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Find a selector that has mapping to the specified paragraph.
+        arguments:      val - value to search for
+        returns:        the selector number if found
+                        otherwise the input value (val &amp; 0xFFFF)
+        note:           selector values are always in paragraphs
+<p>
+long find_selector(long val);
+
+</pre>

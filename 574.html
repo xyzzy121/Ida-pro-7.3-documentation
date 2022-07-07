@@ -1,0 +1,27 @@
+<a name="IDH_574"></a>
+<title>Search for next instruction/data with the specified operand</title>
+<table width="100%"><tr valign="top"><td><h2>Search for next instruction/data with the specified operand</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AskNextImmediate
+ </pre>
+This command searches for the first instruction or data byte
+that contains the specified immediate value. The command is
+relatively slow (but much faster than the text search), because it disassembles each instruction to
+find the operand values.
+<p>
+If the immediate value in an instruction has been logically or bitwise negated,
+then this command will check against the modified value. Example:
+<pre>
+        mov al, -2
+</pre>
+will be found if the user searches for the immediate value 2 but
+not when he searches for 0xFE.
+<p>
+If the checkbox &quot;any untyped value&quot; is checked, then the &quot;value&quot; field is ignored.
+IDA will look for all immediate values without type in this case.
+<p>
+See also
+<pre>
+         <a href="568.html">Search</a> submenu
+         <a href="423.html">How to Enter a Number</a>.</pre>

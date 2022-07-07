@@ -1,0 +1,19 @@
+<a name="IDH_625"></a>
+<title>Set Video Mode</title>
+<table width="100%"><tr valign="top"><td><h2>Set Video Mode</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetVideoMode
+ </pre>
+This command changes the current video mode.
+The list of allowed video modes is kept in the
+IDATUI.CFG file, the SCREEN_MODES parameter.
+<p>
+Please note that there are two instances in this variable:
+one for MS-DOS and another for Windows.
+<p>
+If you use the MS DOS version, you need to specify the screen mode numbers
+valid for you video card in SCREEN_MODES. Otherwise, this command will not
+work.
+<p>
+See also <a href="624.html">Windows</a> submenu.

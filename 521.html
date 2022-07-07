@@ -1,0 +1,86 @@
+<a name="IDH_521"></a>
+<title>Change segment translation</title>
+<table width="100%"><tr valign="top"><td><h2>Change segment translation</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SegmentTranslation
+ </pre>
+A segment translation is a sequence of other segments to use
+when resolving the references to instructions from the current segment.
+Only code references are affected by the segment translation. Data references
+can be redirected to the desired addresses by modifying the data segment
+register.
+<p>
+This feature is available only for selected processors
+(it is not available for IBM PC processors).
+<p>
+We hope it is easier to give an example than to give a formal definition.
+Suppose we have 3 segments:
+<pre>
+                start   end
+        A       0000    1000
+        B       1000    2000
+        C       3000    4000
+</pre>
+The instruction
+<pre>
+        call    1000
+</pre>
+in the segment C obviously refers to the segment B while the instruction
+<pre>
+        call    500
+</pre>
+refers to the segment A.
+<p>
+However, IDA does not try to link these references unless you tell it to do so:
+include the segments A and B into a translation list of the segment C.
+It means that you have to create a translation list
+<pre>
+        A B
+</pre>
+for the segment C.
+<p>
+Below is a more complicated example:
+<pre>
+                start   end
+        A       0000    1000
+        B       1000    2000
+        C       1000    2000
+        D       3000    4000
+        E       3000    4000
+</pre>
+translations
+<pre>
+        B:      A
+        C:      A
+        D:      A B
+        E:      A C
+</pre>
+allow you to emulate overlays (the first set is A B D, the second A C E)
+<p>
+IMPORTANT NOTE1: If you use the segment translations, make sure that all
+segments have unique segment bases. If two segments are placed in the linear
+address space so that
+they must have the same segment base, you may assign different
+<a href="591.html">selectors</a> with equal values to them.
+<p>
+IMPORTANT NOTE2:
+IDA supports only one translation list per segment.
+This translation is applied by default to all instruction in the segment.
+If the segment uses other mappings, then these individual mappings
+can be specified for each instruction separately by using the
+<a href="469.html">make offset</a> commands.
+<p>
+IMPORTANT NOTE3:
+Since only code references are affected by the segment translations,
+try to create the RAM segment at its usual place (i.e. its linear
+address in IDA corresponds to its address in the processor memory).
+This will make all data references to it to be correct without any
+segment translation. For the data references to other segments you'll
+need to use the <a href="469.html">make offset</a> command for each
+such reference.
+<p>
+See also
+<pre>
+         <a href="508.html">addressing space concepts</a>
+         <a href="506.html">Edit|Segments</a> submenu.</pre>

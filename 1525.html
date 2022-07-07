@@ -1,0 +1,34 @@
+<a name="IDH_1525"></a>
+<title> move_segm</title>
+<table width="100%"><tr valign="top"><td><h2> move_segm</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Move a segment to a new address
+This function moves all information to the new address
+It fixes up address sensitive information in the kernel
+The total effect is equal to reloading the segment to the target address
+     ea    - any address within the segment to move
+     to    - new segment start address
+     flags - combination MFS_... constants
+returns: MOVE_SEGM_... error code
+<p>
+long move_segm(long ea, long to, long flags);
+<p>
+#define MSF_SILENT    0x0001    // don't display a &quot;please wait&quot; box on the screen
+#define MSF_NOFIX     0x0002    // don't call the loader to fix relocations
+#define MSF_LDKEEP    0x0004    // keep the loader in the memory (optimization)
+#define MSF_FIXONCE   0x0008    // valid for <a href="1526.html">rebase_program</a>(): call loader only once
+#define MSF_NETDELTA  0x0010    // change inf.netdelta if possible
+#define MSF_PRIORITY  0x0020    // loader segments will overwrite any existing debugger segments when moved.
+#define MSF_NETNODES  0x0080    // move netnodes instead of changing inf.netdelta (this is slower)
+<p>
+#define MOVE_SEGM_OK      0     // all ok
+#define MOVE_SEGM_PARAM  -1     // The specified segment does not exist
+#define MOVE_SEGM_ROOM   -2     // Not enough free room at the target address
+#define MOVE_SEGM_IDP    -3     // IDP module forbids moving the segment
+#define MOVE_SEGM_CHUNK  -4     // Too many chunks are defined, can't move
+#define MOVE_SEGM_LOADER -5     // The segment has been moved but the loader complained
+#define MOVE_SEGM_ODD    -6     // Can't move segments by an odd number of bytes
+#define MOVE_SEGM_ORPHAN -7     // Orphan bytes hinder segment movement
+
+</pre>

@@ -1,0 +1,13 @@
+<a name="IDH_1310"></a>
+<title> get_exception_name</title>
+<table width="100%"><tr valign="top"><td><h2> get_exception_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get exception information
+     code - exception code
+see also <a href="1311.html">define_exception</a> (definition of exception flags)
+<p>
+string get_exception_name(long code); // returns &quot;&quot; on error
+long get_exception_flags(long code);  // returns -1 on error
+
+</pre>

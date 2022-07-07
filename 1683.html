@@ -1,0 +1,18 @@
+<a name="IDH_1683"></a>
+<title> get_fixup_target_flags</title>
+<table width="100%"><tr valign="top"><td><h2> get_fixup_target_flags</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get fixup target flags
+     ea - address to get information about
+returns: 0 - no fixup at the specified address
+         otherwise returns fixup flags:
+<p>
+long get_fixup_target_flags(long ea);
+<p>
+#define FIXUPF_REL      0x1  // fixup is relative to the linear address
+#define FIXUPF_EXTDEF   0x2  // target is a location (otherwise - segment)
+#define FIXUPF_UNUSED   0x4  // fixup is ignored by IDA
+#define FIXUPF_CREATED  0x8  // fixup was not present in the input file
+
+</pre>

@@ -1,0 +1,14 @@
+<a name="IDH_651"></a>
+<title> set_manual_insn</title>
+<table width="100%"><tr valign="top"><td><h2> set_manual_insn</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Specify instruction represenation manually.
+     ea   - linear address
+     insn - a string represenation of the operand
+IDA will not check the specified instruction, it will simply display
+it instead of the orginal representation.
+<p>
+void set_manual_insn(long ea, string insn);
+
+</pre>

@@ -1,0 +1,88 @@
+<a name="IDH_470"></a>
+<title>Convert operand to offset (user-defined base)</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to offset (user-defined base)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpUserOffset
+ </pre>
+This command converts the immediate operand of the
+current instruction/data to a complex offset expression.
+<p>
+Please click here to learn more about <a href="471.html">complex offsets</a>.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+offsets. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the an operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to offset, otherwise it
+will be left unmodified.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+If the offset base is specified as 0xFFFFFFFF, then IDA will create &quot;an automatic offset&quot;.
+Automatic offsets mean that the actual value of the base will be calculated by IDA.
+<p>
+The following offset attributes are available:
+<pre>
+  Treat the base address as a plain number
+</pre>
+<pre>
+        if checked, IDA will treat the base address as a number.
+        In this case, IDA will not create a cross-reference to it
+        and the base address will be printed as a number,
+        not as an offset expression.
+</pre>
+<pre>
+  Offset points past the main object
+</pre>
+<pre>
+        Offsets of this type point past an object end.
+        They do not cause an object created/deletion.
+</pre>
+<pre>
+  Use image base as offset base
+</pre>
+<pre>
+        These offsets are based on the image base.
+        There is no need to explicitly specify the offset base.
+        These offsets are displayed in a concise form:
+          rva func
+        instead of
+          offset func - imagebase
+        If you intend to reassemble the output file, execute the
+        following IDC statement:
+        set_inf_attr(INF_GENFLAGS, get_inf_attr(INF_GENFLAGS) &amp; ~INFFL_ALLASM);
+</pre>
+<pre>
+  Subtract operand value
+</pre>
+<pre>
+        Use this option when the operand value should be substracted
+        from the base to get the target address. In this case the displayed
+        expression will be displayed as
+          offset base - target
+        instead of the usual
+          offset target - base
+</pre>
+<pre>
+  Signed operand
+</pre>
+<pre>
+        Use this option if the operand should be interpreted
+        as a signed value. This option is only available for OFF_REF8,
+        OFF_REF16, OFF_REF32 and OFF_REF64 offset types.
+
+</pre>
+To create offsets to structure members use <a href="472.html">Convert to struct offset</a>
+command.
+<p>
+See also:
+<pre>
+          <a href="467.html">offset by data segment/no</a>
+          <a href="468.html">offset by current segment</a>
+          <a href="1381.html">Edit|Operand types|Offset</a> submenu.
+          <a href="477.html">Enter #th operand manually</a> commands.
+          <a href="1601.html">Set operand type</a></pre>

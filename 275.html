@@ -1,0 +1,15 @@
+<a name="IDH_275"></a>
+<title> print_operand</title>
+<table width="100%"><tr valign="top"><td><h2> print_operand</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get text representation of an operand
+     ea - linear address of instruction (or data)
+     n  - number of operand:
+             0 - the first operand
+             1 - the second operand
+returns: the current text representation of operand
+<p>
+string print_operand(long ea, long n);
+
+</pre>

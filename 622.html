@@ -1,0 +1,128 @@
+<a name="IDH_622"></a>
+<title>Kernel analysis options 2</title>
+<table width="100%"><tr valign="top"><td><h2>Kernel analysis options 2</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Truncate functions upon code deletion
+<pre>
+  Truncate functions when the code at the function end gets deleted.
+  If this option is turned off, IDA does not modify function
+  definitions when code is deleted.
+</pre>
+Create string literals if data xref exists
+<pre>
+  If IDA encounters a data reference to an undefined item, it checks for the
+  presence of the string literal at the target. If the length of the candidate
+  string literal is big enough (more than 4 chars in 16bit or data
+  segments; more than 16 chars otherwise), IDA will automatically create
+  a <a href="454.html">string literal</a>.
+</pre>
+Check for unicode strings
+<pre>
+  This option allows IDA to check for the presence of the unicode
+  strings in the program and creates them if necessary.
+  IDA will check for the unicode strings only if the <a href="613.html">string style</a>
+  is set to &quot;C-style (0 terminated)&quot; or &quot;Unicode&quot;.
+</pre>
+Create offsets and segments using fixup info
+<pre>
+  IDA will use relocation information to make the disassembly
+  nicer. More precisely, it will convert all data items with
+  relocation information to words or dwords like this:
+</pre>
+<pre>
+          dd offset label
+          dw seg seg000
+</pre>
+<pre>
+  If an instruction has a relocation information attached to it,
+  IDA will convert its immediate operand to an offset or segment:
+</pre>
+<pre>
+          mov     eax, offset label
+</pre>
+<pre>
+  You can display the relocation information attached to the current
+  item by using show <a href="598.html">internal</a> flags command.
+</pre>
+Create offset if data xref to seg32 exists
+<pre>
+  If IDA encounters a data reference to 32bit segment and the target
+  contains 32bit value which can be represented as an offset expression,
+  IDA will convert it to an offset.
+</pre>
+Convert 32bit instruction operand to offset
+<pre>
+  This option works only in 32bit and 64bit segments.
+  If an instruction has an immediate operand and the operand
+  can be represented as a meaningful offset expression, IDA will
+  convert it to an offset. However, the value of immediate operand
+  must be higher than 0x10000.
+</pre>
+Automatically convert data to offsets
+<pre>
+  This option allows IDA to convert all newly created data items
+  to offsets if the following conditions are satisfied:
+    - the offset target is a valid address in the program
+    - the target address is higher than 0x20
+    - the target does not point into the middle of an item
+    - if the target is code, the execution does not flow to it
+      from the previous instruction
+    - the data is dword (4 bytes) in a 32-bit segment
+      or qword(8 bytes) in a 64-bit segment
+    - the segment type is not special (extern, communal, abs...)
+</pre>
+Use flirt signatures
+<pre>
+  Allows usage of FLIRT technology
+</pre>
+Comment anonymous library functions
+<pre>
+  This option appends a comment to anonymous library functions.
+  The comment consists of the description of the FLIRT signature
+  which has recognized the function and marked it as coming
+  from a library.
+</pre>
+Multiple copy library function recognition
+<pre>
+  This option allows FLIRT to recognize several copies of the same
+  function in the program.
+</pre>
+Automatically hide libary functions
+<pre>
+  This option hides the functions recognized by FLIRT.
+  It will have effect only from the time it is set.
+</pre>
+Rename jump functions as j_...
+<pre>
+  This option allows IDA to rename simple functions containing only
+</pre>
+<pre>
+          jmp somewhere
+</pre>
+<pre>
+  instruction to &quot;j_somewhere&quot;.
+</pre>
+Rename empty functions as nullsub_...
+<pre>
+  This option allows IDA to rename empty functions containing only
+  a &quot;return&quot; instruction as &quot;nullsub_...&quot;
+  (... is replaced by a serial number: 0,1,2,3...)
+</pre>
+Coagulate data at the final pass
+<pre>
+  This option is meaningful only if &quot;Make final analysis pass&quot;
+  is enabled. It allows IDA to convert <a href="456.html">unexplored</a> bytes
+  to data arrays in the non-code segments.
+</pre>
+Coagulate code at the final pass
+<pre>
+  This option is meaningful only if &quot;Make final analysis pass&quot;
+  is enabled. It allows IDA to convert <a href="456.html">unexplored</a> bytes
+  to data arrays in the code segments.
+</pre>
+Make final analysis pass
+<pre>
+  This option allows IDA to coagulate all <a href="456.html">unexplored</a> bytes
+  by converting them to data or instructions.
+</pre>
+See also <a href="621.html">analysis options 1</a> <a href="1688.html">analysis options 3</a>

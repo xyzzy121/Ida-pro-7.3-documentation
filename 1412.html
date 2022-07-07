@@ -1,0 +1,23 @@
+<a name="IDH_1412"></a>
+<title>Stack trace</title>
+<table width="100%"><tr valign="top"><td><h2>Stack trace</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: StackTrace
+ </pre>
+Opens the stack trace window.
+<p>
+This window displays the function calls that brought the current instruction.
+<p>
+The top of the Stack Trace window lists the last function called by the program.
+Below this is the listing for the previously called functions.
+Each line indicates the name of the function which called the function represented
+by the previous line.
+<p>
+Double clicking on a line jumps to the exact address of the instruction realizing
+this call.
+<p>
+Currently, IDA uses the EBP frame pointer values to gather the stack trace information.
+It will fail for functions using other methods for the frame.
+<pre>
+ See also <a href="1443.html">Tracing</a> submenu.</pre>

@@ -1,0 +1,45 @@
+<a name="IDH_401"></a>
+<title> set_member_type</title>
+<table width="100%"><tr valign="top"><td><h2> set_member_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change structure member type.
+<p>
+This function can be used in two forms.
+First form:
+long set_member_type(long id, long member_offset, long flag, long typeid, long nitems);
+<p>
+Second form:
+long set_member_type(long id, long member_offset, long flag, long typeid, long nitems,
+                     long target, long tdelta, long reftype);
+<p>
+arguments:
+  id            - structure type ID
+  member_offset - offset of the member
+  flag    - new type of the member. Should be one of
+            FF_BYTE..FF_PACKREAL (see above)
+            combined with FF_DATA
+  typeid  - if is_struct(flag) then typeid specifies
+            the structure id for the member
+            if is_off0(flag) then typeid specifies
+            the offset base.
+            if is_strlit(flag) then typeid specifies
+            the string type (<a href="283.html">STRTYPE_...</a>).
+            if is_stroff(flag) then typeid specifies
+            the structure id
+            if is_enum(flag) then typeid specifies
+            the enum id
+            Otherwise typeid should be -1
+  nitems  - number of items in the member
+the remaining arguments are allowed only if <a href="181.html">is_off0(flag)</a> and you want
+to specify a complex offset expression:
+  target  - target address of the offset expr. You may specify it as
+            -1, ida will calculate it itself
+  tdelta  - offset target delta. usually 0
+  reftype - see REF_... definitions
+returns:        !=0 - ok.
+<p>
+long set_member_type(long id, long member_offset, long flag, long typeid, long nitems,
+                     long target, long tdelta, long reftype);
+
+</pre>

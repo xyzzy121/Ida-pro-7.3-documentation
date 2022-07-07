@@ -1,0 +1,18 @@
+<a name="IDH_1220"></a>
+<title> eval</title>
+<table width="100%"><tr valign="top"><td><h2> eval</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Evaluate an expression, in the current scripting language.
+     expr - an expression
+returns: the expression value.
+If there are problems, the returned value will be &quot;IDC_FAILURE: xxx&quot;
+where xxx is the error description
+Thread-safe function.
+<p>
+string or long eval(string expr);
+<p>
+// Macro to check for evaluation failures:
+#define EVAL_FAILURE(code) (value_is_string(code) &amp;&amp; substr(code, 0, 13) == &quot;IDC_FAILURE: &quot;)
+
+</pre>

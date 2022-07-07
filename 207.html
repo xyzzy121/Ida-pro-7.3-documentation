@@ -1,0 +1,16 @@
+<a name="IDH_207"></a>
+<title> create_strlit</title>
+<table width="100%"><tr valign="top"><td><h2> create_strlit</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create a string.
+This function creates a string (the string type is determined by the value
+of get_inf_attr(INF_STRTYPE))
+  ea      - linear address
+  len     - length of the string in bytes
+returns: 1-ok, 0-failure
+note: the type of an existing string is returned by get_str_type()
+<p>
+success create_strlit(long ea, long len=0);
+
+</pre>

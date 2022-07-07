@@ -1,0 +1,24 @@
+<a name="IDH_1354"></a>
+<title>Compiler</title>
+<table width="100%"><tr valign="top"><td><h2>Compiler</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetupCompiler
+ </pre>
+This dialog box allows the user to specify the compiler used to create the
+program along with the memory model, default calling convention, ABI and other
+parameters.
+<p>
+Please note that while some combinations of the parameters are meaningless,
+IDA doesn't check them for validity. It is up to the user to specify a correct
+combination.
+<p>
+IDA tries to determine the correct values automatically.
+<p>
+The include directories are a list of directories that look for the standard C headers.
+This parameter is used during parsing <a href="1367.html">C header files</a>.
+The directories must be separated by ';' in MS Windows and ':' in Linux.
+The predefined macros field has the same format and is used similarly.
+Please note that IDA doesn't define any compiler-specific macros by default.
+<p>
+See also <a href="604.html">Options</a> submenu

@@ -1,0 +1,48 @@
+<a name="IDH_1588"></a>
+<title>Debugging code snippets with QEMU</title>
+<table width="100%"><tr valign="top"><td><h2>Debugging code snippets with QEMU</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Using the <a href="1587.html">&quot;Run external program&quot;</a> option it is easy to debug small
+ARM, MIPS or PowePC code snippets directly from inside IDA.
+<p>
+1) Download and install QEMU. Win32 builds can be downloaded from <a href="http://homepage3.nifty.com/takeda-toshiya/qemu/.">http://homepage3.nifty.com/takeda-toshiya/qemu/.</a>
+<p>
+2) Edit cfg\gdb_arch.cfg file and change the &quot;set QEMUPATH&quot; line to point to the install directory of QEMU.
+<p>
+3) In <a href="1522.html">Remote GDB Debugger options</a> (Debugger|Debugger options, Set specific options), enable &quot;Run a program before debugging&quot;.
+<p>
+4) Click &quot;Choose a configuration&quot; and choose a predefined configuration. Choose &quot;for snippets&quot;, if mentioned.
+<p>
+5) If necessary, edit the command line or memory map.
+<p>
+6) Click OK, OK to confirm and close the options dialog.
+<p>
+7) In Debugger|Process options make sure that Hostname is set to &quot;localhost&quot; and port is non-zero.
+<p>
+8) Select the code range to emulate or at least the first instruction. Alternatively, you can rename the starting address &quot;ENTRY&quot; and end address as &quot;EXIT&quot;.
+<p>
+9) Choose Debugger|Run or press F9.
+<p>
+IDA will write the database into an ELF file (if %e was specified), start QEMU with the specified command line and connect to its GDB stub.
+It will set the SP and PC values so that the code can be stepped through.
+<p>
+NOTE
+<p>
+While it can be very useful, QEMU emulation has certain limitations:
+<p>
+1) the memory map is usually fixed at compile time. So if your program addresses
+intersect some of the system regions as specified by the memory map,
+IDA will refuse to start debugging. In that case, you can either rebase the
+program so that it fits into RAM regions or check other QEMU board configurations
+for a compatible memory layout.
+<p>
+2) the emulation starts at the system (kernel) level when there is no OS loaded.
+That means that system calls and imported functions will not work.
+<p>
+3) the hardware access will only work to the extent emulated by QEMU. If the
+code you are emulating does not match the chosen board configuration of QEMU,
+the code accessing the hadrware most likely will not work properly, if at all.
+<p>
+See also
+  <a href="1587.html">External programs and GDB Debugger</a>
+  <a href="1335.html">Remote GDB Debugger</a>

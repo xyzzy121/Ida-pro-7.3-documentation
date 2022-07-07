@@ -1,0 +1,15 @@
+<a name="IDH_18"></a>
+<title> create_data</title>
+<table width="100%"><tr valign="top"><td><h2> create_data</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create a data item at the specified address
+     ea - linear address
+     flags - FF_BYTE..FF_PACKREAL
+     size - size of item in bytes
+     tid - for FF_STRUCT the structure id
+returns: 1-ok, 0-failure
+<p>
+success create_data(long ea, long flags, long size, long tid);
+
+</pre>

@@ -1,0 +1,9 @@
+<a name="IDH_231"></a>
+<title>Negative Offsets</title>
+<table width="100%"><tr valign="top"><td><h2>Negative Offsets</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+A segment cannot have bytes with negative offset from the segment base.
+Example:
+        if a segment base is 0x3000, this segment can have a
+        start address above or equal to 0x30000, but it cannot
+        have a start address 0x2FFFF.

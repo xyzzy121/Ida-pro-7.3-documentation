@@ -1,0 +1,15 @@
+<a name="IDH_719"></a>
+<title> get_next_bmask</title>
+<table width="100%"><tr valign="top"><td><h2> get_next_bmask</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get next bitmask in the enum (bitfield)
+     enum_id - id of enum
+     bmask   - value of the current bitmask
+returns: value of a bitmask with value higher than the specified
+         value. -1 if no such bitmasks exist.
+         All bitmasks are sorted by their values as unsigned longs.
+<p>
+long get_next_bmask(long enum_id, long value);
+
+</pre>

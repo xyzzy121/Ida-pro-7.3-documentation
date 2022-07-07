@@ -1,0 +1,68 @@
+<a name="IDH_514"></a>
+<title>Change segment attributes</title>
+<table width="100%"><tr valign="top"><td><h2>Change segment attributes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: EditSegment
+ </pre>
+This command allows you to change segment attributes.
+You can change all attributes except the segment base. To change the segment
+base, you have to delete the segment and create it again.
+<p>
+Please use the following links to learn about the segment attributes:
+<pre>
+      <a href="515.html">How to change segment name</a>
+      <a href="517.html">How to change segment class</a>
+      <a href="516.html">How to change segment addressing mode (16/32)</a>
+      <a href="518.html">How to change segment alignment</a>
+      <a href="519.html">How to change segment combination</a>
+</pre>
+Changing the segment class may change the segment type.
+<p>
+MOVE ADJACENT SEGMENTS: means that the previous and next segments will
+be shrunk or expanded to fill gaps between segments.
+Click <a href="628.html">here</a> for more information.
+<p>
+DISABLE ADDRESSES: if set, when a segment is shrunk,
+all information about bytes going out of the segment will be completely removed..
+Otherwise, IDA will discard information about instructions/data,
+comments etc, but will retain byte values so that another segment can be
+created later and it will use the existing byte values.
+<p>
+If IDA creates 2 segments where only
+one segment must exist, you may try
+the following sequence:
+<pre>
+        - <a href="513.html">delete</a> one segment. Choose one with
+          bad segment base value. Do not disable addresses occupied
+          by the segment being deleted.
+        - change bounds of another segment.
+</pre>
+Note that the <a href="507.html">create</a> segment command changes the boundaries of
+the overlapping segment automatically.
+<p>
+Segments with the 'debugger' attribute are the segments whose memory contents
+are not saved in the database. Usually, these segments are created by the
+debugger to reflect the current memory state of the program.
+<p>
+However, the user can modify this attribute.
+<p>
+If it is cleared, then the segment will permanently
+stay in the database after closing the debugger session. The database will reflect the
+state of the segment which was at the time when the status is changed.
+<p>
+If it is set, then the segment will become a temporary segment and
+will be deleted at the end of the debugging session.
+<p>
+The &quot;debugger segment&quot; checbkox is available only during debugging sessions.
+<p>
+The 'loader' segments are the segment created by the file loader. The
+segment having this attribute are considered to be part of the input file.
+<p>
+A segment with the 'debugger' attribute set and the 'loader' attribute
+not set is considered to be an ephemeral segment.
+Such segments are not analyzed automatically by IDA.
+<p>
+&quot;Segment permissions&quot; group box can be used to modify Segment access permissions (Read/Write/Execute)
+<p>
+See also <a href="506.html">Edit|Segments</a> submenu.

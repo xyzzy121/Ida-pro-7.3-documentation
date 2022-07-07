@@ -1,0 +1,29 @@
+<a name="IDH_1346"></a>
+<title>Rename register</title>
+<table width="100%"><tr valign="top"><td><h2>Rename register</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: RenameRegister
+ </pre>
+This command allows you to rename a processor general register to some
+meaningful name. While this is not used very often on IBM PCs,
+it is especially useful on RISC processors with lots of registers.
+<p>
+For example, a general register R9 is not very meaningful and a name like
+'CurrentTime' is much better.
+<p>
+This command can be used to define a new register name as well as to remove it.
+Just move the cursor on the register name and press enter.
+If you enter the new register name as an empty string, then the definition
+will be deleted.
+<p>
+If you have selected a range before using this command, then the definition will
+be restricted to the selected range. But in any case, the definition cannot
+cross the function boundaries.
+<p>
+You cannot use this command if the current instruction does not belong to
+any <a href="484.html">function</a>.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.</pre>

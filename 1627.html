@@ -1,0 +1,47 @@
+<a name="IDH_1627"></a>
+<title>FLAIR match indecision: reference to function expected</title>
+<table width="100%"><tr valign="top"><td><h2>FLAIR match indecision: reference to function expected</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        IDA matched code bytes against at least one
+        signature entry, but failed finding expected
+        cross-references at certain offsets in the code.
+</pre>
+<pre>
+        Consider the following .pat file contents:
+</pre>
+<pre>
+                5589E583EC18A1........890424E8........C9C3...................... 00 0000 0015 :0000 _test ^000F _my_fun0
+                5589E583EC18A1........890424E8........C9C3...................... 00 0000 0015 :0000 _smuk ^000F _my_fun1
+</pre>
+<pre>
+        Now, turn that .pat file into a signature (.sig) file, telling
+        sigmake to include function references into signature
+        (using the -r switch).
+        Then, apply that .sig file to a binary that you are
+        examining.
+        If IDA recognizes the 0x15-bytes long pattern in the binary, it
+        will check that, at offset 0xF from the start of the match,
+        a call to either &quot;_my_fun0&quot; or &quot;_my_fun1&quot; is performed.
+</pre>
+<pre>
+        If either one of the two is found, then that code will
+        be named &quot;test&quot;, or &quot;smuk&quot;, respectively.
+        Otherwise, a SIGFNREF problem will be signalled.
+</pre>
+<pre>
+ What to do:
+        Examine the code pointed to by the address at the given
+        offset (i.e., 0xF) and try and determine whether
+        that function could be &quot;_my_fun0&quot;, or &quot;_my_fun1&quot;.
+        If so, name it accordingly and re-apply the signature.
+</pre>
+<pre>
+        An alternative is to generate the signature (.sig)
+        file without the cross-references to functions
+        (i.e., dropping the '-r' switch).
+        But beware of collisions: a pattern like the
+        one above will inevitably create a collision, since the
+        pattern bytes are similar for the two entries.
+</pre>

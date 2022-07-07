@@ -1,0 +1,23 @@
+<a name="IDH_1574"></a>
+<title> object.store</title>
+<table width="100%"><tr valign="top"><td><h2> object.store</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert the object into a C structure and store it into the idb or a buffer
+ typeinfo - description of the C structure. Can be specified
+            as a declaration string or result of <a href="1533.html">get_tinfo</a>() or
+            similar functions
+ dest     - address (ea) to store the C structure
+            OR a reference to a destination string
+ flags    - combination of PIO_.. bits
+<p>
+void object.store(typeinfo, dest, flags);
+<p>
+#define PIO_NOATTR_FAIL 0x0004 // missing attributes are not ok
+#define PIO_IGNORE_PTRS 0x0008 // do not follow pointers
+<p>
+#define PDF_INCL_DEPS 0x1      // Include dependencies
+#define PDF_DEF_FWD   0x2      // Allow forward declarations
+#define PDF_DEF_BASE  0x4      // Include base '__intX' types
+
+</pre>

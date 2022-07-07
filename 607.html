@@ -1,0 +1,88 @@
+<a name="IDH_607"></a>
+<title>Cross References Dialog</title>
+<table width="100%"><tr valign="top"><td><h2>Cross References Dialog</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA maintains cross-references automatically. Of course, when IDA starts to
+disassemble a new file, the cross-references will not appear immediately;
+they will be collected during background <a href="416.html">analysis</a>.
+<p>
+This command changes the representation of cross references.
+<p>
+Display segments in xrefs
+<pre>
+        This checkbox enables or disables segments in cross references:
+</pre>
+<pre>
+           Enabled:     ; CODE XREF: 3000:1025
+           Disabled:    ; CODE XREF: 1025
+</pre>
+Display xref type mark
+<pre>
+        If this option is disabled, IDA will not display &quot;CODE&quot;
+        or &quot;DATA&quot; in the cross-references.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_XREF_TYPES
+</pre>
+Display function offsets
+<pre>
+        This option controls the appearance of the cross-reference addresses.
+        If it is enabled, the addresses will be displayed as offsets
+        from a function beginning. Example:
+</pre>
+<pre>
+           Enabled:     somefunc+0x44
+           Disabled:    cseg:0x4544
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_XREF_FUNC
+</pre>
+Display xref values
+<pre>
+        If this option is disabled, IDA will just display the presence
+        of cross-references, like this:
+</pre>
+<pre>
+                ; CODE XREF: ...
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_XREF_VALUES
+</pre>
+Right margin
+<pre>
+        Determines the maximal length of a line with the cross references.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: MAX_XREF_LENGTH
+</pre>
+Cross reference depth
+<pre>
+        This value &quot;how many bytes of an object to look at to collect
+        cross references&quot;. For example we have an array:
+</pre>
+<pre>
+                A       db 100 dup(0)
+</pre>
+<pre>
+        If some instruction refers to the 5-th element of the array:
+</pre>
+<pre>
+                mov     al,A+5
+</pre>
+<pre>
+         with TD=3      we'll have no xrefs displayed
+         with TD=10     we'll have this xref
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: MAX_TAIL
+</pre>
+Number of xrefs to display
+<pre>
+        Determines the maximal number of the cross references to display.
+        You may keep this value low because you can access all xrefs by
+        using the <a href="564.html">Jump to cross reference</a> command.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_XREFS
+</pre>
+See also <a href="604.html">Options</a> submenu.

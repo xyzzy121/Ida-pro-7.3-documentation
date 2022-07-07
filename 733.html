@@ -1,0 +1,21 @@
+<a name="IDH_733"></a>
+<title> set_enum_idx</title>
+<table width="100%"><tr valign="top"><td><h2> set_enum_idx</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+specify another serial number for a enum
+     enum_id - id of enum
+     idx     - new serial number.
+               If another enum with the same serial number
+               exists, then all enums with serial
+               numbers &gt;= the specified idx get their
+               serial numbers incremented (in other words,
+               the new enum is put in the middle of the list
+               of enums).
+               If idx &gt;= get_enum_qty() then the enum is
+               moved to the end of the list of enums.
+returns: comment string
+<p>
+success set_enum_idx(long enum_id, long idx);
+
+</pre>

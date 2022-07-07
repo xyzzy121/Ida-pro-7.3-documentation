@@ -1,0 +1,17 @@
+<a name="IDH_727"></a>
+<title> get_next_enum_member</title>
+<table width="100%"><tr valign="top"><td><h2> get_next_enum_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get next constant in the enum
+     enum_id - id of enum
+     bmask   - bitmask of the constant
+               ordinary enums accept only -1 as a bitmask
+     value   - value of the current constant
+returns: value of a constant with value higher than the specified
+         value. -1 no such constants exist.
+         All constants are sorted by their values as unsigned longs.
+<p>
+long get_next_enum_member(long enum_id, long value, long bmask);
+
+</pre>

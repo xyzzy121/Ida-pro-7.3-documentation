@@ -1,0 +1,147 @@
+<a name="IDH_605"></a>
+<title>Text Representation Dialog</title>
+<table width="100%"><tr valign="top"><td><h2>Text Representation Dialog</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This command changes the look of the disassembly.
+Here you can change the values of the following checkboxes/input fields:
+<p>
+Line prefixes
+<pre>
+        This checkbox enables or disables line prefixes display.
+        Line prefix is the address of the current byte:
+</pre>
+<pre>
+         3000:1000      mov ax, bx
+         ^^^^^^^^^
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_LINEPREFIXES
+</pre>
+Number of opcode bytes
+<pre>
+        Opcode bytes are shown below:
+</pre>
+<pre>
+         3000:1000 55           push    bp
+                   ^^^^^^^^^
+</pre>
+<pre>
+        The opcode is the operation code of the current instruction.
+        For the data items, the opcodes are elements of data directives.
+        Sometimes there is not enough place to display all bytes of an item
+        (of a large array, for example). In this case, IDA will display just
+        the few first bytes of the item. By default, IDA does not display
+        the opcodes.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: OPCODE_BYTES
+</pre>
+Use segment names
+<pre>
+        This option controls the appearance of the segment names in the
+        addresses. Example (codeseg has base 3000):
+</pre>
+<pre>
+           Enabled:     codeseg:0034
+           Disabled:    3000:0034
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: USE_SEGMENT_NAMES
+</pre>
+Segment addresses
+<pre>
+        Marking this checkbox, you can disable segment addresses in the
+        disassembly. IDA will show only offsets. Example:
+</pre>
+<pre>
+           Enabled:     codeseg:0034
+           Disabled:    0034
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_SEGMENTS
+</pre>
+Function offsets
+<pre>
+        This option controls the appearance of the line prefixes.
+        If it is enabled, the addresses will be displayed as offsets
+        from a function beginning. Example:
+</pre>
+<pre>
+           Enabled:     somefunc+0x44
+           Disabled:    cseg:0x4544
+</pre>
+Right margin
+<pre>
+        This option controls the length of disassembly lines for data
+        directives.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: MAX_DATALINE_LENGTH
+</pre>
+Instruction indention
+<pre>
+        You can change indention of disassembled instructions:
+</pre>
+<pre>
+                         mov ax, bx
+         &lt;--------------&gt;
+            indention
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: INDENTION
+</pre>
+Display bad instruction &lt;BAD&gt; marks
+<pre>
+        Some assemblers do not understand some instructions even if they
+        must. For example, the Z80 processor has several undocumented
+        instructions and many assemblers fail to recognize them. IDA knows
+        about this fact and tries to produce an output that can be compiled
+        without errors, so it replaces such instructions with data bytes.
+</pre>
+<pre>
+        The problem is more severe with Intel 80x86 processors: the same
+        instruction can be coded differently. There are 2 operation codes
+        for ADD instruction, etc. The worst thing is that the different
+        operation codes have different lengths. If the assembler used to
+        compile a file and your assembler produce different operation codes,
+        you may obtain completely different output files.
+</pre>
+<pre>
+        That is why IDA can mark such instructions as &lt;BAD&gt; and replace them
+        with data bytes. Example:
+</pre>
+<pre>
+           Enabled:
+                        db 0Fh,86h,7Eh,0,0,0 ; &lt;BAD&gt; jbe     loc_0_205
+                        db 0Fh,82h,78h,0,0,0 ; &lt;BAD&gt; jb      loc_0_205
+                        db 0Fh,83h,72h,0,0,0 ; &lt;BAD&gt; jnb     loc_0_205
+           Disabled:
+                        jbe     loc_0_205
+                        jb      loc_0_205
+                        jnb     loc_0_205
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_BAD_INSTRUCTIONS
+</pre>
+Use tabulations in output
+<pre>
+        You can disable the tab chars (0x09) in the output file if you do not
+        like them. By default, IDA produces output files with tab chars.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: USE_TABULATION
+</pre>
+low suspicious limit
+high suspicious limit
+<pre>
+        Click <a href="606.html">here</a> to get information about these fields.
+</pre>
+Display stack pointer
+<pre>
+        If this option is set, IDA will display the value of
+        the stack pointer in the line prefix.
+</pre>
+<pre>
+        <a href="419.html">IDA.CFG</a> parameter: SHOW_SP
+</pre>
+See also <a href="604.html">Options</a> submenu.

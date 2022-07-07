@@ -1,0 +1,15 @@
+<a name="IDH_682"></a>
+<title> create_struct</title>
+<table width="100%"><tr valign="top"><td><h2> create_struct</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create a structure data item at the specified address
+     ea      - linear address
+     size    - structure size in bytes. -1 means that the size
+               will be calculated automatically
+     strname - name of a structure type
+returns: 1-ok, 0-failure
+<p>
+success create_struct(long ea, long size, string strname);
+
+</pre>

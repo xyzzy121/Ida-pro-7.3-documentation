@@ -1,0 +1,13 @@
+<a name="IDH_411"></a>
+<title> get_enum_member_bmask</title>
+<table width="100%"><tr valign="top"><td><h2> get_enum_member_bmask</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get bit mask of symbolic constant
+     const_id - id of symbolic constant
+returns: bitmask of constant or 0
+                        ordinary enums have bitmask = -1
+<p>
+long get_enum_member_bmask(long const_id);
+
+</pre>

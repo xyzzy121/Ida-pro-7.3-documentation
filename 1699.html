@@ -1,0 +1,21 @@
+<a name="IDH_1699"></a>
+<title>Pull all metadata</title>
+<table width="100%"><tr valign="top"><td><h2>Pull all metadata</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This commands retrieves <a href="1704.html">metadata</a> about the current database from Lumina.
+<p>
+IDA will calculate checksums for all non-trivial functions in the database
+and send it to Lumina. This information will be used to match and retrieve
+metadata, which will be automatically applied.
+<p>
+Please note that this may overwrite your changes, so taking a database snapshot
+and saving the database before invoking this command is a good idea.
+<p>
+By non-trivial functions we mean:
+<pre>
+  - long enough functions (&gt;=16 bytes)
+  - non-library functions
+  - non-imported functions (functions with real body)
+</pre>
+See also <a href="1701.html">View all metadata</a>, which allows the user
+to interactively apply metadata.

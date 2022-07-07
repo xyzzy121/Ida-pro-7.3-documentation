@@ -1,0 +1,27 @@
+<a name="IDH_1386"></a>
+<title>Highlighting identifiers</title>
+<table width="100%"><tr valign="top"><td><h2>Highlighting identifiers</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In the graphical version, IDA highlights the identifier under the cursor.
+For example, if the cursor is on the &quot;EAX&quot; register, then all occurrences of &quot;EAX&quot;
+will be displayed with the yellow background. This feature is meant to
+make the program analysis easier by highlighting the interesting parts of
+the disassembly. For example, if the user wants to see all references to &quot;EAX&quot;,
+he just clicks on any &quot;EAX&quot; on the screen and all of them will be highlighted.
+<p>
+The selection is made by pressing the Up, Down, Left, Right keys or
+by simply clicking on the identifier.
+<p>
+The selection is not changed by pressing the PageUp, PageDown, Home, End keys, using
+the scrollbar, or pressing the Alt-Up, Alt-Down, Ctrl-Up, Ctrl-Down keys.
+<p>
+The Alt-Up and Alt-Down keys perform a search of the currently selected identifier
+backward or forward respectively.
+<p>
+The Ctrl-Up and Ctrl-Down keys scroll the disassembly text.
+<p>
+IDA does not highlight the segment names at the line prefix because
+it is not very useful.
+<p>
+It is possible to turn off the highlight. The appropriate checkbox is in
+the <a href="1304.html">Options, General, Browser</a> tab.

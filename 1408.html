@@ -1,0 +1,29 @@
+<a name="IDH_1408"></a>
+<title>Rebase program</title>
+<table width="100%"><tr valign="top"><td><h2>Rebase program</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Rebase program
+ </pre>
+The whole program will be shifted by the specifed amount of bytes in the memory.
+The following options are available (we strongly recommend to leave them
+turned on):
+<pre>
+ Fix up relocations
+</pre>
+<pre>
+        This option allows IDA to modify the references
+        to/from the relocated segment(s). If it is turned
+        off, the references might be wrong after the move.
+</pre>
+<pre>
+ Rebase the whole image
+</pre>
+<pre>
+        This option is accessible only if the whole program
+        is selected. It allows IDA to adjust internal
+        variables on the whole program.
+</pre>
+Please note rebasing the program might remove user-defined xrefs.
+<p>
+See also <a href="506.html">Edit|Segments</a> submenu.

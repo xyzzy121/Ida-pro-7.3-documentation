@@ -1,0 +1,18 @@
+<a name="IDH_461"></a>
+<title>Convert operand to hexadecimal number</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to hexadecimal number</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpHex
+ </pre>
+This command converts immediate operand(s) type of the
+current instruction/data to hex number. So you can
+delete <a href="569.html">suspicious</a> mark of the item.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+See also <a href="1382.html">Edit|Operand types|Number</a> submenu.

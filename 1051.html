@@ -1,0 +1,13 @@
+<a name="IDH_1051"></a>
+<title> add_user_stkpnt</title>
+<table width="100%"><tr valign="top"><td><h2> add_user_stkpnt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Add user-defined SP register change point
+     ea    - linear address where SP changes
+     delta - difference between old and new values of SP
+returns: 1-ok, 0-failed
+<p>
+success add_user_stkpnt(ea, sval_t delta);
+
+</pre>

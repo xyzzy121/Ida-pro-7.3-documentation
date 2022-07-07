@@ -1,0 +1,35 @@
+<a name="IDH_1042"></a>
+<title>Assembler level and C level types</title>
+<table width="100%"><tr valign="top"><td><h2>Assembler level and C level types</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In order to provide intuitive yet powerful interface to types IDA introduces
+two kinds of types:
+<pre>
+  - Assembler level types
+  - C level types
+</pre>
+Assembler level types are the ones defined by the user using the
+<a href="593.html">Struct</a> or <a href="594.html">Enum</a> views.
+<p>
+Since the user has to specify manually the member offset and other attributes,
+IDA considers the member offsets to be fixed for them and never shifts members
+of such types. If a member of struct becomes too big and does not fit the struct
+anymore, IDA will delete it.
+<p>
+The types defined in the <a href="1259.html">Local types</a> window are considered
+as C level types. For them IDA automatically calculates the member offsets and
+if necessary may shift members and change the total struct size.
+<p>
+The user may change the type level by simply editing the type from the appropriate
+window. For example, if a C level type is edited from the <a href="593.html">Struct</a>
+view, IDA will consider such a type as an Assembler level type in the future.
+<pre>
+ In the struct/enum view:
+  Assembler level types are displayed using regular colors.
+  C level types are displayed in gray, as if they are disabled (but they are not).
+</pre>
+<pre>
+ In the local types view:
+  C level types are displayed using regular colors.
+  Assembler level types are displayed in gray, as if they are disabled (but they are not).
+</pre>

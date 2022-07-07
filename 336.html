@@ -1,0 +1,15 @@
+<a name="IDH_336"></a>
+<title> set_func_attr</title>
+<table width="100%"><tr valign="top"><td><h2> set_func_attr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set a function attribute
+     ea    - any address belonging to the function
+     attr  - one of <a href="335.html">FUNCATTR_...</a> constants.
+     value - new value of the attribute
+returns: 1 - ok
+         0 - failed
+<p>
+success set_func_attr(long ea, long attr, long value);
+
+</pre>

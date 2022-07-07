@@ -1,0 +1,74 @@
+<a name="IDH_1304"></a>
+<title>Browser options</title>
+<table width="100%"><tr valign="top"><td><h2>Browser options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This tab of IDA Options dialog allows for editing of hint and identifier highlight
+related settings. There are two groups of settings.
+<p>
+The first group is for hints that are displayed when the mouse is hovered
+over some text.
+<p>
+The second group is for highlighting.
+<p>
+Number of lines for identifier hints
+<pre>
+        Specifies how tall the hint window will be initially.
+        IDA may decide to display less lines than specified if the hint is
+        small. The user can resize the hint window using the mouse wheel.
+</pre>
+Delay for identifier hints
+<pre>
+        Milliseconds that pass before the hint appears when the user
+        hovers the mouse pointer over an identifier
+</pre>
+Mouse wheel resizes hint window
+<pre>
+        Permit to resize the hint window by using the mouse wheel.
+        Can be turned off if the user does not want to resize the hints.
+</pre>
+No hints if debugger is active
+<pre>
+        Hints will be disabled when the debugger is active. This may be
+        useful to speed of debugging: calculating hints for zero filled
+        ranges can be very expensive
+
+</pre>
+Auto highlight the current identifier
+<pre>
+        Highlight the current identifier everywhere on the screen.
+        IDA tries to determine if the current identifier denotes a register.
+        In this case it will highlight references to other parts of the
+        register. For example, if &quot;AL&quot; is highlighted, IDA will also highlight
+        &quot;AH&quot;, &quot;AX&quot;, and &quot;EAX&quot; (if the current processor is x86).
+</pre>
+Unhide collapsed items automatically when jumping to them (gui only)
+<pre>
+        If this option is set on, IDA will automatically
+        uncollapse hidden functions if the user decides to jump
+        to them. As soon as the user quits the function by pressing
+        Esc, the function is automatically collapsed again.
+</pre>
+Lazy jumps (gui only)
+<pre>
+        If this option is set on, IDA will not redraw the
+        disassembly window if the jump target is already on the screen.
+        In this case, it will just move the cursor to the specified
+        address. This option leads to less screen redraws and
+        less jumpy behaviour.
+</pre>
+Number of items in navigation stack drop-down menus
+<pre>
+        Specifies the number of entries in the drop-down menu for the 'Jump'
+        toolbar
+</pre>
+Number of lines for auto scroll
+<pre>
+        Specifies how many lines force automatic scrolling of the
+        disassembly view
+</pre>
+Caret blinking interval
+<pre>
+        Specifies how fast the input caret blinks (in milleseconds).
+        Must be greater than or equal to 500, or zero.
+        Zero means to disable blinking
+</pre>

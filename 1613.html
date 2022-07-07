@@ -1,0 +1,14 @@
+<a name="IDH_1613"></a>
+<title> read_dbg_memory</title>
+<table width="100%"><tr valign="top"><td><h2> read_dbg_memory</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Read from debugger memory
+     ea - linear address
+     size - size of data to read
+returns: data as a string. If failed, If failed, throws an exception
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+string read_dbg_memory(long ea, long size);
+
+</pre>

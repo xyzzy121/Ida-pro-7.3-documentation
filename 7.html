@@ -1,0 +1,14 @@
+<a name="IDH_7"></a>
+<title> suspend_thread</title>
+<table width="100%"><tr valign="top"><td><h2> suspend_thread</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Suspend thread
+Suspending a thread may deadlock the whole application if the suspended
+was owning some synchronization objects.
+     tid - thread id
+Return: -1:network error, 0-failed, 1-ok
+<p>
+long suspend_thread(long tid);
+
+</pre>

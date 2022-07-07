@@ -1,0 +1,15 @@
+<a name="IDH_394"></a>
+<title> del_struc</title>
+<table width="100%"><tr valign="top"><td><h2> del_struc</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+delete a structure type
+     id - structure type ID
+returns: 0 if bad structure type ID is passed
+         1 otherwise the structure type is deleted. All data
+           and other structure types referencing to the
+           deleted structure type will be displayed as array of bytes.
+<p>
+success del_struc(long id);
+
+</pre>

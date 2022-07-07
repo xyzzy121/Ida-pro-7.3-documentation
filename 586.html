@@ -1,0 +1,53 @@
+<a name="IDH_586"></a>
+<title>Functions window</title>
+<table width="100%"><tr valign="top"><td><h2>Functions window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenFunctions
+ </pre>
+A list of all functions in the program is displayed.
+You can <a href="484.html">add</a>, <a href="486.html">delete</a>, <a href="485.html">modify</a> functions
+using <a href="427.html">list</a> viewer commands.
+<p>
+Listed for each function are:
+<pre>
+        - function name
+        - segment that contains the function
+        - offset of the function within the segment
+        - function length in bytes
+        - size (in bytes) of local variables + saved registers
+        - size (in bytes) of arguments passed to the function
+</pre>
+The last column of this window has the following format:
+<pre>
+        R - function returns to the caller
+        F - far function
+        L - library function
+        S - static function
+        B - BP based frame. IDA will automatically convert
+            all frame pointer [BP+xxx] operands to stack
+            variables.
+        T - function has type information
+        = - Frame pointer is equal to the initial stack pointer
+            In this case the frame pointer points to the bottom of the frame
+        M - reserved
+        S - reserved
+        I - reserved
+        C - reserved
+        D - reserved
+        V - reserved
+</pre>
+If a function has its color set, its line is colored using the specified color.
+Otherwise library and lumina functions are colored with the corresponding
+color. Otherwise the line is not colored.
+<p>
+A bold font is used for functions that have definite (user-specified) prototype.
+Also some plugins too may set this flag. Such prototypes are taken as is
+by the decompiler, while other prototypes are considered only as a starting
+point during decompilation.
+<p>
+It is possible to automatically synchronize the function list with the active
+disassembler, pseudocode, or hex view. For that right click on the function
+list and select &quot;Turn on synchronization&quot;.
+<p>
+See also <a href="1356.html">View|Open subviews</a> submenu.

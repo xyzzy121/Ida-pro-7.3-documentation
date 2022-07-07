@@ -1,0 +1,16 @@
+<a name="IDH_1402"></a>
+<title>Step over</title>
+<table width="100%"><tr valign="top"><td><h2>Step over</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ThreadStepOver
+ </pre>
+This command executes one assembler instruction at a time,
+stepping over procedures while executing them as a single unit.
+<p>
+Internally, in the case of a function call, IDA setups a temporary
+breakpoint on the instruction following this function call.
+<pre>
+ See also <a href="1401.html">Step into</a>
+          <a href="1442.html">Run until return</a>
+          <a href="1395.html">Debugger</a> submenu.</pre>

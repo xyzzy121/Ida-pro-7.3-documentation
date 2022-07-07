@@ -1,0 +1,23 @@
+<a name="IDH_550"></a>
+<title>Problem: Cannot find offset base</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Cannot find offset base</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        The current item has an operand marked as an offset,
+        but IDA cannot find the offset base in the database.
+</pre>
+<pre>
+ Possible reason(s):
+        The database is probably corrupted.
+        This may occur if the database was corrupted and repaired.
+</pre>
+<pre>
+ What to do:
+        Mark the operand again as an offset. Use one of the following
+        commands:
+         <a href="467.html">Convert to offset (DS)</a>
+         <a href="468.html">Convert to offset (CS)</a>
+         <a href="469.html">Convert to offset by any segment</a>
+         <a href="470.html">Convert to offset by any user-specified base</a>
+</pre>

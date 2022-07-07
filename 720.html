@@ -1,0 +1,15 @@
+<a name="IDH_720"></a>
+<title> get_prev_bmask</title>
+<table width="100%"><tr valign="top"><td><h2> get_prev_bmask</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get prev bitmask in the enum (bitfield)
+     enum_id - id of enum
+     value   - value of the current bitmask
+returns: value of a bitmask with value lower than the specified
+         value. -1 no such bitmasks exist.
+         All bitmasks are sorted by their values as unsigned longs.
+<p>
+long get_prev_bmask(long enum_id, long value);
+
+</pre>

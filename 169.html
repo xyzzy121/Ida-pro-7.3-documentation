@@ -1,0 +1,17 @@
+<a name="IDH_169"></a>
+<title> get_reg_value</title>
+<table width="100%"><tr valign="top"><td><h2> get_reg_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get register value
+     name - the register name
+the debugger should be running. otherwise the function fails
+the register name should be valid.
+It is not necessary to use this function to get register values
+because a register name in the script will do too.
+returns: register value (integer or floating point)
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+number get_reg_value(string name);
+
+</pre>

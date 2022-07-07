@@ -1,0 +1,14 @@
+<a name="IDH_201"></a>
+<title> create_insn</title>
+<table width="100%"><tr valign="top"><td><h2> create_insn</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create an instruction at the specified address
+     ea - linear address
+returns: 0 - can't create an instruction (no such opcode, the instruction would
+             overlap with existing items, etc)
+         otherwise returns length of the instruction in bytes
+<p>
+long create_insn(long ea);
+
+</pre>

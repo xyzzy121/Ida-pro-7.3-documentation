@@ -1,0 +1,38 @@
+<a name="IDH_244"></a>
+<title> gen_file</title>
+<table width="100%"><tr valign="top"><td><h2> gen_file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Generate an output file
+     type  - type of output file. One of OFILE_... symbols. See below.
+     fp    - the output file handle
+     ea1   - start address. For some file types this argument is ignored
+     ea2   - end address. For some file types this argument is ignored
+     flags - bit combination of GENFLG_...
+returns: number of the generated lines.
+         -1 if an error occurred
+         OFILE_EXE: 0-can't generate exe file, 1-ok
+<p>
+int gen_file(long type, long file_handle, long ea1, long ea2, long flags);
+<p>
+// output file types:
+<p>
+#define OFILE_MAP  0
+#define OFILE_EXE  1
+#define OFILE_IDC  2
+#define OFILE_LST  3
+#define OFILE_ASM  4
+#define OFILE_DIF  5
+<p>
+// output control flags:
+<p>
+#define GENFLG_MAPSEGS 0x0001          // map: generate map of segments
+#define GENFLG_MAPNAME 0x0002          // map: include dummy names
+#define GENFLG_MAPDMNG 0x0004          // map: demangle names
+#define GENFLG_MAPLOC  0x0008          // map: include local names
+#define GENFLG_IDCTYPE 0x0008          // idc: gen only information about types
+#define GENFLG_ASMTYPE 0x0010          // asm&amp;lst: gen information about types too
+#define GENFLG_GENHTML 0x0020          // asm&amp;lst: generate html (gui version only)
+#define GENFLG_ASMINC  0x0040          // asm&amp;lst: gen information only about types
+
+</pre>

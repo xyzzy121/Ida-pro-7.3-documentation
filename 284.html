@@ -1,0 +1,37 @@
+<a name="IDH_284"></a>
+<title> Find</title>
+<table width="100%"><tr valign="top"><td><h2> Find</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+The following functions search for the specified byte
+     ea - address to start from
+     flag is combination of the following bits:
+Returns BADADDR - not found
+<p>
+#define SEARCH_UP       0x00            // search backward
+#define SEARCH_DOWN     0x01            // search forward
+#define SEARCH_NEXT     0x02            // start the search at the next/prev item
+                                        // useful only for find_text() and find_binary()
+                                        // for other Find.. functions it is implicitly set
+#define SEARCH_CASE     0x04            // search case-sensitive
+                                        // (only for bin&amp;txt search)
+#define SEARCH_REGEX    0x08            // enable regular expressions (only for txt)
+#define SEARCH_NOBRK    0x10            // don't test ctrl-break
+#define SEARCH_NOSHOW   0x20            // don't display the search progress
+<p>
+long find_suspop(long ea, long flag);
+long find_code(long ea, long flag);
+long find_data(long ea, long flag);
+long find_unknown(long ea, long flag);
+long find_defined(long ea, long flag);
+long find_imm(long ea, long flag, long value);
+long find_text(long ea, long flag, long y, long x, string str);
+                // y - number of text line at ea to start from (0..MAX_ITEM_LINES)
+                // x - x coordinate in this line
+long find_binary(long ea, long flag, string str);
+                // str - a string as a user enters it for Search Text in Core
+                //      example:  &quot;41 42&quot; - find 2 bytes 41h, 42h
+                // The default radix depends on the current IDP module
+                // (radix for ibm pc is 16)
+
+</pre>

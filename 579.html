@@ -1,0 +1,38 @@
+<a name="IDH_579"></a>
+<title>Search for substring in the file</title>
+<table width="100%"><tr valign="top"><td><h2>Search for substring in the file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AskBinaryText
+ </pre>
+This command searches for the specified substring in the file being
+disassembled. This command can be used for fast lookups of text
+strings in the executable file or even to find references to a data.
+You can interrupt it pressing Ctrl-Break.
+<p>
+If a range is selected using <a href="420.html">anchor</a>, IDA will search
+for the specified substring in the range.
+<p>
+The substring is specified like this:
+<pre>
+        &quot;This is substring to search&quot;
+</pre>
+i.e. in the double-quotes. Also you can specify individual byte values as
+numbers:
+<pre>
+        6A 10
+</pre>
+Follow this <a href="528.html">link</a> to learn more about the format of the input
+string.
+<p>
+For example, if you want to find a reference to the following string:
+<pre>
+ 35F2:106A      db 'Hello',0
+</pre>
+you could search for number 106A in the file.
+<p>
+See also
+<pre>
+         <a href="528.html">the input string format</a>
+         <a href="576.html">search for text</a> command.
+         <a href="568.html">Search</a> submenu</pre>

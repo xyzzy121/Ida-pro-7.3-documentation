@@ -1,0 +1,121 @@
+<a name="IDH_621"></a>
+<title>Kernel analysis options 1</title>
+<table width="100%"><tr valign="top"><td><h2>Kernel analysis options 1</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Trace execution flow
+<pre>
+  This option allows IDA to trace execution flow and convert all
+  references bytes to <a href="452.html">instructions</a>.
+</pre>
+Mark typical code sequences as code
+<pre>
+  IDA knows some typical code sequences for each processor.
+  For example, it knows about typical sequence
+</pre>
+<pre>
+          push    bp
+          mov     bp, sp
+</pre>
+<pre>
+  If this option is enabled, IDA will search for all typical sequences
+  and convert them to instructions even if there are no references
+  to them. The search is performed at the loading time.
+</pre>
+Locate and create jump tables
+<pre>
+  This option allows IDA to try to guess the address and size of jump
+  tables. Please note that disabling this option will not disable
+  the recognition of C-style typical switch constructs.
+</pre>
+Control flow to data segment is ignored
+<pre>
+  If set, IDA will not analyze code reference targets in
+  pure data segments. Usually pure data segments have some
+  instructions (e.g. thunk functions), that's why this option
+  is set off by default. For Mach-O files, it is set on
+  because pure data segment do not contain instructions in them.
+</pre>
+Analyze and create all xrefs
+<pre>
+  If this option is disabled, IDA will not thoroughly analyze the program: it
+  will simply trace execution flow, nothing more (no xrefs, no additional
+  checks, etc)
+</pre>
+Delete instructions with no xrefs
+<pre>
+  This option allows IDA to undefine instructions without any xrefs to them.
+  For example, if you <a href="456.html">undefine</a> an instruction at the start of a
+  function, IDA will trace execution flow and delete all instructions
+  that lose references to them.
+</pre>
+Create function if data xref data-&gt;code32 exists
+<pre>
+  If IDA encounters a data reference from DATA segment to 32bit
+  CODE segment, it will check for the presence of meaningful
+  (disassemblable) instruction at the target. If there is an
+  instruction, it will mark it as an instruction and will create
+  a function there.
+</pre>
+Create functions if call is present
+<pre>
+  This option allows IDA to create <a href="484.html">function</a> (proc) if a call
+  instruction is present. For example, the presence of:
+</pre>
+<pre>
+          call loc_1234
+</pre>
+<pre>
+  leads to creation of a function at label loc_1234
+</pre>
+Create function tails
+<pre>
+  This option allows IDA to find and append separately located
+  function tails to function definitions.
+</pre>
+Create stack variables
+<pre>
+  This option allows IDA to automatically create stack variables and
+  function parameters.
+</pre>
+Propagate stack argument information
+<pre>
+  This option propagates the stack argument information
+  (the type and the name) to the caller's stack. If the caller is
+  called, then the information will be propagated further through
+  the whole program. Currently, the type propagation is really
+  simple and non-intelligent: the first encountered type for
+  a stack variable will be used.
+</pre>
+Propagate register argument information
+<pre>
+  This option propagates the register argument information
+  (the type and the name) to the caller. If the caller is
+  also called, then the information will be propagated further through
+  the whole program.
+</pre>
+Trace stack pointer
+<pre>
+  This option allows IDA to <a href="489.html">trace</a> the value of the SP register.
+</pre>
+Perform full stack pointer analysis
+<pre>
+  This option allows IDA to perform the stack pointer
+  analysis using the simplex method. This option is valid
+  only for the IBM PC processor.
+</pre>
+Perform 'no-return' analysis
+<pre>
+  This option allows IDA to perform the control flow
+  analysis and determine functions which do not return to
+  their callers. The 'exit()' function, for example, does not
+  return to its caller.
+</pre>
+Try to guess member function types
+<pre>
+  If set, IDA will guess member function types using the demangled
+  names. Please note that this rule may occasionally produce wrong
+  results, for example, for static member functions. IDA has no
+  means of distinguishing them from non-static member functions.
+  If clear, IDA will guess only types of non-member functions.
+</pre>
+See also <a href="622.html">analysis options 2</a> <a href="1688.html">analysis options 3</a>

@@ -1,0 +1,20 @@
+<a name="IDH_1393"></a>
+<title>Jump to the specified file offset</title>
+<table width="100%"><tr valign="top"><td><h2>Jump to the specified file offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: JumpFileOffset
+ </pre>
+IDA will ask you for a target file offset. This command jumps to the address
+corresponding to this specified file offset.
+If this file offset corresponds to a valid address then:
+<pre>
+  - the current address is saved in the <a href="542.html">jump stack</a>.
+  - the cursor is positioned to the corresponding address.
+</pre>
+The <a href="539.html">Jump back</a> command (usually Esc) will return you back.
+<p>
+See also
+<pre>
+         <a href="543.html">Jump</a> submenu
+</pre>

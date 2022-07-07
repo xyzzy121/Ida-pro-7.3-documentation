@@ -1,0 +1,36 @@
+<a name="IDH_474"></a>
+<title>Convert operand to stack variable</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to stack variable</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpStackVariable
+ </pre>
+This command converts immediate operand(s) type of the
+current instruction to an offset to stack variables, i.e. a local variable
+or function argument in the stack.
+<p>
+You need to <a href="488.html">define</a> stack variables before using this command.
+<p>
+If the current operand is based on the value of the stack pointer ([ESP+xxx])
+and the SP value is traced incorrectly, then you need to correct SP value
+using <a href="489.html">change stack pointer</a> command.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+stack variables. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to stack variable, otherwise it
+will be left unmodified.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise all other operands will be
+affected.
+<p>
+See also:
+<pre>
+          <a href="458.html">Edit|Operand types</a> submenu.
+          <a href="477.html">Enter #th operand manually</a> commands.
+          <a href="488.html">Define stack variables...</a></pre>

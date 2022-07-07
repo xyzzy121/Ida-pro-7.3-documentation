@@ -1,0 +1,14 @@
+<a name="IDH_274"></a>
+<title> print_insn_mnem</title>
+<table width="100%"><tr valign="top"><td><h2> print_insn_mnem</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get instruction mnemonics
+     ea - linear address of instruction
+returns: 0 - no instruction at the specified location
+note: this function may not return exactly the same mnemonics
+as you see on the screen.
+<p>
+string print_insn_mnem(long ea);              // get instruction name
+
+</pre>

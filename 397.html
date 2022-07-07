@@ -1,0 +1,15 @@
+<a name="IDH_397"></a>
+<title> set_struc_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> set_struc_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+change structure comment
+     id      - structure type ID
+     comment - new comment of the structure
+     repeatable - 1: change repeatable comment
+                  0: change regular comment
+returns: !=0 - ok
+<p>
+long set_struc_cmt(long id, string comment, long repeatable);
+
+</pre>

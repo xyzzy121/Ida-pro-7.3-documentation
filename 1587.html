@@ -1,0 +1,38 @@
+<a name="IDH_1587"></a>
+<title>External programs and GDB Debugger</title>
+<table width="100%"><tr valign="top"><td><h2>External programs and GDB Debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The &quot;Run a program before debugging&quot; option in <a href="1522.html">Remote GDB Debugger options</a>
+allows to automatically run a program (such as a debugging server) when starting a debugging
+session. If you enable it, the following options become available:
+<p>
+Command line
+<pre>
+        Command line of the program to run. The following special symbols can be used:
+</pre>
+<pre>
+        %i: input file name from the <a href="1398.html">Process options</a> dialog
+        %p: port number from the <a href="1398.html">Process options</a> dialog
+        %e: file name of a temporary ELF file created from the database contents
+</pre>
+Initial SP
+<pre>
+        IDA will set the SP (or a similar register) after connecting to the server
+</pre>
+Choose a configuration
+<pre>
+        Load one of the pre-defined configurations (command line, memory map and SP value)
+        described in the gdb_arch.cfg file.
+</pre>
+Memory map
+<pre>
+        Edit the memory map for the external server. It will be used during debugging.
+
+</pre>
+One use of these options is to <a href="1588.html">debug small code snippets</a> using the QEMU emulator.
+<p>
+See also
+<pre>
+  <a href="1522.html">Remote GDB Debugger options</a>
+  <a href="1395.html">Debugger</a> submenu.
+</pre>

@@ -1,0 +1,14 @@
+<a name="IDH_717"></a>
+<title> get_first_bmask</title>
+<table width="100%"><tr valign="top"><td><h2> get_first_bmask</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get first bitmask in the enum (bitfield)
+     enum_id - id of enum (bitfield)
+returns: the smallest bitmask of constant or -1
+         no bitmasks are defined yet
+         All bitmasks are sorted by their values as unsigned longs.
+<p>
+long get_first_bmask(long enum_id);
+
+</pre>

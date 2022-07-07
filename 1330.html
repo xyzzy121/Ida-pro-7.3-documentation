@@ -1,0 +1,66 @@
+<a name="IDH_1330"></a>
+<title>Bochs Disk Image operation mode</title>
+<table width="100%"><tr valign="top"><td><h2>Bochs Disk Image operation mode</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The disk image operation mode is used to run Bochs with any Bochs disk image.
+<p>
+A simple way to get started is to launch IDA and disassemble the bochsrc file
+associated with your disk image. IDA will recognize bochsrc files, parse the contents,
+determine the associated disk image and create a new database containing the first
+sector of the disk image (usually the boot sector).
+<p>
+The database does not have to correspond to the disk image: it could in fact start as an empty database,
+then user could convert the needed segments to loader segments for later analysis.
+The following script can be used for that purpose:
+<pre>
+        attrs = get_segm_attr(desired__segment__start, SEGATTR_FLAGS);
+        attrs = (attrs &amp; ~SFL_DEBUG) | SFL_LOADER;
+        set_segm_attr(desired__segment__start, SEGATTR_FLAGS, attrs);
+</pre>
+If the disk image switches to protected mode with memory paging enabled, IDA
+will use the page table mapping to display segments. For 16-bit applications, IDA
+automatically creates a default DOS memory map (Interrupt vector table, Bios Data Area, User Memory and BIOS ROM).
+Also, the Bochs Debugger plugin will try to guess the debugger segment bitness, nonetheless the user can edit the bitness manually.
+<p>
+Moreover, the Bochs internal debugger provides the ability to add hardware like breakpoints,
+known as watchpoints, but the addresses must be physical addresses.
+In order to use the disk image operation mode in a more convenient way, the plugin will convert the virtual
+addresses to physical adresses (if page table information is present) before adding the hardware breakpoint.
+This mechanism will not always work, please check the <a href="1333.html">FAQ</a> for more information.
+For hardware breakpoint on execute, the plugin will use the selected address as-is and create a physical breakpoint.
+<p>
+The following parameters can be specified for the disk image operation mode:
+<pre>
+  - The bochsrc file which contains the configuration for the Bochs virtual machine in question.
+    The bochsrc file should be entered in:
+    Debugger -&gt; Process Options -&gt; Application (other fields are ignored)
+</pre>
+<pre>
+  - Use virtual breakpoints when protected mode is enabled:
+    This parameter is set in the Debugger Specific options.
+    It will allow the plugin to use &quot;vb&quot; command to create
+    virtual breakpoints (using cs:eip), instead of using the &quot;lb&quot; which
+    creates linear breakpoints (using only &quot;eip&quot;). It is useful when
+    debugging code where the &quot;cs&quot; segment selector base is not zero.
+</pre>
+This is a small example on how to debug a given disk image:
+<p>
+1. Prepare the needed bochs virtual machine files (bochsrc, disk image, floppy image if needed, etc...)
+<p>
+2. Load the bochsrc file into IDA. IDA will automatically create a database.
+<p>
+(Step 2, is optional. It is possible to use a database of your choice, but remember to point
+its &quot;Debugger-&gt;Process Options-&gt;Input file&quot; to the bochsrc file)
+<p>
+3. Make sure the &quot;Disk image&quot; operation mode is selected
+(If Step 2 was used, then Disk image operation mode will be selected automatically)
+<p>
+4. Enable &quot;Debugger Options-&gt;Suspend on debugging start&quot;, and start debugging!
+<p>
+In the disk image operation mode, the Bochs debugger plugin does not handle or report exceptions, if they must be caught
+and handled, please put breakpoints in the IDT or IVT entries.
+<pre>
+ See also:
+        <a href="1329.html">Bochs debugger</a>
+        <a href="1333.html">Bochs plugin operation mode FAQ</a>
+</pre>

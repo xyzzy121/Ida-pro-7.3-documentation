@@ -1,0 +1,16 @@
+<a name="IDH_11"></a>
+<title> suspend_process</title>
+<table width="100%"><tr valign="top"><td><h2> suspend_process</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Suspend the running process
+Tries to suspend the process. If successful, the PROCESS_SUSPENDED
+debug event will arrive (see wait_for_next_event)
+   arguments: none
+returns: success
+To resume a suspended process use the <a href="1214.html">wait_for_next_event</a> function.
+See the important note to the step_into() function
+<p>
+success suspend_process(void);
+
+</pre>

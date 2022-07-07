@@ -1,0 +1,40 @@
+<a name="IDH_299"></a>
+<title> add_segm_ex</title>
+<table width="100%"><tr valign="top"><td><h2> add_segm_ex</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create a new segment
+     startea  - linear address of the start of the segment
+     endea    - linear address of the end of the segment
+                this address will not belong to the segment
+                'endea' should be higher than 'startea'
+     base     - base paragraph or selector of the segment.
+                a paragraph is 16byte memory chunk.
+                If a selector value is specified, the selector should be
+                already defined.
+     use32    - 0: 16bit segment, 1: 32bit segment, 2: 64bit segment
+     align    - segment alignment. see below for alignment values
+     comb     - segment combination. see below for combination values.
+     flags    - combination of ADDSEG_... bits
+returns: 0-failed, 1-ok
+<p>
+success add_segm_ex(long startea, long endea, long sel, long use32, long align, long comb, long flags);
+<p>
+#define ADDSEG_NOSREG   0x0001  // set all default segment register values
+                                // to BADSELs
+                                // (undefine all default segment registers)
+#define ADDSEG_OR_DIE   0x0002  // qexit() if can't add a segment
+#define ADDSEG_NOTRUNC  0x0004  // don't truncate the new segment at the beginning
+                                // of the next segment if they overlap.
+                                // destroy/truncate old segments instead.
+#define ADDSEG_QUIET    0x0008  // silent mode, no &quot;Adding segment...&quot; in the messages window
+#define ADDSEG_FILLGAP  0x0010  // If there is a gap between the new segment
+                                // and the previous one, and this gap is less
+                                // than 64K, then fill the gap by extending the
+                                // previous segment and adding .align directive
+                                // to it. This way we avoid gaps between segments.
+                                // Too many gaps lead to a virtual array failure.
+                                // It cannot hold more than ~1000 gaps.
+#define ADDSEG_SPARSE   0x0020  // Use sparse storage method for the new segment
+
+</pre>

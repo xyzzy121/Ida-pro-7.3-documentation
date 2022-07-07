@@ -1,0 +1,17 @@
+<a name="IDH_1254"></a>
+<title> gen_simple_call_chart</title>
+<table width="100%"><tr valign="top"><td><h2> gen_simple_call_chart</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Generate a function call graph GDL file
+     outfile - output file name. GDL extension will be used
+     title   - graph title
+     ea1     - beginning of the range to flow chart
+     ea2     - end of the range to flow chart. if ea2 == BADADDR
+               then ea1 is treated as an address within a function.
+               That function will be flow charted.
+     flags   - combination of CHART_GEN_GDL, CHART_WINGRAPH, CHART_NOLIBFUNCS
+<p>
+success gen_simple_call_chart(string outfile, string title, long flags);
+
+</pre>

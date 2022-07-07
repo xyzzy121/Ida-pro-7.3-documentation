@@ -1,0 +1,13 @@
+<a name="IDH_542"></a>
+<title>Jumps Stack</title>
+<table width="100%"><tr valign="top"><td><h2>Jumps Stack</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Each IDA Window has its own jump stack. This stack keeps the cursor locations.
+Many IDA commands use the jump stack, i.e. they save the old cursor position to
+the stack. For example, when you are at the address 3000:0100 and press
+the Ctrl-C key (find instruction), the 3000:0100 is saved into the jump stack
+and the search is started. Afterwards, you can return to the old position
+using <a href="539.html">Jump back</a> command.
+<p>
+You can clear the jump stack using the <a href="541.html">Empty stack</a>
+menu command.

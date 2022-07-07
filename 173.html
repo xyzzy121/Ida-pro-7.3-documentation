@@ -1,0 +1,23 @@
+<a name="IDH_173"></a>
+<title> apply_type</title>
+<table width="100%"><tr valign="top"><td><h2> apply_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Apply the specified type to the address
+     ea    - the address of the object
+     type  - typeinfo object or a C declaration string with ';'
+             if specified as zero or an empty string, then the type
+             assciated with 'ea' will be deleted
+     flags - combination of TINFO_... constants or 0
+returns: 1-ok, 0-failed.
+Note: this function accepts member ids and change struct member types too
+<p>
+success apply_type(long ea, typeinfo type, long flags = TINFO_DEFINITE);
+<p>
+#define TINFO_GUESSED    0x0000 // this is a guessed type
+#define TINFO_DEFINITE   0x0001 // this is a definite type
+#define TINFO_DELAYFUNC  0x0002 // if type is a function and no function exists at ea,
+                                // schedule its creation and argument renaming to auto-analysis
+                                // otherwise try to create it immediately
+
+</pre>

@@ -1,0 +1,36 @@
+<a name="IDH_365"></a>
+<title> set_fixup</title>
+<table width="100%"><tr valign="top"><td><h2> set_fixup</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set fixup information
+     ea        - address to set fixup information about
+     type      - fixup type. see get_fixup_target_type()
+                 for possible fixup types.
+     fixupf    - FIXUPF_... bits
+     targetsel - target selector
+     targetoff - target offset
+     displ     - displacement
+returns: none
+<p>
+void set_fixup(long ea, long type, long fixupf, long targetsel, long targetoff, long displ);
+<p>
+The fixupf argument may have the following bits:
+fixup is relative to the linear address `base'. Otherwise fixup is
+relative to the start of the segment with `sel' selector.
+#define FIXUPF_REL         0x0001
+<p>
+target is a location (otherwise - segment).
+Use this bit if the target is a symbol rather than an offset from the
+beginning of a segment.
+#define FIXUPF_EXTDEF      0x0002
+<p>
+fixup is ignored by IDA
+  - disallows the kernel to convert operands
+  - this fixup is not used during output
+#define FIXUPF_UNUSED      0x0004
+<p>
+fixup was not present in the input file
+#define FIXUPF_CREATED     0x0008
+
+</pre>

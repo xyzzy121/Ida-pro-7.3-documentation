@@ -1,0 +1,15 @@
+<a name="IDH_206"></a>
+<title> make_array</title>
+<table width="100%"><tr valign="top"><td><h2> make_array</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create an array.
+     ea      - linear address
+     nitems  - size of array in items
+This function will create an array of the items with the same type as the
+type of the item at 'ea'. If the byte at 'ea' is undefined, then this
+function will create an array of bytes.
+<p>
+success make_array(long ea, long nitems);
+
+</pre>

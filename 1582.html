@@ -1,0 +1,43 @@
+<a name="IDH_1582"></a>
+<title>IDC: Constants</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: Constants</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The following constants can be used in IDC:
+<pre>
+ - long numbers (32-bit for 32-bit version of IDA
+            and 64-bit for 64-bit version of IDA)
+</pre>
+<pre>
+    12345 - decimal constants
+    0x444 - hex constants
+    01236 - octal constants
+    0b110 - binary constants
+    'c'   - character constants
+</pre>
+<pre>
+  Any numeric constant may have 'u' and 'l' suffixes, they are ignored.
+</pre>
+<pre>
+ - 64-bit numbers. To declare a 64-bit constant, use 'i64' suffix:
+</pre>
+<pre>
+   123i64
+</pre>
+<pre>
+   Also, if a constant does not fit 32-bits, it will automatically be
+   stored as a 64-bit constant.
+</pre>
+<pre>
+ - strings. Strings are declared using the double quotes. The backslash
+   character can be used to as an escape:
+</pre>
+<pre>
+   &quot;string&quot;
+   &quot;string\nwith four embedded \x0\x00\000\0 zeroes&quot;
+</pre>
+<pre>
+   Multiple string constants in a row will be automatically concatenated:
+</pre>
+<pre>
+   &quot;this&quot; &quot; is&quot; &quot; one &quot; &quot;string&quot;
+</pre>

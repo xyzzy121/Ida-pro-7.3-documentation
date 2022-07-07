@@ -1,0 +1,27 @@
+<a name="IDH_520"></a>
+<title>Move a segment</title>
+<table width="100%"><tr valign="top"><td><h2>Move a segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MoveSegment
+ </pre>
+This command allows you to move segment(s) to another address.
+Use it if the segment(s) are loaded at a wrong address.
+<p>
+This command shifts (moves) the selected segments in the memory to the target address.
+There must be enough free space at the target address for the segments.
+<p>
+All information in the segment will be moved to the new address, but since the
+addresses change, the disassembly might be not valid anymore (especially if the
+program is moved to the wrong addresses and the relocation information is not
+available).
+<pre>
+ Fix up relocations
+</pre>
+<pre>
+        This option allows IDA to modify the references
+        to/from the relocated segment(s). If it is turned
+        off, the references might be wrong after the move.
+
+</pre>
+See also <a href="506.html">Edit|Segments</a> submenu.

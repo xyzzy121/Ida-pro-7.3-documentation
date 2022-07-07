@@ -1,0 +1,25 @@
+<a name="IDH_576"></a>
+<title>Search for substring in the disassembly</title>
+<table width="100%"><tr valign="top"><td><h2>Search for substring in the disassembly</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AskNextText
+ </pre>
+This command searches for the specified substring in the text
+representation of the disassembly.
+This command is a slow command, because it
+disassembles each instruction to get the text representation.
+IDA will show its progress on the <a href="620.html">indicator</a>.
+You can interrupt this command pressing Ctrl-Break.
+<p>
+You may search for <a href="578.html">regular expressions</a> too.
+<p>
+If a range is selected using <a href="420.html">anchor</a>, IDA will search
+for the specified substring in the range.
+<p>
+Note that this command searches the same as what you see on your
+screen (and not in binary image).
+<p>
+For binary search, look at <a href="579.html">Search for substring in the file</a>
+<p>
+See also <a href="568.html">Search</a> submenu

@@ -1,0 +1,16 @@
+<a name="IDH_170"></a>
+<title> set_reg_value</title>
+<table width="100%"><tr valign="top"><td><h2> set_reg_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set register value
+     name - the register name
+     value - new register value
+the debugger should be running
+It is not necessary to use this function to set register values.
+A register name in the left side of an assignment will do too.
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+success set_reg_value(number value, string name);
+
+</pre>

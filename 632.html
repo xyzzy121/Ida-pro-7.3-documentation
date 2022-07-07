@@ -1,0 +1,31 @@
+<a name="IDH_632"></a>
+<title>Rename a structure/member</title>
+<table width="100%"><tr valign="top"><td><h2>Rename a structure/member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA maintains separate namespaces for each structure. For example, you can define
+something like this:
+<pre>
+ xxx    struc
+ xxx    db ?
+ xxx    struc
+</pre>
+Beware, usually
+assemblers have one common namespace and do not allow the mentioned above example.
+<p>
+An empty name cannot be specified.
+<p>
+This command is available when you open a structure <a href="593.html">window</a>.
+<p>
+If the cursor is on the structure name at the beginning of the structure definition,
+IDA proposes to rename the structure. Otherwise, IDA proposes to rename a structure
+field.
+<p>
+If a structure is being renamed, the option &quot;Don't include in the list&quot; means
+that the structure will not be included
+in the list of the structures which appears when the user applies the structure
+definition (for example, when the user creates a variable of this structure type).
+We recommend to mark this checkbox when you have defined all variables of
+this structure type and want to reduce the number of choices in the list.
+<p>
+See also <a href="490.html">Edit|Structs</a> submenu.
+         <a href="424.html">How to Enter an Identifier</a>

@@ -1,0 +1,21 @@
+<a name="IDH_674"></a>
+<title> get_array_element</title>
+<table width="100%"><tr valign="top"><td><h2> get_array_element</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get value of array element
+     tag     - tag of array, specifies one of two
+               array types AR_...
+     id      - array id
+     idx     - index of an element
+returns: value of the specified array element.
+         note that this function may return char or long
+         result. Unexistent array elements give zero as
+         a result.
+<p>
+string or long get_array_element(long tag, long id, long idx);
+<p>
+#define AR_LONG 'A'     // array of longs
+#define AR_STR  'S'     // array of strings
+
+</pre>

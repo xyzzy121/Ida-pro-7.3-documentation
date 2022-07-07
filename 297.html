@@ -1,0 +1,14 @@
+<a name="IDH_297"></a>
+<title> get_segm_end</title>
+<table width="100%"><tr valign="top"><td><h2> get_segm_end</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get end address of a segment
+     ea - any address in the segment
+returns: end of segment (an address past end of the segment)
+         BADADDR - the specified address doesn't belong to any segment
+Note: it is a macro
+<p>
+#define get_segm_end(ea)    get_segm_attr(ea, SEGATTR_END)
+
+</pre>

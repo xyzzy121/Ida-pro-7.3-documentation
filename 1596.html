@@ -1,0 +1,13 @@
+<a name="IDH_1596"></a>
+<title> read_dbg_byte</title>
+<table width="100%"><tr valign="top"><td><h2> read_dbg_byte</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of program byte using the debugger memory
+     ea - linear address
+returns: value of byte. Throws an exception on failure.
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+long read_dbg_byte(long ea);
+
+</pre>

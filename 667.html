@@ -1,0 +1,15 @@
+<a name="IDH_667"></a>
+<title> set_enum_member_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> set_enum_member_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set a comment of a symbolic constant
+     const_id - id of const
+     cmt     - new comment for the constant
+     repeatable - 0:set regular comment
+                  1:set repeatable comment
+returns: 1-ok, 0-failed
+<p>
+success set_enum_member_cmt(long const_id, string cmt, long repeatable);
+
+</pre>

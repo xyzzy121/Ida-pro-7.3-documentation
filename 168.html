@@ -1,0 +1,14 @@
+<a name="IDH_168"></a>
+<title> set_color</title>
+<table width="100%"><tr valign="top"><td><h2> set_color</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set item color
+     ea - address of the item
+     what - type of the item (one of COLWHAT... constants)
+     color - new color code in RGB (hex 0xBBGGRR)
+returns: 1-ok, 0-failure
+<p>
+success set_color(long ea, long what, long color);
+
+</pre>

@@ -1,0 +1,16 @@
+<a name="IDH_196"></a>
+<title> compile_idc_file</title>
+<table width="100%"><tr valign="top"><td><h2> compile_idc_file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Compile an IDC script file.
+The input should not contain functions that are
+currently executing - otherwise the behaviour of the replaced
+functions is undefined.
+     path - path to compile
+returns: 0 - ok, otherwise it returns an error message.
+Thread-safe function.
+<p>
+string compile_idc_file(string path);
+
+</pre>

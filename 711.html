@@ -1,0 +1,14 @@
+<a name="IDH_711"></a>
+<title> del_extra_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> del_extra_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Delete an extra comment line
+     ea   - linear address
+     n    - number of additional line (0..MAX_ITEM_LINES)
+To delete anterior  line #n use (E_PREV + n)
+To delete posterior line #n use (E_NEXT + n)
+<p>
+void del_extra_cmt(long ea, long n);
+
+</pre>

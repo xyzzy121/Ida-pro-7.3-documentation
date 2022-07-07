@@ -1,0 +1,201 @@
+<a name="IDH_618"></a>
+<title>Processor Type</title>
+<table width="100%"><tr valign="top"><td><h2>Processor Type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetProcessor
+ </pre>
+Valid processor types are:
+<pre>
+  type      description
+  ----      -----------
+</pre>
+<pre>
+  8086    - Intel 8086                   ┐
+  80286r  - Intel 80286 real mode        │
+  80286p  - Intel 80286 protected mode   │
+  80386r  - Intel 80386 real mode        │
+  80386p  - Intel 80386 protected mode   │
+  80486r  - Intel 80486 real mode        │
+  80486p  - Intel 80486 protected mode   │
+  80586r  - Intel Pentium &amp; MMX real mode│ (IBM PC family)
+  80586p  - Intel Pentium &amp; MMX prot mode│
+  80686p  - Intel Pentium Pro &amp; MMX      │
+  k62     - AMD K6-2 with 3DNow!         │
+  p2      - Intel Pentium II             │
+  p3      - Intel Pentium III            │
+  athlon  - AMD K7                       │
+  p4      - Intel Pentium 4              │
+  metapc  - Disassemble all IBMPC opcodes┘
+  8085    - Intel 8085                   ┐
+  z80     - Zilog 80                     │
+  z180    - Zilog 180                    │ (Zilog 80 family)
+  z380    - Zilog 380                    │
+  64180   - Hitachi HD64180              │
+  gb      - Gameboy                      ┘
+  z8      - Zilog 8                        (Zilog 8 family)
+  860xr   - Intel 860 XR                 ┐ (Intel 860 family)
+  860xp   - Intel 860 XP                 ┘
+  8051    - Intel 8051                     (Intel 51 family)
+  80196   - Intel 80196                  ┐ (Intel 80196 family)
+  80196NP - Intel 80196NP, NU            ┘
+  m6502   - MOS 6502                     ┐ (MOS Technology 65xx family)
+  m65c02  - MOS 65c02                    ┘
+  pdp11   - DEC PDP/11                     (PDP family)
+  68000   - Motorola MC68000             ┐
+  68010   - Motorola MC68010             │
+  68020   - Motorola MC68020             │
+  68030   - Motorola MC68030             │
+  68040   - Motorola MC68040             │ (Motorola 680x0 family)
+  68330   - Motorola CPU32 (68330)       │
+  68882   - Motorola MC68020 with MC68882│
+  68851   - Motorola MC68020 with MC68851│
+  68020EX - Motorola MC68020 with both   │
+  colfire - Motorola ColdFire            │
+  68K     - Motorola MC680x0 all opcodes ┘
+  6800    - Motorola MC68HC00            ┐
+  6801    - Motorola MC68HC01            │
+  6803    - Motorola MC68HC03            │
+  6301    - Hitachi HD 6301              │
+  6303    - Hitachi HD 6303              │
+  6805    - Motorola MC68HC05            │ (Motorola 8bit family)
+  6808    - Motorola MC68HC08            │
+  6809    - Motorola MC68HC09            │
+  6811    - Motorola MC68HC11            ┘
+  6812    - Motorola MC68HC12
+  hcs12   - Motorola MC68HCS12
+  6816    - Motorola MC68HC16
+  java    - java                           (Java family)
+  ppc     - PowerPC big endian           ┐
+  ppcl    - PowerPC little endian        ┘ (PowerPC family)
+  arm     - ARM little endian            ┐ (<a href="1350.html">ARM</a> family)
+  armb    - ARM big endian               ┘
+  tms320c2- TMS320C2x series             ┐ (TMS 16bit addressing family)
+  tms320c5- TMS320C5x series             ┘
+  tms320c6- TMS320C6x series             ┐ (TMS VLIW family)
+  tms320c3- TMS320C3x series             ┘
+  tms32054- TMS320C54xx series
+  tms32055- TMS320C55xx series
+  sh3     - Renesas SH-3 (little endian) ┐
+  sh3b    - Renesas SH-3 (big endian)    │ (Renesas SuperH series)
+  sh4     - Renesas SH-4 (little endian) │
+  sh4b    - Renesas SH-4 (big endian)    │
+  sh2a    - Renesas SH-2A (big endian)   ┘
+  avr     - ATMEL AVR                      (ATMEL family)
+  mipsl   - MIPS little endian           ┐ (MIPS family:R2000, R3000, R4000,
+  mipsb   - MIPS big endian              │ R4200, R4300,  R4400, R4600,
+  mipsrl  - MIPS &amp; RSP little            │ R8000, R10000)
+  mipsr   - MIPS &amp; RSP big               │
+  r5900l  - MIPS R5900 little            ┘
+  r5900r  - MIPS R5900 big               ┘
+  h8300   - H8/300x in normal mode       ┐
+  h8300a  - H8/300x in advanced mode     │ (Hitachi H8 family)
+  h8s300  - H8S in normal mode           │
+  h8s300a - H8S in advanced mode         ┘
+  h8500   - H8/500                         (Hitachi H8/500 family)
+  pic12cxx- Microchip PIC 12-bit (12xxx) ┐
+  pic16cxx- Microchip PIC 14-bit (16xxx) │ (PIC family)
+  pic18cxx- Microchip PIC 16-bit (18xxx) ┘
+  sparcb  - SPARC big endian             ┐
+  sparcl  - SPARC little endian          ┘ (SPARC family)
+  alphab  - DEC Alpha big endian         ┐
+  alphal  - DEC Alpha little endian      ┘ (ALPHA family)
+  hppa    - HP PA-RISC big endian          (HP PA-RISC family)
+  dsp56k  - Motorola DSP 5600x           ┐
+  dsp561xx- Motorola DSP 561xx           │ (DSP 56K family)
+  dsp563xx- Motorola DSP 563xx           │
+  dsp566xx- Motorola DSP 566xx           ┘
+  c166    - Siemens C166                 ┐
+  c166v1  - Siemens C166 v1 family       │
+  c166v2  - Siemens C166 v2 family       │ (C166 family)
+  st10    - SGS-Thomson ST10             │
+  super10 - Super10                      ┘
+  st20    - SGS-Thomson ST20/C1            (ST20 family)
+  st20c4  - SGS-Thomson ST20/C2-C4
+  st7     - SGS-Thomson ST7                (ST7 family)
+  ia64l   - Intel Itanium little endian  ┐
+  ia64b   - Intel Itanium big endian     ┘ (IA64 family)
+  cli     - Microsoft.Net platform
+  net     - Microsoft.Net platform (alias)
+  i960l   - Intel 960 little endian      ┐
+  i960b   - Intel 960 big endian         ┘ (i960 family)
+  f2mc16l - Fujitsu F2MC-16L             ┐
+  f2mc16lx- Fujitsu F2MC-16LX            ┘ (Fujitsu F2MC family)
+  78k0    - NEC 78k/0
+  78k0s   - NEC 78k/0s
+  m740    - Mitsubishi 8-bit
+  m7700   - Mitsubishi 16-bit            ┐
+  m7750   - Mitsubishi 16-bit            ┘ (Mitsubishi 16-bit family)
+  m32r    - Mitsubishi 32-bit            ┐
+  m32rx   - Mitsubishi 32-bit extended   ┘ (Mitsubishi 32-bit family)
+  st9     - STMicroelectronics ST9+
+  fr      - Fujitsu FR family
+  m7900   - Mitsubishi M7900
+  kr1878  - Angstrem KR1878
+  ad218x  - Analog Devices ADSP
+  oakdsp  - Atmel OAK DSP
+  tricore - Infineon Tricore
+  ebc     - EFI Bytecode
+  msp430  - Texas Instruments MSP430
+</pre>
+You can change processor type only within the current family. If you have
+selected IBM PC family, you cannot select Zilog 80 family
+and vice versa.
+<p>
+Processor modules can accept additional options that can be passed on the commandline with the -p switch.
+Currently only the <a href="1350.html">ARM</a> module supports it. For example, -parm:ARMv7-A will turn on options specific for the
+ARMv7-A architecture, such as NEON instruction set.
+<p>
+For information about additional processor modules, please visit
+our web page at <a href="https://www.hex-rays.com/products/ida/processors.shtml">https://www.hex-rays.com/products/ida/processors.shtml</a>
+<p>
+Please note that when you change the processor type, IDA may change the
+<a href="619.html">target assembler</a>, so check it out.
+<p>
+You may get a message saying that IDA does not know the specified
+processor if IDA fails to load the corresponding processor module.
+<pre>
+        Windows IDA uses .dll file extension
+        Linux IDA uses .so file extension
+        Mac IDA uses .dylib file extension
+</pre>
+<b>NOTE:</b> modules compiled with support for 64-bit address space, will
+feature a '64' suffix before the extension. E.g., 'pc64.dll'
+<p>
+<b>NOTE:</b> Changing the processor type leads to reanalysis of the whole program.
+Sometimes this is useful.
+<p>
+<b>NOTE:</b> when you load a new processor module, all <a href="416.html">analysis</a>
+options are reset to the values specified in
+the <a href="419.html">configuration</a> file.
+<p>
+IDA determines the default processor using the input file extension and the
+contents of the input file.
+The table which describes the input file extensions and the corresponding
+processor types is located in <a href="419.html">IDA.CFG</a> file and looks like this:
+<pre>
+ DEFAULT_PROCESSOR = {
+ /* Extension   Processor */
+  &quot;com&quot; :       &quot;8086&quot;                  // IDA will try the specified
+  &quot;exe&quot; :       &quot;80386r&quot;                // extensions if no extension is
+  &quot;dll&quot; :       &quot;80386r&quot;                // given.
+  &quot;drv&quot; :       &quot;80386r&quot;
+  &quot;o&quot;   :       &quot;68000&quot;
+  &quot;prc&quot; :       &quot;68000&quot;                 // PalmPilot programs
+  &quot;axf&quot; :       &quot;arm&quot;
+  &quot;h68&quot; :       &quot;68000&quot;                 // MC68000 for *.H68 files
+  &quot;i51&quot; :       &quot;8051&quot;                  // i8051   for *.I51 files
+  &quot;sav&quot; :       &quot;pdp11&quot;                 // PDP-11  for *.SAV files
+  &quot;rom&quot; :       &quot;z80&quot;                   // Z80     for *.ROM files
+  &quot;cla&quot; :       &quot;java&quot;                  // Java classes
+  &quot;class&quot;:      &quot;java&quot;                  // Java classes
+  &quot;s19&quot;:        &quot;6811&quot;
+  &quot;*&quot;:          &quot;80386p&quot;                // Default processor
+}
+</pre>
+If you want to change the default processor type, you need to change this table.
+You may add/delete rows in this table.
+<p>
+See also:
+  <a href="604.html">Options</a> submenu.
+  <a href="1350.html">ARM</a> processor specifics.

@@ -1,0 +1,13 @@
+<a name="IDH_1684"></a>
+<title>Copy field info to pointers</title>
+<table width="100%"><tr valign="top"><td><h2>Copy field info to pointers</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: CopyFieldsToPointers
+ </pre>
+This command scans the current struct variable and renames the locations
+pointed by offset expressions unless they already have a non-dummy name.
+<p>
+It also copies the type info from the struct members to pointed locations.
+<p>
+See also <a href="490.html">Edit|Structs</a> submenu.

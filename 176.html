@@ -1,0 +1,11 @@
+<a name="IDH_176"></a>
+<title> has_value</title>
+<table width="100%"><tr valign="top"><td><h2> has_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Do flags contain byte value? (i.e. has the byte a value?)
+if not, the byte is uninitialized.
+<p>
+#define has_value(F)   ((F &amp; FF_IVL) != 0)     // any defined value?
+
+</pre>

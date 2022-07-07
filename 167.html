@@ -1,0 +1,20 @@
+<a name="IDH_167"></a>
+<title> get_color</title>
+<table width="100%"><tr valign="top"><td><h2> get_color</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get item color
+     ea - address of the item
+     what - type of the item (one of COLWHAT... constants)
+returns: color code in RGB (hex 0xBBGGRR)
+<p>
+long get_color(long ea, long what);
+<p>
+// color item codes:
+#define CIC_ITEM 1          // one instruction or data
+#define CIC_FUNC 2          // function
+#define CIC_SEGM 3          // segment
+<p>
+#define DEFCOLOR 0xFFFFFFFF     // Default color
+
+</pre>

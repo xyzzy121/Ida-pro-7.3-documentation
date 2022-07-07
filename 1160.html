@@ -1,0 +1,19 @@
+<a name="IDH_1160"></a>
+<title>Customizing graph layout</title>
+<table width="100%"><tr valign="top"><td><h2>Customizing graph layout</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Each node has a title bar with title buttons. The title bar can be used
+to displace the node. Displacing nodes  or edges creates a custom layout. The
+custom layouts are automatically saved in the database. If there is a
+custom layout for the function, IDA never destroys it without your
+explicit permission. This behavior has its drawbacks: when the nodes are
+resized (because of added comments, for example), the old layout will be
+retained and the nodes could overlap. In this case, the user can ask IDA
+to redo the layout or manually move the overlapping nodes. To avoid
+displacing nodes inadvertently, turn on the <a href="19.html">lock graph layout</a> option.
+<p>
+The user can also click on the edge layout points (edge bending points) and drag
+them. If two edge layout points are too close, one of them will be deleted.
+To create new edge layout points, use Shift-DoubleClick on the edge.
+<p>
+Back to <a href="42.html">graph view</a>

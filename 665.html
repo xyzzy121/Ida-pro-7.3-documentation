@@ -1,0 +1,17 @@
+<a name="IDH_665"></a>
+<title> del_enum_member</title>
+<table width="100%"><tr valign="top"><td><h2> del_enum_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+delete a member of enum - a symbolic constant
+     enum_id - id of enum
+     value   - value of symbolic constant.
+     serial  - serial number of the constant in the enumeration.
+               See <a href="704.html">op_enum</a>() for for details.
+     bmask   - bitmask of the constant
+               ordinary enums accept only -1 as a bitmask
+returns: 1-ok, 0-failed
+<p>
+success del_enum_member(long enum_id, long value, long serial, long bmask);
+
+</pre>

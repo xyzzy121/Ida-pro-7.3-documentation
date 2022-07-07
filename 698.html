@@ -1,0 +1,56 @@
+<a name="IDH_698"></a>
+<title> op_offset</title>
+<table width="100%"><tr valign="top"><td><h2> op_offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert operand to a complex offset expression
+This is a more powerful version of <a href="697.html">op_plain_offset</a>() function.
+It allows to explicitly specify the reference type (off8, off16, etc)
+and the expression target with a possible target delta.
+The complex expressions are represented by IDA in the following form:
+<pre>
+        target + tdelta - base
+</pre>
+If the target is not present, then it will be calculated using
+        target = operand_value - tdelta + base
+The target must be present for LOW.. and HIGH.. reference types
+     ea      - linear address of the instruction/data
+     n       - number of operand to convert (the same as in op_plain_offset)
+     reftype - one of REF_... constants
+     target  - an explicitly specified expression target. if you don't
+               want to specify it, use -1. Please note that LOW... and
+               HIGH... reference type requre the target.
+     base    - the offset base (a linear address)
+     tdelta  - a displacement from the target which will be displayed
+               in the expression.
+<p>
+success op_offset(long ea, int n, long reftype, long target, long base, long tdelta);
+<p>
+#define REF_OFF8    0              // 8bit full offset
+#define REF_OFF16   1              // 16bit full offset
+#define REF_OFF32   2              // 32bit full offset
+#define REF_LOW8    3              // low 8bits of 16bit offset
+#define REF_LOW16   4              // low 16bits of 32bit offset
+#define REF_HIGH8   5              // high 8bits of 16bit offset
+#define REF_HIGH16  6              // high 16bits of 32bit offset
+#define V695_REF_VHIGH   7         // obsolete
+#define V695_REF_VLOW    8         // obsolete
+#define REF_OFF64   9              // 64bit full offset
+                                   // note: processor modules or plugins may register additional
+                                   // custom reference types (for example, REF_HIGHA16 is
+                                   // used by MIPS, SPARC, PPC, ALPHA, TRICORE, etc.)
+#define REFINFO_RVA         0x10   // based reference (rva)
+#define REFINFO_PASTEND     0x20   // reference past an item
+                                   // it may point to an nonexistitng address
+                                   // do not destroy alignment dirs
+#define REFINFO_NOBASE      0x80   // offset base is a number
+                                   // implies that base have be any value
+                                   // nb: base xrefs are created only if base
+                                   // points to the middle of a segment
+#define REFINFO_SUBTRACT  0x0100   // the reference value is subtracted from
+                                   // the base value instead of (as usual)
+                                   // being added to it
+#define REFINFO_SIGNEDOP  0x0200   // the operand value is sign-extended (only
+                                   // supported for REF_OFF8/16/32/64)
+
+</pre>

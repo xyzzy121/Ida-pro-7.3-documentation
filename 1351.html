@@ -1,0 +1,16 @@
+<a name="IDH_1351"></a>
+<title> expand_struc</title>
+<table width="100%"><tr valign="top"><td><h2> expand_struc</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+expand or shrink a structure type
+     id     - structure type ID
+     offset - offset in the structure
+     delta  - how many bytes to add or remove
+     recalc - recalculate the locations where
+              the structure type is used
+returns: !=0 - ok
+<p>
+success expand_struc(long id, long offset, long delta, long recalc);
+
+</pre>

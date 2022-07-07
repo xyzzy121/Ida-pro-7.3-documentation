@@ -1,0 +1,66 @@
+<a name="IDH_500"></a>
+<title>Bitfields</title>
+<table width="100%"><tr valign="top"><td><h2>Bitfields</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+There is a special kind of <a href="499.html">enums</a>: bitfields.
+A bitfield is an enum divided into bit groups. When you define a new symbolic constant
+in a bitfield, you need to specify the group to which the constant will belong
+to. By default, IDA proposes groups containing one bit each.
+If a group is not defined yet, it is automatically created when the first
+constant in the group is defined. For example:
+<pre>
+        name    CONST1
+        value   0x1
+        mask    0x1
+</pre>
+will define a constant named CONST1 with value 1 and will create a group containing
+only one bit. Another example. Let's consider the following definitions:
+<pre>
+ #define OOF_SIGNMASK    0x0003
+ #define   OOFS_IFSIGN   0x0000
+ #define   OOFS_NOSIGN   0x0001
+ #define   OOFS_NEEDSIGN 0x0002
+ #define OOF_SIGNED      0x0004
+ #define OOF_NUMBER      0x0008
+ #define OOF_WIDTHMASK   0x0030
+ #define   OOFW_IMM      0x0000
+ #define   OOFW_16       0x0010
+ #define   OOFW_32       0x0020
+ #define   OOFW_8        0x0030
+ #define OOF_ADDR        0x0040
+ #define OOF_OUTER       0x0080
+ #define OOF_ZSTROFF     0x0100
+</pre>
+How do we describe this?
+<pre>
+   name           value    mask   maskname
+</pre>
+<pre>
+   OOFS_IFSIGN   0x0000   0x0003 OOF_SIGNMASK
+   OOFS_NOSIGN   0x0001   0x0003 OOF_SIGNMASK
+   OOFS_NEEDSIGN 0x0002   0x0003 OOF_SIGNMASK
+ OOF_SIGNED      0x0004   0x0004
+ OOF_NUMBER      0x0008   0x0008
+   OOFW_IMM      0x0000   0x0030 OOF_WIDTHMASK
+   OOFW_16       0x0010   0x0030 OOF_WIDTHMASK
+   OOFW_32       0x0020   0x0030 OOF_WIDTHMASK
+   OOFW_8        0x0030   0x0030 OOF_WIDTHMASK
+ OOF_ADDR        0x0040   0x0040
+ OOF_OUTER       0x0080   0x0080
+ OOF_ZSTROFF     0x0100   0x0100
+
+</pre>
+If a mask consists of more than one bit, it can have a name and a comment.
+A mask name can be set when a constant with the mask is being defined.
+IDA will display the mask names in a different color.
+<p>
+In order to use a bitfield in the program, just convert an instruction
+operand to <a href="473.html">enum</a>. IDA will display the operand like this:
+<pre>
+        mov     ax, 70h
+</pre>
+will be replaced by
+<pre>
+        mov     ax, OOFS_IFSIGN or OOFW_8 or OOF_ADDR
+</pre>
+See also <a href="594.html">Enum window</a>

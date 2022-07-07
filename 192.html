@@ -1,0 +1,17 @@
+<a name="IDH_192"></a>
+<title> add_idc_hotkey</title>
+<table width="100%"><tr valign="top"><td><h2> add_idc_hotkey</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Add hotkey for IDC function
+     hotkey  - hotkey name ('a', &quot;Alt-A&quot;, etc)
+     idcfunc - IDC function name
+returns:
+#define IDCHK_OK        0       // ok
+#define IDCHK_ARG       -1      // bad argument(s)
+#define IDCHK_KEY       -2      // bad hotkey name
+#define IDCHK_MAX       -3      // too many IDC hotkeys
+<p>
+long add_idc_hotkey(string hotkey, string idcfunc);
+
+</pre>

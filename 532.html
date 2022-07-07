@@ -1,0 +1,15 @@
+<a name="IDH_532"></a>
+<title> get_prev_index</title>
+<table width="100%"><tr valign="top"><td><h2> get_prev_index</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get index of the previous existing array element
+     tag     - tag of array (AR_LONG or AR_STR)
+     id      - array id
+     idx     - index of the current element
+returns: -1 - no more array elements
+         otherwise returns index of the previous array element
+<p>
+long get_prev_index(long tag, long id, long idx);
+
+</pre>

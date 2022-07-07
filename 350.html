@@ -1,0 +1,18 @@
+<a name="IDH_350"></a>
+<title> set_frame_size</title>
+<table width="100%"><tr valign="top"><td><h2> set_frame_size</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Make function frame
+     ea      - any address belonging to the function
+     lvsize  - size of function local variables
+     frregs  - size of saved registers
+     argsize - size of function arguments that will be purged
+               from the stack upon return
+returns: ID of function frame or -1
+         If the function did not have a frame, the frame
+         will be created. Otherwise the frame will be modified
+<p>
+long set_frame_size(long ea, long lvsize, long frregs, long argsize);
+
+</pre>

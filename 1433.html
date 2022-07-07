@@ -1,0 +1,25 @@
+<a name="IDH_1433"></a>
+<title>String encodings</title>
+<table width="100%"><tr valign="top"><td><h2>String encodings</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA Qt can display program strings using different encodings. You can
+specify default encodings for all strings or override the encoding of a specific
+string.
+<p>
+The following encodings can be used:
+<p>
+&lt;default&gt; - the default encoding for this string type (8-bit or 16-bit)
+<p>
+&lt;no conversion&gt; - the string bytes are printed using the current
+system encoding (after translating with XlatAsciiOutput array in the <a href="419.html">configuration</a> file).
+<p>
+Windows codepages (e.g. 866, CP932, windows-1251)
+<p>
+Charset names (e.g. Shift-JIS, UTF-8, Big5)
+<p>
+You can add new encodings to the list using the contex menu item Insert (Ins hotkey).
+<p>
+On Linux/OS X, you can run &quot;iconv -l&quot; to see the available encodings. Please note that some
+encodings are not supported on all systems.
+<p>
+See also <a href="613.html">Options</a> submenu.

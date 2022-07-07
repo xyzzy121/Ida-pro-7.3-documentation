@@ -1,0 +1,16 @@
+<a name="IDH_9"></a>
+<title> start_process</title>
+<table width="100%"><tr valign="top"><td><h2> start_process</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Launch the debugger
+     path - path to the executable file.
+     args - command line arguments
+     sdir - initial directory for the process
+for all args: if empty, the default value from the database will be used
+returns: -1-failed, 0-cancelled by the user, 1-ok
+See the important note to the step_into() function
+<p>
+long start_process(string path, string args, string sdir);
+
+</pre>

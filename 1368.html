@@ -1,0 +1,24 @@
+<a name="IDH_1368"></a>
+<title>Problem: Failed to trace the value of the stack pointer</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Failed to trace the value of the stack pointer</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        The value of the stack pointer at the end of the function is different
+        from its value at the start of the function. IDA checks for the
+        difference only if the function is ended by a &quot;return&quot; instruction.
+        The most probable cause is that stack tracing has failed.
+        This problem is displayed in the disassembly listing with
+        the &quot;sp-analysis failed&quot; comment.
+</pre>
+<pre>
+ What to do:
+        1. Examine the value of <a href="489.html">stack pointer</a> at various
+           locations of the function and try to find out why the stack tracing
+           has failed. Usually, it fails because some called function changed the
+           stack pointer (by purging the input parameters, for example)
+        2. If you have found the offending function, <a href="485.html">change</a> its
+           attributes (namely, number of bytes purged upon return).
+        3. Another way is to specify manually how the stack pointer is
+           modified. See <a href="489.html">Change stack pointer</a> command
+</pre>

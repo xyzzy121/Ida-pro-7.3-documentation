@@ -1,0 +1,14 @@
+<a name="IDH_707"></a>
+<title> op_offset_high16</title>
+<table width="100%"><tr valign="top"><td><h2> op_offset_high16</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert operand to a high offset
+High offset is the upper 16bits of an offset.
+This type is used by PPC, MIPS, and other RISC processors.
+(for the explanations of 'ea' and 'n' please see <a href="696.html">op_bin</a>())
+     target - the full value (all 32bits) of the offset
+<p>
+success op_offset_high16(long ea, int n, long target);
+
+</pre>

@@ -1,0 +1,17 @@
+<a name="IDH_424"></a>
+<title>How to Enter an Identifier</title>
+<table width="100%"><tr valign="top"><td><h2>How to Enter an Identifier</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+An identifier is a name which starts with a letter and contains
+only letters and digits. The list of allowed characters
+is specified in config file <a href="419.html">IDA.CFG</a>. All names are case-sensitive.
+<p>
+Maximal length of a name is specified in the configuration file too:
+<pre>
+        MAX_NAME_LENGTH=120     // Maximal length of new names
+</pre>
+Default is 120.
+<p>
+Some assemblers have a shorter name length limit, beware!
+<p>
+IDA will warn you if you enter an illegal name.

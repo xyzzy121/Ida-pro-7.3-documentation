@@ -1,0 +1,22 @@
+<a name="IDH_300"></a>
+<title> del_segm</title>
+<table width="100%"><tr valign="top"><td><h2> del_segm</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Delete a segment
+  ea      - any address in the segment
+  flags   - combination of SEGMOD_... flags
+<p>
+success del_segm(long ea, long flags);
+<p>
+#define SEGMOD_KILL    0x0001 // disable addresses if segment gets shrinked or deleted
+#define SEGMOD_KEEP    0x0002 // keep information (code &amp; data, etc)
+#define SEGMOD_SILENT  0x0004 // be silent
+#define SEGMOD_KEEP0   0x0008 // flag for internal use, don't set
+#define SEGMOD_KEEPSEL 0x0010 // do not try to delete unused selector
+#define SEGMOD_NOMOVE  0x0020 // don't move info from the start of segment to the new start address
+                              // (for set_segm_start())
+#define SEGMOD_SPARSE  0x0040 // use sparse storage if extending the segment
+                              // (for set_segm_start(), set_segm_end())
+
+</pre>

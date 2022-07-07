@@ -1,0 +1,14 @@
+<a name="IDH_1516"></a>
+<title> get_strlit_contents</title>
+<table width="100%"><tr valign="top"><td><h2> get_strlit_contents</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get string contents
+     ea   - linear address
+     len  - string length. -1 means to calculate the max string length
+     type - the string type (one of <a href="283.html">STRTYPE_...</a> constants)
+Returns: string contents or empty string
+<p>
+string get_strlit_contents(long ea, long len, long type);
+
+</pre>

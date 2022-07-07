@@ -1,0 +1,49 @@
+<a name="IDH_1259"></a>
+<title>Local types window</title>
+<table width="100%"><tr valign="top"><td><h2>Local types window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenLocalTypes
+ </pre>
+Each database has a local type library embedded into it.
+This type library (til) is used to store types that are local to the current database.
+They are usually created by <a href="1367.html">parsing</a> a header file.
+<p>
+This command opens the local types window. The user can manipulate local types
+here:
+<pre>
+  - the existing types can be modified (the default hotkey is Ctrl-E)
+  - the existing types can be deleted (the default hotkey is Del)
+  - new types can be added (the default hotkey is Ins)
+</pre>
+Please note that Ins can be used to add many types at once. For that the user
+just needs to enter multiple declarations, one after another in the dialog box.
+<p>
+However, Ctrl-E permits for editing of one type at a time. This may cause
+problems with complex structure types with nested types. Nested types will not
+be saved by Ctrl-E.
+<p>
+If the edited type corresponds to an idb type (struct or enum), then
+the corresponding type will be automatically synchronized. If the user modifies
+an idb type in the struct/enum windows, the corresponding local type will
+be updated too. So the type synchronization works both ways.
+<p>
+Some types in this list are created automatically by IDA. They are
+copies of the types defined in the <a href="593.html">Struct</a> or <a href="594.html">Enum</a> views.
+Such types are displayed using in gray, as if they are disabled.
+<p>
+Types displayed in black are considered as C level types. Read <a href="1042.html">more</a>.
+<p>
+Each type in the local type library has an ordinal number and may have a name.
+<p>
+Be careful when deleting existing types because if there are references to
+them, they will be invalidated.
+<p>
+A local type can be mapped to another type. Such an operation deletes the existing
+type and redirects all its references to the destination type. Circular dependencies
+are forbidden. In the case of a user mistake, a mapped type can be deleted and recreated
+with the correct information.
+<pre>
+ See also <a href="1356.html">View|Open subviews</a> submenu.
+          <a href="1358.html">Type libraries window</a>
+          <a href="1691.html">C++ type details</a></pre>

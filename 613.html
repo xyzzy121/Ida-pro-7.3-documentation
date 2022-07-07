@@ -1,0 +1,31 @@
+<a name="IDH_613"></a>
+<title>String literal style dialog</title>
+<table width="100%"><tr valign="top"><td><h2>String literal style dialog</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetStrlitStyle
+ </pre>
+With this dialog you can setup string styles and also create a new
+string immediately at the current location.
+<p>
+The following string styles are defined:
+<pre>
+      C-style (zero-terminated)
+      DOS style ($ terminated)
+      Pascal style (one byte length prefix)
+      Wide pascal (two-byte length prefix)
+      Delphi (four-byte length prefix)
+      Unicode (UTF-16)
+      Unicode pascal style (two-byte length prefix)
+      Unicode wide pascal style (four-byte length prefix)
+      Character terminated
+</pre>
+If you select &quot;character terminated&quot; string style then you may
+specify up to 2 termination characters. The string will be terminated
+by any of these characters. If the second character
+is equal to 0, then it is ignored.
+<p>
+In IDA Qt you can also set a specific encoding to be used to display the string,
+or change the defaults for all strings. See <a href="1433.html">string encodings</a>.
+<p>
+See also <a href="604.html">Options</a> submenu.

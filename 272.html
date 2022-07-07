@@ -1,0 +1,16 @@
+<a name="IDH_272"></a>
+<title> demangle_name</title>
+<table width="100%"><tr valign="top"><td><h2> demangle_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Demangle a name
+     name - name to demangle
+     disable_mask - a mask that tells how to demangle the name
+                    it is a good idea to get this mask using
+                    get_inf_attr(INF_SHORT_DN) or get_inf_attr(INF_LONG_DN)
+Returns: a demangled name
+If the input name cannot be demangled, returns 0
+<p>
+string demangle_name(string name, long disable_mask);
+
+</pre>

@@ -1,0 +1,70 @@
+<a name="IDH_223"></a>
+<title>Bad input file format</title>
+<table width="100%"><tr valign="top"><td><h2>Bad input file format</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ The input file does not conform to the following definitions:
+</pre>
+Intel Hex Object Format
+ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+This is the default format.  This format is
+line  oriented  and  uses only printable ASCII characters except for
+the carriage return/line feed at the end of each line.  Each line in
+the file assumes the following format:
+<pre>
+ :NNAAAARRHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHCCTT
+</pre>
+Where:
+<p>
+All fields marked 'hex' consist of two  or  four  ASCII  hexadecimal
+digits  (0-9,  A-F).  A maximum of 24 data bytes will be represented
+on each line.
+<pre>
+ :      = Record Start Character
+ NN     = Byte Count (hex)
+ AAAA   = Address of first byte (hex)
+ RR     = Record Type (hex, 00 except for last record which is 01)
+ HH     = Data Bytes (hex)
+ CC     = Check Sum (hex)
+ TT     = Line Terminator (carriage return, line feed)
+</pre>
+The last line of the file will be a record conforming to  the  above
+format with a byte count of zero (':00000001FF').
+<p>
+The checksum is defined as:
+<pre>
+        sum      =  byte_count + address_hi + address_lo +
+                        record_type + (sum of all data bytes)
+        checksum =  ((-sum) &amp; ffh)
+</pre>
+MOS  Technology  Hex Object Format
+ ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+This format is line oriented and
+uses  only  printable  ASCII  characters  except  for  the  carriage
+return/line  feed  at  the  end of each line.  Each line in the file
+assumes the following format:
+<pre>
+ ;NNAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHCCCCTT
+</pre>
+Where:
+<p>
+All fields marked 'hex' consist of two  or  four  ASCII  hexadecimal
+digits  (0-9,  A-F).  A maximum of 24 data bytes will be represented
+on each line.
+<pre>
+ ;      = Record Start Character
+ NN     = Byte Count (hex)
+ AAAA   = Address of first byte (hex)
+ HH     = Data Bytes (hex)
+ CCCC   = Check Sum (hex)
+ TT     = Line Terminator (carriage return, line feed)
+</pre>
+The last line of the file will be a record with a byte count of zero
+(';00').
+<p>
+The checksum is defined as:
+<pre>
+        sum      =  byte_count + address_hi + address_lo +
+                        (sum of all data bytes)
+        checksum =  (sum &amp; ffffh)
+</pre>

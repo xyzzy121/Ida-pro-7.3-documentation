@@ -1,0 +1,20 @@
+<a name="IDH_277"></a>
+<title> get_operand_value</title>
+<table width="100%"><tr valign="top"><td><h2> get_operand_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get number used in the operand
+This function returns an immediate number used in the operand
+     ea - linear address of instruction
+     n  - the operand number
+The return values are:
+     operand is an immediate value  =&gt; immediate value
+     operand has a displacement     =&gt; displacement
+     operand is a direct memory ref =&gt; memory address
+     operand is a register          =&gt; register number
+     operand is a register phrase   =&gt; phrase number
+     otherwise                      =&gt; -1
+<p>
+long get_operand_value(long ea, long n);
+
+</pre>

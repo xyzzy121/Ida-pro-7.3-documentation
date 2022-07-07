@@ -1,0 +1,13 @@
+<a name="IDH_721"></a>
+<title> get_bmask_name</title>
+<table width="100%"><tr valign="top"><td><h2> get_bmask_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get bitmask name (only for bitfields)
+     enum_id - id of enum
+     bmask   - bitmask of the constant
+returns: name of bitmask if it exists. otherwise returns 0.
+<p>
+long get_bmask_name(long enum_id, long bmask);
+
+</pre>

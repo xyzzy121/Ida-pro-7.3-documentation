@@ -1,0 +1,16 @@
+<a name="IDH_146"></a>
+<title> add_auto_stkpnt</title>
+<table width="100%"><tr valign="top"><td><h2> add_auto_stkpnt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Add automatical SP register change point
+     func_ea  - function start
+     ea       - linear address where SP changes
+                usually this is the end of the instruction which
+                modifies the stack pointer (cmd.ea+cmd.size)
+     delta    - difference between old and new values of SP
+returns: 1-ok, 0-failed
+<p>
+success add_auto_stkpnt(func_ea, ea, sval_t delta);
+
+</pre>

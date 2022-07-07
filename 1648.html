@@ -1,0 +1,52 @@
+<a name="IDH_1648"></a>
+<title>Page breakpoints</title>
+<table width="100%"><tr valign="top"><td><h2>Page breakpoints</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Page breakpoints are memory access breakpoints that can be set to detect
+when the application reads, writes, or executes code/data in a specific
+memory range. Page breakpoints are very similar to hardware breakpoints
+but there is no limitation on the number of page breakpoints that can be
+set or their size, in contrast with normal hardware breakpoints.
+<p>
+Memory access breakpoints are implemented by removing page permissions according
+to the specified type of the page breakpoint to be added (for example, for a
+write page breakpoint, the write permission will be removed from the page).
+When the access violation exception occurs because the application
+tries to access the specific memory region, IDA reports a breakpoint hit.
+<p>
+As page breakpoints can be set for a small part of a memory page but the
+permissons of the whole page must be changed, page breakpoints can slow
+down the debugger because many access violation exceptions may be generated.
+If the application accesses memory outside of the desired range but on the
+same page, the generated exception must be silently handled and the
+application resumed. Specifically, page breakpoints in the code segment can slow
+down the debugger very much.
+<p>
+Memory access breakpoints are supported since IDA version 6.3 for the following
+debuggers:
+<p>
+Win32
+<pre>
+  Page breakpoints are supported for both local and remote debugging
+  of 32 and 64bit applications.
+</pre>
+WinDbg
+<pre>
+  Page breakpoints are supported only for local debugging of 32-bit applications.
+</pre>
+Bochs
+<pre>
+  Page breakpoints are supported for both of 32 and 64bit applications.
+  Page breakpoints in the bochs debugger are just like normal hardware
+  breakpoints but with no limit on the number of breakpoints or their size.
+  Please note that hardware breakpoints in the bochs debugger occur AFTER the
+  instruction is executed while regular page breakpoints occur BEFORE the
+  instruction is actually executed.
+</pre>
+<pre>
+ See also <a href="1404.html">Breakpoints list</a>
+          <a href="1405.html">Add breakpoint</a>
+          <a href="1406.html">Delete breakpoint</a>
+          <a href="1407.html">Edit breakpoint</a>
+          <a href="1404.html">Breakpoints</a> submenu.
+</pre>

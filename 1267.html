@@ -1,0 +1,13 @@
+<a name="IDH_1267"></a>
+<title> get_min_spd_ea</title>
+<table width="100%"><tr valign="top"><td><h2> get_min_spd_ea</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Return the address with the minimal spd (stack pointer delta)
+If there are no SP change points, then return BADADDR.
+     func_ea - function start
+returns: BADDADDR - no such function
+<p>
+long get_min_spd_ea(func_ea);
+
+</pre>

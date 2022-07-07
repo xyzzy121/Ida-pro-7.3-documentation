@@ -1,0 +1,46 @@
+<a name="IDH_1414"></a>
+<title>Exceptions</title>
+<table width="100%"><tr valign="top"><td><h2>Exceptions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+This dialog box allows to setup how the debugger will react to specific exceptions.
+For each exception, two settings can be specified, simply by selecting the desired exception,
+and clicking the 'Edit' button in the popup menu.
+<p>
+Suspend program
+<pre>
+        Specify whether the debugger will suspend when the exception occurs.
+        If 'Passed to' == application and the application handles
+        the exception successfully, the execution will not be suspended
+        regardless of the 'Suspend' value.
+</pre>
+Passed to
+<pre>
+        Specify whether the exception will be passed to the application itself
+        or handled by the debugger. If the debugged program contains exception
+        handling code, it is better to select 'Application'.
+</pre>
+Report
+<pre>
+  Warn
+</pre>
+<pre>
+        Show a warning message with the exception information.
+</pre>
+<pre>
+  Log
+</pre>
+<pre>
+        Instead of displaying a warning message, log to the output window the exception
+        information.
+</pre>
+<pre>
+  Silent
+</pre>
+<pre>
+        Do not show a warning message nor log to the output window.
+</pre>
+For new exceptions being added by the &quot;Insert&quot; command, you have to specify
+the exception name and code. These values must be unique, the name cannot be empty, and
+the code cannot be zero.
+<pre>
+ See also <a href="1395.html">Debugger</a> submenu.</pre>

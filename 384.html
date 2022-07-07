@@ -1,0 +1,20 @@
+<a name="IDH_384"></a>
+<title> get_first_member</title>
+<table width="100%"><tr valign="top"><td><h2> get_first_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get offset of the first member of a structure
+     id            - structure type ID
+returns: -1 if bad structure type ID is passed
+         or structure has no members
+         otherwise returns offset of the first member.
+         <b>NOTE:</b> IDA allows 'holes' between members of a
+               structure. It treats these 'holes'
+               as unnamed arrays of bytes.
+         <b>NOTE:</b> Union members are, in IDA's internals, located
+               at subsequent byte offsets: member 0 -&gt; offset 0x0,
+               member 1 -&gt; offset 0x1, etc...
+<p>
+long get_first_member(long id);
+
+</pre>

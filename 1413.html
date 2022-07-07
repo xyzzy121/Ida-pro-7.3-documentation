@@ -1,0 +1,157 @@
+<a name="IDH_1413"></a>
+<title>Debugger options</title>
+<table width="100%"><tr valign="top"><td><h2>Debugger options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetupDebugger
+ </pre>
+This dialog box allows to specify different settings related to the debugger.
+<p>
+Events
+<pre>
+  - Suspend on debugging start
+</pre>
+<pre>
+      If selected, the debugger will suspend directly once the debugging
+      starts.
+</pre>
+<pre>
+  - Evaluate event condition on exit
+</pre>
+<pre>
+      If selected, the debugger will evaluate the event condition immediately
+      before closing the debugging session (once we receive PROCESS_EXITED or
+      PROCESS_DETACHED event)
+</pre>
+<pre>
+  - Suspend on process entry point
+</pre>
+<pre>
+      If selected, the debugger will insert a temporary breakpoint
+      at the main entry point of the debugged application.
+</pre>
+<pre>
+  - Suspend on thread start/exit
+</pre>
+<pre>
+      If selected, the debugger will suspend if a new thread starts
+      or if an existing thread terminates.
+</pre>
+<pre>
+  - Suspend on library load/unload
+</pre>
+<pre>
+      If selected, the debugger will suspend if a new library is
+      loaded or if a previously loaded library is unloaded.
+</pre>
+<pre>
+  - Suspend on debugging message
+</pre>
+<pre>
+      If selected, the debugger will suspend if the debugged application
+      generates a message destined to the debugger.
+</pre>
+Event condition
+<pre>
+      When one or more debug events (see above) are checked then this
+      option is used to specify a condition. In the following example,
+      the debugger will suspend the prcoess whenever a module with the
+      name test.dll is loaded:
+</pre>
+<pre>
+ get_event_id() == LIB_LOADED &amp;&amp; strstr(get_event_module_name(), &quot;test.dll&quot;) != -1
+</pre>
+Log
+<pre>
+  - Segment modifications
+</pre>
+<pre>
+      If selected, the debugger will print information regarding
+      segment modifications (creation, deletion, or resizing of
+      segments) since the last event. Note that the debugger
+      doesn't continuously track segment modifications, but detects
+      those only if a debugging event occurs.
+</pre>
+<pre>
+  - Thread start/exit
+</pre>
+<pre>
+      If selected, the debugger will print a message if a new thread
+      starts or if an existing thread terminates.
+</pre>
+<pre>
+  - Library load/unload
+</pre>
+<pre>
+      if Selected, the debugger will print a message if a new library is
+      loaded or if a previously loaded library is unloaded.
+</pre>
+<pre>
+  - Breakpoint
+</pre>
+<pre>
+      If selected, the debugger will print a message if the debugged process
+      reaches a breakpoint.
+</pre>
+<pre>
+  - Debugging message
+</pre>
+<pre>
+      If selected, the debugger will print debugging messages from
+      the application.
+</pre>
+Options
+<pre>
+  - Reconstruct the stack
+</pre>
+<pre>
+      If selected, the debugger will try to reconstruct the chain of stack
+      frames, based on information available on the stack and in the
+      <a href="488.html">function stack variables</a>.
+</pre>
+<pre>
+  - Show debugger breakpoint instructions
+</pre>
+<pre>
+      If selected, the debugger will show breakpoint instructions inserted
+      by the debugger itself. This function is mainly useful if the user
+      wants to see the real content of the memory.
+</pre>
+<pre>
+  - Use hardware temporary breakpoints
+</pre>
+<pre>
+      If selected, IDA will try to use hardware breakpoints for the temporary
+      breakpoints used to implement the &quot;step over&quot; and &quot;run to&quot; functionality.
+      This feature is useful when debugging read-only or self-modifying code,
+      since it does not change the contents of the memory.
+      IDA will fall back to software breakpoints if the attempt to set a
+      hardware breakpoint fails.
+</pre>
+<pre>
+  - Autoload PDB files
+</pre>
+<pre>
+      If selected, IDA will invoke the PDB plugin to try to load PDB symbols
+      for every new module loaded into process.
+</pre>
+<pre>
+  - Set as just-in-time debugger
+</pre>
+<pre>
+      If changed from off to on, IDA will try to register itself as a
+      just-in-time debugger (invoked by the system in case of application
+      crashes) on dialog close.
+</pre>
+Edit exceptions
+<pre>
+      This button allows the user to <a href="1414.html">setup</a>
+      how the debugger will react to specific exceptions.
+</pre>
+Reload exceptions
+<pre>
+      This button reloads the exception table from the exceptions.cfg
+      file.
+</pre>
+<pre>
+ See also <a href="1395.html">Debugger</a> submenu.</pre>

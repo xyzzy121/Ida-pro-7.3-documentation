@@ -1,0 +1,36 @@
+<a name="IDH_442"></a>
+<title>Create Executable File</title>
+<table width="100%"><tr valign="top"><td><h2>Create Executable File</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ProduceExe
+ </pre>
+Enter a file name for the new executable file. Usually this
+command is used after patching (see commands <a href="527.html">Patch byte</a> and
+<a href="527.html">Patch word</a>) to obtain a patched version of the file.
+<p>
+IDA produces executable files only for:
+<pre>
+  - MS DOS .exe
+  - MS DOS .com
+  - MS DOS .drv
+  - MS DOS .sys
+  - general binary
+  - Intel Hex Object Format
+  - MOS Technology Hex Object Format
+</pre>
+For other file formats please create a <a href="443.html">difference</a> file.
+<p>
+<b>NOTE:</b> only <a href="527.html">Patch byte/word</a> commands affect the executable
+file contents, other commands
+(including <a href="477.html">User-Specified String for the #th Operand</a>)
+will not affect the content of the disassembled file.
+<p>
+EXE files: Output files will have the same EXE-header and relocation table as
+the input file. IDA will fill unused ranges of the EXE file (e.g.
+between relocation table and loadable pages) with zeroes.
+<p>
+See also
+<pre>
+         <a href="438.html">File|Produce output file</a> submenu,
+         <a href="526.html">Edit|Patch core</a> submenu.</pre>

@@ -1,0 +1,14 @@
+<a name="IDH_264"></a>
+<title> next_head</title>
+<table width="100%"><tr valign="top"><td><h2> next_head</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get next defined item (instruction or data) in the program
+     ea    - linear address to start search from
+     maxea - the search will stop at the address
+             maxea is not included in the search range
+returns: BADADDR - no (more) defined items
+<p>
+long next_head(long ea, long maxea);
+
+</pre>

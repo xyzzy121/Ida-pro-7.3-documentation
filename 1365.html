@@ -1,0 +1,14 @@
+<a name="IDH_1365"></a>
+<title> patch_dbg_byte</title>
+<table width="100%"><tr valign="top"><td><h2> patch_dbg_byte</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change a byte in the debugged process memory only
+     ea    - linear address
+     value - new value of the byte
+Returns: 1 if successful, 0 if not
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+success patch_dbg_byte(long ea, long value);
+
+</pre>

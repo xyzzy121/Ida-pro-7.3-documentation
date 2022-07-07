@@ -1,0 +1,36 @@
+<a name="IDH_654"></a>
+<title> Hidden ranges</title>
+<table width="100%"><tr valign="top"><td><h2> Hidden ranges</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// ----------------------------------------------------------------------------
+//                           H I D D E N  A R E A S
+// ----------------------------------------------------------------------------
+<p>
+// Hidden ranges - address ranges which can be replaced by their descriptions
+<p>
+// hide a range
+//       start, end  - range boundaries
+//       description - description to display if the range is collapsed
+//       header      - header lines to display if the range is expanded
+//       footer      - footer lines to display if the range is expanded
+//       visible     - the range state
+//       color       - RGB color code (-1 means default color)
+//  returns: !=0 - ok
+<p>
+success add_hidden_range(long start, long end, string description, string header, string footer, long color);
+<p>
+// set hidden range state
+//       ea      - any address belonging to the hidden range
+//       visible - new state of the range
+//  returns: !=0 - ok
+<p>
+success update_hidden_range(long ea, long visible);
+<p>
+// delete a hidden range
+//       ea - any address belonging to the hidden range
+//  returns: !=0 - ok
+<p>
+success del_hidden_range(long ea);
+
+</pre>

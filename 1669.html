@@ -1,0 +1,132 @@
+<a name="IDH_1669"></a>
+<title>Dalvik debugger</title>
+<table width="100%"><tr valign="top"><td><h2>Dalvik debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The Dalvik debugger is a plugin to debug Android applications written for the Dalvik Virtual Machine. It includes the source level debugging too.
+<p>
+Dalvik debugger specific options:
+<pre>
+    ADB executable
+</pre>
+<pre>
+        IDA needs to know where the 'adb' utility resides, and tries various
+        methods to locate it automatically. Usually IDA finds the path to adb,
+        but if it fails then we can define the ANDROID_SDK_HOME or the
+        ANDROID_HOME environment variable to point to the directory where the
+        Android SDK is installed to. Or set the path to 'adb' here.
+</pre>
+<pre>
+    Emulator/device serial number
+</pre>
+<pre>
+        If multiple emulator/device instances are running, you must specify
+        the target instance to connect to.
+</pre>
+<pre>
+    Package name
+</pre>
+<pre>
+        Set the package name for the application as specified in
+        AndroidManifest.xml. It is a mandatory option to start an application.
+        If you plan to use &quot;Attach to process&quot; debugger action then you may
+        leave this field empty.
+
+</pre>
+<pre>
+    Activity
+</pre>
+<pre>
+        If your want to start an application using the &quot;Start process&quot;
+        debugger action then you have to set this option too. Copy it from
+        AndroidManifest.xml. If you plan to use the &quot;Attach to process&quot;
+        debugger action then you may leave this field empty.
+</pre>
+<pre>
+    Command line arguments
+</pre>
+<pre>
+        Every object inside Dalvik VM has an ID. It is the 64-bit number.
+        If you want to see it in &quot;Locals&quot;/&quot;Watches&quot; windows then set this
+        checkbox.
+</pre>
+Source-level debugging
+<pre>
+    In order to use source-level debugging you have to set paths to the
+    application source code files. Do it using &quot;Options/Sources path&quot;
+    menu item.
+</pre>
+<pre>
+    Our dalvik debugger presumes that the application sources reside
+    in the current (&quot;.&quot;) directory.  If this is not the case, you can
+    map current directory (&quot;.&quot;) to the directory where the source files
+    are located.
+</pre>
+List of special things about our Dalvik debugger:
+<pre>
+  - In Dalvik there is no stack and there is no SP register.
+    The only available register is IP.
+  - The method frame registers and slots (v0, v1, ...) are represented as
+    local variables in IDA.
+    We can see them in the Debugger/Debugger Windows/Locals window
+  - The stack trace is available from &quot;Debugger/Windows/Stack trace&quot;
+  - When the application is running, it may execute some system code.
+    If we break the execution by clicking on the &quot;Cancel&quot; button,
+    quite often we may find ourselves outside of the application,
+    in the system code. The value of the IP register is 0xFFFFFFFF in this
+    case, and stack trace shows only system calls and a lot of 0xFFFFFFFFs.
+    It means that IDA could not locate the current execution position inside
+    the application. We recommend to set more breakpoints inside the
+    application, resume the execution and interact with application by
+    clicking on its windows, selecting menu items, etc.
+    The same thing can occur when we step out the application or
+    step into the system code. In the last case we can use &quot;Run until
+    return&quot; debugger command to return to the application code.
+</pre>
+Locals window
+<pre>
+    IDA considers the method frame registers, slots, and
+    variables (v0, v1, ...) as local variables.
+    To see their values we have to open the &quot;Locals&quot; window
+    from the &quot;Debugger/Debugger windows/Locals&quot; menu item.
+</pre>
+<pre>
+    If the information about the frame is available (the symbol table is
+    intact) then IDA shows the method arguments, the method local variables
+    with names and other non-named variables.
+    Otherwise some variable values will not be displayed because IDA
+    does not know their types. Variables without type information are
+    marked with &quot;Bad type&quot; in the &quot;Locals&quot; window.
+    To see the variable value in this case please use the &quot;Watches&quot; window.
+</pre>
+Watches window
+<pre>
+    To open the &quot;Watches&quot; window please select the &quot;Debugger/Windows/Watches&quot;
+    menu item. In this window we can add any variable to watch its value.
+</pre>
+<pre>
+    Please note that we have to specify type of variable if it is not known.
+    Use C-style casts:
+        (Object*)v0
+        (String)v6
+        (char*)v17
+        (int)v7
+</pre>
+<pre>
+    We do not need to specify the real type of an object variable,
+    the &quot;(Object*)&quot; cast is enough.  IDA can derive the real object type
+    itself.
+</pre>
+<pre>
+    ATTENTION! An incorrect type may cause the Dalvik VM to crash.
+</pre>
+<pre>
+    There is not much we can do about it. Our recommendation is to never
+    cast an integer variable to an object type, the Dalvik VM usually
+    crashes if we do that. But the integer cast &quot;(int)&quot; is safe in practice.
+</pre>
+<pre>
+    Keeping the above in the mind, do not leave the cast entries
+    in the &quot;Watches&quot; window for a long time. Delete them before any
+    executing instruction that may change the type of the watched variable
+</pre>
+See also <a href="1395.html">Debugger</a> submenu.

@@ -1,0 +1,14 @@
+<a name="IDH_346"></a>
+<title> get_frame_lvar_size</title>
+<table width="100%"><tr valign="top"><td><h2> get_frame_lvar_size</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get size of local variables in function frame
+     ea - any address belonging to the function
+returns: Size of local variables in bytes.
+         If the function doesn't have a frame, return 0
+         If the function does't exist, return -1
+<p>
+#define get_frame_lvar_size(ea)  get_func_attr(ea, FUNCATTR_FRSIZE)
+
+</pre>

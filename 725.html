@@ -1,0 +1,15 @@
+<a name="IDH_725"></a>
+<title> get_first_enum_member</title>
+<table width="100%"><tr valign="top"><td><h2> get_first_enum_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get first constant in the enum
+     enum_id - id of enum
+     bmask   - bitmask of the constant
+               ordinary enums accept only -1 as a bitmask
+returns: value of constant or -1 no constants are defined
+         All constants are sorted by their values as unsigned longs.
+<p>
+long get_first_enum_member(long enum_id, long bmask);
+
+</pre>

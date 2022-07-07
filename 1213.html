@@ -1,0 +1,40 @@
+<a name="IDH_1213"></a>
+<title> Debugger: control</title>
+<table width="100%"><tr valign="top"><td><h2> Debugger: control</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Execute one instruction in the current thread.
+// Other threads are kept suspended.
+//
+// NOTE
+//   You must call wait_for_next_event() after this call
+//   in order to find out what happened. Normally you will
+//   get the STEP event but other events are possible (for example,
+//   an exception might occur or the process might exit).
+//   This remark applies to all execution control functions.
+//   The event codes depend on the issued command.
+// returns: success
+<p>
+success step_into(void);
+<p>
+// Execute one instruction in the current thread,
+// but without entering into functions
+// Others threads keep suspended.
+// See the important note to the step_into() function
+<p>
+success step_over(void);
+<p>
+// Execute the process until the given address is reached.
+// If no process is active, a new process is started.
+// See the important note to the step_into() function
+<p>
+success run_to(long ea, long pid=NO_PROCESS, long tid=NO_THREAD);
+<p>
+// Execute instructions in the current thread until
+// a function return instruction is executed (aka &quot;step out&quot;).
+// Other threads are kept suspended.
+// See the important note to the step_into() function
+<p>
+success step_until_ret(void);
+
+</pre>

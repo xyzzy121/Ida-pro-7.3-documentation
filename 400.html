@@ -1,0 +1,14 @@
+<a name="IDH_400"></a>
+<title> set_member_name</title>
+<table width="100%"><tr valign="top"><td><h2> set_member_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+change structure member name
+     id            - structure type ID
+     member_offset - offset of the member
+     name          - new name of the member
+returns: !=0 - ok.
+<p>
+long set_member_name(long id, long member_offset, string name);
+
+</pre>

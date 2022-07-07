@@ -1,0 +1,49 @@
+<a name="IDH_1418"></a>
+<title>Desktops</title>
+<table width="100%"><tr valign="top"><td><h2>Desktops</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+IDA saves different settings in desktops: the main window configuration,
+the toolbars configuration, and the configuration of all database windows.
+<p>
+Different desktops are available:
+<pre>
+ &lt;Database&gt;
+     this desktop configuration is stored in the database itself,
+     and is automatically loaded each time you open this database.
+     IDA also automatically saves the current desktop configuration
+     to this desktop if you close and save the database.
+</pre>
+<pre>
+ &lt;Database debugger&gt;
+     this desktop configuration is also stored in the database,
+     and is loaded each time you start the debugger.
+     As for the &lt;Database&gt; desktop, IDA automatically saves the current
+     desktop configuration to this desktop once the debugger stops.
+</pre>
+<pre>
+ &lt;Default&gt;
+     this desktop configuration is stored in the registry,
+     and is loaded each time you start IDA without opening a database,
+     or the first time you create a new database.
+</pre>
+<pre>
+ &lt;Default debugger&gt;
+     this desktop configuration is stored in the registry,
+     and is loaded the first time you start the debugger.
+</pre>
+<pre>
+  named desktops
+     these desktop configurations are stored in the registry,
+     and can be loaded manually by the user during the disassembly
+     or the debugging.
+</pre>
+Notice IDA will use a default configuration for main windows and toolbars
+if the screen resolution changed.
+<p>
+See also
+<pre>
+         <a href="1419.html">Load desktop...</a> command
+         <a href="1420.html">Save desktop...</a> command
+         <a href="1421.html">Delete desktop...</a> command
+         <a href="1422.html">Reset desktop</a> command
+</pre>

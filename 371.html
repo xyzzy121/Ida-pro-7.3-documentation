@@ -1,0 +1,23 @@
+<a name="IDH_371"></a>
+<title> get_first_struc_idx</title>
+<table width="100%"><tr valign="top"><td><h2> get_first_struc_idx</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get index of first structure type
+returns: -1 if no structure type is defined
+         index of first structure type.
+         Each structure type has an index and ID.
+         INDEX determines position of structure definition
+          in the list of structure definitions. Index 1
+          is listed first, after index 2 and so on.
+          The index of a structure type can be changed any
+          time, leading to movement of the structure definition
+          in the list of structure definitions.
+         ID uniquely denotes a structure type. A structure
+          gets a unique ID at the creation time and this ID
+          can't be changed. Even when the structure type gets
+          deleted, its ID won't be resued in the future.
+<p>
+long get_first_struc_idx(void);
+
+</pre>

@@ -1,0 +1,38 @@
+<a name="IDH_1129"></a>
+<title>Graph node groups</title>
+<table width="100%"><tr valign="top"><td><h2>Graph node groups</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Any number of nodes can be collapsed into a single synthetic node. Such
+a synthetic node contains a user-provided text instead of normal
+disassembly listing. The 'group' command is available from the
+right-click menu if there are selected nodes.
+<p>
+Even a single node can be used to create a group. This feature can be used to
+collapse huge nodes into something manageable or to hide a group that consists of
+one node.
+<p>
+After creating a group, IDA automatically refreshes the graph layout. If a
+custom layout was present, it is not applied to the reduced graph.
+However, the existing custom layout is not destroyed and will be re-used
+as soon as the user switches to the full graph by deleting the group or
+uncollapsing it.
+<p>
+The node groups can be nested: synthetic nodes can be used to create
+other groups. This feature allows reducing the graph into a single node.
+Each node can belong to only one group at a time.
+<p>
+Groups can be uncollapsed to display the original node content. The node
+frames of the current uncollapsed group (the one with the mouse pointer)
+are displayed with a special color. The default group frame color is
+yellow. This way, the existing uncollapsed groups can be visualized by
+hovering the mouse over the graph nodes.
+<p>
+There are also commands to collapse and uncollapse all groups in the
+graph. They are available from the right click menu.
+<p>
+To edit the contents of synthetic nodes, use the 'set node text' button
+on the node title. The 'rename' command can be used too.
+<p>
+IDA automatically remembers the graph groups and their state for each function.
+<p>
+Back to <a href="42.html">graph view</a>

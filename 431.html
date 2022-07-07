@@ -1,0 +1,18 @@
+<a name="IDH_431"></a>
+<title>Reload the input file</title>
+<table width="100%"><tr valign="top"><td><h2>Reload the input file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ReloadFile
+ </pre>
+This command reloads the same input file into the database.
+IDA tries to retain as much information as possible in the database.
+All the names, comments, segmentation information and similar will be retained.
+<p>
+Only the values of individual bytes will be changed.
+<p>
+This command works for some input file types only: if the file was loaded into the database with special settings, this command
+may fail. In this case, use <a href="444.html">Dump database to IDC file</a>
+command and reload the file manually.
+<p>
+See also <a href="430.html">Load... submenu</a> commands.

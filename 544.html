@@ -1,0 +1,25 @@
+<a name="IDH_544"></a>
+<title>Jump to the specified address</title>
+<table width="100%"><tr valign="top"><td><h2>Jump to the specified address</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: JumpAsk
+ </pre>
+This command jumps to the specified address in the program.
+IDA will ask you for the target address.
+You can enter a name or an address as a hexadecimal number
+with or without a segment.
+If you enter a valid address then:
+<pre>
+  - the current address is saved in the <a href="542.html">jump stack</a>.
+  - the cursor is positioned to the specified address.
+</pre>
+The <a href="539.html">Jump back</a> command (usually Esc) will return you back.
+<p>
+In the structure and enum views, the cursor will be moved to the corresponding
+offset in the current type.
+<p>
+See also
+<pre>
+         <a href="543.html">Jump</a> submenu
+         <a href="426.html">How to Enter an Address</a>.</pre>

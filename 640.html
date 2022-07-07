@@ -1,0 +1,14 @@
+<a name="IDH_640"></a>
+<title>Patched bytes have relocation information</title>
+<table width="100%"><tr valign="top"><td><h2>Patched bytes have relocation information</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+If a byte has relocation information attached to it, then
+the value of this byte is changed when the file is loaded into
+the memory by the system loader or linker.
+Therefore, it doesn't make much sense (and sometimes it is simply illegal)
+to modify the byte.
+<p>
+We recommend to return the original value of the byte(s).
+<p>
+You can see the relocation information attached to an item by using the
+<a href="598.html">show internal flags</a> command.

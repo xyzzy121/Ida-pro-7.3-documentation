@@ -1,0 +1,35 @@
+<a name="IDH_1357"></a>
+<title>Debugging with VMWare</title>
+<table width="100%"><tr valign="top"><td><h2>Debugging with VMWare</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+VMWare Workstation 6.5 is recommended for debugging, though earlier versions may work too.
+Only 32-bit debugging is supported.
+<p>
+In order to enable debugging with GDB protocol, add the following lines to the .vmx
+file of the virtual machine:
+<pre>
+   debugStub.listen.guest32 = &quot;TRUE&quot;
+   debugStub.hideBreakpoints= &quot;TRUE&quot;
+</pre>
+To debug the VM startup, use:
+<pre>
+   monitor.debugOnStartGuest32 = &quot;TRUE&quot;
+</pre>
+Please note that the execution will start in the BIOS.
+<p>
+To accept connections from remote computers, the following line must be specified:
+<pre>
+   debugStub.listen.guest32.remote = &quot;TRUE&quot;
+</pre>
+VMWare Workstation will listen on port 8832.
+<p>
+Tips:
+<p>
+Since the GDB server does not report the memory layout, it must be specified manually.
+For example, to debug BIOS startup code, create a 16-bit segment from F0000 to 10000 with base F000.
+<p>
+Use the <a href="1523.html">GDB command line</a> to get extra info about the registers.
+For example, use &quot;r cr0&quot; to see current value of the cr0 register or &quot;r cs&quot; to see the base, limit
+and other attributes of the CS selector in protected mode.
+<p>
+Back to <a href="1335.html">Remote GDB Debugger</a>

@@ -1,0 +1,29 @@
+<a name="IDH_89"></a>
+<title>IDC: Exceptions</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: Exceptions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Any runtime error generates an exception. Exceptions terminate the execution.
+It is possible to catch an exception instead of terminating the execution:
+<pre>
+        auto e;
+        try
+        {
+          ... some statements that cause a runtime error...
+        }
+        catch ( e )
+        {
+          // e holds the exception information
+          // it is an instance of the <a href="1577.html">exception</a> class
+        }
+</pre>
+The try/catch blocks can be nested. If the current function has no try/catch blocks,
+the calling function will be examined, and so on, until we find a try/catch block
+or exit the main function. If no try/catch block is found, an unhandled exception
+is reported.
+<p>
+It is also possible to throw an exception explicitly. Any object can be thrown.
+For example:
+<pre>
+        throw 5;
+</pre>
+will throw value '5'.

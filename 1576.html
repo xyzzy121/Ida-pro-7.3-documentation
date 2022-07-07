@@ -1,0 +1,13 @@
+<a name="IDH_1576"></a>
+<title> loader_input_t.gets</title>
+<table width="100%"><tr valign="top"><td><h2> loader_input_t.gets</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Read one line of text from the input file
+     maxsize - maximal size of the line
+Returns: one line of text or 0
+If the input file contains zeroes, the line will be truncated at them
+<p>
+string loader_input_t.gets(long maxsize);
+
+</pre>

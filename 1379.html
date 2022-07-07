@@ -1,0 +1,53 @@
+<a name="IDH_1379"></a>
+<title>Strings window</title>
+<table width="100%"><tr valign="top"><td><h2>Strings window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenStrings
+ </pre>
+This command opens the strings window.
+<p>
+The strings window contains all strings in the program.
+<p>
+You can setup the list parameters by right-clicking
+(or pressing Ctrl-U in the text version) on the list.
+<p>
+The list always contains strings defined in the program regardless
+of the settings in this dialog box, but the user can ask IDA to display
+strings not yet explicitly defined as strings.
+<p>
+The following parameters are available:
+<p>
+Display only defined strings
+<pre>
+        If checked, IDA will display only strings explicitly marked
+        as string items (using the <a href="454.html">create string literal</a> command).
+        In this case, the other checkboxes are ignored.
+</pre>
+Ignore instructions/data definitions
+<pre>
+        If checked, IDA will ignore instruction/data definitions
+        and will try to treat them as strings. If it can build a string
+        with the length greater than the minimal length, the string
+        will be displayed in the list.
+        This setting is ignored if 'only defined strings' is on.
+</pre>
+Strict ASCII (7-bit) strings
+<pre>
+        If checked, only strings containing exclusively 7-bit characters
+        (8th bit must be zero) will be added to the list. Please note that
+        the user can specify which characters are accepted in the strings
+        by modifying the StrlitChars parameter in the <a href="419.html">ida.cfg</a> file.
+        This setting is ignored if 'only defined strings' is on.
+</pre>
+Allowed string types
+<pre>
+        Allows the user to specify the string types included in the list.
+        This setting is ignored if 'only defined strings' is on.
+</pre>
+Minimal string length
+<pre>
+        The minimal length the string must have to be added to the list.
+
+</pre>
+See also <a href="1356.html">View|Open subviews</a> submenu.

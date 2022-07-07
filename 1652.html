@@ -1,0 +1,51 @@
+<a name="IDH_1652"></a>
+<title>PIN debugger</title>
+<table width="100%"><tr valign="top"><td><h2>PIN debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The PIN debugger is a remote debugger plugin used to record execution traces. It
+allows to record traces on Linux and Windows (x86 and x86_64) from any of the
+supported IDA platforms (Windows, Linux and MacOSX). Support for MacOSX targets
+is not yet available. Please see the section <a href="1653.html">PIN support for MacOSX</a>
+for more details on this subject.
+<p>
+To use the PIN debugger plugin the following steps must be carried out:
+<pre>
+  - Download the appropriate version of PIN from <a href="http://www.pintool.org">http://www.pintool.org</a>
+</pre>
+<pre>
+  - <a href="1655.html">Build the PIN tool</a>
+</pre>
+<pre>
+  - Configure the debugger specific options in
+    Debugger Options, Set specific options.
+</pre>
+<pre>
+  PIN debugger plugin has the following configuration options:
+</pre>
+<pre>
+  - PIN Binary Path: Full path to the pin binary.
+  - PIN Tool Path: Directory where the idadbg.so or .dll PIN tool resides.
+  - Tracing options:
+    - Instruction tracing: trace individual instructions
+    - Basic block tracing: trace basic blocks
+    - Function tracing: trace functions
+    - Recording of register values: record register values or not. If
+      this option is disabled, only EIP/RIP will be recorded.
+  - PIN Tool options:
+    - Autolaunch pin for &quot;localhost&quot;: When this option is set and
+    the host name specified in Debugger, Process Options is &quot;localhost&quot;, the PIN
+    tool will be executed by IDA. Otherwise IDA expects the PIN tool to be
+    already running and listening. Please refer to
+    <a href="1654.html">Connecting a remote PIN tool instance from IDA</a> for more details.
+    - Debug mode: This flag allows one to see what's happening in the PIN tool
+    side. It prints out some debugging information.
+    - Extra-arguments: Additional command line arguments to be used when
+    constructing the command line to launch PIN locally. The extra arguments can
+    be added before the PIN tool specification (before '-t /path/to/pin/tool) or
+    after the PIN tool (after '-t /path/to/pin/tool' but before '-- application').
+    Please consult the section &quot;Command Line Switches&quot; of the Intel PIN manual
+    for more details.
+</pre>
+Optionally you can launch PIN yourself and connect to it from IDA. See
+<a href="1654.html">Connecting a remote PIN tool instance from IDA</a> for more
+details.

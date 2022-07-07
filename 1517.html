@@ -1,0 +1,21 @@
+<a name="IDH_1517"></a>
+<title> parse_decls</title>
+<table width="100%"><tr valign="top"><td><h2> parse_decls</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Parse many type declarations
+     input -  file name or C declarations (depending on the flags)
+     flags -  combination of PT_... constants or 0
+returns: number of errors
+<p>
+long parse_decls(string input, long flags);
+<p>
+Parse one type declaration
+     input -  a C declaration
+     flags -  combination of PT_... constants or 0
+              PT_FILE should not be specified in flags (it is ignored)
+returns: typeinfo object or num 0
+<p>
+typeinfo parse_decl(string input, long flags);
+
+</pre>

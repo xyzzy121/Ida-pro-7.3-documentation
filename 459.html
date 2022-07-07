@@ -1,0 +1,49 @@
+<a name="IDH_459"></a>
+<title>Perform en masse operation</title>
+<table width="100%"><tr valign="top"><td><h2>Perform en masse operation</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+If you have selected a range before applying an operand conversion
+command, IDA will display a dialog box.
+<p>
+You can choose a range of operands to perform an en masse operation:
+<pre>
+ ALL OPERANDS
+ -----------
+</pre>
+The operation will be performed on all
+operands as a toggle. For example, if you
+ask to convert to a character, then all
+non-character operands will become characters,
+and all character operands will become non-chars.
+<pre>
+ OPERAND VALUE RANGE
+ -------------------
+</pre>
+The operation will be performed on the <a href="569.html">void</a> operands
+which contain immediate numbers in the specified range.
+<pre>
+ ... OPERANDS
+ ------------
+</pre>
+This selection will convert all operands with the specified type to
+undefined operands.
+Example: all characters become non-characters.
+<pre>
+ NOT ... OPERANDS
+ ---------------
+</pre>
+This selection allows to convert all operands that do not have the specified type
+to the specified type. Example: all non-characters to characters.
+<pre>
+ NOT TYPED OPERANDS
+ -----------------
+</pre>
+This selection allows to convert all operands without any type to the specified
+type. Example: all operands with no type to characters.
+<pre>
+ APPLY ONLY IF POSSIBLE
+ ---------------------
+</pre>
+IDA will check whether an operand can be represented with the specified type
+(as a character constant, for example), and perform type conversion only if
+the check is successful.

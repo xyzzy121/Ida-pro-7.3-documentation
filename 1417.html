@@ -1,0 +1,16 @@
+<a name="IDH_1417"></a>
+<title>Debugging with OpenOCD</title>
+<table width="100%"><tr valign="top"><td><h2>Debugging with OpenOCD</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Make sure the following line is present in the .cfg file for your target:
+<pre>
+ gdb_port 3333
+</pre>
+Edit the port number if necessary.
+Specify that port in the process options and use the Debugger, Attach command.
+<p>
+Tips:
+<pre>
+  Use the <a href="1523.html">GDB command line</a> to send commands directly to OpenOCD interperter.
+</pre>
+Back to <a href="1335.html">Remote GDB Debugger</a>

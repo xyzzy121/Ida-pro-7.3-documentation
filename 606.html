@@ -1,0 +1,25 @@
+<a name="IDH_606"></a>
+<title>Low &amp; High Suspicious Operand Limits</title>
+<table width="100%"><tr valign="top"><td><h2>Low & High Suspicious Operand Limits</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+If IDA suspects that an operand can be represented as something different
+from a plain number, it will mark the operand as &quot;suspicious&quot; and display
+it in red/orange.
+<p>
+Two values control the definition of suspiciousness.  An operand is 'suspicious' if
+it has an immediate value between low and high 'suspicious' limits.
+The comparison is always unsigned, i.e. in the instruction
+<pre>
+        mov ax,[bp-2]
+</pre>
+<pre>
+  the immediate operand is 0xFFFE, not -2.
+
+</pre>
+IDA uses a simple heuristic to determine initial suspiciousness limits.
+You may change these limits any time you want.
+<p>
+See also
+<pre>
+         <a href="1369.html">Comments Dialog</a>
+         <a href="423.html">How to Enter a Number</a>.</pre>

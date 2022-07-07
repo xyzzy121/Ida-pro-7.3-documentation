@@ -1,0 +1,20 @@
+<a name="IDH_1325"></a>
+<title>Watch view (source level)</title>
+<table width="100%"><tr valign="top"><td><h2>Watch view (source level)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In this window the user can view values of selected variables.
+<p>
+Global variables (data item names) as well as variables that are local
+to the current function can be added by pressing Ins.
+<p>
+Expressions can be added to the view as well, they will be considered as IDC
+expressions.
+<p>
+Expressions may have a type cast at the beginning. For example
+<p>
+(int)0x12345678
+<p>
+means that the contents of the memory at the address 0x12345678 should be
+displayed as an integer. Note: to display strings use &quot;char[]&quot; as the typo.
+<p>
+See also <a href="1272.html">Source code view</a>

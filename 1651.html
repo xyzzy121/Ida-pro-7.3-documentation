@@ -1,0 +1,60 @@
+<a name="IDH_1651"></a>
+<title> Trace events functions</title>
+<table width="100%"><tr valign="top"><td><h2> Trace events functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Return the total number of recorded events
+long get_tev_qty();
+<p>
+// Return the address of the specified event
+//       tev - event number
+long get_tev_ea(long tev);
+<p>
+// Return the type of the specified event (TEV_... constants)
+//       tev - event number
+long get_tev_type(long tev);
+<p>
+#define TEV_NONE  0 // no event
+#define TEV_INSN  1 // an instruction trace
+#define TEV_CALL  2 // a function call trace
+#define TEV_RET   3 // a function return trace
+#define TEV_BPT   4 // write, read/write, execution trace
+#define TEV_MEM   5 // memory layout changed
+#define TEV_EVENT 6 // debug event
+<p>
+// Return the thread id of the specified event
+//       tev - event number
+long get_tev_tid(long tev);
+<p>
+// Return the register value for the specified event
+//       tev - event number
+//       reg - register name (like EAX, RBX, ...)
+long get_tev_reg(long tev, string reg);
+<p>
+// Return the number of memory addresses recorded for the specified event
+//       tev - event number
+long get_tev_mem_qty(long tev);
+<p>
+// Return the memory pointed by 'index' for the specified event
+//       tev - event number
+//       idx - memory address index
+string get_tev_mem(long tev, long idx);
+<p>
+// Return the address pointed by 'index' for the specified event
+//       tev - event number
+//       idx - memory address index
+string get_tev_mem_ea(long tev, long idx);
+<p>
+// Return the address of the callee for the specified event
+//       tev - event number
+long get_call_tev_callee(long tev);
+<p>
+// Return the return address for the specified event
+//       tev - event number
+long get_ret_tev_return(long tev);
+<p>
+// Return the address of the specified TEV_BPT event
+//       tev - event number
+long get_bpt_tev_ea(long tev);
+
+</pre>

@@ -1,0 +1,16 @@
+<a name="IDH_278"></a>
+<title> get_extra_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> get_extra_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get extra comment line
+     ea - linear address
+     n  - number of line (0..MAX_ITEM_LINES)
+          MAX_ITEM_LINES is defined in IDA.CFG
+To get anterior  line #n use (E_PREV + n)
+To get posterior line #n use (E_NEXT + n)
+Returns number 0 if the comment line does not exit
+<p>
+string get_extra_cmt(long ea, long n);
+
+</pre>

@@ -1,0 +1,46 @@
+<a name="IDH_501"></a>
+<title>Add/Edit an enum</title>
+<table width="100%"><tr valign="top"><td><h2>Add/Edit an enum</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AddEnum
+ </pre>
+<pre>
+ Action    name: EditEnum
+ </pre>
+These commands allow you to define and to edit an enum type.
+You need to specify:
+<pre>
+        - name of enum
+        - its serial number (1,2...)
+        - representation of enum members
+</pre>
+Each enum has its ID and a serial number. The ID is a number used to
+refer to the enum, while a serial number is used to order enums
+during output. Changing the serial number moves the enum to another place.
+<p>
+The serial number of an enum is displayed at the lower left corner of the window.
+<p>
+You can specify any number as a serial number,
+IDA will move the enum to the specified place.
+<pre>
+        1 - the current enum becomes the first enum
+        2 - the current enum becomes the second enum
+        ...
+</pre>
+You also need to specify representation of enum constants. You may choose
+from various number bases (hex,dec,oct,bin) and character constants.
+<p>
+You may specify the element width or leave it zero. Zero means the element
+width is not specified. The allowed widths are the powers of 2 in the range of 1..64.
+<p>
+Please note that you can create <a href="500.html">bitfield</a> definitions here
+by checking the &quot;bitfield&quot; checkbox.
+<p>
+These command is available when you open the enums <a href="594.html">window</a>.
+<p>
+See also
+<pre>
+         <a href="499.html">Edit|Enums</a> submenu.
+         <a href="423.html">How to Enter a Number</a>.
+</pre>

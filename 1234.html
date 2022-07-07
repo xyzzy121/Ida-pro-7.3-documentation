@@ -1,0 +1,18 @@
+<a name="IDH_1234"></a>
+<title> enable_tracing</title>
+<table width="100%"><tr valign="top"><td><h2> enable_tracing</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Enable step tracing
+     trace_level - what kind of trace to modify
+     enable      - 0: turn off, 1: turn on
+Returns: success
+<p>
+success enable_tracing(long trace_level, long enable);
+<p>
+#define TRACE_STEP 0x0  // lowest level trace. trace buffers are not maintained
+#define TRACE_INSN 0x1  // instruction level trace
+#define TRACE_FUNC 0x2  // function level trace (calls &amp; rets)
+#define TRACE_BBLK 0x4  // basic block level trace
+
+</pre>

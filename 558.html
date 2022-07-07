@@ -1,0 +1,16 @@
+<a name="IDH_558"></a>
+<title>Problem: Execution flows beyond limits</title>
+<table width="100%"><tr valign="top"><td><h2>Problem: Execution flows beyond limits</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Description:
+        IDA encountered a jump or call instruction to an illegal address.
+        Namely:
+          - jump/call beyond program segments
+          - near jump/call beyond the current segment
+ What to do:
+        1. Enter the operand <a href="477.html">manually</a>
+        2. or Create a new <a href="507.html">segment</a> making the illegal address legal
+        3. or Change the current segment bounds using one of the following:
+              <a href="514.html">How to change segment attributes</a>
+              <a href="520.html">How to move a segment</a></pre>

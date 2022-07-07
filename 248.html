@@ -1,0 +1,15 @@
+<a name="IDH_248"></a>
+<title> get_full_flags</title>
+<table width="100%"><tr valign="top"><td><h2> get_full_flags</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get full internal flags
+     ea - linear address
+This function returns all bits, including MS_VAL and FF_IVL.
+These bits may be expensive to retrieve when the debugger is active.
+returns: 32-bit value of internal flags. See start of this file
+for explanations.
+<p>
+long get_full_flags(long ea);
+
+</pre>

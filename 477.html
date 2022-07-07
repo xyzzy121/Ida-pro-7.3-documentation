@@ -1,0 +1,27 @@
+<a name="IDH_477"></a>
+<title>User-defined operand</title>
+<table width="100%"><tr valign="top"><td><h2>User-defined operand</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ManualOperand
+ </pre>
+You may specify any string instead of an operand if IDA does not represent
+the operand in the desired form. In this case, IDA will simply display the
+specified string in the instruction instead of the default operand.
+<p>
+The current operand (under the cursor) will be affected.
+<p>
+You can use this command not only with instructions but with data
+items too.
+<p>
+IDA proposes the previous manual operand as the default value in the input form.
+<p>
+To delete the manual operand and revert back to the default text, specify an empty string.
+<p>
+IDA automatically deletes manually entered operands when you
+change operand representation using operand <a href="458.html">types</a> submenu.
+<p>
+<b>NOTE:</b> A text offset reference is generated if you use a label in the program as the operand string.
+In other cases no cross-references are generated.
+<p>
+See also <a href="458.html">Edit|Operand types</a> submenu.

@@ -1,0 +1,34 @@
+<a name="IDH_511"></a>
+<title>Create segment - automatically chosen selector case</title>
+<table width="100%"><tr valign="top"><td><h2>Create segment - automatically chosen selector case</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Suppose we need to create a segment occupying linear addresses 200000-200C00
+and the virtual addresses must have be 0000..0C00. If we simply
+enter
+<pre>
+        segment start address:  0x200000
+        segment end address:    0x200C00
+        segment base:           0x20000
+</pre>
+Then IDA will notice that the segment base is too big and does not
+fit into 16bits. Because of this IDA will find a free selector (let's
+say it has found selector number 5), define it to point at paragraph
+0x20000 and create a segment. After all this we will have:
+<pre>
+        - a new selector is defined (5 -&gt; 0x20000)
+        - a new segment is created. Its attributes:
+                start = 0x200000
+                end   = 0x200C00
+                base  = 5
+</pre>
+The first virtual address in the segment will be 0:
+<pre>
+        VirtualAddress = LinearAddress - (SelectorValue(SegmentBase) &lt;&lt; 4)
+                       = 0x200000      - (SelectorValue(5) &lt;&lt; 4)
+                       = 0x200000      - (0x20000 &lt;&lt; 4)
+                       = 0x200000      - 0x200000
+                       = 0
+</pre>
+Please note that the end address never belongs to the segment in IDA.
+<p>
+Go back to <a href="508.html">addressing space concepts</a>

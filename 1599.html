@@ -1,0 +1,14 @@
+<a name="IDH_1599"></a>
+<title> read_dbg_qword</title>
+<table width="100%"><tr valign="top"><td><h2> read_dbg_qword</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get value of program quadro word (8 bytes) using the debugger memory
+     ea - linear address
+returns: the value of the quadro word. If failed, throws an exception
+Note: this function is available only in the 64-bit version of IDA Pro
+Thread-safe function (may be called only from the main thread and debthread)
+<p>
+long read_dbg_qword(long ea);
+
+</pre>

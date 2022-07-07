@@ -1,0 +1,119 @@
+<a name="IDH_1350"></a>
+<title>ARM processor specifics</title>
+<table width="100%"><tr valign="top"><td><h2>ARM processor specifics</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Since architecture version v4 (introduced in ARM7 cores), ARM processors
+have a new 16-bit instruction set called Thumb (the original 32-bit
+set is referred to as &quot;ARM&quot;). Since these two sets have different instruction
+encodings and can be mixed in one segment, we need a way to specify
+how to disassemble instructions.
+For this purpose, IDA uses a virtual segment register named 'T'.
+If its value is 0, then ARM mode is used. Otherwise, Thumb mode is used.
+ARM is the default mode. Please note that if you change the value
+of T register for a range, IDA will destroy all instructions in that range
+because their disassembly is no longer correct.
+<p>
+IDA supports ARM/Thumb Macro Assembler as a target assembler.
+However, some number formats are not supported by the kernel and will not
+be accepted by the assembler utility.
+<p>
+To decode Aarch64 (ARM64) instructions the segment must be declared as 64-bit.
+<p>
+<h3>Processor options for ARM</h3>
+
+<p>
+Simplify instructions
+<pre>
+      If this option is on, IDA will simplify instructions and replace
+      them by clearer pseudo-instructions
+      For example,
+</pre>
+<pre>
+              MOV     PC, LR
+</pre>
+<pre>
+      is replaced by
+</pre>
+<pre>
+              RET
+</pre>
+Disable pointer dereferencing
+<pre>
+      If this option is on, IDA will not use =label syntax for
+      pointer references.
+      For example,
+</pre>
+<pre>
+                    LDR     R1, =dst
+                    ...
+      off_0_1003C   DCD dst
+</pre>
+<pre>
+      will be replaced by
+</pre>
+<pre>
+                    LDR     R1, off_0_1003C
+</pre>
+No automatic ARM-Thumb switch
+<pre>
+      If this option is on, IDA will not propagate
+      ARM-Thumb modes automatically when following jumps and calls.
+</pre>
+Disable BL jumps detection
+<pre>
+      Some ARM compilers in Thumb mode use BL (branch-and-link)
+      instead of B (branch) for long jumps, since BL has more range.
+      By default, IDA tries to determine if BL is a jump or a call.
+      You can override IDA's decision using commands in Edit/Other menu
+      (Force BL call/Force BL jump).
+      If your target does not use this trick, you can set this option
+      and IDA will always treat BL as a call.
+</pre>
+Edit ARM architecture options
+<pre>
+      This button allows you to edit various features of the ARM architecture.
+      This will affect the disassembly of some instructions depending on whether
+      the selected architecture supports them. For details, see the ARM Architecture Reference Manual.
+</pre>
+<h3>Command-line options</h3>
+
+<pre>
+      You can configure the architecture options from the command line.
+      For that, use the -parm:&lt;option1[;option2...]&gt; switch.
+      The following options are accepted:
+</pre>
+<pre>
+      ARMv&lt;N&gt;  - base ARM architecture version (e.g. ARMv4, ARMv4T,
+                 ARMv5TE, ..., ARMv7-M, ARMv7-A)
+       or
+</pre>
+<pre>
+      &lt;name&gt;   - ARM core name (e.g. ARM7TDMI, ARM926EJ-S, PXA270,
+                Cortex-M3, Cortex-A8)
+</pre>
+<pre>
+      Additionally, a special name &quot;armmeta&quot; can be used to enable decoding of all known instructions.
+</pre>
+<pre>
+      The options above will set some default values that can be adjusted further:
+</pre>
+<pre>
+      NoVFP/VFPv&lt;N&gt;           - disable or enable support for VFP
+                                instructions (e.g. VFPv3).
+      NoNEON/NEON/NEON-FMA    - disable or enable support for NEON
+                                (aka Advanced SIMD) instructions.
+      NoThumb/Thumb/Thumb-2   - disable or enable support for Thumb (16-bit)
+                                or Thumb-2 (16/32-bit) instructions.
+      NoARM/ARM               - disable or enable support for ARM
+                                instructions.
+      XScale                  - support for XScale-specific instructions.
+                                Implies ARMv5TE.
+      NoWMMX/WMMXv1/WMMXv2    - support for Intel Wireless MMX
+                                extensions (v1 or v2). Implies XScale.
+</pre>
+See
+<pre>
+      <a href="523.html">Change segment register value</a>
+      <a href="522.html">Set default segment register value</a>
+</pre>
+commands to learn how to specify the segment register value.

@@ -1,0 +1,20 @@
+<a name="IDH_1711"></a>
+<title>Redo an action</title>
+<table width="100%"><tr valign="top"><td><h2>Redo an action</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Redo
+ </pre>
+This command reverts the previously issued <a href="1710.html">Undo</a> command.
+It is possible to use Redo multiple times.
+<p>
+This command also reverts all changes that were done to the database after
+the last Undo command, including the eventual useful modifications made by the
+autoanalysis. In other words, the entire database is modified to get to the
+exact state that it had before executing the last Undo command.
+<p>
+See also
+        <a href="1710.html">Undo</a>
+        <a href="1712.html">Reset Undo</a>
+        <a href="1713.html">Disable Undo</a>
+        <a href="1714.html">Open undo history</a>

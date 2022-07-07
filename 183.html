@@ -1,0 +1,16 @@
+<a name="IDH_183"></a>
+<title> sprintf</title>
+<table width="100%"><tr valign="top"><td><h2> sprintf</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Return a formatted string.
+     format - printf-style format string.
+              %a - means address expression.
+              floating point values are output only in one format
+               regardless of the character specified (f, e, g, E, G)
+              %p is not supported.
+Thread-safe function.
+<p>
+string sprintf(string format, ...);
+
+</pre>

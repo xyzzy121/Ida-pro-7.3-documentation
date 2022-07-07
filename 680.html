@@ -1,0 +1,16 @@
+<a name="IDH_680"></a>
+<title> create_custom_data</title>
+<table width="100%"><tr valign="top"><td><h2> create_custom_data</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert the current item to a custom data type
+     ea   - linear address
+     size - size of the item
+     dtid - custom data type id (see <a href="1219.html">find_custom_data_type</a>)
+     fid  - custom data format id (see <a href="1589.html">find_custom_data_format</a>)
+returns: 1-ok, 0-failure
+This is a convenience macro, see also <a href="18.html">create_data</a>() function
+<p>
+#define create_custom_data(ea, size, dtid, fid) create_data(ea, FF_CUSTOM, size, dtid|((fid)&lt;&lt;16))
+
+</pre>

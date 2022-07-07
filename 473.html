@@ -1,0 +1,34 @@
+<a name="IDH_473"></a>
+<title>Convert operand to symbolic constant (enum)</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to symbolic constant (enum)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpEnum
+ </pre>
+This command converts immediate operand(s) type of the
+current instruction/data to an <a href="499.html">enum</a> member.
+Before using this command, you have to <a href="501.html">define</a> an enumeration type.
+<p>
+If the selected enum is a bitfield, IDA will try to build a bitfield
+expression to represent the constant. Please note that for bitfields having
+multiple constants with the same value some expressions won't be possible.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+symbolic constants. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to offset, otherwise it
+will be left unmodified.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise all other operands will be
+affected.
+<p>
+See also:
+<pre>
+          <a href="458.html">Edit|Operand types</a> submenu.
+          <a href="477.html">Enter #th operand manually</a> commands.
+          <a href="1601.html">Set operand type</a></pre>

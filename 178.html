@@ -1,0 +1,10 @@
+<a name="IDH_178"></a>
+<title> is_loaded</title>
+<table width="100%"><tr valign="top"><td><h2> is_loaded</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Is the byte initialized?
+<p>
+#define is_loaded(ea)    has_value(get_full_flags(ea))  // any defined value?
+
+</pre>

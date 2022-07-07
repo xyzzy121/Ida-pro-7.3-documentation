@@ -1,0 +1,19 @@
+<a name="IDH_255"></a>
+<title> get_name_ea</title>
+<table width="100%"><tr valign="top"><td><h2> get_name_ea</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get linear address of a name
+     from - the referring address.
+            Allows to retrieve local label addresses in functions.
+            If a local name is not found, then address of a global name is returned.
+     name - name of program byte
+returns: address of the name
+         BADADDR - no such name
+Dummy names (like byte_xxxx where xxxx are hex digits) are parsed by this
+function to obtain the address. The database is not consulted for them.
+<p>
+long get_name_ea(long from, string name);
+#define get_name_ea_simple(name)  get_name_ea(BADADDR, name)
+
+</pre>

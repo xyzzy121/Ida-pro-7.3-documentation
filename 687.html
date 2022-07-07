@@ -1,0 +1,18 @@
+<a name="IDH_687"></a>
+<title>Append Function Tail</title>
+<table width="100%"><tr valign="top"><td><h2>Append Function Tail</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AppendFunctionTail
+ </pre>
+This command appends an arbitrary range of the program to a function definition.
+A range must be selected before applying this command. This range must not
+intersect with other function chunks.
+<p>
+IDA will ask to select the parent function for the selection and will
+append the range to the function definition.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="688.html">Remove function tail</a></pre>

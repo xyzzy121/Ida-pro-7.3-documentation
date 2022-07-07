@@ -1,0 +1,18 @@
+<a name="IDH_317"></a>
+<title> fseek</title>
+<table width="100%"><tr valign="top"><td><h2> fseek</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set cursor position in the file
+     handle - file handle
+     offset - offset from origin
+     origin - 0 = from the start of file
+              1 = from the current cursor position
+              2 = from the end of file
+returns: 0 - ok
+         otherwise error
+Thread-safe function.
+<p>
+long fseek(long handle, long offset, long origin);
+
+</pre>

@@ -1,0 +1,20 @@
+<a name="IDH_1712"></a>
+<title>Clear undo history</title>
+<table width="100%"><tr valign="top"><td><h2>Clear undo history</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ResetUndo
+ </pre>
+This command clears the undo history. After it the Undo and Redo commands
+become unavailable. However, once the user performs a new action, IDA will
+again start journaling all database modifications.
+<p>
+A side effect of this command is fast autoanalysis: since there is no user
+action to revert yet, IDA does not maintain undo buffers and this speeds up
+the analysis.
+<p>
+See also
+        <a href="1710.html">Undo</a>
+        <a href="1711.html">Redo</a>
+        <a href="1713.html">Disable Undo</a>
+        <a href="1714.html">Open undo history</a>

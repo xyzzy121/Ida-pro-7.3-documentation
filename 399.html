@@ -1,0 +1,15 @@
+<a name="IDH_399"></a>
+<title> del_struc_member</title>
+<table width="100%"><tr valign="top"><td><h2> del_struc_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+delete structure member
+     id            - structure type ID
+     member_offset - offset of the member
+returns: !=0 - ok.
+<b>NOTE:</b> IDA allows 'holes' between members of a structure.
+      It treats these 'holes' as unnamed arrays of bytes.
+<p>
+long del_struc_member(long id, long member_offset);
+
+</pre>

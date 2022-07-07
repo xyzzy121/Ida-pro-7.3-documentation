@@ -1,0 +1,33 @@
+<a name="IDH_617"></a>
+<title>Setup data types</title>
+<table width="100%"><tr valign="top"><td><h2>Setup data types</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetupData
+ </pre>
+This command allows you to select the data types used in the round-robin
+carousel in <a href="453.html">MakeData</a> command.
+<p>
+Valid data types are:
+<pre>
+        - byte
+        - word          (2 bytes)
+        - double word   (4 bytes)
+        - float         (4 bytes)
+        - quadro word   (8 bytes)
+        - double        (8 bytes)
+        - long double   (10 or 12 bytes)
+        - packed real   (10 or 12 bytes)
+        - octa word     (16 bytes)
+</pre>
+Naturally, not all data types are usable for all processors. For example,
+Intel 8051 processor doesn't have the 'double word' type.
+<p>
+Furthermore, this command allows you to select a data type for the current undefined
+item and convert it to data.
+<p>
+Please note that if the current processor does not support a data
+type, you cannot assign it even if you have selected it.
+If you unselect all data types, IDA will use the 'byte' type.
+<p>
+See also <a href="604.html">Options</a> submenu.

@@ -1,0 +1,15 @@
+<a name="IDH_1137"></a>
+<title> load_debugger</title>
+<table width="100%"><tr valign="top"><td><h2> load_debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Load the debugger
+     dbgname - debugger module name
+               Examples: win32, linux, mac.
+     use_remote - 0/1: use remote debugger or not
+This function is needed only when running idc scripts from the command line.
+In other cases IDA loads the debugger module automatically.
+<p>
+success load_debugger(string dbgname, long use_remote);
+
+</pre>

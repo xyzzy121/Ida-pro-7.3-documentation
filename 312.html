@@ -1,0 +1,70 @@
+<a name="IDH_312"></a>
+<title> set_segm_attr</title>
+<table width="100%"><tr valign="top"><td><h2> set_segm_attr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set segment attribute
+     arguments:      segea - any address within segment
+                     attr  - one of SEGATTR_... constants
+Please note that not all segment attributes are modifiable.
+Also some of them should be modified using special functions
+like set_segm_addressing, etc.
+<p>
+success set_segm_attr(long segea, long attr, long value);
+<p>
+#ifndef __EA64__
+#define SEGATTR_START    0      // starting address
+#define SEGATTR_END      4      // ending address
+#define SEGATTR_ORGBASE 16
+#define SEGATTR_ALIGN   20      // alignment
+#define SEGATTR_COMB    21      // combination
+#define SEGATTR_PERM    22      // permissions
+#define SEGATTR_BITNESS 23      // bitness (0: 16, 1: 32, 2: 64 bit segment)
+                                // Note: modifying the attrbite directly does
+                                // not lead to the reanalysis of the segment.
+                                // Using set_segm_addressing() is more correct.
+#define SEGATTR_FLAGS   24      // segment flags
+#define SEGATTR_SEL     28      // segment selector
+#define SEGATTR_ES      32      // default ES value
+#define SEGATTR_CS      36      // default CS value
+#define SEGATTR_SS      40      // default SS value
+#define SEGATTR_DS      44      // default DS value
+#define SEGATTR_FS      48      // default FS value
+#define SEGATTR_GS      52      // default GS value
+#define SEGATTR_TYPE    96      // segment type
+#define SEGATTR_COLOR   100     // segment color
+#else
+#define SEGATTR_START    0
+#define SEGATTR_END      8
+#define SEGATTR_ORGBASE 32
+#define SEGATTR_ALIGN   40
+#define SEGATTR_COMB    41
+#define SEGATTR_PERM    42
+#define SEGATTR_BITNESS 43
+#define SEGATTR_FLAGS   44
+#define SEGATTR_SEL     48
+#define SEGATTR_ES      56
+#define SEGATTR_CS      64
+#define SEGATTR_SS      72
+#define SEGATTR_DS      80
+#define SEGATTR_FS      88
+#define SEGATTR_GS      96
+#define SEGATTR_TYPE    184
+#define SEGATTR_COLOR   188
+#endif
+<p>
+// Segment permissions
+#define SEGPERM_EXEC  1         // Execute
+#define SEGPERM_WRITE 2         // Write
+#define SEGPERM_READ  4         // Read
+#define SEGPERM_MAXVAL (SEGPERM_EXEC + SEGPERM_WRITE + SEGPERM_READ)
+<p>
+// Valid segment flags
+#define SFL_COMORG   0x01       // IDP dependent field (IBM PC: if set, ORG directive is not commented out)
+#define SFL_OBOK     0x02       // orgbase is present? (IDP dependent field)
+#define SFL_HIDDEN   0x04       // is the segment hidden?
+#define SFL_DEBUG    0x08       // is the segment created for the debugger?
+#define SFL_LOADER   0x10       // is the segment created by the loader?
+#define SFL_HIDETYPE 0x20       // hide segment type (do not print it in the listing)
+
+</pre>

@@ -1,0 +1,16 @@
+<a name="IDH_326"></a>
+<title> writeshort</title>
+<table width="100%"><tr valign="top"><td><h2> writeshort</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+write 2 bytes to file
+     handle    - file hanlde
+     word      - a 16-bit value to write
+     mostfirst - 0 least significant byte is first (intel)
+                 1  most  significant byte is first
+returns: 0 - ok
+Thread-safe function.
+<p>
+long writeshort(long handle, long word, long mostfirst);
+
+</pre>

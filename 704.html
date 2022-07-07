@@ -1,0 +1,19 @@
+<a name="IDH_704"></a>
+<title> op_enum</title>
+<table width="100%"><tr valign="top"><td><h2> op_enum</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert operand to a symbolic constant
+(for the explanations of 'ea' and 'n' please see <a href="696.html">op_bin</a>())
+     enumid - id of enumeration type
+     serial - serial number of the constant in the enumeration
+              The serial numbers are used if there are more than
+              one symbolic constant with the same value in the
+              enumeration. In this case the first defined constant
+              get the serial number 0, then second 1, etc.
+              There could be 256 symbolic constants with the same
+              value in the enumeration.
+<p>
+success op_enum(long ea, int n, long enumid, long serial);
+
+</pre>

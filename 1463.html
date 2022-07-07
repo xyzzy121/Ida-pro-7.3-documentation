@@ -1,0 +1,56 @@
+<a name="IDH_1463"></a>
+<title>Remote debugging</title>
+<table width="100%"><tr valign="top"><td><h2>Remote debugging</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+1. Launch a remote IDA debugger server on the remote host. The remote
+server is started from the command line and accepts command line parameters.
+You can specify a password if you want to protect your debugger server
+from strangers. For example, to launch the server under MS Windows, you could enter:
+<pre>
+        win32_remote -Pmy_secret_password
+</pre>
+2. Specify the remote debugger parameters in the Debugger, <a href="1398.html">Process options</a>.
+The file paths must be valid on the remote host. Do not forget to specify
+the same password as you have specified when launching the server. For example,
+to debug notepad.exe on the remote computer remote.host.com:
+<pre>
+        Application: c:\windows\notepad.exe
+        Input file:  c:\windows\notepad.exe
+        Directory:   c:\windows
+        Hostname:    remote.host.com
+        Port:        23946
+        Password:    my_secret_password
+</pre>
+3. The rest of debugging is the same as with local debugging.
+<pre>
+ NOTE
+</pre>
+The debugger server can handle one debugger session at once. If you need
+to debug several applications simultaneously, launch several servers at different
+network ports.
+<p>
+The following debugger servers are shipped with IDA
+<pre>
+    File name          Target system      Debugged programs
+ ------------------    -----------------  -----------------
+ android_server        ARM Android        32-bit ELF files
+ android_server64      AArch64 Android    64-bit ELF files
+ android_x64_server    x86 Android 32-bit 32-bit ELF files
+ android_x86_server    x86 Android 64-bit 64-bit ELF files
+ armlinux_server       ARM Linux          32-bit ELF files
+ linux_server          Linux 32-bit       32-bit ELF files
+ linux_server64        Linux 64-bit       64-bit ELF files
+ mac_server            Mac OS X           32-bit Mach-O files
+ mac_server64          Mac OS X           64-bit Mach-O files
+ win32_remote.exe      MS Windows 32-bit  32-bit PE files
+ win64_remote64.exe    MS Windows 64-bit  64-bit PE files
+</pre>
+An appropriate server must be started on the remote computer before
+starting a debug session.
+<pre>
+ See also <a href="1397.html">Start process</a>
+          <a href="1395.html">Debugger</a> submenu
+          <a href="1217.html">Debugger for Linux</a>
+          <a href="1078.html">Debugger for Intel Mac OS X</a>
+          <a href="145.html">Debugger for Android native code</a>
+          <a href="1677.html">Remote iOS debugger</a></pre>

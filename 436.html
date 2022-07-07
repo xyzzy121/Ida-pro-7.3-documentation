@@ -1,0 +1,40 @@
+<a name="IDH_436"></a>
+<title>Load FLIRT signature file</title>
+<table width="100%"><tr valign="top"><td><h2>Load FLIRT signature file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: LoadSigFile
+ </pre>
+This command allows you to apply an additional signature file
+to the program.
+<p>
+A signature file contains patterns of standard runtime functions.
+With their help, IDA is able to recognize the standard functions and
+names them accordingly.
+<p>
+IDA attempts to detect the necessary signature files automatically but unfortunately, this is not always possible.
+This command adds the specified signature file into the planned signature files queue.
+<p>
+Signature files reside in the subdirectories of the SIG directory. Each
+processor has its own subdirectory. The name of the subdirectory
+is equivalent to the name of the processor module file (z80 for z80.w32, for example).
+Note: IBM PC signatures are located in the SIG directory itself.
+Note: the IDASGN environment variable can be used to specify
+the location of the signatures directory.
+<p>
+There is another way to load a signature file: you may insert/delete signature
+files in the following way:
+<pre>
+        - open the signatures window
+        - press Ins to insert a signature file to the queue
+        - press Del to delete a signature file from the queue
+</pre>
+This is a preferred way of applying signatures because useful
+information, such as the number of identified functions is displayed
+in the signature window.
+<p>
+<b>NOTE:</b> FLIRT works only for the processors with normal byte size. The byte
+size must be equal to 8 (processors with wide bytes like AVR or DSP56K are
+not supported)
+<p>
+See also <a href="430.html">Load... submenu</a> commands.

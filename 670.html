@@ -1,0 +1,15 @@
+<a name="IDH_670"></a>
+<title> rename_array</title>
+<table width="100%"><tr valign="top"><td><h2> rename_array</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+rename array
+     id      - array id returned by create_array() or get_array_id()
+     newname - new name of array. There are no
+               restrictions on the name (its length should
+               be less than 120 characters, though)
+returns: 1-ok, 0-failed
+<p>
+success rename_array(long id, string newname);
+
+</pre>

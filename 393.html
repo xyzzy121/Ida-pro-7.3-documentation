@@ -1,0 +1,28 @@
+<a name="IDH_393"></a>
+<title> add_struc</title>
+<table width="100%"><tr valign="top"><td><h2> add_struc</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+define a new structure type
+     index    - index of new structure type
+                If another structure has the specified index,
+                then index of that structure and all other
+                structures will be increentedfreeing the specifed
+                index. If index is == -1, then the biggest index
+                number will be used.
+                See <a href="371.html">get_first_struc_idx</a>() for the explanation of
+                structure indices and IDs.
+<pre>
+     name     - name of the new structure type.
+</pre>
+<pre>
+     is_union - 0: structure
+                1: union
+</pre>
+returns: -1 if can't define structure type because of bad structure name:
+            the name is ill-formed or is already used in the program.
+         otherwise returns ID of the new structure type
+<p>
+long add_struc(long index, string name, long is_union);
+
+</pre>

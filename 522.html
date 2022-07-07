@@ -1,0 +1,20 @@
+<a name="IDH_522"></a>
+<title>Set Default Segment Register Value</title>
+<table width="100%"><tr valign="top"><td><h2>Set Default Segment Register Value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetSegmentRegisterDefault
+ </pre>
+Relevant only for processors with the segment registers.
+<p>
+You can specify a default value of a segment register for the current segment.
+When you change the default value, IDA will reanalyze the segment,
+taking the default value when it cannot determine the actual value
+of the register. This takes time, so do not be surprised if references
+are not corrected immediately.
+<p>
+To specify a value other than the default value of a segment register, you can
+use <a href="523.html">change segment register value</a> command.
+<pre>
+ See also <a href="506.html">Edit|Segments</a> submenu.
+ See also <a href="422.html">How to enter segment value</a>.</pre>

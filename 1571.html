@@ -1,0 +1,14 @@
+<a name="IDH_1571"></a>
+<title> loader_input_t</title>
+<table width="100%"><tr valign="top"><td><h2> loader_input_t</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Open an input file for reading
+     filename - name of the file to open
+     is_remote- !=0 means to open a file on the remote computer
+                (possible only during remote debugging)
+Returns loader_input_t object or 0
+<p>
+loader_input_t open_loader_input(string filename, long is_remote);
+
+</pre>

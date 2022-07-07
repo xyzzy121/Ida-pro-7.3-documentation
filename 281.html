@@ -1,0 +1,27 @@
+<a name="IDH_281"></a>
+<title>Zooming graphs</title>
+<table width="100%"><tr valign="top"><td><h2>Zooming graphs</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The graph can be zoomed in and out. There are several ways of zooming the graph:
+<pre>
+ - Use Ctrl-Wheel. The current mouse position will be the zoom center
+   point (i.e. this point will not move during the zoom operation)
+ - Use the predefined 'Zoom 100%' and 'Fit window' commands. They are
+   available from the right-click menu or by their shortcuts: '1' and
+   'W' respectively. The current mouse position is the zoom center
+   point for the 'zoom 100%' command.
+ - Use Ctrl-KeypadPlus or Ctrl-KeypadMinus keys. The current keyboard
+   cursor is the zoom center for these commands.
+</pre>
+There are two options linked to the graph zooming:
+<pre>
+ - Auto fit graph to window: will fit the current graph to the window
+   size. Default: off
+ - Fit window max zoom level 100%: the 'fit window' command does not
+   use zoom levels higher than 100%. Default: on
+</pre>
+The zoom level is never greater than 1000% and less than 1%.
+IDA remembers the current zoom level for each location in the navigation
+history.
+<p>
+Back to <a href="42.html">graph view</a> or <a href="1626.html">proximity view</a>

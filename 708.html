@@ -1,0 +1,14 @@
+<a name="IDH_708"></a>
+<title> get_flags</title>
+<table width="100%"><tr valign="top"><td><h2> get_flags</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get internal flags without MS_VAL and FF_IVL.
+     ea - linear address
+MS_VAL and FF_IVL may be expensive to retrieve when the debugger is active.
+returns: 32-bit value of internal flags. See start of this file
+for explanations.
+<p>
+long get_flags(long ea);
+
+</pre>

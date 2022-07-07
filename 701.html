@@ -1,0 +1,14 @@
+<a name="IDH_701"></a>
+<title> op_man</title>
+<table width="100%"><tr valign="top"><td><h2> op_man</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Specify operand represenation manually.
+(for the explanations of 'ea' and 'n' please see <a href="696.html">op_bin</a>())
+     str - a string represenation of the operand
+IDA will not check the specified operand, it will simply display
+it instead of the orginal representation of the operand.
+<p>
+success op_man(long ea, long n, string str);// manually enter n-th operand
+
+</pre>

@@ -1,0 +1,24 @@
+<a name="IDH_466"></a>
+<title>Convert operand to segment</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpSegment
+ </pre>
+This command converts the immediate operand(s) type of the
+current instruction/data to segment base. The segment bases are usually
+displayed like this:
+<pre>
+        mov     ax, seg dseg
+
+</pre>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If IDA cannot find a segment whose base is equal to the operand value,
+it simply displays it as hex number.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+See also <a href="458.html">Edit|Operand types</a> submenu.

@@ -1,0 +1,38 @@
+<a name="IDH_497"></a>
+<title>Force zero field offset</title>
+<table width="100%"><tr valign="top"><td><h2>Force zero field offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ZeroStructOffset
+ </pre>
+This command forces IDA to display a full structure member name
+even if the offset of the member is equal to zero.
+<p>
+If used twice, the command cancels itself.
+<p>
+Example: Suppose we have the following structure:
+<pre>
+        xxx     struc
+        a       db ?
+        b       db ?
+        c       db ?
+        xxx     ends
+</pre>
+<pre>
+        dloc    xxx ?
+</pre>
+<pre>
+  Normally IDA displays references to it like this:
+</pre>
+<pre>
+        mov     eax, offset dloc
+        mov     eax, offset dloc.b
+</pre>
+<pre>
+  If you force IDA, then it displays member 'a':
+</pre>
+<pre>
+        mov     eax, offset dloc.a
+        mov     eax, offset dloc.b
+</pre>
+See also <a href="490.html">Edit|Structs</a> submenu.

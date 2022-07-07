@@ -1,0 +1,59 @@
+<a name="IDH_1333"></a>
+<title>Bochs debugger FAQ</title>
+<table width="100%"><tr valign="top"><td><h2>Bochs debugger FAQ</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+General:
+<p>
+- How are breakpoints treated by IDA Bochs Plugin: Bochs debugger does not use
+breakpoints by inserting 0xCC at the given address. Instead, since it is an
+emulator, it constantly compares the current instruction pointer against the
+breakpoint list. Data breakpoints are supported by Bochs and are known as &quot;watchpoints&quot;.
+If the user creates hardware breakpoints, IDA will automatically create Bochs watchpoints.
+<p>
+- How to select the Bochs operation mode programmatically: using IDC: it is possible to use
+process_config_line() function to pass a key=value. For example, process_config_line(&quot;DEFAULT_MODE=1&quot;)
+will select the disk image operation mode. (Please refer to cfg\dbg_bochs.cfg for list of configurable options).
+<p>
+- When debugging, IDA undefines instructions: if the &quot;Debugger options / Reconstruct stack&quot; is checked and
+the stack pointer is in the same segment as the currently executing code, then IDA might undefine instructions.
+To solve this program, uncheck the reconstruct stack option.
+<p>
+- How to convert from physical to linear addresses and vice versa: Bochs internal debugger provides two useful
+commands for this: &quot;info tab&quot; and &quot;page&quot;.
+<p>
+Disk image operation mode:
+<p>
+- Data/Software breakpoints are not always triggered: During a debugging session, when a breakpoint
+is created while the protected mode/paging is enabled, the page table information is used to translate addresses
+and correctly create the breakpoint. When debugging session is started again, IDA cannot access translation tables
+to re-create the same breakpoint, thus the breakpoint will be created without any translation information (it will be treated as physical addresses)
+This is why those breakpoints are not triggered. As a workaround, we suggest disabling those breakpoints and re-enable
+them when paging is enabled. This problem can also arise when the &quot;use virtual breakpoints&quot; option is enabled.
+<p>
+IDB/PE operation mode:
+<p>
+- Cannot map VA: Sometimes, IDA may display a message stating that a given VA could
+not be mapped. This mainly happens because both IDB/PE operation modes use virtual
+addresses from 0x0 to 0x9000 and from 0xE0000000 to 0xFFFFFFFF internally.
+To solve the problem, please rebase the program to another area:
+<pre>
+  - IDB operation mode: use Edit, Segment, Rebase program
+  - PE operation mode: rebase the input file using a third party utility
+</pre>
+PE operation mode:
+<p>
+- Dynamic DLL loading: sometimes, when running a program, the plugin may attempt to load
+a DLL that is not declared in the stub or load section of the startup script.
+In this case, please write down the name of the DLL, then add it to the startup script,
+and restart the debug session.
+It is possible to create a local copy, next to your database, of startup scripts so
+that these scripts will be used with this database only.
+<p>
+- Disk image loading slow: The disk image produced in the PE operation mode can be as big as 20MB. The reason
+for this slow loading is most probably because the plugin tries to load all referenced DLLs instead of stubbing them.
+To fix this, when the process starts, please take note of the loaded DLLs list (using IDA / Modules List) then
+add the desired module names in the startup.* / &quot;stub&quot; section.
+<pre>
+ See also:
+        <a href="1329.html">Bochs debugger</a>
+</pre>

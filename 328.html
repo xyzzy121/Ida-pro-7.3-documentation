@@ -1,0 +1,14 @@
+<a name="IDH_328"></a>
+<title> readstr</title>
+<table width="100%"><tr valign="top"><td><h2> readstr</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+read a string from file
+     handle  - file hanlde
+returns: a string
+Check for EOF like this: !value_is_string(retvalue)
+Thread-safe function.
+<p>
+string readstr(long handle);
+
+</pre>

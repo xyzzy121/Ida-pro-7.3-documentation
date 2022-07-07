@@ -1,0 +1,26 @@
+<a name="IDH_569"></a>
+<title>Search for next suspicious operand</title>
+<table width="100%"><tr valign="top"><td><h2>Search for next suspicious operand</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: JumpSuspicious
+ </pre>
+Suspicious operands are the operands that need your attention
+because they contain an immediate value that could be a
+number or an offset. IDA does not know about it, so it marks these
+instructions as 'suspicious'.  You can change the suspiciousness of the operands
+using <a href="606.html">set lower limit of suspicious operands</a> and
+<a href="606.html">set upper limit of suspicious operands</a> commands.
+<p>
+Data arrays are considered to be suspicious if the first element of the
+data array is within the lower and upper suspicious limits. Values of other
+elements are not examined.
+<p>
+You can disable the display of the 'suspicious' marks in the <a href="1369.html">Comments Dialog</a>.
+<p>
+<b>NOTE:</b> We strongly recommend that before producing an ASM file you go
+through all 'suspicious' marks and get rid of them.  After this you have
+a certain level of confidence that the file has been
+disassembled correctly.
+<p>
+See also <a href="568.html">Search</a> submenu

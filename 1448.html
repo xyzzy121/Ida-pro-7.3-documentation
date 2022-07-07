@@ -1,0 +1,29 @@
+<a name="IDH_1448"></a>
+<title>Add write trace</title>
+<table width="100%"><tr valign="top"><td><h2>Add write trace</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: WriteTraceAdd
+ </pre>
+This command adds a write trace to the current address.
+<p>
+Each time the given address will be accessed in write mode,
+the debugger will add a trace event to the <a href="1444.html">Trace window</a>.
+<p>
+In fact, write traces are nothing more than breakpoints with special properties: they don't stop
+and they simply add a trace event when the breakpoints are reached.
+<p>
+Internally, the debugger will add a hardware breakpoint on the given address,
+so all the restrictions for <a href="1407.html">hardware breakpoints</a> are also valid
+for write traces.
+<pre>
+ See also <a href="1444.html">Trace window</a>
+          <a href="1629.html">Trace management</a>
+          <a href="1445.html">Clear trace</a>
+          <a href="1446.html">Instruction tracing</a>
+          <a href="1447.html">Function tracing</a>
+          <a href="1628.html">Basic block tracing</a>
+          <a href="1449.html">Add read/write trace</a>
+          <a href="1450.html">Add execution trace</a>
+          <a href="1451.html">Tracing options</a>
+          <a href="1443.html">Tracing</a> submenu.</pre>

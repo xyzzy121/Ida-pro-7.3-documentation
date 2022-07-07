@@ -1,0 +1,24 @@
+<a name="IDH_681"></a>
+<title> ARM specific</title>
+<table width="100%"><tr valign="top"><td><h2> ARM specific</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Some ARM compilers in Thumb mode use BL (branch-and-link)
+instead of B (branch) for long jumps, since BL has more range.
+By default, IDA tries to determine if BL is a jump or a call.
+You can override IDA's decision using commands in Edit/Other menu
+(Force BL call/Force BL jump) or the following two functions.
+<p>
+//  Force BL instruction to be a jump
+//       ea - address of the BL instruction
+//  returns: 1-ok, 0-failed
+<p>
+success force_bl_jump(long ea);
+<p>
+//  Force BL instruction to be a call
+//       ea - address of the BL instruction
+//  returns: 1-ok, 0-failed
+<p>
+success force_bl_call(long ea);
+
+</pre>

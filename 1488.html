@@ -1,0 +1,52 @@
+<a name="IDH_1488"></a>
+<title>Breakpoint conditions</title>
+<table width="100%"><tr valign="top"><td><h2>Breakpoint conditions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+You can use the &quot;Condition&quot; field of the breakpoint properties to enter
+an expression which is evaluated when the breakpoint is hit. It can be either
+an actual condition or just any valid code in <a href="162.html">IDC</a>
+or another supported scripting language syntax. By using the &quot;...&quot; button, you
+can open a multi-line editor for the condtition and switch the scripting language
+used for evaluating it.
+<p>
+Expressions
+<pre>
+  If you enter an expression, the result will be used to determine whether
+  the selected actions are exectuted. Some examples of IDC expressions:
+</pre>
+<pre>
+  Check if EAX is equal to 5:
+</pre>
+<pre>
+    EAX==5
+</pre>
+<pre>
+  Check if the first argument to the function is 1:
+</pre>
+<pre>
+    get_wide_dword(ESP)==1
+</pre>
+<pre>
+  Interpret the second argument to the function as a pointer to Unicode string, print it,
+  and return 0 (so that the execution continues immediately):
+</pre>
+<pre>
+    msg(&quot;Filename: %s\n&quot;, get_strlit_contents(get_wide_dword(ESP+4), -1, STRTYPE_UNICODE)), 0
+</pre>
+<pre>
+  Set EAX to 0 and continue:
+</pre>
+<pre>
+    EAX=0,0
+</pre>
+Statements
+<pre>
+  You can enter several statements in the multi-line editor. If the last one is a 'return' statement,
+  it is used as the result of the condition. Otherwise the condition is assumed to return 0.
+</pre>
+<pre>
+ See also <a href="1404.html">Breakpoints list</a>
+          <a href="1407.html">Edit breakpoint</a>
+          <a href="1404.html">Breakpoints</a> submenu
+          <a href="162.html">Index of IDC functions</a>
+</pre>

@@ -1,0 +1,57 @@
+<a name="IDH_1398"></a>
+<title>Process options</title>
+<table width="100%"><tr valign="top"><td><h2>Process options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetupProcess
+ </pre>
+This dialog box allows to specify different settings related to the
+process being debugged.
+<p>
+Application
+<pre>
+        Host application to launch. For executable files, this field is
+        equal to the 'input file'.
+        If this field is wrong, IDA will not be able to launch the program.
+        For remoting debugging, this field denotes a remote file.
+</pre>
+Input file
+<pre>
+        The input file used to create the database.
+        For remoting debugging, this field denotes a remote file.
+</pre>
+Directory
+<pre>
+        Directory to start the application. If empty, then the current directory
+        will be used.
+        For remoting debugging, this field denotes a remote directory.
+</pre>
+Parameters
+<pre>
+        Optional parameters to pass to the debugged application (or the host application)
+        when it starts. This field may be empty.
+        The standard input/output/error channels can be redirected using
+        the bash shell notations. for example: &gt;output 2&gt;&amp;1
+</pre>
+Hostname
+<pre>
+        If entered, denotes the name of the remote host with the application
+        to debug. In this case, a remote IDA server on this host must be launched.
+        Click <a href="1463.html">here</a> to see the list of remote servers.
+</pre>
+Port
+<pre>
+        The port number of the remote server
+</pre>
+Password
+<pre>
+        Optional password to protect your server from strangers connecting to
+        it and running arbitrary commands. The same password switch must be
+        specified on the remote server.
+</pre>
+The hostname, port, and password are not available for debuggers connected locally
+to the computer.
+<pre>
+ See also <a href="1397.html">Start process</a>
+          <a href="1395.html">Debugger</a> submenu
+          <a href="1463.html">How to launch remote debugging</a></pre>

@@ -1,0 +1,12 @@
+<a name="IDH_177"></a>
+<title> byte_value</title>
+<table width="100%"><tr valign="top"><td><h2> byte_value</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get byte value from flags
+Get value of byte provided that the byte is initialized.
+This macro works ok only for 8-bit byte machines.
+<p>
+#define byte_value(F)  (F &amp; MS_VAL)    // quick replacement for get_wide_byte()
+
+</pre>

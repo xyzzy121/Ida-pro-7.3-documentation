@@ -1,0 +1,61 @@
+<a name="IDH_398"></a>
+<title> add_struc_member</title>
+<table width="100%"><tr valign="top"><td><h2> add_struc_member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Add structure member.
+<p>
+This function can be used in two forms.
+First form:
+long add_struc_member(long id, string name, long offset, long flag,
+                    long typeid, long nbytes);
+Second form:
+long add_struc_member(long id, string name, long offset, long flag,
+                    long typeid, long nbytes,
+                    long target, long tdelta, long reftype);
+<p>
+arguments:
+  id      - structure type ID
+  name    - name of the new member
+  offset  - offset of the new member
+            -1 means to add at the end of the structure
+  flag    - type of the new member. Should be one of
+            FF_BYTE..FF_PACKREAL (see above)
+            combined with FF_DATA
+  typeid  - if is_struct(flag) then typeid specifies
+            the structure id for the member
+            if is_off0(flag) then typeid specifies
+            the offset base.
+            if is_strlit(flag) then typeid specifies
+            the string type (<a href="283.html">STRTYPE_...</a>).
+            if is_stroff(flag) then typeid specifies
+            the structure id
+            if is_enum(flag) then typeid specifies
+            the enum id
+            Otherwise typeid should be -1
+  nbytes  - number of bytes in the new member
+the remaining arguments are allowed only if isOff0(flag) and you want
+to specify a complex offset expression
+  target  - target address of the offset expr. You may specify it as
+            -1, ida will calculate it itself
+  tdelta  - offset target delta. usually 0
+  reftype - see REF_... definitions
+returns: 0 - ok, otherwise error code STRUC_ERROR_...
+<p>
+long add_struc_member(long id, string name, long offset, long flag, long typeid, long nbytes,
+                      long target, long tdelta, long reftype);
+<p>
+// Constants used with begin_type_updating() and end_type_updating()
+#define UTP_ENUM      0
+#define UTP_STRUCT    1
+<p>
+#define STRUC_ERROR_MEMBER_NAME    (-1) // already has member with this name (bad name)
+#define STRUC_ERROR_MEMBER_OFFSET  (-2) // already has member at this offset
+#define STRUC_ERROR_MEMBER_SIZE    (-3) // bad number of bytes or bad sizeof(type)
+#define STRUC_ERROR_MEMBER_TINFO   (-4) // bad typeid parameter
+#define STRUC_ERROR_MEMBER_STRUCT  (-5) // bad struct id (the 1st argument)
+#define STRUC_ERROR_MEMBER_UNIVAR  (-6) // unions can't have variable sized members
+#define STRUC_ERROR_MEMBER_VARLAST (-7) // variable sized member should be the last member in the structure
+#define STRUC_ERROR_MEMBER_NESTED  (-8) // recursive structure nesting is forbidden
+
+</pre>

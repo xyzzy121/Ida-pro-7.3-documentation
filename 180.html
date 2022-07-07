@@ -1,0 +1,27 @@
+<a name="IDH_180"></a>
+<title> CommonBits</title>
+<table width="100%"><tr valign="top"><td><h2> CommonBits</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+//
+//      Common bits
+//
+<p>
+#define MS_COMM 0x000FF800             // Mask of common bits
+#define FF_COMM 0x00000800             // Has comment?
+#define FF_REF  0x00001000             // has references?
+#define FF_LINE 0x00002000             // Has next or prev cmt lines ?
+#define FF_NAME 0x00004000             // Has user-defined name ?
+#define FF_LABL 0x00008000             // Has dummy name?
+#define FF_FLOW 0x00010000             // Exec flow from prev instruction?
+#define FF_SIGN 0x00020000             // Inverted sign of operands
+#define FF_BNOT 0x00040000             // Bitwise negation of operands
+#define FF_ANYNAME      (FF_LABL|FF_NAME)
+<p>
+#define is_flow(F)       ((F &amp; FF_FLOW) != 0)
+#define is_extra_cmts(F) ((F &amp; FF_LINE) != 0)
+#define has_xref(F)      ((F &amp; FF_REF)  != 0)
+#define has_name(F)      ((F &amp; FF_NAME) != 0)
+#define has_user_name(F) ((F &amp; FF_ANYNAME) == FF_NAME)
+
+</pre>

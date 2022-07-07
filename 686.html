@@ -1,0 +1,27 @@
+<a name="IDH_686"></a>
+<title> del_items</title>
+<table width="100%"><tr valign="top"><td><h2> del_items</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Convert item (instruction/data) to unexplored bytes.
+The whole item (including the head and tail bytes) will be destroyed.
+It is allowed to pass any address in the item to this function
+     ea     - any address within the item to delete
+     flags  - combination of DELIT_... constants
+     nbytes - number of bytes in the range to be undefined
+returns: number of undefined items
+<p>
+long del_items(ea_t ea, long flags=0, long nbytes=1);
+<p>
+#define DELIT_SIMPLE    0x0000  // simply undefine the specified item
+#define DELIT_EXPAND    0x0001  // propogate undefined items, for example
+                                // if removing an instruction removes all
+                                // references to the next instruction, then
+                                // plan to convert to unexplored the next
+                                // instruction too.
+#define DELIT_DELNAMES  0x0002  // delete any names at the specified
+                                // address range (except for the starting
+                                // address). this bit is valid if nbytes &gt; 1
+#define DELIT_NOTRUNC   0x0004  // don't truncate the current function
+
+</pre>

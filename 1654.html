@@ -1,0 +1,41 @@
+<a name="IDH_1654"></a>
+<title>Connecting a remote PIN tool instance from IDA</title>
+<table width="100%"><tr valign="top"><td><h2>Connecting a remote PIN tool instance from IDA</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+For local debugging the PIN tool can be automatically launched by IDA.
+For remote debugging it must be launched manually, as in the following example:
+<pre>
+  $ /path/to/pin -t /path/to/idadbg/lib -p PORT -- APPLICATION [ARGUMENTS]
+</pre>
+Where PORT is the port that the PIN tool will listen for incoming connections
+from IDA. APPLICATION is the target application to be traced and the optional
+parameter ARGUMENTS are the arguments to be passed to the target application.
+Please note that on Win64 it may be required to specify the path to
+specific x64 binary instead to the pin.bat batch file.
+<p>
+To attach to an already running process instead of starting a new one a command
+like the following one must be executed:
+<pre>
+  $ /path/to/pin -pid PID -t /full/path/to/idadbg/lib/with.extension -p PORT
+</pre>
+Where PID is the pid of the running process to attach and PORT the port that the
+PIN tool will listen for incoming connections.
+<p>
+The hostname and port where the PIN tool is listening for incoming connections
+should be specified in IDA. See the Debugger, Process options dialog.
+<p>
+After successfully launching the PIN tool the IDA debugger can be launched
+by pressing F9 or selecting Debugger, Start Process.
+<p>
+PIN accepts the following optional environment variables and command
+line arguments:
+<pre>
+  - Environment variables:
+    IDAPIN_DEBUG: Set this environment variable to 1 or higher to print
+    debugging information.
+</pre>
+<pre>
+  - Command line arguments:
+    -p number: Port where the PIN tool will listen for incoming connections from IDA
+    -idadbg [0|1|2]: Same as the IDAPIN_DEBUG environment variable
+</pre>

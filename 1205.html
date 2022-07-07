@@ -1,0 +1,17 @@
+<a name="IDH_1205"></a>
+<title> get_debug_name</title>
+<table width="100%"><tr valign="top"><td><h2> get_debug_name</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get the name assigned to the ea by the debugger module
+     ea  - linear address
+     how - one of the DEBNAME_ constants
+<p>
+string get_debug_name(long ea, long how);
+<p>
+#define DEBNAME_EXACT 0 // find a name at exactly the specified address
+#define DEBNAME_LOWER 1 // find a name with the address &gt;= the specified address
+#define DEBNAME_UPPER 2 // find a name with the address &gt;  the specified address
+#define DEBNAME_NICE  3 // find a name with the address &lt;= the specified address
+
+</pre>

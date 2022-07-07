@@ -1,0 +1,13 @@
+<a name="IDH_718"></a>
+<title> get_last_bmask</title>
+<table width="100%"><tr valign="top"><td><h2> get_last_bmask</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get last bitmask in the enum (bitfield)
+     enum_id - id of enum
+returns: the biggest bitmask or -1 no bitmasks are defined yet
+         All bitmasks are sorted by their values as unsigned longs.
+<p>
+long get_last_bmask(long enum_id);
+
+</pre>

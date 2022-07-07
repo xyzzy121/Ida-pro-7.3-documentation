@@ -1,0 +1,37 @@
+<a name="IDH_498"></a>
+<title>Select union member</title>
+<table width="100%"><tr valign="top"><td><h2>Select union member</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SelectUnionMember
+ </pre>
+This command tells IDA how to display references to a union from the current
+cursor location.
+<p>
+Example:
+  Suppose we have the following union:
+<pre>
+        xxx     union
+        a       db ?
+        b       dw ?
+        c       dd ?
+        ends   xxx
+</pre>
+<pre>
+        dloc    xxx ?
+</pre>
+<pre>
+  Normally, IDA displays references to &quot;dloc&quot; like this:
+</pre>
+<pre>
+        mov     al,  byte ptr dloc
+        mov     eax, word ptr dloc
+</pre>
+<pre>
+  After using this command, IDA can display the union members:
+</pre>
+<pre>
+        mov     al,  dloc.b
+        mov     eax, dloc.d
+</pre>
+See also <a href="490.html">Edit|Structs</a> submenu.

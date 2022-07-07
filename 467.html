@@ -1,0 +1,48 @@
+<a name="IDH_467"></a>
+<title>Convert operand to offset (data segment)</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to offset (data segment)</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpOffset
+ </pre>
+This command converts the immediate operand of the
+current instruction/data to an offset from the current data segment (DS).
+<p>
+If current DS value is unknown (or equal 0xFFFF) IDA
+will warn you -- it will beep. In this case, you have to
+define DS register value for the current byte. The
+best way to do it is:
+<pre>
+  - <a href="547.html">jump to segment register change point</a>
+  - <a href="523.html">change value of DS</a>
+  - <a href="539.html">return</a>
+</pre>
+or you can <a href="522.html">change default value</a> of DS for the current
+segment.
+<p>
+If you want to delete offset definition, you can use
+this command again - it works as trigger.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwis, all other operands will be
+affected.
+<p>
+If a range is selected using the <a href="420.html">anchor</a>, IDA will perform
+'en masse' conversion. It will convert
+immediate operands of all instructions in the selected range to
+offsets. However, IDA will ask you first the lower and upper limits of
+immediate operand value. If the operand value is &gt;= lower limit and
+&lt;= upper limit then the operand will be converted to offset, otherwise it
+will be left unmodified.
+<p>
+To create offsets to structure members use <a href="472.html">Convert to struct offset</a>
+command.
+<p>
+See also:
+<pre>
+          <a href="467.html">offset by data segment/no offset</a>
+          <a href="469.html">offset by any segment</a>
+          <a href="470.html">offset by any user-specified base</a>
+          <a href="1381.html">Edit|Operand types|Offset</a> submenu.
+          <a href="477.html">Enter the operand manually</a> command.
+          <a href="1601.html">Set operand type</a></pre>

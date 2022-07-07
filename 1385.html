@@ -1,0 +1,36 @@
+<a name="IDH_1385"></a>
+<title>Arrows window</title>
+<table width="100%"><tr valign="top"><td><h2>Arrows window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In the graphical version, there is a small window with arrows on the
+left of the disassembly. These arrows represent the execution flow,
+namely the branch and jump instructions.
+The arrow color can be:
+<pre>
+        - red: means that the arrow source and destination do not
+        belong to the same function. Usually, the branches are
+        within functions and the red color will conspicuously
+        represent branches from or to different functions.
+        - black: the currently selected arrow. The selection
+        is made by moving to the beginning or the end of the
+        arrow using the Up or Down keys or left-clicking on the arrow
+        start or the arrow end. The selection is
+        not changed by pressing the PageUp, PageDown, Home, End keys or using
+        the scrollbar. This allows to trace the selected arrow far away.
+        - grey: all other arrows
+</pre>
+The arrow thickness can be:
+<pre>
+        - thick: a backward arrow. Backward arrows usually represent
+        loops. Thick arrows represent the loops in a clear and
+        notable manner.
+        - thin: forward arrows.
+</pre>
+Finally, the arrows can be solid or dotted. The dotted arrows
+represent conditional branches when the solid arrows represent
+unconditional branches.
+<p>
+You can resize the arrows window using a vertical splitter or even fully hide it.
+If it is hidden, the arrows window will not be visible on the screen but you
+can reveal it by dragging the splitter to the right. IDA remembers the current arrow
+window size in the registry when you close the disassembly window.

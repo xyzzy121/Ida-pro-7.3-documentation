@@ -1,0 +1,14 @@
+<a name="IDH_348"></a>
+<title> get_frame_args_size</title>
+<table width="100%"><tr valign="top"><td><h2> get_frame_args_size</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get size of arguments in function frame which are purged upon return
+     ea - any address belonging to the function
+returns: Size of function arguments in bytes.
+         If the function doesn't have a frame, return 0
+         If the function does't exist, return -1
+<p>
+#define get_frame_args_size(ea)  get_func_attr(ea, FUNCATTR_ARGSIZE)
+
+</pre>

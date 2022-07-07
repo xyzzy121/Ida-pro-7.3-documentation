@@ -1,0 +1,16 @@
+<a name="IDH_198"></a>
+<title> call_system</title>
+<table width="100%"><tr valign="top"><td><h2> call_system</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Execute an OS command.
+IDA will wait for the started program to finish.
+In order to start the command in parallel, use OS methods.
+For example, you may start another program in parallel using &quot;start&quot; command.
+     command - command line to execute
+returns: error code from OS
+Thread-safe function.
+<p>
+long call_system(string command);
+
+</pre>

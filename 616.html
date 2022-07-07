@@ -1,0 +1,22 @@
+<a name="IDH_616"></a>
+<title>Dump/normal View</title>
+<table width="100%"><tr valign="top"><td><h2>Dump/normal View</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ToggleDump
+ </pre>
+This command switches the current disassembly window mode between
+dump mode and normal mode.
+Initially all disassembly windows are in normal mode
+so you can see instructions and data.
+When you are in dump mode, no instructions or data are displayed.
+All bytes of the program will be dumped
+on the screen as plain bytes and in ASCII.
+This command may be useful when you want to find something in the program visually.
+Do not forget that many commands continue to work in dump mode.
+For example, you can use binary <a href="579.html">search</a> command.
+<p>
+The text version supports only paragraph aligned addressing in the view.
+Switching to the hex dump view and back may change the cursor position in the disassembly listing.
+<p>
+See also <a href="604.html">Options</a> submenu.

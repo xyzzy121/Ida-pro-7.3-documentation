@@ -1,0 +1,17 @@
+<a name="IDH_330"></a>
+<title> add_func</title>
+<table width="100%"><tr valign="top"><td><h2> add_func</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+create a function
+     start, end - function bounds
+                  If the function end address is BADADDR, then
+                  IDA will try to determine the function bounds
+                  automatically. IDA will define all necessary
+                  instructions to determine the function bounds.
+returns: !=0 - ok
+note: an instruction should be present at the start address
+<p>
+success add_func(long start, long end=BADADDR);
+
+</pre>

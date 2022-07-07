@@ -1,0 +1,123 @@
+<a name="IDH_1520"></a>
+<title>WinDbg Debugger</title>
+<table width="100%"><tr valign="top"><td><h2>WinDbg Debugger</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+The WinDbg debugger plugin uses Microsoft's Debugging Engine COM interfaces from the Debugging Tools package.
+<p>
+To use the WinDbg debugger plugin, the following steps must be carried out:
+<pre>
+  - Please download the latest debugging tools from
+  <a href="http://www.microsoft.com/whdc/devtools/debugging/default.mspx">http://www.microsoft.com/whdc/devtools/debugging/default.mspx</a>
+</pre>
+<pre>
+  - Configure the debugger specific options in
+        Debugger Options, Set specific options.
+</pre>
+<pre>
+  Windbg debugger plugin has the following configuration options:
+</pre>
+<pre>
+  - The Debugging Tools folder: This should be configured to point to the same
+  folder where Microsoft Debugging Tools are installed. The plugin will try to
+  guess where the tools are, but if it fails, a manual intervention will be required.
+  If this option is not set, then the plugin will try to use dbgeng.dll from
+  MS Windows system folder, while normal debug operations will work, extensions will not.
+</pre>
+<pre>
+  - Kernel mode debugging: Check this option when debugging the kernel.
+</pre>
+<pre>
+  - User-mode debugging: Check this option to debug MS Windows applications.
+</pre>
+<pre>
+  - Non-Invasive debugging: Check this option to enable attaching to user-mode
+  processes non-invasively
+</pre>
+<pre>
+  - Kernel mode debugging with reconnect and initial break: Select this option
+  when debugging a kernel and when the connection string contains 'reconnect'. This option
+  will assure that the debugger breaks as soon as possible after a reconnect.
+</pre>
+<pre>
+  - Output flags: These flags tell the debugging engine which kind of output
+  messages to display and which to omit
+
+</pre>
+The WinDbg debugger plugins has the following features:
+<pre>
+  - Send commands to the debugger engine when the debugging session starts.
+  Use the &quot;.&quot; key to switch to the command line and start typing commands.
+  Please note that while it is possible to send any command to the engine, only the
+  commands that change the execution status should not be used:
+  go (&quot;g&quot;), step (&quot;t&quot;), step into (&quot;p&quot;), etc...
+</pre>
+<pre>
+  - Symbol information: If the symbol path is configured properly, then the
+  debugger engine will fetch debug symbols from the appropriate location (symbol server, cache, etc...)
+  For example, setting the following environment variable before starting IDA:
+  _NT_SYMBOL_PATH=srv*c:\pdb_cache*<a href="http://msdl.microsoft.com/download/symbols">http://msdl.microsoft.com/download/symbols</a>
+</pre>
+<pre>
+  - Multi-processor support: Debugger Engine will create a virtual thread for
+  each processor that it finds. Similarily, IDA will present these processors as threads.
+</pre>
+<pre>
+  - Remote debugging support: It is possible to use the process server &quot;dbgsrv.exe&quot;
+  to enable remote debugging. For example:
+</pre>
+<pre>
+    1. Run &quot;dbgsrv -t tcp:port=PORT_NUM,server=HOST_NAME&quot;
+</pre>
+<pre>
+    2. Verify that the server is correctly running by listing all process
+    servers on the given HOST_NAME:
+</pre>
+<pre>
+      cdb -QR \\HOST_NAME
+</pre>
+<pre>
+    3. Finally, run IDA and specify the following connection string:
+      tcp:port=PORT_NUM,server=HOST_NAME
+</pre>
+<pre>
+  - Use WinDbg extensions: it is possible to use the extension commands that
+  usually work with WinDbg. Make sure that the &quot;Debugging Tools folder&quot; setting
+  is properly set so that this feature works.
+</pre>
+<pre>
+  - Kernel Debugging: It is possible to debug the kernel the same way as it is
+  done with WinDbg. Simply setup the target kernel and configure the WinDbg
+  plugin by checking the &quot;kernel mode debugging&quot; option and by typing a correct
+  connection string. If the user detaches from a kernel session (using Debugger/Detach Process),
+  the debugged kernel will resume. However, if the user selects Debugger/Terminate Process,
+  the kernel will be suspended (it will wait until another client attaches to it).
+</pre>
+<pre>
+  - Dump files support: It is possible to load into IDA dump files generated either
+  manually (using the &quot;.dump&quot; command) or crash dumps generated from a crashed process or kernel.
+  Please refer check the <a href="1529.html">windmp file loader</a> reference.
+</pre>
+<pre>
+  After the dump has been loaded, it is possible to run the debugger and investigate about
+  the crash by typing Windbg commands into the command line window.
+  For example, one could check the call-stack or use any other Windbg extension.
+</pre>
+<pre>
+  - External breakpoints: it is possible to use the command line to create breakpoints
+  that are not supported by IDA but supported by the debugging engine: in that
+  case, all unknown (external) breakpoints will suspend IDA when they trigger.
+
+</pre>
+The WinDbg debugger can be used to debug local programs as well as remote programs.
+This is controlled via the connection string in the &quot;Process Option&quot; dialog.
+If it is left blank,it means that a local debugging is in effect. Otherwise, a debug engine compatible connection
+string is expected.
+IDA will display an error message if the connection string could not be accepted:
+in that case, try using the same connection string with &quot;cdb&quot;, or &quot;windbg&quot; and see
+if it works.
+<p>
+The WinDbg debugger module adds a new menu item: Debugger, WinDbg command.
+It can be used to send arbitrary commands to the debugger engine. The command output is
+displayed in the message window.
+<p>
+<a href="712.html">Additional IDC functions provided by the WinDbg debugger</a>

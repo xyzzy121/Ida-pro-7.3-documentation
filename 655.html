@@ -1,0 +1,23 @@
+<a name="IDH_655"></a>
+<title> rotate_left</title>
+<table width="100%"><tr valign="top"><td><h2> rotate_left</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+rotate a value to the left (or right)
+   arguments:
+        x      - value to rotate
+        count  - number of times to rotate. negative counter means
+                 rotate to the right
+        nbits  - number of bits to rotate
+        offset - offset of the first bit to rotate
+returns: the value with the specified field rotated
+         all other bits are not modified
+Thread-safe function.
+<p>
+long rotate_left(long value, long count, long nbits, long offset);
+<p>
+#define rotate_dword(x, count) rotate_left(x, count, 32, 0)
+#define rotate_word(x, count)  rotate_left(x, count, 16, 0)
+#define rotate_byte(x, count)  rotate_left(x, count,  8, 0)
+
+</pre>

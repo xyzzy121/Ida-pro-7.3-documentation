@@ -1,0 +1,33 @@
+<a name="IDH_426"></a>
+<title>How to Enter an Address</title>
+<table width="100%"><tr valign="top"><td><h2>How to Enter an Address</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+You should enter an address as a hexadecimal number or a location name. When
+you enter the address in the hexadecimal format, you can omit
+the segment part of the address and the current segment will be used.
+Addresses beyond the program limits are invalid.
+<p>
+Also, you can enter a location name with a displacement:
+<pre>
+        name+5
+</pre>
+And finally you can specify a relative address:
+<pre>
+        +10             0x10 bytes further
+        -5              5 bytes backwards
+</pre>
+If the entered string cannot be recognized as a hexadecimal or location name,
+IDA will try to interpreet it as an expression using the current script interpreter.
+The default interpreter is <a href="157.html">IDC</a>.
+<p>
+Special addresses:
+<pre>
+        $ - current location (depends on the current <a href="619.html">assembler</a>)
+</pre>
+Examples:
+<pre>
+        456             current segment, offset 0x456
+        5E              current segment, offset 0x5E
+        3000:34         segment 0x3000,  offset 0x34
+        ds:67           segment pointed by ds, offset 0x67
+        start           a location with name 'start'</pre>

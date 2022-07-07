@@ -1,0 +1,34 @@
+<a name="IDH_599"></a>
+<title>Hide</title>
+<table width="100%"><tr valign="top"><td><h2>Hide</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: Hide
+ </pre>
+This command allows you to hide a part of disassembly.
+You can hide a function, a segment, or create a special
+hidden range.
+<p>
+If a range is specified, a special hidden range is created on
+this range.
+<p>
+If the cursor is on the segment name at the start of the segment,
+the segment will be hidden.
+IDA will display only the header of the hidden segment.
+<p>
+If the cursor is on a structure variable and if the target assembler is set on
+'can display terse structures or the <a href="285.html">INFFL_ALLASM</a> bit', then
+the structure will be collapsed into one line and displayed in the terse form.
+<p>
+Otherwise, the current function will be hidden.
+IDA will display only the header of the hidden function.
+<p>
+If there is no current function then IDA will beep.
+<p>
+If you want to see hidden items on the screen, you may use
+<a href="600.html">unhide</a> command or <a href="601.html">enable</a>
+the display of the hidden items.
+If you want to delete a previously created hidden range, you
+may use <a href="1394.html">del hidden range</a> command.
+<p>
+See also <a href="583.html">Edit|View</a> submenu

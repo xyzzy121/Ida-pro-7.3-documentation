@@ -1,0 +1,16 @@
+<a name="IDH_357"></a>
+<title> get_entry</title>
+<table width="100%"><tr valign="top"><td><h2> get_entry</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+retrieve entry point address
+     ordinal - entry point number
+               it is returned by get_entry_ordinal()
+returns: -1 if entry point doesn't exist
+         otherwise entry point address.
+         If entry point address is equal to its ordinal
+         number, then the entry point has no ordinal.
+<p>
+long get_entry(long ordinal);
+
+</pre>

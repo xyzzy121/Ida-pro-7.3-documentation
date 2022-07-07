@@ -1,0 +1,15 @@
+<a name="IDH_1600"></a>
+<title> get_bytes</title>
+<table width="100%"><tr valign="top"><td><h2> get_bytes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Return the specified number of bytes of the program
+      ea - linear address
+      size - size of buffer in normal 8-bit bytes
+      use_dbg - use debugger memory or just the database
+returns: 0-failure
+         or a string containing the read bytes
+<p>
+string get_bytes(long ea, long size, long use_dbg);
+
+</pre>

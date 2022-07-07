@@ -1,0 +1,24 @@
+<a name="IDH_383"></a>
+<title> get_next_offset</title>
+<table width="100%"><tr valign="top"><td><h2> get_next_offset</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+get next offset in a structure
+     id     - structure type ID
+     offset - current offset
+returns: -1 if bad structure type ID is passed
+         or no (more) offsets in the structure
+         otherwise returns next offset in a structure.
+         <b>NOTE:</b> IDA allows 'holes' between members of a
+               structure. It treats these 'holes'
+               as unnamed arrays of bytes.
+         This function returns a member offset or a hole offset.
+         It will return size of the structure if input
+         'offset' belongs to the last member of the structure.
+         <b>NOTE:</b> Union members are, in IDA's internals, located
+               at subsequent byte offsets: member 0 -&gt; offset 0x0,
+               member 1 -&gt; offset 0x1, etc...
+<p>
+long get_next_offset(long id, long offset);
+
+</pre>

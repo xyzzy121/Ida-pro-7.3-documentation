@@ -1,0 +1,36 @@
+<a name="IDH_16"></a>
+<title> msg</title>
+<table width="100%"><tr valign="top"><td><h2> msg</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Display an UTF-8 encoded message in the message window
+     format - printf() style format string
+     ...    - additional parameters if any
+This function can be used to debug IDC scripts
+The result of the stringification of the arguments
+will be treated as an UTF-8 string.
+Thread-safe function.
+<p>
+void msg(string format, ...);
+<p>
+// Print variables in the message window
+// This function print text representation of all its arguments to the output window.
+// This function can be used to debug IDC scripts
+<p>
+void print(...);
+<p>
+// Display a message in a message box
+//      format - printf() style format string
+//      ...    - additional parameters if any
+// This function can be used to debug IDC scripts
+// The user will be able to hide messages if they appear twice in a row on the screen
+<p>
+void warning(string format, ...);
+<p>
+// Display a fatal message in a message box and quit IDA
+//      format - printf() style format string
+//      ...    - additional parameters if any
+<p>
+void error(string format, ...);
+
+</pre>

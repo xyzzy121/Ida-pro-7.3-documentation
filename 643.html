@@ -1,0 +1,22 @@
+<a name="IDH_643"></a>
+<title> Hashes</title>
+<table width="100%"><tr valign="top"><td><h2> Hashes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+associative arrays (the same as hashes in Perl)
+to create a hash, use <a href="668.html">create_array</a>() function
+you can use the following function with hashes:
+     <a href="669.html">get_array_id</a>(), <a href="670.html">rename_array</a>(), <a href="671.html">delete_array</a>()
+The following additional functions are defined:
+<p>
+success set_hash_long(long id, string idx, long value);
+success set_hash_string(long id, string idx, string value);
+long    get_hash_long(long id, string idx);
+string  get_hash_string(long id, string idx);
+success del_hash_string(long id, string idx);
+string  get_first_hash_key(long id);
+string  get_next_hash_key(long id, string idx);
+string  get_last_hash_key(long id);
+string  get_prev_hash_key(long id, string idx);
+
+</pre>

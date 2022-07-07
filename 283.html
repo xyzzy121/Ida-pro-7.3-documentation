@@ -1,0 +1,42 @@
+<a name="IDH_283"></a>
+<title> get_str_type</title>
+<table width="100%"><tr valign="top"><td><h2> get_str_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get string type
+     ea - linear address
+Returns one of STRTYPE_... constants
+<p>
+long get_str_type(long ea);
+<p>
+// Character-terminated string. The termination characters are kept in
+// the next bytes of string type.
+#define STRTYPE_TERMCHR   (STRWIDTH_1B|STRLYT_TERMCHR&lt;&lt;STRLYT_SHIFT)
+// C-style string.
+#define STRTYPE_C         STRTYPE_TERMCHR
+// Zero-terminated 16bit chars
+#define STRTYPE_C_16      (STRWIDTH_2B|STRLYT_TERMCHR&lt;&lt;STRLYT_SHIFT)
+// Zero-terminated 32bit chars
+#define STRTYPE_C_32      (STRWIDTH_4B|STRLYT_TERMCHR&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, one-byte length prefix
+#define STRTYPE_PASCAL    (STRWIDTH_1B|STRLYT_PASCAL1&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, 16bit chars, one-byte length prefix
+#define STRTYPE_PASCAL_16 (STRWIDTH_2B|STRLYT_PASCAL1&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, two-byte length prefix
+#define STRTYPE_LEN2      (STRWIDTH_1B|STRLYT_PASCAL2&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, 16bit chars, two-byte length prefix
+#define STRTYPE_LEN2_16   (STRWIDTH_2B|STRLYT_PASCAL2&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, two-byte length prefix
+#define STRTYPE_LEN4      (STRWIDTH_1B|STRLYT_PASCAL4&lt;&lt;STRLYT_SHIFT)
+// Pascal-style, 16bit chars, two-byte length prefix
+#define STRTYPE_LEN4_16   (STRWIDTH_2B|STRLYT_PASCAL4&lt;&lt;STRLYT_SHIFT)
+<p>
+#define         STRTERM1(strtype)       ((strtype&gt;&gt;8)&amp;0xFF)
+                                        // 3d byte:
+#define         STRTERM2(strtype)       ((strtype&gt;&gt;16)&amp;0xFF)
+                                        // The termination characters are kept in
+                                        // the 2nd and 3d bytes of string type
+                                        // if the second termination character is
+                                        // '\0', then it is ignored.
+
+</pre>

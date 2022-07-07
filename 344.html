@@ -1,0 +1,16 @@
+<a name="IDH_344"></a>
+<title> find_func_end</title>
+<table width="100%"><tr valign="top"><td><h2> find_func_end</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Determine a new function boundaries
+     ea  - starting address of a new function
+returns: if a function already exists,
+         then return its end address.
+         if a function end cannot be determined,
+         then return BADADDR
+         otherwise return the end address of the new function
+<p>
+long find_func_end(long ea);
+
+</pre>

@@ -1,0 +1,18 @@
+<a name="IDH_175"></a>
+<title> import_type</title>
+<table width="100%"><tr valign="top"><td><h2> import_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Copy information from type library to database
+   Copy structure, union, or enum definition from the type library
+   to the IDA database.
+        idx       - the position of the new type in the list of
+                    types (structures or enums)
+                    -1 means at the end of the list
+        type_name - name of type to copy
+   returns: BADNODE-failed, otherwise the type id
+                (structure id or enum id)
+<p>
+long import_type(long idx, string type_name);
+
+</pre>

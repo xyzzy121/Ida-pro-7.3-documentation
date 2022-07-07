@@ -1,0 +1,44 @@
+<a name="IDH_588"></a>
+<title>Signatures window</title>
+<table width="100%"><tr valign="top"><td><h2>Signatures window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenSignatures
+ </pre>
+This command opens the signatures window.
+<p>
+For each signature, the following is displayed:
+<pre>
+        - name of file with the signature
+        - state of signature:
+                - Planned: the signature will be applied
+                - Current: the signature is being applied
+                - Applied: the signature has been applied
+        - number of functions found using the signature
+        - description of the signature
+</pre>
+You can modify the planned signatures list here:
+add/delete library modules to be used during the disassembling.
+<p>
+You cannot delete an applied signature from the list.
+<p>
+To add a signature to the list for the application press &lt;Ins&gt;.
+You will see a list of signatures that can be applied to the program being
+disassembled.
+<p>
+Text version: Not all signature files will be displayed (for example,
+32 bit signatures will not be shown for a 16 bit program). If you want
+to see the full list of signatures, select the first line of the list
+saying SWITCH TO FULL LIST OF SIGNATURES.
+<p>
+Signature files reside in the subdirectories of the SIG directory. Each
+processor has its own subdirectory. The name of the subdirectory
+is equal to the name of the processor module file (z80 for z80.w32, for example).
+Note: IBM PC signatures are located in the SIG directory itself.
+Note: the IDASGN environment variable can be used to specify
+the location of the signatures directory.
+<p>
+See also
+<pre>
+         <a href="1356.html">View|Open subviews</a> submenu.
+         <a href="427.html">How To Use List Viewer</a></pre>

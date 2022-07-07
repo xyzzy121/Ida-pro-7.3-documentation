@@ -1,0 +1,14 @@
+<a name="IDH_266"></a>
+<title> next_not_tail</title>
+<table width="100%"><tr valign="top"><td><h2> next_not_tail</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Get next not-tail address in the program
+This function searches for the next displayable address in the program.
+The tail bytes of instructions and data are not displayable.
+     ea - linear address
+returns: BADADDR - no (more) not-tail addresses
+<p>
+long next_not_tail(long ea);
+
+</pre>

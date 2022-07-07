@@ -1,0 +1,52 @@
+<a name="IDH_1374"></a>
+<title>Load PDB debug information file</title>
+<table width="100%"><tr valign="top"><td><h2>Load PDB debug information file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: LoadPdbFile
+ </pre>
+This command loads a PDB file.
+<p>
+If the program being disassembled has a companion PDB file, then
+this command may be used to load information from the PDB file into the
+database.
+<p>
+Please note that the PDB loader uses the system DLL IMAGEHLP.DLL to load
+the PDB file. The system DLL may refuse to load the PDB file if it is from
+another operating system version or for some other reason.
+<p>
+The system searches for the PDB file in the system directories (usually something
+like \WINNT\Symbols) and in the current directory.
+<p>
+The LoadPdbFile command launches a special plugin PDB.DLL which can be run manually
+using Edit-&gt;Plugins submenu. This plugin uses MS DIA DLLs to load the
+debug information and therefore can load only the PDBs compatible with the currently
+installed IMAGEHLP.DLL
+<p>
+Since PDB.DLL use the MS DIA DLLs that are available only on Windows, loading
+PDB information on Unix requires a different setup. The user has to launch
+the win32_remote.exe debugger server on a Windows computer. The PDB plugin on
+Unix can connect to the debugger server and use it to load PDB files. Please note
+that we do not debug anything here but use the win32_remote.exe utility to
+extract information from PDB files and transfer it to IDA. To ensure
+that everything works correctly, you have to provide the following things:
+<pre>
+  - the computer where the PDB.DLL or win32_remote.exe run must have
+    the Microsoft Debugging Tools installed. In case of doubt please verify
+    that the dia2dump.exe utility from Microsoft can run and load PDB files
+    on that computer.
+</pre>
+<pre>
+  - In the case of IDA running on Unix, there must be a network connection
+    between the Unix computer and the computer where win32_remote.exe runs.
+    You can edit the pdb.cfg file and specify where the remote
+    Windows computer is located so you do not need to specify it each
+    time when IDA needs to load PDB info.
+</pre>
+When you invoke this command a second time, it will ask for the name of the
+input file and its loading address. This allows the loading of PDB files for
+additional DLLs.
+<pre>
+  See also
+        <a href="430.html">Load... submenu</a> commands.
+        <a href="1457.html">Debugger module list</a> command.</pre>

@@ -1,0 +1,22 @@
+<a name="IDH_1523"></a>
+<title>Command line</title>
+<table width="100%"><tr valign="top"><td><h2>Command line</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+At the bottom of the main IDA window, just above the status bar there is a input
+field. It can be used to enter various commands. By default, it accepts IDC commands,
+but plugins may register themselves as command language providers for it.
+<p>
+Currently, the following command line providers exist:
+<pre>
+  - <a href="157.html">idc</a>
+  - python plugin
+  - bochs debugger
+  - windbg debugger
+  - GDB debugger
+</pre>
+When these plugins are active, they will process the entered commands.
+The current command language can be changed by clicking on the button to the left
+of the input field. The current language can be set as default by choosing &quot;Default CLI&quot;
+from the context menu of the command line.
+<p>
+The command line input field can be activated by pressing '.'. Esc switches back to the previous window.

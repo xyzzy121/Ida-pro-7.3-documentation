@@ -1,0 +1,14 @@
+<a name="IDH_1580"></a>
+<title> sizeof</title>
+<table width="100%"><tr valign="top"><td><h2> sizeof</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Calculate the size of a type
+     type - type to calculate the size of
+            can be specified as a typeinfo object (e.g. the result of get_tinfo())
+            or a string with C declaration (e.g. &quot;int&quot;)
+returns: size of the type or -1 if error
+<p>
+long sizeof(typeinfo type);
+
+</pre>

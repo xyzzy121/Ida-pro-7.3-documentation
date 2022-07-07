@@ -1,0 +1,17 @@
+<a name="IDH_714"></a>
+<title> patch_word</title>
+<table width="100%"><tr valign="top"><td><h2> patch_word</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change value of a program word (2 bytes)
+     ea    - linear address
+     value - new value of the word
+Returns: 1 if the database has been modified,
+         0 if either the debugger is running and the process' memory
+           has value 'value' at address 'ea',
+           or the debugger is not running, and the IDB
+           has value 'value' at address 'ea already.
+<p>
+success patch_word(long ea, long value);
+
+</pre>

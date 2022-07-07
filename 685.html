@@ -1,0 +1,19 @@
+<a name="IDH_685"></a>
+<title> define_local_var</title>
+<table width="100%"><tr valign="top"><td><h2> define_local_var</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Create a local variable
+     start, end - range of addresses for the local variable.
+                  For the stack variables the end address is ignored.
+                  If there is no function at 'start' then this function.
+                  will fail.
+     location  -  the variable location in the &quot;[bp+xx]&quot; form where xx is
+                  a number. The location can also be specified
+                  as a register name.
+     name      -  name of the local variable
+returns: 1-ok, 0-failure
+<p>
+success define_local_var(long start, long end, string location, string name);
+
+</pre>

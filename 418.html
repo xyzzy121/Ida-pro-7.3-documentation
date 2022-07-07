@@ -1,0 +1,18 @@
+<a name="IDH_418"></a>
+<title>Keyboard Macros</title>
+<table width="100%"><tr valign="top"><td><h2>Keyboard Macros</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+You can define a keyboard macro to automate frequent keystroke sequences.
+They are defined in the same manner as in the Borland IDE:
+<pre>
+        - Press Alt--
+        - Press &lt;key&gt; - macro name
+        - Enter macro body
+        - Press Alt-=
+</pre>
+All macros are lost when you <a href="450.html">exit</a> IDA.
+If you want to have a static macro which is not lost when you quit IDA,
+then write it down into IDATUI.CFG file. The format of a macro definition
+is explained <a href="419.html">here</a>.
+<p>
+<b>NOTE:</b> keyboard macros are available only in the text version of IDA.

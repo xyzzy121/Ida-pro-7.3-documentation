@@ -1,0 +1,20 @@
+<a name="IDH_1247"></a>
+<title> collect_stack_trace</title>
+<table width="100%"><tr valign="top"><td><h2> collect_stack_trace</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Unwind the stack for the given thread
+     tid - thread id
+returns: a call stack object with the attributes:
+&quot;size&quot; - number of frames
+array subscript &quot;[0]&quot;, &quot;[1]&quot;, ... up to the number of frames - 1
+each frame object has the attributes:
+  &quot;callea&quot; - the address of the call instruction.
+             for the 0th frame this is usually just the current value of EIP.
+  &quot;funcea&quot; - the address of the called function
+  &quot;fp&quot;     - the value of the frame pointer of the called function
+  &quot;funcok&quot; - is there a function created in the database for the current frame?
+<p>
+object collect_stack_trace(long tid);
+
+</pre>

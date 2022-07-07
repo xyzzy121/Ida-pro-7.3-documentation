@@ -1,0 +1,142 @@
+<a name="IDH_1577"></a>
+<title>IDC: classes</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: classes</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Classes can be declared the following way:
+<pre>
+  class name
+  {
+    method1(...) {}
+    ...
+  };
+</pre>
+Inside the class, method functions are declared without the 'static' keyword.
+The method with the name of the class is the class constructor. For example:
+<pre>
+  class myclass
+  {
+     myclass(x,y)
+     {
+       print(&quot;myclass constructor has been called with two arguments: &quot;, x, y);
+       this.x = x;
+       this.y = x;
+     }
+     ~myclass()
+     {
+       print(&quot;destructor has been called: &quot;, this);
+     }
+  };
+</pre>
+Inside the class methods, the 'this' variable can be used to refer to the current
+object.
+<p>
+Only one constructor per class is allowed.
+<p>
+Class instances are created like this:
+<pre>
+  o = myclass(1, 2);
+</pre>
+And object attributes (or fields) are accessed like this:
+<pre>
+  print(o.x);
+  o.y = o.x + 1;
+</pre>
+A new attribute is created upon assigning to it:
+<pre>
+  o.new_attr = 1;
+</pre>
+Accessing an unexisting attribute generates an exception, which can be <a href="89.html">caught</a>.
+<p>
+The following special method names exist:
+<pre>
+  __setattr__(attr, value)
+    This method is called when an object attribute is assigned a new value.
+    Instead of assigning a value, this method can do something else.
+    To modify a class attribute from this method, please use the setattr()
+    global function.
+    Compare with: Python <b>_setattr_</b> method
+</pre>
+<pre>
+  __getattr__(attr)
+    This method is called when an object attribute is accessed for reading.
+    Instead of simply returning a value, this method can do something else,
+    for example to calculate the attribute on the fly. To retrieve a
+    attribute from this function, use the getattr() global function.
+    Compare with: Python <b>_getattr_</b> method
+</pre>
+Simple class inheritance is support. Derived classed are declared like this:
+<pre>
+  class derived : base
+  {
+    ...
+  };
+</pre>
+Here we declare the 'derived' class that is derived from the 'base' class.
+For derived classes, the base class constructor can be called explicitly:
+<pre>
+  class derived : base
+  {
+    derived() : base(args...)
+    {
+    }
+  };
+</pre>
+If the base class constructor is not called explicitly, IDA will call
+it implicitly, without any arguments.
+<p>
+It is possible to call base class methods using full names:
+<pre>
+    base::func(this, args...);
+</pre>
+The 'this' argument must be passed explicitly in this case.
+<p>
+When there are no more references to an object, it is automatically destroyed.
+We use a simple reference count algorithm to track the object use.
+Circularly dependent objects are not detected: they are never destroyed.
+<p>
+The following built-in object classes exist:
+<pre>
+  - object: the default base class for all new classes. When the base class
+    is not specified, the new class will inherit from 'object'
+    This class has no fields and no special constructor. It has the following
+    methods:
+</pre>
+<pre>
+     <a href="1574.html">void object.store(typeinfo, ea, flags)</a>
+     <a href="1575.html">void object.retrieve(typeinfo, ea, flags)</a>
+</pre>
+<pre>
+  - exception: class used to report exceptions. It has the following attributes:
+</pre>
+<pre>
+    file - source file name where the exception occurred
+    func - current function name
+    line - line number
+    pc   - program counter value (internal to idc)
+</pre>
+<pre>
+    Runtime errors are reported as exceptions too. They are two more fields:
+</pre>
+<pre>
+    qerrno      - runtime error code
+    description - printable error description
+</pre>
+<pre>
+    This class has no special constructor and has no methods.
+</pre>
+<pre>
+  - typeinfo: class used to represent type info. It has the following attributes:
+</pre>
+<pre>
+    type        - binary encoded type string
+    fields      - field names for the type (e.g. structure member names)
+    name        - (optional) variable/function name
+</pre>
+<pre>
+    Human readable form of the typeinfo can be obtained by calling the
+    <a href="1647.html">print()</a> method. The type size can be calculated
+    using the <a href="1508.html">size()</a> method.
+</pre>
+<pre>
+  - <a href="1581.html">loader_input_t</a>: class to read files.
+</pre>

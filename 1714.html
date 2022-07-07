@@ -1,0 +1,26 @@
+<a name="IDH_1714"></a>
+<title>Show undo history</title>
+<table width="100%"><tr valign="top"><td><h2>Show undo history</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ShowUndoHistory
+ </pre>
+This command opens a window with the undo history. It is available from
+the Views, Open subviews submenu.
+<p>
+Double clicking on a line reverts the database to the state before the
+corresponding action.
+<p>
+It is possible to truncate the undo history by right clicking and selecting
+the corresponding menu item. The unfo information for the currently selected
+user action will be removed together with the information about all preceding actions.
+<p>
+The redoable user actions are displayed in italics.
+The current position in the undo buffers is displayed in bold, it
+usually denotes the first redoable user action.
+<p>
+See also
+        <a href="1710.html">Undo</a>
+        <a href="1711.html">Redo</a>
+        <a href="1712.html">Reset Undo</a>
+        <a href="1713.html">Disable Undo</a>

@@ -1,0 +1,64 @@
+<a name="IDH_288"></a>
+<title> Asks</title>
+<table width="100%"><tr valign="top"><td><h2> Asks</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+// Ask the user to enter a string
+//      defval - the default string value. This value
+//               will appear in the dialog box.
+//      hist   - history id. One of HIST_... constants
+//      prompt - the prompt to display in the dialog box
+// Returns: the entered string.
+<p>
+string ask_str(string defval, long hist, string prompt);
+<p>
+#define HIST_SEG    1           ///&lt; segment names
+#define HIST_CMT    2           ///&lt; comments
+#define HIST_SRCH   3           ///&lt; search substrings
+#define HIST_IDENT  4           ///&lt; names
+#define HIST_FILE   5           ///&lt; file names
+#define HIST_TYPE   6           ///&lt; type declarations
+#define HIST_CMD    7           ///&lt; commands
+#define HIST_DIR    8           ///&lt; directory names (text version only)
+<p>
+// Ask the user to choose a file
+//      for_saving- 0: &quot;Open&quot; dialog box, 1: &quot;Save&quot; dialog box
+//      mask   - the input file mask as &quot;*.*&quot; or the default file name.
+//      prompt - the prompt to display in the dialog box
+// Returns: the selected file.
+<p>
+string ask_file(bool for_saving, string mask, string prompt);
+<p>
+// Ask the user to enter an address
+//      defval - the default address value. This value
+//               will appear in the dialog box.
+//      prompt - the prompt to display in the dialog box
+// Returns: the entered address or BADADDR.
+<p>
+long ask_addr(long defval, string prompt);
+<p>
+// Ask the user to enter a number
+//      defval - the default value. This value
+//               will appear in the dialog box.
+//      prompt - the prompt to display in the dialog box
+// Returns: the entered number or -1.
+<p>
+long ask_long(long defval, string prompt);
+<p>
+// Ask the user to enter a segment value
+//      defval - the default value. This value
+//               will appear in the dialog box.
+//      prompt - the prompt to display in the dialog box
+// Returns: the entered segment selector or BADSEL.
+<p>
+long ask_seg(long defval, string prompt);
+<p>
+// Ask the user a question and let him answer Yes/No/Cancel
+//      defval - the default answer. This answer will be selected if the user
+//               presses Enter.
+//      prompt - the prompt to display in the dialog box
+// Returns: -1:cancel, 0-no, 1-ok
+<p>
+long ask_yn(long defval, string prompt);
+
+</pre>

@@ -1,0 +1,27 @@
+<a name="IDH_160"></a>
+<title>IDC: Functions</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: Functions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+An IDC function always returns a value. There are 2 kinds of functions:
+<pre>
+  - <a href="162.html">built-in</a> functions
+  - user-defined functions
+</pre>
+A user-defined function is declared this way:
+<pre>
+  static func(arg1,arg2,arg3)
+  {
+    <a href="159.html">statements</a> ...
+  }
+</pre>
+It is not necessary to specify the parameter types
+because all necessary type conversions are performed automatically.
+<p>
+By default all function arguments are passed by value, except:
+<pre>
+  - objects are always passed by reference
+  - functions are always passed by reference
+  - it is possible to pass a variable by reference using the &amp; operator
+</pre>
+If the function to call does not exist, IDA tries to resolve the name using
+the debugged program labels. If it succeeds, an <a href="1572.html">dbg_appcall</a> is performed.

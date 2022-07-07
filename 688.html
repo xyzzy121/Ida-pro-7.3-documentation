@@ -1,0 +1,23 @@
+<a name="IDH_688"></a>
+<title>Remove Function Tail</title>
+<table width="100%"><tr valign="top"><td><h2>Remove Function Tail</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: AppendFunctionTail
+ </pre>
+This command removes the function tail at the cursor from a function definition.
+<p>
+If there are several parent functions for the current function tail range,
+IDA will ask to select the parent function.
+<p>
+After the confirmation, the current function tail range will be removed from the
+selected function definition.
+<p>
+If the parent was the only owner of the current tail, then the tail will be destroyed.
+Otherwise it will still be present in the database. If the removed parent was the owner
+of the tail, then another function will be selected as the owner.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="687.html">Append function tail</a></pre>

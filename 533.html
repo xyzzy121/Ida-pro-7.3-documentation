@@ -1,0 +1,25 @@
+<a name="IDH_533"></a>
+<title>Create alignment directive</title>
+<table width="100%"><tr valign="top"><td><h2>Create alignment directive</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: MakeAlignment
+ </pre>
+This command allows you to create an alignment directive.
+The alignment directive will replace a number of useless bytes
+inserted by the linker to align code and data to paragraph boundary
+or any other address which is equal to a power of two.
+<p>
+You can select a range to be converted to an alignment directive.
+If you have selected a range, IDA will try to determine a
+correct alignment automatically.
+<p>
+There are at least two requirements for this command to work:
+        - there must be enough unexplored bytes at the current address.
+        - an alignment directive must always end at an address
+          which is divisible by a power or two.
+<p>
+See also
+<pre>
+         <a href="530.html">Edit|Other</a> submenu
+         <a href="426.html">How to Enter an Address</a>.</pre>

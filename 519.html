@@ -1,0 +1,35 @@
+<a name="IDH_519"></a>
+<title>Change Segment Combination</title>
+<table width="100%"><tr valign="top"><td><h2>Change Segment Combination</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+Combination
+<p>
+A field that describes how the linker can combine the
+segment with other segments. Under MS-DOS, segments with
+the same name and class can be combined in two ways: they
+can be concatenated to form one logical segment, or they
+can be overlapped. In the latter case, they have either the
+same start address or the same end address, and they
+describe a common range in memory. Values for the field
+are:
+<pre>
+  Private. Do not combine with any
+           other program segment.
+  Public.  Combine by appending at
+           an offset that meets the
+           alignment requirement.
+</pre>
+<pre>
+  Stack.   Combine as for Public.
+           This combine type forces
+           byte alignment.
+</pre>
+<pre>
+  Common.  Combine by overlay using
+           maximum size.
+
+</pre>
+Changing segment combination changes only the segment definition
+on the screen. Nothing else will happen.
+<p>
+See also other <a href="514.html">SegEdit</a> form fields.

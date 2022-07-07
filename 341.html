@@ -1,0 +1,14 @@
+<a name="IDH_341"></a>
+<title> set_func_cmt</title>
+<table width="100%"><tr valign="top"><td><h2> set_func_cmt</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+set function comment
+     ea         - any address belonging to the function
+     cmt        - a function comment line
+     repeatable - 1: get repeatable comment
+                  0: get regular comment
+<p>
+void set_func_cmt(long ea, string cmt, long repeatable);
+
+</pre>

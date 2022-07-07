@@ -1,0 +1,74 @@
+<a name="IDH_158"></a>
+<title>IDC: Expressions</title>
+<table width="100%"><tr valign="top"><td><h2>IDC: Expressions</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+In the IDC expressions you can use almost all C operations except:
+<pre>
+  complex assignment operations as '+='
+</pre>
+<a href="1582.html">Constants</a> are defined more or less like in C, with
+some minor differences.
+<p>
+There are four type conversion operations:
+<pre>
+  long(expr)  floating point numbers are truncated during conversion
+  char(expr)
+  float(expr)
+  __int64(expr)
+</pre>
+However, explicit type conversions are rarely required because all type
+conversions are made automatically:
+<pre>
+  - addition:
+        if both operands are strings,
+          string addition is performed (strings are concatenated);
+        if both operands are objects,
+          object combination is performed (a new object is created)
+        if floating point operand exists,
+          both operands are converted to floats;
+        otherwise
+          both operands are converted to longs;
+</pre>
+<pre>
+  - subtraction/multiplication/division:
+        if floating point operand exists,
+          both operands are converted to floats;
+        if both operands are objects and the operation is subtraction,
+          object subtraction is performed (a new object is created)
+        otherwise
+          both operands are converted to longs;
+</pre>
+<pre>
+  - comparisons (==,!=, etc):
+        if both operands are strings, string comparison is performed;
+        if floating point operand exists,
+          both operands are converted to floats;
+        otherwise
+          both operands are converted to numbers;
+</pre>
+<pre>
+  - all other operations:
+        operand(s) are converted to longs;
+</pre>
+If any of the long operands is 64bit, the other operand is converted to 64bit too.
+<p>
+There is one notable exception concerning type conversions: if one
+operand is a string and the other is zero (0), then a string operation
+is performed. Zero is converted to an empty string in this case.
+<p>
+The &amp; operator is used to take a reference to a variable. References
+themselves cannot be modified once created. Any assignment to them
+will modify the target variable. For example:
+<pre>
+        auto x, r;
+        r = &amp;x;
+        r = 1;   // x is equal to 1 now
+</pre>
+References to references are immediately resolved:
+<pre>
+        auto x, r1, r2;
+        r1 = &amp;x;
+        r2 = &amp;r1; // r2 points to x
+</pre>
+Since all non-object arguments are passed to functions by value, references are
+a good way to pass arguments by reference.

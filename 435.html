@@ -1,0 +1,24 @@
+<a name="IDH_435"></a>
+<title>Load debug information file</title>
+<table width="100%"><tr valign="top"><td><h2>Load debug information file</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: LoadDbgFile
+ </pre>
+This command loads a DBG file.
+<p>
+If the program being disassembled has a companion DBG file, then
+this command may be used to load information from a DBG file into the
+database. IDA loads DBG files automatically if it can find them
+in the directory with the input file.
+<p>
+The built-in debug information loader cannot load NB10 format files and PDB files.
+To load those files, please use a special plugin PDB.DLL which can be run manually
+using Edit-&gt;Plugins submenu. This plugin uses MS Windows DLLs to load the
+debug information and therefore has the following limitations:
+<pre>
+        - it works only under MS Windows
+        - it will load only PDBs compatible with the currently
+          installed IMAGEHLP.DLL
+</pre>
+See also <a href="430.html">Load... submenu</a> commands.

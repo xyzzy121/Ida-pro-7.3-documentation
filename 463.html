@@ -1,0 +1,18 @@
+<a name="IDH_463"></a>
+<title>Convert operand to binary number</title>
+<table width="100%"><tr valign="top"><td><h2>Convert operand to binary number</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpBinary
+ </pre>
+This command makes the current instruction or data operand type binary.
+IDA always uses 123b notation for binary numbers even if the current
+assembler does not support binary numbers.
+<p>
+When you use this command, IDA deletes the <a href="477.html">manually</a> entered operand.
+<p>
+If the cursor is on the first operand (the cursor is before ',')
+then the first operand will be affected; otherwise, all other operands will be
+affected.
+<p>
+See also <a href="1382.html">Edit|Operand types|Number</a> submenu.

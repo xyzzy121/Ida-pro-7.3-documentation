@@ -1,0 +1,47 @@
+<a name="IDH_620"></a>
+<title>Analysis options</title>
+<table width="100%"><tr valign="top"><td><h2>Analysis options</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: SetAuto
+ </pre>
+This command allows you to disable and enable the autoanalysis
+and its indicator.
+<p>
+Usually, the auto analysis is enabled.
+Disable it if you are sure that it will help you.
+<p>
+Here you can change various kernel analysis <a href="621.html">options 1</a>
+and <a href="622.html">options 2</a> and <a href="1688.html">options 3</a>,
+change the processor type (if the processor module supports several types), or
+the assembler style.
+If the current <a href="618.html">processor</a> has options, there will also be a button
+to change processor-specific options.
+If the current <a href="618.html">processor</a> supports memory mapping, there will
+also be a button to change the memory mapping ranges.
+<p>
+The analysis indicator is located in the bottom left corner of the main IDA window (upper right corner in text verion).
+Possible values of the indicator:
+<pre>
+ &quot;          &quot; empty indicator means that the indicator is turned off.
+ AU:  idle    Autoanalysis is finished.
+ AU:disabled  Autoanalysis is disabled.
+ FL:&lt;address&gt; execution flow is being traced
+ PR:&lt;address&gt; a function is being created
+ TL:&lt;address&gt; a function tail is being created
+ SP:&lt;address&gt; the stack pointer is being traced
+ AC:&lt;address&gt; the address is being analyzed
+ LL:&lt;number&gt;  a signature file is being loaded
+ L1:&lt;address&gt; the first pass of FLIRT
+ L2:&lt;address&gt; the second pass of FLIRT
+ L3:&lt;address&gt; the third pass of FLIRT
+ TP:&lt;address&gt; type information is being applied
+ FI:&lt;address&gt; the final pass of autoanalysis
+ WF:&lt;address&gt; weak execution flow is being traced
+ ??:&lt;address&gt; the address becomes unexplored
+  @:&lt;number&gt;  indication of various activity
+</pre>
+Hint: you can right-click the analysis indicator to quickly disable or enable it, or to reanalyze the program.
+<p>
+See also <a href="604.html">Options</a> submenu.
+         <a href="416.html">auto analysis explanation</a>.

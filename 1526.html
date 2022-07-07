@@ -1,0 +1,15 @@
+<a name="IDH_1526"></a>
+<title> rebase_program</title>
+<table width="100%"><tr valign="top"><td><h2> rebase_program</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Rebase the whole program by 'delta' bytes
+     delta - number of bytes to move the program
+     flags - combination of <a href="1525.html">MFS_...</a> constants
+             it is recommended to use MSF_FIXONCE so that the loader takes
+             care of global variables it stored in the database
+returns: error code <a href="1525.html">MOVE_SEGM_...</a>
+<p>
+long rebase_program(long delta, long flags);
+
+</pre>

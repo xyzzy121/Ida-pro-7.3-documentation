@@ -1,0 +1,37 @@
+<a name="IDH_513"></a>
+<title>Delete a segment</title>
+<table width="100%"><tr valign="top"><td><h2>Delete a segment</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: KillSegment
+ </pre>
+This command allows you to delete a segment.
+<p>
+IDA will ask your the permission to disable the addresses occupied by the segment.
+If you allow this operation, all information about the segment will
+be deleted. In other words, IDA will discard the information about
+instructions or data, comments etc.
+<p>
+If you check the &quot;disable addresses&quot; checkbox, IDA will mark the addresses
+occupied by the segment as &quot;nonexistent&quot; in the program. You will lose *ALL*
+information, including byte values.
+<p>
+It is impossible to disassemble the content of adresses not located in any
+segment, therefore you must create a new segment if you want to resume the
+disassembly of that part of the code.
+<p>
+You can also edit (see below) an adjacent segment to <a href="514.html">expand</a> it to those
+addresses.
+<p>
+IDA will ask your the permission to disable addresses occupied by the segment.
+If you give your permission, information about the segment will be
+deleted, otherwise IDA will discard information about instruction/data,
+comments etc, but retain byte values so that you will be able to create
+another segment afterwards.
+<p>
+To disassemble the addresses occupied by the segment, you need to create a
+new segment again (i.e. you cannot disassemble bytes without a segment).
+You can also <a href="514.html">expand</a> another adjacent segment to
+these addresses.
+<p>
+See also <a href="506.html">Edit|Segments</a> submenu.

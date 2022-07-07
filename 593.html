@@ -1,0 +1,40 @@
+<a name="IDH_593"></a>
+<title>Structures window</title>
+<table width="100%"><tr valign="top"><td><h2>Structures window</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: OpenStructures
+ </pre>
+This command opens the structure definitions window.
+<p>
+You can modify structure definitions here: add/rename/delete structures,
+add/delete/define structure members.
+<p>
+Each structure must have a unique name. A field name must be unique in the
+structure. In order to create or delete a field, use data definitions
+commands (<a href="453.html">data</a>, <a href="454.html">string literal</a>, <a href="455.html">array</a>, <a href="456.html">undefine</a>, <a href="457.html">Rename</a>).
+You may also define <a href="479.html">regular</a> or <a href="480.html">repeatable</a> comments.
+<p>
+In order to modify member types, use commands from the <a href="458.html">Edit|Operand types...</a> submenu.
+For example, to convert a structure member to an offset, use one of the following
+commands:
+<pre>
+      <a href="468.html">Convert to offset (automatic)</a>
+      <a href="467.html">Convert to offset (from a segment base)</a>
+      <a href="470.html">Convert to offset (complex offset expression)</a>
+</pre>
+Some struct types in this window are created automatically by IDA. They are
+copies of some local types. Such structs are displayed in gray. They are
+considered as C-level types. As soon as the user edits such a type, it becomes
+an ASM-level type. Read <a href="1042.html">more</a>.
+<p>
+In the structure header IDA displays the following info:
+<pre>
+  - the structure size in bytes
+  - the alignment
+  - for C level types: copyof_XX where XX is the ordinal type number.
+  - for ASM level types: mappedto_XX where XX is the ordinal type number.
+    It is possible to jump to the corresponding local type by pressing Enter.
+  - for types copied from standard type libraries: &quot;standard type&quot;
+</pre>
+See also <a href="1356.html">View|Open subviews</a> submenu.

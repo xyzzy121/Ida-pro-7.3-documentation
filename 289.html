@@ -1,0 +1,16 @@
+<a name="IDH_289"></a>
+<title> set_ida_state</title>
+<table width="100%"><tr valign="top"><td><h2> set_ida_state</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Change IDA indicator.
+Returns the previous status.
+<p>
+long set_ida_state(long status);
+<p>
+#define IDA_STATUS_READY    0 // READY     IDA is idle
+#define IDA_STATUS_THINKING 1 // THINKING  Analyzing but the user may press keys
+#define IDA_STATUS_WAITING  2 // WAITING   Waiting for the user input
+#define IDA_STATUS_WORK     3 // BUSY      IDA is busy
+
+</pre>

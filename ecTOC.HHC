@@ -1,0 +1,3637 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="makeqhelp www.hex-rays.com">
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ExWindow Styles" value="0x200">
+	<param name="Window Styles" value="0x800025">
+	<param name="Font" value="MS Sans Serif,9,0">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="The Interactive Disassembler Help Index">
+	<param name="Local" value="index.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC language">
+	<param name="Local" value="157.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Alphabetical list of IDC functions">
+	<param name="Local" value="162.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Index of debugger related IDC functions">
+	<param name="Local" value="1216.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Abort IDA">
+	<param name="Local" value="449.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add breakpoint">
+	<param name="Local" value="1405.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add execution trace">
+	<param name="Local" value="1450.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add read/write trace">
+	<param name="Local" value="1449.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add watch">
+	<param name="Local" value="1410.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add write trace">
+	<param name="Local" value="1448.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Add/Edit an enum">
+	<param name="Local" value="501.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_auto_stkpnt">
+	<param name="Local" value="146.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_default_til">
+	<param name="Local" value="174.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_entry">
+	<param name="Local" value="355.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_enum">
+	<param name="Local" value="731.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_enum_member">
+	<param name="Local" value="739.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_func">
+	<param name="Local" value="330.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_idc_hotkey">
+	<param name="Local" value="192.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_segm_ex">
+	<param name="Local" value="299.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_sourcefile">
+	<param name="Local" value="644.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_struc">
+	<param name="Local" value="393.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_struc_member">
+	<param name="Local" value="398.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="add_user_stkpnt">
+	<param name="Local" value="1051.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Additional information at the end of file">
+	<param name="Local" value="218.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Analysis options">
+	<param name="Local" value="620.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Anchor">
+	<param name="Local" value="420.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Android debugger">
+	<param name="Local" value="145.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Append Function Tail">
+	<param name="Local" value="687.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="APPLE PUBLIC SOURCE LICENSE">
+	<param name="Local" value="1163.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Apply patches to input file">
+	<param name="Local" value="1618.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="apply_type">
+	<param name="Local" value="173.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="ARM processor specifics">
+	<param name="Local" value="1350.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="ARM specific">
+	<param name="Local" value="681.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Arrows window">
+	<param name="Local" value="1385.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Asks">
+	<param name="Local" value="288.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Assemble an instruction">
+	<param name="Local" value="529.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Assembler Directives Dialog">
+	<param name="Local" value="608.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Assembler level and C level types">
+	<param name="Local" value="1042.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="atoa">
+	<param name="Local" value="188.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="atol">
+	<param name="Local" value="190.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Attach to process">
+	<param name="Local" value="1452.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="attach_process">
+	<param name="Local" value="12.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Auto analysis is not completed">
+	<param name="Local" value="630.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="auto_mark_range">
+	<param name="Local" value="678.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="auto_wait">
+	<param name="Local" value="195.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Background Analysis">
+	<param name="Local" value="416.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bad input file format">
+	<param name="Local" value="223.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bad Relocation Table">
+	<param name="Local" value="217.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Basic block tracing">
+	<param name="Local" value="1628.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="batch">
+	<param name="Local" value="287.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="begin_type_updating">
+	<param name="Local" value="1606.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Binary string format">
+	<param name="Local" value="528.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bitfields">
+	<param name="Local" value="500.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bitwise negate operand">
+	<param name="Local" value="476.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bochs debugger">
+	<param name="Local" value="1329.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bochs debugger FAQ">
+	<param name="Local" value="1333.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bochs Disk Image operation mode">
+	<param name="Local" value="1330.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bochs IDB operation mode">
+	<param name="Local" value="1331.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Bochs PE operation mode">
+	<param name="Local" value="1332.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Breakpoint conditions">
+	<param name="Local" value="1488.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Breakpoint handling functions">
+	<param name="Local" value="1076.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Breakpoints list">
+	<param name="Local" value="1404.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Breakpoints submenu">
+	<param name="Local" value="1454.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Browser options">
+	<param name="Local" value="1304.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Building the PIN tool">
+	<param name="Local" value="1655.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="byte_value">
+	<param name="Local" value="177.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="C++ type details">
+	<param name="Local" value="1691.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Calculator">
+	<param name="Local" value="596.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="call_system">
+	<param name="Local" value="198.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot add the selection to the function definition">
+	<param name="Local" value="695.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot assign to Segment Register">
+	<param name="Local" value="694.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot Create Database">
+	<param name="Local" value="234.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot create segment registers range">
+	<param name="Local" value="693.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot find file segmentation">
+	<param name="Local" value="229.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot find input File">
+	<param name="Local" value="637.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot generate executable file">
+	<param name="Local" value="222.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot move segment start address">
+	<param name="Local" value="233.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot move segment start address">
+	<param name="Local" value="232.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cannot rename a location">
+	<param name="Local" value="228.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Center current line in window">
+	<param name="Local" value="1679.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change operand sign">
+	<param name="Local" value="475.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Segment Addressing">
+	<param name="Local" value="516.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Segment Alignment">
+	<param name="Local" value="518.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change segment attributes">
+	<param name="Local" value="514.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Segment Combination">
+	<param name="Local" value="519.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Segment Name">
+	<param name="Local" value="515.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Segment Register Value">
+	<param name="Local" value="523.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change segment translation">
+	<param name="Local" value="521.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Change Stack Pointer">
+	<param name="Local" value="489.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Choose mark number">
+	<param name="Local" value="225.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Choose marked location">
+	<param name="Local" value="227.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Choose segment">
+	<param name="Local" value="525.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="choose_func">
+	<param name="Local" value="342.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="cleanup_appcall">
+	<param name="Local" value="1573.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Clear trace">
+	<param name="Local" value="1445.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Clear undo history">
+	<param name="Local" value="1712.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="collect_stack_trace">
+	<param name="Local" value="1247.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Color configuration">
+	<param name="Local" value="615.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Command line">
+	<param name="Local" value="1523.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Command line switches">
+	<param name="Local" value="417.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Comments Dialog">
+	<param name="Local" value="1369.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Common Public License Version 1.0">
+	<param name="Local" value="14.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="CommonBits">
+	<param name="Local" value="180.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="compile_idc_file">
+	<param name="Local" value="196.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="compile_idc_text">
+	<param name="Local" value="224.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Compiler">
+	<param name="Local" value="1354.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Complex Offset Expression">
+	<param name="Local" value="471.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Configuration files">
+	<param name="Local" value="419.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Connecting a remote PIN tool instance from IDA">
+	<param name="Local" value="1654.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to binary number">
+	<param name="Local" value="463.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to character">
+	<param name="Local" value="465.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to decimal number">
+	<param name="Local" value="462.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to floating point number">
+	<param name="Local" value="1380.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to hexadecimal number">
+	<param name="Local" value="461.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to number">
+	<param name="Local" value="460.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to octal number">
+	<param name="Local" value="464.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to offset (any segment)">
+	<param name="Local" value="469.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to offset (code segment)">
+	<param name="Local" value="468.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to offset (data segment)">
+	<param name="Local" value="467.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to offset (user-defined base)">
+	<param name="Local" value="470.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to segment">
+	<param name="Local" value="466.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to stack variable">
+	<param name="Local" value="474.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to structure offset">
+	<param name="Local" value="472.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert operand to symbolic constant (enum)">
+	<param name="Local" value="473.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert to array">
+	<param name="Local" value="455.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert to data">
+	<param name="Local" value="453.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert to instruction">
+	<param name="Local" value="452.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Convert to string literal">
+	<param name="Local" value="454.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Copy a structure type">
+	<param name="Local" value="1370.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Copy field info to pointers">
+	<param name="Local" value="1684.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create a new segment">
+	<param name="Local" value="507.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create a new structure from current data">
+	<param name="Local" value="1392.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create a regular comment">
+	<param name="Local" value="479.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create a repeatable comment">
+	<param name="Local" value="480.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create additional comment lines">
+	<param name="Local" value="481.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create alignment directive">
+	<param name="Local" value="533.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create ASM File">
+	<param name="Local" value="440.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create C header file">
+	<param name="Local" value="141.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create Difference File">
+	<param name="Local" value="443.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create Executable File">
+	<param name="Local" value="442.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create Function">
+	<param name="Local" value="484.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create HTML File">
+	<param name="Local" value="1504.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create INC File">
+	<param name="Local" value="1475.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create LST File">
+	<param name="Local" value="441.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create MAP File">
+	<param name="Local" value="439.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create segment - automatically chosen selector case">
+	<param name="Local" value="511.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create segment - simple case (PC)">
+	<param name="Local" value="509.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create segment - simple case (Z80)">
+	<param name="Local" value="510.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Create segment - user-defined selector case">
+	<param name="Local" value="512.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_align">
+	<param name="Local" value="683.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_array">
+	<param name="Local" value="668.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_byte">
+	<param name="Local" value="208.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_custom_data">
+	<param name="Local" value="680.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_data">
+	<param name="Local" value="18.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_double">
+	<param name="Local" value="215.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_dword">
+	<param name="Local" value="210.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_float">
+	<param name="Local" value="214.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_insn">
+	<param name="Local" value="201.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_oword">
+	<param name="Local" value="212.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_pack_real">
+	<param name="Local" value="347.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_qword">
+	<param name="Local" value="211.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_strlit">
+	<param name="Local" value="207.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_struct">
+	<param name="Local" value="682.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_tbyte">
+	<param name="Local" value="656.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_word">
+	<param name="Local" value="209.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="create_yword">
+	<param name="Local" value="213.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Credits">
+	<param name="Local" value="1462.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cross reference attributes">
+	<param name="Local" value="1305.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cross References Dialog">
+	<param name="Local" value="607.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Cross references window">
+	<param name="Local" value="592.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Customize Demangled Names">
+	<param name="Local" value="612.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Customizing graph layout">
+	<param name="Local" value="1160.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Dalvik debugger">
+	<param name="Local" value="1669.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Dalvik debugger extension functions">
+	<param name="Local" value="1673.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Database Is Empty">
+	<param name="Local" value="635.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Database is not closed">
+	<param name="Local" value="235.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Database snapshot manager">
+	<param name="Local" value="1622.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="dbg_appcall">
+	<param name="Local" value="1572.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger options">
+	<param name="Local" value="1413.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger submenu">
+	<param name="Local" value="1395.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger window">
+	<param name="Local" value="1396.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger: control">
+	<param name="Local" value="1213.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger: events">
+	<param name="Local" value="1214.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger: modules">
+	<param name="Local" value="1212.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugger: options">
+	<param name="Local" value="1215.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugging code snippets with QEMU">
+	<param name="Local" value="1588.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugging with gdbserver">
+	<param name="Local" value="1343.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugging with OpenOCD">
+	<param name="Local" value="1417.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugging with QEMU">
+	<param name="Local" value="1521.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Debugging with VMWare">
+	<param name="Local" value="1357.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Declare a structure variable">
+	<param name="Local" value="496.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="decode_insn">
+	<param name="Local" value="1218.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Define a new structure">
+	<param name="Local" value="491.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Define an enum member">
+	<param name="Local" value="503.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="define_exception">
+	<param name="Local" value="1311.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="define_local_var">
+	<param name="Local" value="685.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Del hidden range">
+	<param name="Local" value="1394.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_array_element">
+	<param name="Local" value="675.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_enum">
+	<param name="Local" value="732.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_enum_member">
+	<param name="Local" value="665.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_extra_cmt">
+	<param name="Local" value="711.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_fixup">
+	<param name="Local" value="366.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_func">
+	<param name="Local" value="331.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_idc_hotkey">
+	<param name="Local" value="193.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_items">
+	<param name="Local" value="686.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_segm">
+	<param name="Local" value="300.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_selector">
+	<param name="Local" value="293.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_source_linnum">
+	<param name="Local" value="649.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_sourcefile">
+	<param name="Local" value="646.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_stkpnt">
+	<param name="Local" value="1135.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_struc">
+	<param name="Local" value="394.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_struc_member">
+	<param name="Local" value="399.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="del_user_info">
+	<param name="Local" value="1278.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="delattr">
+	<param name="Local" value="1546.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete a segment">
+	<param name="Local" value="513.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete a structure">
+	<param name="Local" value="492.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete a structure member">
+	<param name="Local" value="633.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete an enum member">
+	<param name="Local" value="505.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete an enum type">
+	<param name="Local" value="502.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete breakpoint">
+	<param name="Local" value="1406.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete desktop">
+	<param name="Local" value="1421.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete Function">
+	<param name="Local" value="486.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Delete watch">
+	<param name="Local" value="1411.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="delete_all_segments">
+	<param name="Local" value="200.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="delete_array">
+	<param name="Local" value="671.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Deleting a Segment">
+	<param name="Local" value="629.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="demangle_name">
+	<param name="Local" value="272.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Demangled Names">
+	<param name="Local" value="611.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Demonstration Version Constraints">
+	<param name="Local" value="421.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Desktops">
+	<param name="Local" value="1418.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Detach from process">
+	<param name="Local" value="1453.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="detach_process">
+	<param name="Local" value="1318.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Diff to binary trace">
+	<param name="Local" value="1634.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Disable undo">
+	<param name="Local" value="1713.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Disassembly window">
+	<param name="Local" value="585.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Display chart of xrefs from addresses">
+	<param name="Local" value="1390.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Display chart of xrefs to addresses">
+	<param name="Local" value="1389.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Display function call graph">
+	<param name="Local" value="1377.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Display function flow chart">
+	<param name="Local" value="1376.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Display used-defined chart of xrefs">
+	<param name="Local" value="1391.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Dump database to IDC file">
+	<param name="Local" value="444.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Dump typeinfo to IDC file">
+	<param name="Local" value="445.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Dump/normal View">
+	<param name="Local" value="616.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="DYLD Shared Cache Utils">
+	<param name="Local" value="1705.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit a structure">
+	<param name="Local" value="495.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit an enum member">
+	<param name="Local" value="504.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit breakpoint">
+	<param name="Local" value="1407.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit Function">
+	<param name="Local" value="485.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit submenu">
+	<param name="Local" value="451.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit trace description">
+	<param name="Local" value="1632.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Comments submenu">
+	<param name="Local" value="478.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Operand types submenu">
+	<param name="Local" value="458.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Operand types|Number submenu">
+	<param name="Local" value="1382.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Operand types|Offset submenu">
+	<param name="Local" value="1381.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Other Submenu">
+	<param name="Local" value="530.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Patch core  submenu">
+	<param name="Local" value="526.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Edit|Segments submenu">
+	<param name="Local" value="506.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Empty input file">
+	<param name="Local" value="689.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Empty navigation stack">
+	<param name="Local" value="541.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="enable_tracing">
+	<param name="Local" value="1234.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="end_type_updating">
+	<param name="Local" value="1607.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Enter mark description">
+	<param name="Local" value="226.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Enums submenu">
+	<param name="Local" value="499.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Enums window">
+	<param name="Local" value="594.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Environment variables">
+	<param name="Local" value="1375.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Error loading overlays">
+	<param name="Local" value="220.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="eval">
+	<param name="Local" value="1220.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="eval_python">
+	<param name="Local" value="1122.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Exceptions">
+	<param name="Local" value="1414.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="exec_idc">
+	<param name="Local" value="1603.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="exec_python">
+	<param name="Local" value="1138.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Execute Script File">
+	<param name="Local" value="432.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Exit IDA">
+	<param name="Local" value="450.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="exit_process">
+	<param name="Local" value="10.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Expand a structure">
+	<param name="Local" value="493.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="expand_struc">
+	<param name="Local" value="1351.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Export binary trace">
+	<param name="Local" value="1636.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Export data">
+	<param name="Local" value="1671.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Export trace to text file">
+	<param name="Local" value="1637.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Exports window">
+	<param name="Local" value="1415.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="External programs and GDB Debugger">
+	<param name="Local" value="1587.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fclose">
+	<param name="Local" value="315.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fgetc">
+	<param name="Local" value="321.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="File submenu">
+	<param name="Local" value="429.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="filelength">
+	<param name="Local" value="316.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="File|Load file submenu">
+	<param name="Local" value="430.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="File|Produce output files  submenu">
+	<param name="Local" value="438.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Find">
+	<param name="Local" value="284.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Find all errors">
+	<param name="Local" value="1482.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Find all suspicious operands">
+	<param name="Local" value="1373.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="find_custom_data_format">
+	<param name="Local" value="1589.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="find_custom_data_type">
+	<param name="Local" value="1219.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="find_func_end">
+	<param name="Local" value="344.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="find_selector">
+	<param name="Local" value="291.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="firstattr">
+	<param name="Local" value="1547.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="FLAIR collision: the function with the given name already exists">
+	<param name="Local" value="1441.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="FLAIR match indecision: reference to function expected">
+	<param name="Local" value="1627.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fopen">
+	<param name="Local" value="314.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Force zero field offset">
+	<param name="Local" value="497.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="forget_exception">
+	<param name="Local" value="1313.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="format_cdata">
+	<param name="Local" value="1646.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fprintf">
+	<param name="Local" value="323.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fputc">
+	<param name="Local" value="322.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="fseek">
+	<param name="Local" value="317.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="ftell">
+	<param name="Local" value="318.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="func_contains">
+	<param name="Local" value="271.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Function calls window">
+	<param name="Local" value="1383.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Function chunk related functions">
+	<param name="Local" value="1077.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Function tracing">
+	<param name="Local" value="1447.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Functions provided by the replayer debugger">
+	<param name="Local" value="710.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Functions provided by the WinDbg debugger">
+	<param name="Local" value="712.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Functions submenu">
+	<param name="Local" value="483.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Functions window">
+	<param name="Local" value="586.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="gen_file">
+	<param name="Local" value="244.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="gen_flow_graph">
+	<param name="Local" value="1253.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="gen_simple_call_chart">
+	<param name="Local" value="1254.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="generate_disasm_line">
+	<param name="Local" value="273.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_array_element">
+	<param name="Local" value="674.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_array_id">
+	<param name="Local" value="669.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_bmask_cmt">
+	<param name="Local" value="722.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_bmask_name">
+	<param name="Local" value="721.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_bookmark">
+	<param name="Local" value="368.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_bookmark_desc">
+	<param name="Local" value="369.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_bytes">
+	<param name="Local" value="1600.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_cmt">
+	<param name="Local" value="280.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_color">
+	<param name="Local" value="167.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_curline">
+	<param name="Local" value="258.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_current_thread">
+	<param name="Local" value="5.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_db_byte">
+	<param name="Local" value="1366.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_debug_name">
+	<param name="Local" value="1205.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_debug_name_ea">
+	<param name="Local" value="1209.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_debugger_event_cond">
+	<param name="Local" value="1503.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_entry">
+	<param name="Local" value="357.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_entry_name">
+	<param name="Local" value="1307.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_entry_ordinal">
+	<param name="Local" value="356.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_entry_qty">
+	<param name="Local" value="354.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum">
+	<param name="Local" value="406.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_cmt">
+	<param name="Local" value="408.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_flag">
+	<param name="Local" value="410.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_idx">
+	<param name="Local" value="405.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member">
+	<param name="Local" value="716.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_bmask">
+	<param name="Local" value="411.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_by_name">
+	<param name="Local" value="412.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_cmt">
+	<param name="Local" value="730.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_enum">
+	<param name="Local" value="715.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_name">
+	<param name="Local" value="729.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_member_value">
+	<param name="Local" value="413.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_name">
+	<param name="Local" value="407.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_qty">
+	<param name="Local" value="403.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_size">
+	<param name="Local" value="409.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_enum_width">
+	<param name="Local" value="1298.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_exception_code">
+	<param name="Local" value="1309.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_exception_name">
+	<param name="Local" value="1310.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_exception_qty">
+	<param name="Local" value="1308.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_extra_cmt">
+	<param name="Local" value="278.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_field_ea">
+	<param name="Local" value="1579.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_file_ext">
+	<param name="Local" value="1157.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_bmask">
+	<param name="Local" value="717.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_enum_member">
+	<param name="Local" value="725.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_index">
+	<param name="Local" value="111.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_member">
+	<param name="Local" value="384.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_seg">
+	<param name="Local" value="294.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_first_struc_idx">
+	<param name="Local" value="371.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fixup_target_dis">
+	<param name="Local" value="364.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fixup_target_flags">
+	<param name="Local" value="1683.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fixup_target_off">
+	<param name="Local" value="363.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fixup_target_sel">
+	<param name="Local" value="362.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fixup_target_type">
+	<param name="Local" value="361.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_flags">
+	<param name="Local" value="708.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_forced_operand">
+	<param name="Local" value="282.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_fpnum">
+	<param name="Local" value="253.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_frame_args_size">
+	<param name="Local" value="348.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_frame_id">
+	<param name="Local" value="345.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_frame_lvar_size">
+	<param name="Local" value="346.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_frame_regs_size">
+	<param name="Local" value="650.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_frame_size">
+	<param name="Local" value="349.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_full_flags">
+	<param name="Local" value="248.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_func_attr">
+	<param name="Local" value="335.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_func_cmt">
+	<param name="Local" value="340.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_func_flags">
+	<param name="Local" value="337.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_func_name">
+	<param name="Local" value="339.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_func_off_str">
+	<param name="Local" value="343.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_gotea">
+	<param name="Local" value="1094.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_idb_path">
+	<param name="Local" value="247.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_imagebase">
+	<param name="Local" value="1058.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_ip_val">
+	<param name="Local" value="1119.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_item_end">
+	<param name="Local" value="268.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_item_head">
+	<param name="Local" value="1605.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_item_size">
+	<param name="Local" value="269.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_last_bmask">
+	<param name="Local" value="718.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_last_enum_member">
+	<param name="Local" value="726.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_last_index">
+	<param name="Local" value="537.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_last_member">
+	<param name="Local" value="385.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_last_struc_idx">
+	<param name="Local" value="372.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_local_tinfo">
+	<param name="Local" value="1291.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_manual_insn">
+	<param name="Local" value="652.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_cmt">
+	<param name="Local" value="388.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_flag">
+	<param name="Local" value="390.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_id">
+	<param name="Local" value="1644.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_name">
+	<param name="Local" value="387.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_offset">
+	<param name="Local" value="386.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_qty">
+	<param name="Local" value="381.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_size">
+	<param name="Local" value="389.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_member_strid">
+	<param name="Local" value="391.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_min_spd_ea">
+	<param name="Local" value="1267.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_module_info">
+	<param name="Local" value="1248.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_name">
+	<param name="Local" value="270.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_name_ea">
+	<param name="Local" value="255.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_bmask">
+	<param name="Local" value="719.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_enum_member">
+	<param name="Local" value="727.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_fixup_ea">
+	<param name="Local" value="359.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_func">
+	<param name="Local" value="333.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_index">
+	<param name="Local" value="610.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_offset">
+	<param name="Local" value="383.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_seg">
+	<param name="Local" value="295.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_next_struc_idx">
+	<param name="Local" value="373.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_nsec_stamp">
+	<param name="Local" value="353.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_numbered_type_name">
+	<param name="Local" value="1292.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_operand_type">
+	<param name="Local" value="276.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_operand_value">
+	<param name="Local" value="277.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_ordinal_qty">
+	<param name="Local" value="1286.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_original_byte">
+	<param name="Local" value="250.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_bmask">
+	<param name="Local" value="720.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_enum_member">
+	<param name="Local" value="728.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_fixup_ea">
+	<param name="Local" value="360.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_func">
+	<param name="Local" value="334.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_index">
+	<param name="Local" value="532.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_offset">
+	<param name="Local" value="382.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_prev_struc_idx">
+	<param name="Local" value="374.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_processes">
+	<param name="Local" value="1319.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_processor_name">
+	<param name="Local" value="279.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_qword">
+	<param name="Local" value="1321.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_reg_value">
+	<param name="Local" value="169.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_root_filename">
+	<param name="Local" value="246.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_screen_ea">
+	<param name="Local" value="257.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_segm_attr">
+	<param name="Local" value="311.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_segm_by_sel">
+	<param name="Local" value="256.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_segm_end">
+	<param name="Local" value="297.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_segm_name">
+	<param name="Local" value="298.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_segm_start">
+	<param name="Local" value="296.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_source_linnum">
+	<param name="Local" value="648.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_sourcefile">
+	<param name="Local" value="645.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_sp_delta">
+	<param name="Local" value="352.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_spd">
+	<param name="Local" value="351.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_sreg">
+	<param name="Local" value="261.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_str_type">
+	<param name="Local" value="283.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_strlit_contents">
+	<param name="Local" value="1516.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_by_idx">
+	<param name="Local" value="376.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_cmt">
+	<param name="Local" value="379.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_id">
+	<param name="Local" value="377.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_idx">
+	<param name="Local" value="375.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_name">
+	<param name="Local" value="378.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_qty">
+	<param name="Local" value="370.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_struc_size">
+	<param name="Local" value="380.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_thread_qty">
+	<param name="Local" value="1166.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_tinfo">
+	<param name="Local" value="1533.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_type">
+	<param name="Local" value="172.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_wide_byte">
+	<param name="Local" value="249.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_wide_dword">
+	<param name="Local" value="252.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="get_wide_word">
+	<param name="Local" value="251.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="getattr">
+	<param name="Local" value="1543.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="getn_enum">
+	<param name="Local" value="404.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="getn_thread">
+	<param name="Local" value="1625.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="getn_thread_name">
+	<param name="Local" value="1249.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Give Name to the Location">
+	<param name="Local" value="457.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graph colors">
+	<param name="Local" value="1142.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graph node groups">
+	<param name="Local" value="1129.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graph options">
+	<param name="Local" value="19.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graph overview window">
+	<param name="Local" value="1130.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graph view">
+	<param name="Local" value="42.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Graphs submenu">
+	<param name="Local" value="1378.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="guess_type">
+	<param name="Local" value="171.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="has_value">
+	<param name="Local" value="176.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="hasattr">
+	<param name="Local" value="1545.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Hashes">
+	<param name="Local" value="643.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Hidden ranges">
+	<param name="Local" value="654.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Hide">
+	<param name="Local" value="599.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Hide all items">
+	<param name="Local" value="1387.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Hide/unhide a border">
+	<param name="Local" value="535.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Highlighting identifiers">
+	<param name="Local" value="1386.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How to Enter a Number">
+	<param name="Local" value="423.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How to Enter a Segment Value">
+	<param name="Local" value="422.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How to Enter an Address">
+	<param name="Local" value="426.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How to Enter an Identifier">
+	<param name="Local" value="424.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How to enter text">
+	<param name="Local" value="425.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="How To Use List Viewers in IDA">
+	<param name="Local" value="427.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDA address space concepts">
+	<param name="Local" value="508.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="idadir">
+	<param name="Local" value="245.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: classes">
+	<param name="Local" value="1577.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Constants">
+	<param name="Local" value="1582.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Exceptions">
+	<param name="Local" value="89.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Expressions">
+	<param name="Local" value="158.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Functions">
+	<param name="Local" value="160.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: loader_input_t class">
+	<param name="Local" value="1581.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Predefined symbols">
+	<param name="Local" value="1165.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Slices">
+	<param name="Local" value="1578.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: Statements">
+	<param name="Local" value="159.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="IDC: variables">
+	<param name="Local" value="161.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Illegal Usage of the Switch">
+	<param name="Local" value="636.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Import binary trace">
+	<param name="Local" value="1635.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="import_type">
+	<param name="Local" value="175.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Imported module is not found">
+	<param name="Local" value="240.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Imports window">
+	<param name="Local" value="1416.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="inf_attr">
+	<param name="Local" value="285.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Instant debugger">
+	<param name="Local" value="1502.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Instruction tracing">
+	<param name="Local" value="1446.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Intel Mac OS X debugger">
+	<param name="Local" value="1078.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Invoke external help">
+	<param name="Local" value="626.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Invoke OS Shell">
+	<param name="Local" value="446.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_bf">
+	<param name="Local" value="738.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_code">
+	<param name="Local" value="179.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_loaded">
+	<param name="Local" value="178.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_mapped">
+	<param name="Local" value="482.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_union">
+	<param name="Local" value="392.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="is_value...() functions">
+	<param name="Local" value="1221.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump back">
+	<param name="Local" value="539.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump Immediate">
+	<param name="Local" value="538.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump submenu">
+	<param name="Local" value="543.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to a problematic location">
+	<param name="Local" value="548.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to cross reference">
+	<param name="Local" value="564.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to cross reference from current location">
+	<param name="Local" value="1593.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to cross references to operand">
+	<param name="Local" value="565.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to Entry Point">
+	<param name="Local" value="567.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to function">
+	<param name="Local" value="566.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to next function">
+	<param name="Local" value="1590.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to previous function">
+	<param name="Local" value="1591.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to previously marked position">
+	<param name="Local" value="563.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to the named location">
+	<param name="Local" value="545.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to the specified address">
+	<param name="Local" value="544.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to the specified file offset">
+	<param name="Local" value="1393.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to the specified segment">
+	<param name="Local" value="546.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jump to the specified segment register change point">
+	<param name="Local" value="547.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Jumps Stack">
+	<param name="Local" value="542.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="jumpto">
+	<param name="Local" value="194.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Kernel analysis options 1">
+	<param name="Local" value="621.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Kernel analysis options 2">
+	<param name="Local" value="622.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Kernel analysis options 3">
+	<param name="Local" value="1688.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Keyboard layout">
+	<param name="Local" value="627.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Keyboard Macros">
+	<param name="Local" value="418.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="lastattr">
+	<param name="Local" value="1548.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Linux debugger">
+	<param name="Local" value="1217.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="List of Functions">
+	<param name="Local" value="639.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load Additional Binary File">
+	<param name="Local" value="1372.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load additional file">
+	<param name="Local" value="433.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load C header">
+	<param name="Local" value="1367.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load debug information file">
+	<param name="Local" value="435.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load desktop">
+	<param name="Local" value="1419.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load file dialog">
+	<param name="Local" value="242.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load FLIRT signature file">
+	<param name="Local" value="436.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load IDS file">
+	<param name="Local" value="434.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load PDB debug information file">
+	<param name="Local" value="1374.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Load TDS debug information file">
+	<param name="Local" value="1512.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="load_and_run_plugin">
+	<param name="Local" value="653.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="load_debugger">
+	<param name="Local" value="1137.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t">
+	<param name="Local" value="1571.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.close">
+	<param name="Local" value="1570.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.getc">
+	<param name="Local" value="1551.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.gets">
+	<param name="Local" value="1576.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.getz">
+	<param name="Local" value="1427.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.read">
+	<param name="Local" value="93.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.readbytes">
+	<param name="Local" value="1553.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.seek">
+	<param name="Local" value="96.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.size">
+	<param name="Local" value="95.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loader_input_t.tell">
+	<param name="Local" value="1302.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="loadfile">
+	<param name="Local" value="319.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Local types window">
+	<param name="Local" value="1259.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Locals view (source level)">
+	<param name="Local" value="1518.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Low &amp; High Suspicious Operand Limits">
+	<param name="Local" value="606.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Low level breakpoint conditions">
+	<param name="Local" value="144.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="ltoa">
+	<param name="Local" value="189.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Lumina Metadata">
+	<param name="Local" value="1704.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Lumina Submenu">
+	<param name="Local" value="1698.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Main Idea">
+	<param name="Local" value="415.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Main Menu Bar">
+	<param name="Local" value="428.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="make_array">
+	<param name="Local" value="206.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Manual memory regions">
+	<param name="Local" value="1697.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Mark Position">
+	<param name="Local" value="582.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Maximal number of segments is reached">
+	<param name="Local" value="221.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Menu system">
+	<param name="Local" value="358.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Message Window">
+	<param name="Local" value="584.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Miscellanous Options">
+	<param name="Local" value="1371.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="mkdir">
+	<param name="Local" value="1617.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Module list">
+	<param name="Local" value="1457.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Move a segment">
+	<param name="Local" value="520.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="move_segm">
+	<param name="Local" value="1525.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Moving The Segment Start">
+	<param name="Local" value="628.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="msg">
+	<param name="Local" value="16.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Names Representation">
+	<param name="Local" value="609.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Names window">
+	<param name="Local" value="587.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Negative Offsets">
+	<param name="Local" value="231.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="next_addr">
+	<param name="Local" value="262.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="next_head">
+	<param name="Local" value="264.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="next_not_tail">
+	<param name="Local" value="266.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="nextattr">
+	<param name="Local" value="1549.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="No Segment for the current byte">
+	<param name="Local" value="641.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Not a virtual array file">
+	<param name="Local" value="690.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Notepad">
+	<param name="Local" value="1384.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="object.retrieve">
+	<param name="Local" value="1575.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="object.store">
+	<param name="Local" value="1574.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Objective-C Analysis Plugin">
+	<param name="Local" value="1687.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Obsolete Database Format">
+	<param name="Local" value="236.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_bin">
+	<param name="Local" value="696.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_enum">
+	<param name="Local" value="704.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_flt">
+	<param name="Local" value="1524.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_man">
+	<param name="Local" value="701.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_num">
+	<param name="Local" value="700.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_offset">
+	<param name="Local" value="698.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_offset_high16">
+	<param name="Local" value="707.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_plain_offset">
+	<param name="Local" value="697.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_seg">
+	<param name="Local" value="699.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_stkvar">
+	<param name="Local" value="706.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="op_stroff">
+	<param name="Local" value="705.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Open subviews">
+	<param name="Local" value="1356.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Options Submenu">
+	<param name="Local" value="604.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="OpTypes">
+	<param name="Local" value="181.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="ord">
+	<param name="Local" value="191.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Other options">
+	<param name="Local" value="1631.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Overlayed files">
+	<param name="Local" value="219.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Packed Files">
+	<param name="Local" value="216.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Page breakpoints">
+	<param name="Local" value="1648.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="parse_decls">
+	<param name="Local" value="1517.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="patch_byte">
+	<param name="Local" value="713.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="patch_dbg_byte">
+	<param name="Local" value="1365.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="patch_dword">
+	<param name="Local" value="679.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="patch_qword">
+	<param name="Local" value="254.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="patch_word">
+	<param name="Local" value="714.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Patched Bytes Are Skipped">
+	<param name="Local" value="638.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Patched bytes have relocation information">
+	<param name="Local" value="640.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Patching the Image">
+	<param name="Local" value="527.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Pause process">
+	<param name="Local" value="1399.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="PCRE2 LICENCE">
+	<param name="Local" value="1686.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="PE .idata section has additional data">
+	<param name="Local" value="243.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Perform en masse operation">
+	<param name="Local" value="459.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="PIN debugger">
+	<param name="Local" value="1652.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="PIN support for MacOSX">
+	<param name="Local" value="1653.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="plan_and_wait">
+	<param name="Local" value="202.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="plan_to_apply_idasgn">
+	<param name="Local" value="1161.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Plugin modules">
+	<param name="Local" value="536.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Plugin Options">
+	<param name="Local" value="1465.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="prev_addr">
+	<param name="Local" value="263.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="prev_head">
+	<param name="Local" value="265.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="prev_not_tail">
+	<param name="Local" value="267.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="prevattr">
+	<param name="Local" value="1550.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="print_decls">
+	<param name="Local" value="1676.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="print_insn_mnem">
+	<param name="Local" value="274.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="print_operand">
+	<param name="Local" value="275.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Already data or code">
+	<param name="Local" value="557.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Attention! Probably erroneous situation">
+	<param name="Local" value="560.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot disassemble">
+	<param name="Local" value="556.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot find alternative string for an operand">
+	<param name="Local" value="552.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot find comment">
+	<param name="Local" value="553.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot find name">
+	<param name="Local" value="551.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot find offset base">
+	<param name="Local" value="550.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Cannot find references">
+	<param name="Local" value="554.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Decision to convert to instruction/data is made by IDA">
+	<param name="Local" value="561.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Execution flows beyond limits">
+	<param name="Local" value="558.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Failed to trace the value of the stack pointer">
+	<param name="Local" value="1368.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Indirect execution flow">
+	<param name="Local" value="555.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: The decision made by IDA was wrong and rolled back">
+	<param name="Local" value="562.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problem: Too many lines">
+	<param name="Local" value="559.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problems List">
+	<param name="Local" value="549.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Problems window">
+	<param name="Local" value="595.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Process options">
+	<param name="Local" value="1398.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="process_config_line">
+	<param name="Local" value="1293.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="process_ui_action">
+	<param name="Local" value="1431.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Processor Type">
+	<param name="Local" value="618.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Produce call graph GDL file">
+	<param name="Local" value="1252.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Produce flow chart GDL file">
+	<param name="Local" value="1251.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Proximity view">
+	<param name="Local" value="1626.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Pull all metadata">
+	<param name="Local" value="1699.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Pull current function">
+	<param name="Local" value="1702.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Push all metadata">
+	<param name="Local" value="1700.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Push current function">
+	<param name="Local" value="1703.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="put_bookmark">
+	<param name="Local" value="367.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qbasename">
+	<param name="Local" value="603.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qdirname">
+	<param name="Local" value="602.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qexit">
+	<param name="Local" value="197.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qisabspath">
+	<param name="Local" value="1060.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qmake_full_path">
+	<param name="Local" value="1066.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qmakefile">
+	<param name="Local" value="984.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="qsleep">
+	<param name="Local" value="1315.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_dbg_byte">
+	<param name="Local" value="1596.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_dbg_dword">
+	<param name="Local" value="1598.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_dbg_memory">
+	<param name="Local" value="1613.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_dbg_qword">
+	<param name="Local" value="1599.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_dbg_word">
+	<param name="Local" value="1597.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_selection_end">
+	<param name="Local" value="260.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="read_selection_start">
+	<param name="Local" value="259.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="readlong">
+	<param name="Local" value="325.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="readshort">
+	<param name="Local" value="324.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="readstr">
+	<param name="Local" value="328.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Rebase program">
+	<param name="Local" value="1408.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="rebase_program">
+	<param name="Local" value="1526.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="recalc_spd">
+	<param name="Local" value="1426.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Redo an action">
+	<param name="Local" value="1711.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Refresh memory">
+	<param name="Local" value="1296.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Refresh Screen">
+	<param name="Local" value="1080.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="REGULAR EXPRESSION SYNTAX SUMMARY">
+	<param name="Local" value="578.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Reload the input file">
+	<param name="Local" value="431.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remote debugging">
+	<param name="Local" value="1463.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remote GDB Debugger">
+	<param name="Local" value="1335.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remote GDB Debugger options">
+	<param name="Local" value="1522.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remote iOS Debugger">
+	<param name="Local" value="1677.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remove binary trace">
+	<param name="Local" value="1633.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Remove Function Tail">
+	<param name="Local" value="688.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="rename">
+	<param name="Local" value="1615.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Rename a stack variable">
+	<param name="Local" value="1323.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Rename a structure/member">
+	<param name="Local" value="632.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Rename Any Address">
+	<param name="Local" value="531.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Rename register">
+	<param name="Local" value="1346.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="rename_array">
+	<param name="Local" value="670.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="rename_entry">
+	<param name="Local" value="676.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Repeat search for instruction/data with the specified operand">
+	<param name="Local" value="575.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Repeat search for substring in the disassembly">
+	<param name="Local" value="577.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Repeat search for substring in the file">
+	<param name="Local" value="580.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Replayer debugger">
+	<param name="Local" value="1639.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Reset desktop">
+	<param name="Local" value="1422.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Reset Hidden Messages">
+	<param name="Local" value="1464.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="resume_thread">
+	<param name="Local" value="8.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="retrieve_input_file_md5">
+	<param name="Local" value="1294.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="rotate_left">
+	<param name="Local" value="655.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Run to cursor">
+	<param name="Local" value="1403.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Run until return">
+	<param name="Local" value="1442.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="RunPythonStatement">
+	<param name="Local" value="1127.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="sanitize_file_name">
+	<param name="Local" value="1195.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Save database">
+	<param name="Local" value="447.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Save database as...">
+	<param name="Local" value="448.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Save desktop">
+	<param name="Local" value="1420.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="save_database">
+	<param name="Local" value="1303.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="savefile">
+	<param name="Local" value="320.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Scattered argument locations">
+	<param name="Local" value="1492.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Script command">
+	<param name="Local" value="437.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Scrolling graphs">
+	<param name="Local" value="1117.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for bytes not belonging to any function">
+	<param name="Local" value="581.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next code">
+	<param name="Local" value="570.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next data">
+	<param name="Local" value="571.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next explored byte">
+	<param name="Local" value="573.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next instruction/data with the specified operand">
+	<param name="Local" value="574.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next string with error">
+	<param name="Local" value="1481.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next suspicious operand">
+	<param name="Local" value="569.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for next unexplored byte">
+	<param name="Local" value="572.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for substring in the disassembly">
+	<param name="Local" value="576.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search for substring in the file">
+	<param name="Local" value="579.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Search submenu">
+	<param name="Local" value="568.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="search_path">
+	<param name="Local" value="1096.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Segment Class Name">
+	<param name="Local" value="517.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Segment Register Change Points">
+	<param name="Local" value="524.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Segment registers window">
+	<param name="Local" value="590.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Segments window">
+	<param name="Local" value="589.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="sel2para">
+	<param name="Local" value="290.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Select trace">
+	<param name="Local" value="1630.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Select union member">
+	<param name="Local" value="498.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="select_thread">
+	<param name="Local" value="6.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Selections in graphs">
+	<param name="Local" value="241.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="selector_by_name">
+	<param name="Local" value="307.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Selectors window">
+	<param name="Local" value="591.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="send_dbg_command">
+	<param name="Local" value="1592.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set current ip">
+	<param name="Local" value="1471.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set Default Segment Register Value">
+	<param name="Local" value="522.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set Direction for Searches">
+	<param name="Local" value="623.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set Function End">
+	<param name="Local" value="487.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set function/item type">
+	<param name="Local" value="1361.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set operand type">
+	<param name="Local" value="1601.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Set Video Mode">
+	<param name="Local" value="625.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_array_long">
+	<param name="Local" value="672.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_array_params">
+	<param name="Local" value="1334.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_array_string">
+	<param name="Local" value="673.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_bmask_cmt">
+	<param name="Local" value="724.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_bmask_name">
+	<param name="Local" value="723.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_cmt">
+	<param name="Local" value="204.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_color">
+	<param name="Local" value="168.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_debugger_event_cond">
+	<param name="Local" value="1505.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_default_sreg_value">
+	<param name="Local" value="308.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_bf">
+	<param name="Local" value="737.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_cmt">
+	<param name="Local" value="735.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_flag">
+	<param name="Local" value="736.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_idx">
+	<param name="Local" value="733.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_member_cmt">
+	<param name="Local" value="667.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_member_name">
+	<param name="Local" value="666.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_name">
+	<param name="Local" value="734.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_enum_width">
+	<param name="Local" value="1301.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_exception_flags">
+	<param name="Local" value="1312.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_fixup">
+	<param name="Local" value="365.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_frame_size">
+	<param name="Local" value="350.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_func_attr">
+	<param name="Local" value="336.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_func_cmt">
+	<param name="Local" value="341.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_func_end">
+	<param name="Local" value="332.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_func_flags">
+	<param name="Local" value="338.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_func_start">
+	<param name="Local" value="105.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_ida_state">
+	<param name="Local" value="289.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_local_type">
+	<param name="Local" value="1289.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_manual_insn">
+	<param name="Local" value="651.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_member_cmt">
+	<param name="Local" value="402.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_member_name">
+	<param name="Local" value="400.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_member_type">
+	<param name="Local" value="401.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_name">
+	<param name="Local" value="203.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_processor_type">
+	<param name="Local" value="286.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_reg_value">
+	<param name="Local" value="170.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_root_filename">
+	<param name="Local" value="1314.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_addressing">
+	<param name="Local" value="306.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_alignment">
+	<param name="Local" value="304.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_attr">
+	<param name="Local" value="312.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_class">
+	<param name="Local" value="303.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_combination">
+	<param name="Local" value="305.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_name">
+	<param name="Local" value="302.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segm_type">
+	<param name="Local" value="310.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_segment_bounds">
+	<param name="Local" value="301.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_selector">
+	<param name="Local" value="292.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_source_linnum">
+	<param name="Local" value="647.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_storage_type">
+	<param name="Local" value="1527.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_struc_cmt">
+	<param name="Local" value="397.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_struc_idx">
+	<param name="Local" value="395.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_struc_name">
+	<param name="Local" value="396.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="set_target_assembler">
+	<param name="Local" value="1583.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="setattr">
+	<param name="Local" value="1544.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Setup data types">
+	<param name="Local" value="617.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Setup hidden items">
+	<param name="Local" value="601.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Shifted pointers">
+	<param name="Local" value="1695.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Show application screen">
+	<param name="Local" value="1472.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Show trace callgraph">
+	<param name="Local" value="1638.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Show undo history">
+	<param name="Local" value="1714.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Shrink a structure">
+	<param name="Local" value="494.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Signatures window">
+	<param name="Local" value="588.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Silent mode of IDA">
+	<param name="Local" value="631.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="sizeof">
+	<param name="Local" value="1580.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Source code view">
+	<param name="Local" value="1272.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Specify instruction color">
+	<param name="Local" value="1456.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Specify instruction representation manually">
+	<param name="Local" value="534.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Specify Target Assembler">
+	<param name="Local" value="619.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="split_sreg_range">
+	<param name="Local" value="677.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="sprintf">
+	<param name="Local" value="183.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Stack trace">
+	<param name="Local" value="1412.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Stack Variables Window">
+	<param name="Local" value="488.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Start process">
+	<param name="Local" value="1397.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="start_process">
+	<param name="Local" value="9.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Step into">
+	<param name="Local" value="1401.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Step over">
+	<param name="Local" value="1402.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Step Tracing Options">
+	<param name="Local" value="1649.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="strfill">
+	<param name="Local" value="1558.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="String encodings">
+	<param name="Local" value="1433.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="String literal style dialog">
+	<param name="Local" value="613.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="String options">
+	<param name="Local" value="614.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Strings window">
+	<param name="Local" value="1379.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="strlen">
+	<param name="Local" value="186.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="strstr">
+	<param name="Local" value="185.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Structures submenu">
+	<param name="Local" value="490.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Structures window">
+	<param name="Local" value="593.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="substr">
+	<param name="Local" value="184.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="suspend_process">
+	<param name="Local" value="11.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="suspend_thread">
+	<param name="Local" value="7.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Switch debugger">
+	<param name="Local" value="1461.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Take database snapshot">
+	<param name="Local" value="1621.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Take memory snapshot">
+	<param name="Local" value="1470.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="take_memory_snapshot">
+	<param name="Local" value="1235.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Terminate process">
+	<param name="Local" value="1400.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Text Representation Dialog">
+	<param name="Local" value="605.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="The current node">
+	<param name="Local" value="85.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="The Name List is Empty">
+	<param name="Local" value="237.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Thread list">
+	<param name="Local" value="1423.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="to_ea">
+	<param name="Local" value="182.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Toggle leading zeroes">
+	<param name="Local" value="1510.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="toggle_bnot">
+	<param name="Local" value="703.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="toggle_sign">
+	<param name="Local" value="702.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Trace events functions">
+	<param name="Local" value="1651.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Trace file functions">
+	<param name="Local" value="1650.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Trace management">
+	<param name="Local" value="1629.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Trace window">
+	<param name="Local" value="1444.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Tracing options">
+	<param name="Local" value="1451.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Tracing submenu">
+	<param name="Local" value="1443.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="trim">
+	<param name="Local" value="1560.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Type libraries window">
+	<param name="Local" value="1358.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="typeinfo.print">
+	<param name="Local" value="1647.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="typeinfo.size">
+	<param name="Local" value="1508.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Undefine a byte">
+	<param name="Local" value="456.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Undo an action">
+	<param name="Local" value="1710.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Undo the last 'Return' Command">
+	<param name="Local" value="540.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Unexpected Database Format">
+	<param name="Local" value="239.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Unhide">
+	<param name="Local" value="600.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Unhide all items">
+	<param name="Local" value="1388.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="unlink">
+	<param name="Local" value="1616.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Unpacked database is dangerous">
+	<param name="Local" value="634.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="update_extra_cmt">
+	<param name="Local" value="709.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Upgrading IDA database">
+	<param name="Local" value="238.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="User-defined operand">
+	<param name="Local" value="477.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="validate_idb_names">
+	<param name="Local" value="205.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Various dialog help messages">
+	<param name="Local" value="1345.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Various graph hints">
+	<param name="Local" value="1159.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="View all metadata">
+	<param name="Local" value="1701.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="View Internal Flags">
+	<param name="Local" value="598.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="View segment registers">
+	<param name="Local" value="597.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="View submenu">
+	<param name="Local" value="583.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Virtual Array: Too high VA version">
+	<param name="Local" value="692.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Watch list">
+	<param name="Local" value="1409.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Watch view (source level)">
+	<param name="Local" value="1325.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Watches submenu">
+	<param name="Local" value="1455.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="WinDbg Debugger">
+	<param name="Local" value="1520.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Windmp file loader">
+	<param name="Local" value="1529.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Window is in Dumping Mode">
+	<param name="Local" value="642.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Windows submenu">
+	<param name="Local" value="624.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="write_dbg_memory">
+	<param name="Local" value="1614.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="writelong">
+	<param name="Local" value="327.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="writeshort">
+	<param name="Local" value="326.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="writestr">
+	<param name="Local" value="329.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Xrefs">
+	<param name="Local" value="313.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="xtol">
+	<param name="Local" value="187.html">
+</OBJECT>
+<LI><OBJECT type="text/sitemap">
+	<param name="Name" value="Zooming graphs">
+	<param name="Local" value="281.html">
+</OBJECT>
+</UL>
+</BODY></HTML>

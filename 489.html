@@ -1,0 +1,29 @@
+<a name="IDH_489"></a>
+<title>Change Stack Pointer</title>
+<table width="100%"><tr valign="top"><td><h2>Change Stack Pointer</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+ Action    name: ChangeStackPointer
+ </pre>
+This command allows you to specify how the stack pointer (SP)
+is modified by the current instruction.
+<p>
+You cannot use this command if the current instruction does not belong to
+any <a href="484.html">function</a>.
+<p>
+You will need to use this command only if IDA was not able to trace the value of the SP register.
+Usually IDA can handle it but in some special cases it fails.
+An example of such a situation is an indirect call of a function that
+purges its parameters from the stack. In this case, IDA has no
+imformation about the function and cannot properly trace the value of SP.
+<p>
+Please note that you need to specify the <b>difference</b> between the old and
+new values of SP.
+<p>
+The value of SP is used if the current function accesses local variables
+by [ESP+xxx] notation.
+<p>
+See also
+<pre>
+         <a href="483.html">Edit|Functions</a> submenu.
+         <a href="474.html">Convert to stack variable</a></pre>

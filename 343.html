@@ -1,0 +1,17 @@
+<a name="IDH_343"></a>
+<title> get_func_off_str</title>
+<table width="100%"><tr valign="top"><td><h2> get_func_off_str</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+convert address to 'funcname+offset' string
+     ea - address to convert
+returns: if the address belongs to a function then
+           return a string formed as 'name+offset'
+           where 'name'   is a function name
+                 'offset' is offset within the function
+         else
+           return 0
+<p>
+string get_func_off_str(long ea);
+
+</pre>

@@ -1,0 +1,17 @@
+<a name="IDH_1527"></a>
+<title> set_storage_type</title>
+<table width="100%"><tr valign="top"><td><h2> set_storage_type</h2></td>
+<td width="64"><img src="ida55.bmp"/></td></tr></table>
+<pre>
+Set storage type
+     start_ea - starting address
+     end_ea   - ending address
+     stt     - new storage type, one of STT_VA and STT_MM
+returns: 0 - ok, otherwise internal error code
+<p>
+long set_storage_type(long start_ea, long end_ea, long stt);
+<p>
+#define STT_VA 0  // regular storage: virtual arrays, an explicit flag for each byte
+#define STT_MM 1  // memory map: sparse storage. useful for huge objects
+
+</pre>
